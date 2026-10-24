@@ -19,4 +19,15 @@ class MissionChecks(unittest.TestCase):
             self.assertGreater(a['positive_mechanical_work_J'],0)
             self.assertGreater(float(rows[-1]['x_m']),float(rows[500]['x_m']))
 
+    def test_observation_callback_preserves_dynamics(self):
+        samples=[]
+        def observe(model,data,state,coverage):
+            samples.append(float(data.time))
+        a=mission(seed=7,duration=.1)
+        b=mission(seed=7,duration=.1,on_sample=observe)
+        self.assertEqual(a,b)
+        self.assertEqual(len(samples),50)
+        self.assertAlmostEqual(samples[0],0.)
+        self.assertAlmostEqual(samples[-1],.098)
+
 if __name__=='__main__':unittest.main()

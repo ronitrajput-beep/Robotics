@@ -1,0 +1,11 @@
+{
+  "renderer": "MuJoCo EGL",
+  "playback_speedup": 8,
+  "fps": 25,
+  "frames": 802,
+  "video_duration_s": 32.08,
+  "source": "Fresh physical simulation, observed before each sampled mj_step; no state replay",
+  "status": "DOCKED",
+  "simulation_duration_s": 256.62800000049725,
+  "limitations": "Not interactive viewer verification, not a team submission video, not calibrated cleaning or hardware evidence"
+}

@@ -47,3 +47,9 @@ python analytics/generate_paper_figures.py --input analytics/new_expanded.csv.gz
 ```
 
 Both figure tools refuse existing output paths. Read CONTACT_COVERAGE.md before interpreting coverage. Do not present the `expanded` variant's stopped lower-return pilots as mission completions. To reproduce the small development fault matrix use `python src/run_fault_checks.py` in a fresh checkout/output directory; it refuses the retained `analytics/fault_matrix_v1` directory to protect existing evidence.
+
+## Watch or record a headless simulation
+
+`src/record_demo.py --output-dir <NEW_DIRECTORY>` records an actual fresh MuJoCo run via EGL and streams RGB frames to the system `ffmpeg` executable. Use the same Python environment as above. A full mission is shown at **8× playback**, with simulation time, controller state and whole-panel qualifying projected coverage overlaid. The renderer's framebuffer dimensions are set at runtime; physics parameters are unchanged. The output directory must be new and receives MP4, preview, video metadata, full telemetry and the mission manifest. Rendering records observation callbacks before integration; it does not replay or overwrite robot state. This is separate from desktop `--viewer` operation and the required team video.
+
+Recorded example: `docs/validation/demo_v2/mujoco_demo.mp4` (32.08 s, 960×720 H.264, 25 FPS, 8× playback). It represents 256.628 s of simulation ending DOCKED, matching the earlier expanded-safe-return seed-0 physical metrics exactly. All 802 frames were decoded successfully with ffmpeg. Its telemetry, coverage map and manifests are alongside the video. This visualises movement and measured coverage statistics; the panel surface does not display a simulated dirt texture.

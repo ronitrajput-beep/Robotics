@@ -9,7 +9,7 @@ from cleaning_coverage import CoverageMap
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard"):
+def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None):
     if fault not in (None,"pose_dropout","brush_jam","traction_loss"): raise ValueError("Unknown fault")
     if not np.isfinite(duration) or duration<=0: raise ValueError("Duration must be positive")
     if variant not in ("baseline", "proposed"): raise ValueError("Unknown controller")
@@ -111,6 +111,8 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             work+=float(np.sum(np.maximum(0,d.actuator_force*d.actuator_velocity)))*dt
             errors.append(cross_error)
             if writer:writer.writerow([d.time,state,*p[:2],yaw,*reference,cross_error,d.qvel[m.joint('brush_hinge').dofadr[0]],int(contact),normal_force,visited.mean(),1-soil.mean(),effort,work,speed,clearance(p),supervisor.reason or '',float(np.linalg.norm(d.qvel[3:6])),*bp[:2],*axle])
+            if on_sample is not None:
+                on_sample(m,d,state,coverage_map)
             mujoco.mj_step(m,d)
             if display and step%16==0:
                 if not display.is_running():status='USER_STOP';break
