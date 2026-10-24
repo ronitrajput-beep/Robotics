@@ -11,7 +11,7 @@ Finish the autonomous inclined-solar-panel cleaning crawler capstone for Arush (
 - Normal brush contact force is logged. Cleaning proxy requires force >0.1 N and speed >1 rad/s. Proxy is uncalibrated; no glass-deflection/coating-safety claim.
 - Lowered and compliant brush experiments were rejected. Current geometry is the validated rigid-brush design.
 - 60 independent 30-second tracking runs completed. See analytics/tracking_benchmark/statistics.json. This narrow initial-position study is NOT 30 full missions or robust-environment validation.
-- Ten automated tests and physical model validation pass. EGL image rendering works; interactive viewer needs rehearsal.
+- Eleven automated tests and physical model validation pass. EGL image rendering works; interactive viewer needs rehearsal.
 - Economics and sensitivity are computed but default inputs remain explicitly unverified assumptions.
 - Nothing has been submitted to faculty, Teams or LinkedIn.
 
@@ -36,4 +36,8 @@ Development CSVs may be gzip-compressed in this sharing checkout. pandas reads .
 
 ## Latest pushed development checkpoint
 
-Active-braking supervisor is in src/safety.py. Fault CLI supports pose_dropout, brush_jam and traction_loss. Stop reasons/events and terminal planar speed are logged. Existing output paths are protected. Nominal full-route regression with supervisor completed all 16 waypoints at 244.002 s, no false stops; data in analytics/supervised_nominal_real_trials.csv.gz. It ends at the route endpoint while still moving ~0.095 m/s; actual settled docking remains unfinished. Fault evidence and 10 tests are included. Group README now supersedes stale starter claims; AI_AUDIT.md records actual AI error cases for student verification. Remaining work is still listed above; never mark full-panel cleaning or final submission complete.
+Active-braking supervisor is in src/safety.py. Fault CLI supports pose_dropout, brush_jam and traction_loss. Stop reasons/events and terminal planar speed are logged. Existing output paths are protected. Nominal full-route regression with supervisor completed all 16 waypoints at 244.002 s, no false stops; data in analytics/supervised_nominal_real_trials.csv.gz. It ends at the route endpoint while still moving ~0.095 m/s; that historical run predates the settled docking implementation below. Fault evidence and 10 tests are included. Group README now supersedes stale starter claims; AI_AUDIT.md records actual AI error cases for student verification. Remaining work is still listed above; never mark full-panel cleaning or final submission complete.
+
+## Settled docking checkpoint
+
+The current controller enters DOCKING at the endpoint and physically brakes until planar speed <0.02 m/s, chassis angular speed <0.05 rad/s and brush speed <1 rad/s all hold for 0.5 s. Final endpoint error must be <=0.12 m. Full seed-0 run reached DOCKED at 244.526 s, error 0.10096 m, speed 0.00463 m/s. Independent CSV verification is analytics/verify_docking_run.py; measured data and 300 DPI figure are included. Eleven tests pass. Remaining priorities: contact/coverage, wider full-mission and fault validation, source verification/business calibration, viewer/video and dossier. Docking is endpoint settling, not a charging connector or passive mechanical latch.

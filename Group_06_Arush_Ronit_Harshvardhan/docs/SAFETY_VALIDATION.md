@@ -1,6 +1,6 @@
 # Safety supervisor: measured scope
 
-The supervisor latches a stop reason, disables brush rotation and commands zero wheel speed using bounded active motor braking. It does not freeze positions or velocities. It continues MuJoCo stepping while braking. STOPPED requires measured planar speed <0.02 m/s for 0.5 s; this is a planar settling criterion, not a certified safety state or proof that orientation is fixed. If braking cannot settle within 3 s it reports ABORT_UNSTOPPED; crossing the current support-envelope boundary reports ABORT_EDGE sooner.
+The supervisor latches a stop reason, disables brush rotation and commands zero wheel speed using bounded active motor braking. It does not freeze positions or velocities. It continues MuJoCo stepping while braking. STOPPED now requires planar speed <0.02 m/s, angular speed <0.05 rad/s and brush speed <1 rad/s together for 0.5 s. This is a simulated settling criterion, not certified safety or passive holding after power removal. The original fault logs below predate the angular criterion; the pose-dropout integration test was rerun successfully under the stronger criterion. If braking cannot settle within 3 s it reports ABORT_UNSTOPPED; crossing the current support-envelope boundary reports ABORT_EDGE sooner.
 
 Predictive margin: 0.02 m + speed × 0.05 s + speed²/(2 × 0.30 m/s²). Deceleration and latency are design assumptions, not validated guarantees for every friction/tilt. The body is enclosed conservatively by a 0.45 m horizontal radius. These margins do not replace a tether or hardware brake.
 

@@ -12,7 +12,7 @@ class StopSupervisor:
     def margin(self, speed):
         return .02 + speed*self.latency + speed*speed/(2*self.assumed_deceleration)
 
-    def update(self, time, speed, clearance, pose_valid=True, brush_stalled=False):
+    def update(self, time, speed, clearance, pose_valid=True, brush_stalled=False, angular_speed=0., brush_speed=0.):
         if self.reason is None:
             reason = ('POSE_DROPOUT' if not pose_valid else
                       'BRUSH_STALL' if brush_stalled else
@@ -20,7 +20,7 @@ class StopSupervisor:
             if reason:
                 self.reason=reason;self.triggered_at=time
         if self.reason is None:return None
-        if speed < .02:
+        if speed < .02 and angular_speed < .05 and brush_speed < 1:
             if self.quiet_since is None:self.quiet_since=time
         else:self.quiet_since=None
         if self.quiet_since is not None and time-self.quiet_since>=.5:return 'STOPPED'

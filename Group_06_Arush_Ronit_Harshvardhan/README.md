@@ -10,6 +10,7 @@ The MuJoCo model uses four torque-driven rollers as a track approximation, an 8.
 - Three developmental seeds completed the route in approximately 244 seconds, with approximately 4.4 cm geometric path-tracking RMSE and 55% whole-panel contact coverage. This is NOT complete cleaning.
 - A separate 30-second initial-sweep study ran 30 baseline and 30 proposed trials, recording 500 Hz data. Mean tracking RMSE: 11.68 cm baseline, 2.27 cm proposed. Narrow initial-position randomisation gives very small within-group variance; results do not establish broad robustness or real-world performance.
 - Pose-dropout and brush-jam injections demonstrate active braking. Severe traction loss remains unsafe. See [safety validation](docs/SAFETY_VALIDATION.md).
+- Settled endpoint docking is verified in a complete seed-0 mission, including a 0.5-second low-speed hold and independently checked 500 Hz logs. See docs/DOCKING.md.
 - Headless EGL rendering works. Interactive viewer rehearsal is still pending.
 
 ## Run

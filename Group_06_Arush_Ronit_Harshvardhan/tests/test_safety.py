@@ -11,6 +11,13 @@ class SafetyChecks(unittest.TestCase):
         self.assertEqual(s.update(.1,0,1,True),'BRAKING')
         self.assertEqual(s.update(.7,0,1,True),'STOPPED')
         self.assertEqual(s.reason,'POSE_DROPOUT')
+    def test_rotation_and_brush_prevent_stop(self):
+        s=StopSupervisor()
+        self.assertEqual(s.update(0,0,1,False,angular_speed=.2),'BRAKING')
+        self.assertEqual(s.update(.8,0,1,angular_speed=.2),'BRAKING')
+        self.assertEqual(s.update(1.0,0,1,brush_speed=3),'BRAKING')
+        self.assertEqual(s.update(1.1,0,1),'BRAKING')
+        self.assertEqual(s.update(1.7,0,1),'STOPPED')
     def test_cannot_stop(self):
         s=StopSupervisor()
         self.assertEqual(s.update(0,.3,.01),'BRAKING')

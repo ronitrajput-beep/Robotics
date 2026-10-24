@@ -33,13 +33,13 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         if output.exists() or output.with_suffix('.json').exists(): raise FileExistsError(output)
         output.parent.mkdir(parents=True,exist_ok=True)
         f=gzip.open(output,'wt',newline='') if output.suffix=='.gz' else output.open('w',newline='');writer=csv.writer(f)
-        writer.writerow(['time_s','state','x_m','y_m','yaw_rad','ref_x_m','ref_y_m','path_error_m','brush_rad_s','brush_contact','brush_normal_N','coverage_fraction','soil_removed_fraction','effort_Nm2_s','work_J','speed_mps','clearance_m','stop_reason'])
+        writer.writerow(['time_s','state','x_m','y_m','yaw_rad','ref_x_m','ref_y_m','path_error_m','brush_rad_s','brush_contact','brush_normal_N','coverage_fraction','soil_removed_fraction','effort_Nm2_s','work_J','speed_mps','clearance_m','stop_reason','angular_speed_rad_s'])
     display=None
     if viewer:
         from mujoco import viewer as mj_viewer
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]
-    supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None
+    supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None; docking=False
     brush_dof=m.joint('brush_hinge').dofadr[0]
     try:
         for step in range(int(duration/dt)):
@@ -49,11 +49,12 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 if fault=='brush_jam': m.dof_damping[brush_dof]=20.
                 if fault=='traction_loss': m.geom_friction[:,0]=.05
             speed=float(np.linalg.norm((R.T@d.qvel[:3])[:2]))
-            stopping=supervisor.update(d.time,speed,clearance(p),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5)
+            stopping=supervisor.update(d.time,speed,clearance(p),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
             if stopping and not any(e['event']=='BRAKING' for e in events):
                 events.append({'time_s':float(d.time),'event':'BRAKING','reason':supervisor.reason});integral[:]=0
             if stopping in ('STOPPED','ABORT_UNSTOPPED'):
-                status=stopping;break
+                status=('DOCKED' if np.linalg.norm(route[-1]-p[:2])<=.12 else 'ABORT_DOCK_POSITION') if stopping=='STOPPED' and docking else stopping
+                events.append({'time_s':float(d.time),'event':status});break
             goal=route[index]; distance=np.linalg.norm(goal-p[:2])
             reference,cross_error=segment_reference(p[:2],initial if index==0 else route[index-1],goal)
             if variant=="baseline": reference=goal.copy()
@@ -67,12 +68,15 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             state='SETTLE' if d.time<1 else ('ALIGN' if abs(error)>.4 else 'SWEEP')
             if clearance(p)<0 or p[2]<.04:
                 status='ABORT_EDGE';break
-            if not stopping and d.time>=1 and distance<.10:
+            if not stopping and not docking and d.time>=1 and distance<.10:
                 index+=1
-                if index==len(route):status='ROUTE_COMPLETE';break
+                if index==len(route):
+                    index-=1;docking=True;supervisor.reason='DOCK';supervisor.triggered_at=d.time
+                    stopping='BRAKING';integral[:]=0
+                    events.append({'time_s':float(d.time),'event':'DOCKING'})
             v=0 if state!='SWEEP' else direction*min(.18,.8*distance)*max(0,np.cos(error))
             omega=0 if state=='SETTLE' else np.clip(3*error,-1.2,1.2)
-            if stopping: state='BRAKING';v=omega=0.
+            if stopping: state='DOCKING' if docking else 'BRAKING';v=omega=0.
             speeds=np.array([v-.20*omega]*2+[v+.20*omega]*2)/.06
             for i,j in enumerate(joints):
                 e=speeds[i]-d.qvel[j]
@@ -101,12 +105,12 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             effort+=float(np.sum(d.actuator_force**2))*dt
             work+=float(np.sum(np.maximum(0,d.actuator_force*d.actuator_velocity)))*dt
             errors.append(cross_error)
-            if writer:writer.writerow([d.time,state,*p[:2],yaw,*reference,cross_error,d.qvel[m.joint('brush_hinge').dofadr[0]],int(contact),normal_force,visited.mean(),1-soil.mean(),effort,work,speed,clearance(p),supervisor.reason or ''])
+            if writer:writer.writerow([d.time,state,*p[:2],yaw,*reference,cross_error,d.qvel[m.joint('brush_hinge').dofadr[0]],int(contact),normal_force,visited.mean(),1-soil.mean(),effort,work,speed,clearance(p),supervisor.reason or '',float(np.linalg.norm(d.qvel[3:6]))])
             mujoco.mj_step(m,d)
             if display and step%16==0:
                 if not display.is_running():status='USER_STOP';break
                 display.sync()
-        result={**hashes,'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index,'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
+        result={**hashes,'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
         if output:output.with_suffix('.json').write_text(json.dumps(result,indent=2))
         print(json.dumps(result,indent=2));return result
     finally:
