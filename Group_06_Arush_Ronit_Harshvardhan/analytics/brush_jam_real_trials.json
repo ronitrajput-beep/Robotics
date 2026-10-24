@@ -1,0 +1,34 @@
+{
+  "model_sha256": "93abd3ac44bb9d2e093bb4e59cf70108914480d2e9cecf7523743ded0af3b6a6",
+  "controller_sha256": "c0f0e9215853d27b79394dd6e73948298787f41cf1718ac4d6ef4464bb749f00",
+  "planner_sha256": "11662539145e51aae063225650282d0893a9fa38c5a183458fb64e3c4f11f346",
+  "safety_sha256": "1eaf1356928563a22486ffec19febd53c1eae6721ed23199dc5babfa1bcd33ba",
+  "fault": "brush_jam",
+  "fault_time_s": 3.0,
+  "events": [
+    {
+      "time_s": 3.001999999999891,
+      "event": "INJECT_brush_jam"
+    },
+    {
+      "time_s": 3.5059999999998355,
+      "event": "BRAKING",
+      "reason": "BRUSH_STALL"
+    }
+  ],
+  "stop_reason": "BRUSH_STALL",
+  "terminal_speed_mps": 0.0007023034076137087,
+  "variant": "proposed",
+  "planned_duration_s": 10.0,
+  "seed": 0,
+  "status": "STOPPED",
+  "time_s": 4.037999999999777,
+  "waypoints_reached": 0,
+  "waypoints_total": 16,
+  "visited_contact_fraction": 0.011458333333333333,
+  "soil_removed_proxy_fraction": 0.003997872061272556,
+  "path_tracking_rmse_m": 0.015023317958830162,
+  "effort_Nm2_s": 4.402185611574036,
+  "positive_mechanical_work_J": 15.040069013074467,
+  "mujoco": "3.17.0"
+}

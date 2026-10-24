@@ -12,3 +12,7 @@ Scores must be reviewed by the team. S, O, D use 1–10 ordinal scales; RPN = S 
 | Logging failure | Missing reproducibility evidence | 6/3/5 | 90 | Exceptions propagate; no fabricated replacement data | Atomic manifest/failure handling required |
 
 Do not fill optimistic post-mitigation RPNs without evidence. Inspection, tethering and real glass/load qualification remain hardware deployment considerations outside this simulation's demonstrated capability.
+
+## New evidence
+
+Pose validity failure and dissipative brush-jam injections now trigger latched active braking, with measured settling in the seed-0 runs. Severe friction loss still exits the support envelope. See SAFETY_VALIDATION.md and raw logs. These observations support improved detection, but one run per fault does not estimate occurrence probability; no numerical post-mitigation RPN has been invented.

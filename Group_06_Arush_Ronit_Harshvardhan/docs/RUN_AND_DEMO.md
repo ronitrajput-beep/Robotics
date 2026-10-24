@@ -15,7 +15,7 @@ python -m unittest discover -s tests
 python src/crawler_cleaning_controller.py --seed 0 --output analytics/my_run_real_trials.csv
 ```
 
-Use a new output filename to preserve previous evidence. Current scripts do not prevent overwriting an explicitly selected individual output. For a desktop viewer add `--viewer`; desktop GUI operation remains to be rehearsed. Cloud headless EGL rendering has been tested separately. The viewer currently runs at simulation throughput rather than enforcing real-time pacing; do not imply a recording is real-time unless paced or labelled.
+Use a new output filename to preserve previous evidence. The controller refuses an existing output or companion manifest. For a desktop viewer add `--viewer`; desktop GUI operation remains to be rehearsed. Cloud headless EGL rendering has been tested separately. The viewer currently runs at simulation throughput rather than enforcing real-time pacing; do not imply a recording is real-time unless paced or labelled.
 
 The retained model approximates tracks using four driven rollers, has a rigid panel and rigid brush, and uses ground-truth pose feedback. It has no validated particulate/coating model. Its soil field is an uncalibrated numerical proxy. Route completion does not mean whole-panel cleaning; inspect contact coverage separately.
 
