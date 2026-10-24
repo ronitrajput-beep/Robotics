@@ -1,0 +1,19 @@
+{
+  "difference_definition": "proposed minus baseline",
+  "mean_difference_m": -0.0940977263771544,
+  "ci95_m": [
+    -0.09453698305014227,
+    -0.09365846970416652
+  ],
+  "welch_t": -432.7779272675193,
+  "df": 40.53394552264412,
+  "p_value": 6.620454769881348e-76,
+  "cohens_d_pooled": -111.74278032755113,
+  "proposed_mean_m": 0.022747883586318695,
+  "baseline_mean_m": 0.1168456099634731,
+  "proposed_sd_m": 0.0004935915422477207,
+  "baseline_sd_m": 0.0010837924229832848,
+  "n_proposed": 30,
+  "n_baseline": 30,
+  "scope": "30-second initial-sweep tracking only; not whole-mission efficacy"
+}

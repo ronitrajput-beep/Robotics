@@ -1,0 +1,16 @@
+{
+  "model_sha256": "93abd3ac44bb9d2e093bb4e59cf70108914480d2e9cecf7523743ded0af3b6a6",
+  "controller_sha256": "d537dfed2eae0816770a92ed04b06f380a5364734841ec4439c1c5a760fa268e",
+  "planner_sha256": "11662539145e51aae063225650282d0893a9fa38c5a183458fb64e3c4f11f346",
+  "seed": 0,
+  "status": "ROUTE_COMPLETE",
+  "time_s": 244.00200000043696,
+  "waypoints_reached": 16,
+  "waypoints_total": 16,
+  "visited_contact_fraction": 0.5516666666666666,
+  "soil_removed_proxy_fraction": 0.2893754896512203,
+  "path_tracking_rmse_m": 0.04363063753639817,
+  "effort_Nm2_s": 494.11809862231587,
+  "positive_mechanical_work_J": 1976.1465912665533,
+  "mujoco": "3.17.0"
+}

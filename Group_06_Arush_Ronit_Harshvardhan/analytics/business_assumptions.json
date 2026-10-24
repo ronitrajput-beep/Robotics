@@ -1,0 +1,15 @@
+{
+  "input_status": "unverified scenario assumptions, not sourced deployment costs",
+  "capital_ratio": 0.65,
+  "robot_cost_ratio_range": [
+    0.05,
+    1.2
+  ],
+  "life_years": 5,
+  "manual_hours_per_month": 120,
+  "supervision_hours_per_month": 20,
+  "maintenance_hours_per_month": 10,
+  "queue_arrivals_per_hour": 0.1,
+  "queue_service_rate_per_hour": 0.25,
+  "warning": "Queue and labour rates are illustrative and not calibrated to current partial-panel route."
+}

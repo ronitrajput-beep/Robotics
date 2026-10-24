@@ -1,0 +1,36 @@
+[
+  {
+    "controller_sha256": "7cfb0000197f2e5760e3a61f1096b65f396121427f33d612fd527039303e5aa2",
+    "planner_sha256": "0ceedb9a93fc7a74d500293bf801a3f3360452a18652c78dd5bcd8955cf3113d",
+    "seed": 1,
+    "status": "ROUTE_COMPLETE",
+    "time_s": 243.64400000043526,
+    "waypoints_reached": 16,
+    "waypoints_total": 16,
+    "visited_contact_fraction": 0.5521875,
+    "soil_removed_proxy_fraction": 0.28921497088785086,
+    "path_tracking_rmse_m": 0.04396775810760617,
+    "effort_Nm2_s": 492.46003016024406,
+    "positive_mechanical_work_J": 1968.3612337214522,
+    "model_sha256": "0d1d9b6fa8343bee175b6529e0f615f06ad6ac627e1e0dc04c32190702c8ca54",
+    "mujoco": "3.17.0",
+    "provenance_note": "Model hash corrected: runner previously hashed on completion; both workers loaded rigid-brush model before subsequent edit."
+  },
+  {
+    "controller_sha256": "7cfb0000197f2e5760e3a61f1096b65f396121427f33d612fd527039303e5aa2",
+    "planner_sha256": "0ceedb9a93fc7a74d500293bf801a3f3360452a18652c78dd5bcd8955cf3113d",
+    "seed": 2,
+    "status": "ROUTE_COMPLETE",
+    "time_s": 244.48000000043925,
+    "waypoints_reached": 16,
+    "waypoints_total": 16,
+    "visited_contact_fraction": 0.5517708333333333,
+    "soil_removed_proxy_fraction": 0.2901301423988176,
+    "path_tracking_rmse_m": 0.04465643290701836,
+    "effort_Nm2_s": 494.8383012532109,
+    "positive_mechanical_work_J": 1977.4110410096507,
+    "model_sha256": "0d1d9b6fa8343bee175b6529e0f615f06ad6ac627e1e0dc04c32190702c8ca54",
+    "mujoco": "3.17.0",
+    "provenance_note": "Model hash corrected: runner previously hashed on completion; both workers loaded rigid-brush model before subsequent edit."
+  }
+]

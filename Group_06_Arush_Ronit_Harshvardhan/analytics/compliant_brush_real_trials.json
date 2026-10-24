@@ -1,0 +1,17 @@
+{
+  "controller_sha256": "7cfb0000197f2e5760e3a61f1096b65f396121427f33d612fd527039303e5aa2",
+  "planner_sha256": "0ceedb9a93fc7a74d500293bf801a3f3360452a18652c78dd5bcd8955cf3113d",
+  "seed": 0,
+  "status": "ROUTE_COMPLETE",
+  "time_s": 222.76600000033557,
+  "waypoints_reached": 16,
+  "waypoints_total": 16,
+  "visited_contact_fraction": 0.5396875,
+  "soil_removed_proxy_fraction": 0.15343769468148727,
+  "path_tracking_rmse_m": 0.029599921578677225,
+  "effort_Nm2_s": 300.0070081552484,
+  "positive_mechanical_work_J": 1794.2175934058557,
+  "model_sha256": "6b85accc41631ec102b070c58d1e9d25997657e4b8dbcaf0bcec4312ffc204ac",
+  "mujoco": "3.17.0",
+  "provenance_note": "Corrected completion-time hash to controller source loaded at launch; brush experiment rejected because contact duty decreased."
+}

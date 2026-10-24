@@ -1,0 +1,18 @@
+{
+  "model_sha256": "93abd3ac44bb9d2e093bb4e59cf70108914480d2e9cecf7523743ded0af3b6a6",
+  "controller_sha256": "35558f8dac0d09520d628b16ede69169d9ecf1b29a5da1b89aa8497d2f51ef2e",
+  "planner_sha256": "11662539145e51aae063225650282d0893a9fa38c5a183458fb64e3c4f11f346",
+  "variant": "proposed",
+  "planned_duration_s": 30,
+  "seed": 2021,
+  "status": "TIMEOUT",
+  "time_s": 29.99999999999425,
+  "waypoints_reached": 2,
+  "waypoints_total": 16,
+  "visited_contact_fraction": 0.11020833333333334,
+  "soil_removed_proxy_fraction": 0.0484009241963681,
+  "path_tracking_rmse_m": 0.022006685776879777,
+  "effort_Nm2_s": 53.801026972302665,
+  "positive_mechanical_work_J": 208.73547744319856,
+  "mujoco": "3.17.0"
+}

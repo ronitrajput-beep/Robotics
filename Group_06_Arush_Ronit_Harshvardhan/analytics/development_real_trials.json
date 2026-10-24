@@ -1,0 +1,14 @@
+{
+  "seed": 0,
+  "status": "ROUTE_COMPLETE",
+  "time_s": 214.15000000029443,
+  "waypoints_reached": 12,
+  "waypoints_total": 12,
+  "visited_contact_fraction": 0.45958333333333334,
+  "soil_removed_proxy_fraction": 0.24783798382847622,
+  "waypoint_distance_rms_m": 2.6161597530123726,
+  "effort_Nm2_s": 480.32506947441874,
+  "positive_mechanical_work_J": 1570.0374417312032,
+  "model_sha256": "0d1d9b6fa8343bee175b6529e0f615f06ad6ac627e1e0dc04c32190702c8ca54",
+  "mujoco": "3.17.0"
+}
