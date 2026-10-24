@@ -1,0 +1,53 @@
+{
+  "model_sha256": "93abd3ac44bb9d2e093bb4e59cf70108914480d2e9cecf7523743ded0af3b6a6",
+  "controller_sha256": "c36d54814a93027cf0072ef29c5d2fae53972a6a0a8e816167ba001990057dd6",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "layout": "expanded_safe_return",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.6141666666666666,
+    "qualified_contact_fraction": 0.6140625,
+    "half_soil_proxy_removed_fraction": 0.30145833333333333,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.896584440227704,
+    "soil_removed_proxy_fraction": 0.3155094990315671
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 256.65000000049736,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 256.65200000049737,
+      "event": "BRAKING",
+      "reason": "DOCK"
+    },
+    {
+      "time_s": 257.17600000049987,
+      "event": "DOCKED"
+    }
+  ],
+  "stop_reason": "DOCK",
+  "terminal_angular_speed_rad_s": 0.0002734445859082151,
+  "terminal_brush_speed_rad_s": 0.07849072332358954,
+  "dock_error_m": 0.10093765972817267,
+  "terminal_speed_mps": 0.004834350033273289,
+  "variant": "proposed",
+  "planned_duration_s": 420.0,
+  "seed": 2,
+  "status": "DOCKED",
+  "time_s": 257.17600000049987,
+  "waypoints_reached": 16,
+  "waypoints_total": 16,
+  "visited_contact_fraction": 0.6065625,
+  "soil_removed_proxy_fraction": 0.3111649028935203,
+  "path_tracking_rmse_m": 0.045373599805230494,
+  "effort_Nm2_s": 522.6378475670211,
+  "positive_mechanical_work_J": 2083.020518661169,
+  "mujoco": "3.17.0"
+}

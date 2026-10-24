@@ -23,3 +23,7 @@ python src/crawler_cleaning_controller.py --fault brush_jam --duration 10 --outp
 python src/crawler_cleaning_controller.py --fault traction_loss --duration 10 --output analytics/new_slip.csv
 ```
 Existing output paths are refused so evidence cannot be silently overwritten.
+
+## Three-seed development matrix after workspace recovery
+
+`python src/run_fault_checks.py` freezes a small protocol and refuses an existing `analytics/fault_matrix_v1` directory. It executed seeds 0/1/2 for each fault at t=3 s with a 10 s limit, retaining compressed 500 Hz telemetry, coverage snapshots, manifests and results. All three pose-dropout and all three jam cases reached STOPPED under the current planar/angular/brush settling rule. All three severe traction-loss cases reached ABORT_EDGE. This reproduces the unsafe limitation; it is not a statistical safety claim or a demonstrated recovery. See `analytics/fault_matrix_v1/results.json` for individual speeds, timings and events. No faults were excluded.

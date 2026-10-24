@@ -1,0 +1,54 @@
+{
+  "scope": "Three development seeds, not final evaluation or hardware safety",
+  "checks": "500 Hz, positive measured clearance, route completion, endpoint error, 0.5 s planar/angular/brush settling window",
+  "results": [
+    {
+      "seed": 0,
+      "status": "DOCKED",
+      "time_s": 256.62800000049725,
+      "samples": 128314,
+      "minimum_clearance_m": 0.15273699170677418,
+      "dock_error_m": 0.1006135413179178,
+      "grid_cell_area_m2": 0.0025000000000000005,
+      "panel_area_m2": 24.0,
+      "geometric_footprint_fraction": 0.6134375,
+      "qualified_contact_fraction": 0.6132291666666667,
+      "half_soil_proxy_removed_fraction": 0.30125,
+      "interior_area_m2": 15.810000000000002,
+      "interior_qualified_fraction": 0.8957938013915243,
+      "soil_removed_proxy_fraction": 0.3150779342902984
+    },
+    {
+      "seed": 1,
+      "status": "DOCKED",
+      "time_s": 255.4000000004914,
+      "samples": 127700,
+      "minimum_clearance_m": 0.1502342041306381,
+      "dock_error_m": 0.1007543201136237,
+      "grid_cell_area_m2": 0.0025000000000000005,
+      "panel_area_m2": 24.0,
+      "geometric_footprint_fraction": 0.6177083333333333,
+      "qualified_contact_fraction": 0.6171875,
+      "half_soil_proxy_removed_fraction": 0.3015625,
+      "interior_area_m2": 15.810000000000002,
+      "interior_qualified_fraction": 0.8954775458570525,
+      "soil_removed_proxy_fraction": 0.3150841408123808
+    },
+    {
+      "seed": 2,
+      "status": "DOCKED",
+      "time_s": 257.17600000049987,
+      "samples": 128588,
+      "minimum_clearance_m": 0.1452299949050017,
+      "dock_error_m": 0.10093765972817267,
+      "grid_cell_area_m2": 0.0025000000000000005,
+      "panel_area_m2": 24.0,
+      "geometric_footprint_fraction": 0.6141666666666666,
+      "qualified_contact_fraction": 0.6140625,
+      "half_soil_proxy_removed_fraction": 0.30145833333333333,
+      "interior_area_m2": 15.810000000000002,
+      "interior_qualified_fraction": 0.896584440227704,
+      "soil_removed_proxy_fraction": 0.3155094990315671
+    }
+  ]
+}

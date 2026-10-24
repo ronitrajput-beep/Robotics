@@ -35,3 +35,15 @@ The retained model approximates tracks using four driven rollers, has a rigid pa
 - 3:10–3:45: Each member explains their actual contribution, one verified issue they understand, and the major remaining sim-to-real limitation.
 
 Every member must actually appear and speak. Record only after final evidence is reviewed. Never invent a post URL, consent, signature or completed peer review. Use the final assignment's 3–4 minute requirement, not the older 60–90 second example.
+
+## Current coverage candidate and read-only figures
+
+Optional wider development candidate (the default route remains standard):
+
+```
+python src/crawler_cleaning_controller.py --layout expanded_safe_return --seed 0 --duration 420 --output analytics/new_expanded.csv.gz
+python analytics/audit_contact_coverage.py analytics/new_expanded.csv.gz --report analytics/new_expanded_audit.json --figure docs/validation/new_expanded.png
+python analytics/generate_paper_figures.py --input analytics/new_expanded.csv.gz --output docs/validation/new_telemetry.png
+```
+
+Both figure tools refuse existing output paths. Read CONTACT_COVERAGE.md before interpreting coverage. Do not present the `expanded` variant's stopped lower-return pilots as mission completions. To reproduce the small development fault matrix use `python src/run_fault_checks.py` in a fresh checkout/output directory; it refuses the retained `analytics/fault_matrix_v1` directory to protect existing evidence.

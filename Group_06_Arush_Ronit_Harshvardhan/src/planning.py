@@ -3,11 +3,14 @@ import numpy as np
 
 FOOTPRINT_RADIUS = .45  # encloses brush: hypot(.29+.06, .275) < .45 m
 
-def raster():
-    points=[(-2.20,1.20)]
-    for i,y in enumerate(np.linspace(1.20,-1.20,8)):
+def raster(layout="standard"):
+    if layout not in ("standard", "expanded", "expanded_safe_return"):
+        raise ValueError("Unknown raster layout")
+    left, right, top = (-2.20, 2.30, 1.20) if layout == "standard" else (-2.40, 2.40, 1.35)
+    points=[(left,top)]
+    for i,y in enumerate(np.linspace(top,-1.20 if layout=="expanded_safe_return" else -top,8)):
         if i: points.append((points[-1][0] - np.sign(points[-1][0])*.65,float(y)))
-        points.append((2.30 if i%2==0 else -2.30,float(y)))
+        points.append((right if i%2==0 else (-2.30 if layout=="standard" else left),float(y)))
     points.append((0.,-1.))
     return np.array(points)
 

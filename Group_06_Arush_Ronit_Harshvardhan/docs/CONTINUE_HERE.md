@@ -41,3 +41,17 @@ Active-braking supervisor is in src/safety.py. Fault CLI supports pose_dropout, 
 ## Settled docking checkpoint
 
 The current controller enters DOCKING at the endpoint and physically brakes until planar speed <0.02 m/s, chassis angular speed <0.05 rad/s and brush speed <1 rad/s all hold for 0.5 s. Final endpoint error must be <=0.12 m. Full seed-0 run reached DOCKED at 244.526 s, error 0.10096 m, speed 0.00463 m/s. Independent CSV verification is analytics/verify_docking_run.py; measured data and 300 DPI figure are included. Eleven tests pass. Remaining priorities: contact/coverage, wider full-mission and fault validation, source verification/business calibration, viewer/video and dossier. Docking is endpoint settling, not a charging connector or passive mechanical latch.
+
+## Recovered workspace checkpoint — 25 October 2026
+
+The pushed files were recovered into `/workspace/Robotics`. Python 3.12 pinned requirements, pip check, physics checks and **18 tests** pass on the new instance; EGL 640×480 rendering was independently checked again. Interactive desktop viewer is still unverified. Cloud install/start instructions were saved as a draft, not published.
+
+Read `CONTACT_COVERAGE.md` next. New cell-centre coverage maps preserve the 24 m² denominator, separately report a declared 15.81 m² interior and distinguish projected footprint, qualifying contact and soil proxy. New NPZ snapshots and brush-pose CSV fields support diagnosis. The original legacy coverage fields remain intact. Standard seed 0 reproduced identical motion/docking. Its v2 contact union is 55.885%, while 44.094% of the panel is never under the projected brush footprint.
+
+Three expanded-layout pilots reached ~64% contact but stopped before docking on EDGE_MARGIN; preserve these failures. The optional `--layout expanded_safe_return` restored the original lower row while widening the upper/side sweep. Seeds 0/1/2 all DOCKED, 255.4–257.2 s, 61.3–61.7% whole-panel contact union, >0.145 m minimum logged clearance. Independent CSV checks are in `analytics/expanded_safe_return_checks.json`. The standard route remains default. Contact union is not calibrated cleaning; the soil-proxy threshold metric did not improve, so report that tradeoff honestly.
+
+The nine-case fault matrix retained 3/3 settled dropout stops, 3/3 settled jam stops and 3/3 severe traction-loss edge failures. No broad robustness or hardware safety claim is supported. Code/model were unchanged within each batch; earlier coverage-audit and expanded-pilot datasets intentionally have different controller/planner hashes, recorded at launch.
+
+The old `generate_paper_figures.py` no longer synthesises observations; it requires genuine mission telemetry and refuses overwriting outputs. Historical starter datasets/images remain excluded from evidence. The manuscript blueprint now reports actual narrow tracking results and limitations instead of invented full-mission/manual-baseline significance.
+
+Next: investigate measured force spikes/intermittent dose and unreachable border geometry, freeze an explicit full-mission protocol for baseline/proposed with suitable conditions and sufficient held-out runs, improve logging/provenance failure handling, verify sources/business assumptions, rehearse viewer/video and complete the dossier with team review. Never substitute these three development seeds or the old 30-second study for final full-mission evaluation. Human signatures, video appearances/posting, peer reviews and Teams turn-in remain outstanding.

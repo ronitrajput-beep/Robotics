@@ -5,35 +5,38 @@ import mujoco
 import numpy as np
 from planning import raster, segment_reference, clearance
 from safety import StopSupervisor
+from cleaning_coverage import CoverageMap
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3.):
+def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard"):
     if fault not in (None,"pose_dropout","brush_jam","traction_loss"): raise ValueError("Unknown fault")
     if not np.isfinite(duration) or duration<=0: raise ValueError("Duration must be positive")
     if variant not in ("baseline", "proposed"): raise ValueError("Unknown controller")
+    planned_route=raster(layout)
     rng = np.random.default_rng(seed)
     model_path = ROOT/'models/solar_cleaning_crawler.xml'
-    hashes={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'model_sha256':model_path,'controller_sha256':Path(__file__),'planner_sha256':ROOT/'src/planning.py','safety_sha256':ROOT/'src/safety.py'}.items()}
+    hashes={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'model_sha256':model_path,'controller_sha256':Path(__file__),'planner_sha256':ROOT/'src/planning.py','safety_sha256':ROOT/'src/safety.py','coverage_sha256':ROOT/'src/cleaning_coverage.py'}.items()}
     m = mujoco.MjModel.from_xml_path(str(model_path)); d = mujoco.MjData(m)
     mujoco.mj_forward(m,d)
     b=m.body('crawler_chassis').id; rack=m.body('pv_array_rack').id
     R=d.xmat[rack].reshape(3,3).copy(); origin=d.xpos[rack].copy()
     # Initial conditions only; never overwrite state during integration.
-    d.qpos[0:3] = origin + R @ np.array([-2.20+rng.uniform(-.01,.01),1.20+rng.uniform(-.01,.01),.12])
+    d.qpos[0:3] = origin + R @ np.array([planned_route[0,0]+rng.uniform(-.01,.01),planned_route[0,1]+rng.uniform(-.01,.01),.12])
     mujoco.mj_forward(m,d)
     joints=[m.joint(s+'_'+e).dofadr[0] for s in ('left','right') for e in ('front','rear')]
-    route=raster()[1:]; index=0; integral=np.zeros(4); dt=m.opt.timestep
+    route=planned_route[1:]; index=0; integral=np.zeros(4); dt=m.opt.timestep
     initial=(R.T@(d.xpos[b]-origin))[:2].copy()
     axisx=np.linspace(-3,3,120); axisy=np.linspace(-2,2,80)
     X,Y=np.meshgrid(axisx,axisy); soil=np.ones(X.shape); visited=np.zeros(X.shape,bool)
+    coverage_map=CoverageMap()
     f=None; writer=None
     if output:
         output=Path(output)
-        if output.exists() or output.with_suffix('.json').exists(): raise FileExistsError(output)
+        if output.exists() or output.with_suffix('.json').exists() or output.with_suffix('.coverage.npz').exists(): raise FileExistsError(output)
         output.parent.mkdir(parents=True,exist_ok=True)
         f=gzip.open(output,'wt',newline='') if output.suffix=='.gz' else output.open('w',newline='');writer=csv.writer(f)
-        writer.writerow(['time_s','state','x_m','y_m','yaw_rad','ref_x_m','ref_y_m','path_error_m','brush_rad_s','brush_contact','brush_normal_N','coverage_fraction','soil_removed_fraction','effort_Nm2_s','work_J','speed_mps','clearance_m','stop_reason','angular_speed_rad_s'])
+        writer.writerow(['time_s','state','x_m','y_m','yaw_rad','ref_x_m','ref_y_m','path_error_m','brush_rad_s','brush_contact','brush_normal_N','coverage_fraction','soil_removed_fraction','effort_Nm2_s','work_J','speed_mps','clearance_m','stop_reason','angular_speed_rad_s','brush_x_m','brush_y_m','brush_axle_x','brush_axle_y'])
     display=None
     if viewer:
         from mujoco import viewer as mj_viewer
@@ -98,6 +101,8 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 if stall_since is None:stall_since=d.time
             else:stall_since=None
             bp=R.T@(d.geom_xpos[brush]-origin)
+            axle=(R.T@d.geom_xmat[brush].reshape(3,3)[:,2])[:2]
+            coverage_map.update(bp[:2],axle,*m.geom_size[brush,:2],normal_force,brush_speed,state=='SWEEP',dt)
             ux=np.cos(yaw)*(X-bp[0])+np.sin(yaw)*(Y-bp[1]);uy=-np.sin(yaw)*(X-bp[0])+np.cos(yaw)*(Y-bp[1])
             mask=(abs(ux)<.06)&(abs(uy)<.275)
             if contact and brush_speed>1 and state=='SWEEP':
@@ -105,18 +110,20 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             effort+=float(np.sum(d.actuator_force**2))*dt
             work+=float(np.sum(np.maximum(0,d.actuator_force*d.actuator_velocity)))*dt
             errors.append(cross_error)
-            if writer:writer.writerow([d.time,state,*p[:2],yaw,*reference,cross_error,d.qvel[m.joint('brush_hinge').dofadr[0]],int(contact),normal_force,visited.mean(),1-soil.mean(),effort,work,speed,clearance(p),supervisor.reason or '',float(np.linalg.norm(d.qvel[3:6]))])
+            if writer:writer.writerow([d.time,state,*p[:2],yaw,*reference,cross_error,d.qvel[m.joint('brush_hinge').dofadr[0]],int(contact),normal_force,visited.mean(),1-soil.mean(),effort,work,speed,clearance(p),supervisor.reason or '',float(np.linalg.norm(d.qvel[3:6])),*bp[:2],*axle])
             mujoco.mj_step(m,d)
             if display and step%16==0:
                 if not display.is_running():status='USER_STOP';break
                 display.sync()
-        result={**hashes,'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
-        if output:output.with_suffix('.json').write_text(json.dumps(result,indent=2))
+        result={**hashes,'layout':layout,'coverage_metrics_v2':coverage_map.summary(),'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
+        if output:
+            coverage_map.save(output.with_suffix('.coverage.npz'))
+            output.with_suffix('.json').write_text(json.dumps(result,indent=2))
         print(json.dumps(result,indent=2));return result
     finally:
         if f:f.close()
         if display:display.close()
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('--seed',type=int,default=0);a.add_argument('--duration',type=float,default=360);a.add_argument('--output');a.add_argument('--viewer',action='store_true');a.add_argument('--fault',choices=['pose_dropout','brush_jam','traction_loss']);a.add_argument('--fault-time',type=float,default=3.);args=a.parse_args()
-    mission(args.seed,args.output,args.duration,args.viewer,fault=args.fault,fault_time=args.fault_time)
+    a=argparse.ArgumentParser();a.add_argument('--layout',choices=['standard','expanded','expanded_safe_return'],default='standard');a.add_argument('--seed',type=int,default=0);a.add_argument('--duration',type=float,default=360);a.add_argument('--output');a.add_argument('--viewer',action='store_true');a.add_argument('--fault',choices=['pose_dropout','brush_jam','traction_loss']);a.add_argument('--fault-time',type=float,default=3.);args=a.parse_args()
+    mission(args.seed,args.output,args.duration,args.viewer,fault=args.fault,fault_time=args.fault_time,layout=args.layout)

@@ -1,0 +1,49 @@
+{
+  "model_sha256": "93abd3ac44bb9d2e093bb4e59cf70108914480d2e9cecf7523743ded0af3b6a6",
+  "controller_sha256": "304c8efe5107cef6f279acecfa040f2087619959d843754fbff8486cbe0057ce",
+  "planner_sha256": "c66fa25144c365da6e214f9165225c1d93ae74696d7f8364c6be9821b20534e3",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "layout": "expanded",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.6401041666666667,
+    "qualified_contact_fraction": 0.639375,
+    "half_soil_proxy_removed_fraction": 0.238125,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.8950031625553447,
+    "soil_removed_proxy_fraction": 0.30716078861510876
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 244.06200000043725,
+      "event": "BRAKING",
+      "reason": "EDGE_MARGIN"
+    },
+    {
+      "time_s": 244.58200000043973,
+      "event": "STOPPED"
+    }
+  ],
+  "stop_reason": "EDGE_MARGIN",
+  "terminal_angular_speed_rad_s": 0.0007636768117730814,
+  "terminal_brush_speed_rad_s": 0.05184162215712138,
+  "dock_error_m": 2.339822499719643,
+  "terminal_speed_mps": 0.00317634025252295,
+  "variant": "proposed",
+  "planned_duration_s": 420.0,
+  "seed": 2,
+  "status": "STOPPED",
+  "time_s": 244.58200000043973,
+  "waypoints_reached": 15,
+  "waypoints_total": 16,
+  "visited_contact_fraction": 0.6316666666666667,
+  "soil_removed_proxy_fraction": 0.3013913684636088,
+  "path_tracking_rmse_m": 0.043688441578519845,
+  "effort_Nm2_s": 503.7066047600517,
+  "positive_mechanical_work_J": 1989.1968732395953,
+  "mujoco": "3.17.0"
+}

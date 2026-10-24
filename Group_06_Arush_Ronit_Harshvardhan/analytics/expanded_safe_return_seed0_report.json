@@ -1,0 +1,39 @@
+{
+  "input_sha256": {
+    "expanded_safe_return_seed0.csv.gz": "60a2bd839dd83bb62915e0258c0aae13fadb39a98e27700c241e37301f44729b",
+    "expanded_safe_return_seed0.csv.json": "afc809a3e72db2e43cf5efcb2c795158ad9b38f41013f63150dd3f63a2ea4413",
+    "expanded_safe_return_seed0.csv.coverage.npz": "6a4740eb30588f501c3139c31765f7dc8753e52f0901c256eeb6d5fccd237470"
+  },
+  "status": "DOCKED",
+  "seed": 0,
+  "samples": 128314,
+  "dt_s": 0.002,
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.6134375,
+    "qualified_contact_fraction": 0.6132291666666667,
+    "half_soil_proxy_removed_fraction": 0.30125,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.8957938013915243,
+    "soil_removed_proxy_fraction": 0.3150779342902984
+  },
+  "sweep_samples": 123435,
+  "qualifying_duty_during_sweep": 0.3451776238506096,
+  "sweep_force_N_quantiles_0_50_95_100": [
+    0.0,
+    0.0,
+    114.26984239399457,
+    298.03490447300373
+  ],
+  "sweep_absolute_brush_speed_rad_s_quantiles_0_50_95_100": [
+    0.001912444938643859,
+    5.0967320012158375,
+    6.805802047606771,
+    9.198313810522032
+  ],
+  "whole_panel_never_projected_fraction": 0.3865625,
+  "whole_panel_projected_but_never_qualified_fraction": 0.00020833333333333335,
+  "minimum_clearance_m": 0.15273699170677418,
+  "interpretation": "Projected rectangular footprint activated by aggregate measured brush force and speed; not resolved bristle contact or calibrated soil removal. Interior is a declared reporting region, not guaranteed reachability."
+}
