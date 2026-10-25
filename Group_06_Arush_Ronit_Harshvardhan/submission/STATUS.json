@@ -1,13 +1,10 @@
 {
-  "updated_utc": "2026-10-25T23:34:59.027228+00:00",
-  "phase": "final-validation-finished-analysis-pending",
+  "updated_utc": "2026-10-25T23:42:24.932739+00:00",
+  "phase": "technical-review-files-ready-human-actions-remain",
   "batch": "analytics/final_validation_v1",
   "technical_files": "docs/MDRIIA_Group_06_Technical_Dossier.docx and .pdf",
   "human_actions": "Member authorship/learning/declarations, actual peer reviews, team video/LinkedIn, signatures and faculty/Teams submission remain required.",
   "completed": 180,
   "planned": 180,
-  "statuses": {
-    "CLEAN_AND_HOME": 180
-  },
-  "review_files_are_preliminary": true
+  "review_files_are_preliminary": false
 }

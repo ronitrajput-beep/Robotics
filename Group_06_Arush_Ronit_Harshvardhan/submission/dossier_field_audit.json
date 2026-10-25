@@ -1,5 +1,5 @@
 {
-  "preliminary": true,
+  "preliminary": false,
   "template": "submission/templates/MDRIIA_Group_06_Technical_Dossier_original.docx",
   "template_sha256": "b700ada3ec753f12190f3cd71541a1c8f7be7f40e06fe19201899d20648aac87",
   "controls_original": 212,
@@ -76,5 +76,5 @@
     "M06.SIGN.E058.viva_ready",
     "M06.SIGN.E058.research_consent"
   ],
-  "dossier_sha256": "db3d5127a6f23954870394a2dd49a58510fd722a87695d2df111336c40b7a9d1"
+  "dossier_sha256": "67d17a41f4b5382fd4dce43323ecb1236b87ff58bd43a0c12d79dd30362e408f"
 }

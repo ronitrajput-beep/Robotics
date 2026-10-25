@@ -1,6 +1,6 @@
 {
-  "created_utc": "2026-10-25T17:28:43.295893+00:00",
-  "status": "PRELIMINARY REVIEW COPY: final validation pending",
+  "created_utc": "2026-10-25T23:42:25.220812+00:00",
+  "status": "TECHNICAL REVIEW COPY: unsigned personal fields and team submission actions remain",
   "bulk_raw_data": "Full real 500 Hz trial logs are retained separately in the personal Robotics repository; see submission/REPRODUCE.md. Archive is not a substitute for raw data.",
   "files": [
     {
@@ -12,36 +12,6 @@
       "path": "analytics/analyse_tracking_benchmark.py",
       "bytes": 2296,
       "sha256": "ca2c5d4fc6e1b4a1b38b67a3b5b5cdb9d5bb7a7f90f12d55a552fc896763ec8a"
-    },
-    {
-      "path": "analytics/business_nominal_draft_v1/business_sensitivity.png",
-      "bytes": 169734,
-      "sha256": "5f86c1701ded60ee828a81d25b28f2baa9aeaf7e60717ff2ced37ff095cc0f34"
-    },
-    {
-      "path": "analytics/business_nominal_draft_v1/inputs.json",
-      "bytes": 1929,
-      "sha256": "5b9a4df27114ba5813b28949f104113444dfd305437a89d6752dbfa40f3f4961"
-    },
-    {
-      "path": "analytics/business_nominal_draft_v1/queue_and_labour.png",
-      "bytes": 151679,
-      "sha256": "1d5add92b514ed9846864ee59c663bf0c71d61c80d55ca1e9b7f2f490f5cab68"
-    },
-    {
-      "path": "analytics/business_nominal_draft_v1/results.json",
-      "bytes": 4672,
-      "sha256": "51f717b7514a4874d451482c46c52948804f83b0ffc4dc13d3d51173efe18a96"
-    },
-    {
-      "path": "analytics/business_nominal_draft_v1/sensitivity.csv",
-      "bytes": 13928,
-      "sha256": "e7bb1763312a1662a86ac7cbc7bd6261cf8bb9575d4eafdae29174d07438b6d1"
-    },
-    {
-      "path": "analytics/business_nominal_draft_v1/simulation_inputs.json",
-      "bytes": 564,
-      "sha256": "d9babb6eb42bdf186586fe1faa37baa8bc0c00fe874cfeccce2b9f68efcb5ec5"
     },
     {
       "path": "analytics/collection_contact_trace/lift_state.npz",
@@ -104,9 +74,89 @@
       "sha256": "4005c4844b52c1aea77407a06d6dcad68023a07a9724c9251359e791eded823e"
     },
     {
+      "path": "analytics/final_business_v1/business_sensitivity.png",
+      "bytes": 169902,
+      "sha256": "cdc08f1ed5875f0db454a94426ae63724b6f3b255fb1a36b0fa147ad65cc0094"
+    },
+    {
+      "path": "analytics/final_business_v1/inputs.json",
+      "bytes": 1929,
+      "sha256": "5b9a4df27114ba5813b28949f104113444dfd305437a89d6752dbfa40f3f4961"
+    },
+    {
+      "path": "analytics/final_business_v1/queue_and_labour.png",
+      "bytes": 151169,
+      "sha256": "ac151d3a29fb575d625f518176d6e286460c4cbd06c4079ae9c81109a75322aa"
+    },
+    {
+      "path": "analytics/final_business_v1/results.json",
+      "bytes": 6066,
+      "sha256": "1b5866e28492c77ce80017b347242b17c33644c44530e8e73d1095f2f8aa1c04"
+    },
+    {
+      "path": "analytics/final_business_v1/sensitivity.csv",
+      "bytes": 13923,
+      "sha256": "ff9a2436263d1ba177fc2fcc43d7c2fd9af38c415da43283bd1b7ea37ccb2845"
+    },
+    {
+      "path": "analytics/final_business_v1/simulation_inputs.json",
+      "bytes": 606,
+      "sha256": "93e8e9bd99ef5c6445e60c82b6e1d4cbe32cbb8dbf473744a67cf2945fe06430"
+    },
+    {
+      "path": "analytics/final_validation_v1/batch_complete.json",
+      "bytes": 95,
+      "sha256": "0f5a5599150568ca612409edbba2353350667e54ca8461779251b4b80b31fab5"
+    },
+    {
+      "path": "analytics/final_validation_v1/figures/completion_and_coverage.png",
+      "bytes": 146493,
+      "sha256": "4b7419b6c793dafa4ad8e08e8261410c0159fd8265d889b4f3a19d525c0d8d89"
+    },
+    {
+      "path": "analytics/final_validation_v1/figures/representative_trajectories.png",
+      "bytes": 295912,
+      "sha256": "ea44abae13daee0591cda6d4bd75f434f1ac03a2f4701e5b7bbe8db4d21d9827"
+    },
+    {
+      "path": "analytics/final_validation_v1/figures/tracking_and_effort.png",
+      "bytes": 137080,
+      "sha256": "300987584fe3db5018eeb93c83ee43115f5b7572f11f0835a0b555bc819211f8"
+    },
+    {
+      "path": "analytics/final_validation_v1/models/tilt_10.xml",
+      "bytes": 11848,
+      "sha256": "fc0849aaca734fb057fd3c1cdd91dd61673e8e1c8969dd3d8a516b2e37b2c903"
+    },
+    {
+      "path": "analytics/final_validation_v1/models/tilt_20.xml",
+      "bytes": 11846,
+      "sha256": "d155fa43a96880eb2d7107970882ae8289197520af20b29c41f5189e23641de2"
+    },
+    {
+      "path": "analytics/final_validation_v1/models/tilt_30.xml",
+      "bytes": 11848,
+      "sha256": "27db6d7398bf7234ae51e3a706e15f4960aae5580f0de4f83041d737da77d23f"
+    },
+    {
       "path": "analytics/final_validation_v1/protocol.json",
       "bytes": 76190,
       "sha256": "cbe7b084244983a835867fcecbc01dac21d28530ed40bf6e7c4a79be434387ab"
+    },
+    {
+      "path": "analytics/final_validation_v1/statistics.json",
+      "bytes": 21868,
+      "sha256": "288023f2fdbec355921748d5e0d5169a1e46ba46b85ae86a8a70aaa702be2432"
+    },
+    {
+      "path": "analytics/final_validation_v1/summary.csv",
+      "bytes": 95670,
+      "sha256": "f488d1db4915ec53f9c3873951788610f8c6c1f8d496b8750d049fdeb3961a0e"
+    },
+    {
+      "path": "analytics/final_validation_v1/trace_audit.json",
+      "bytes": 46803,
+      "sha256": "81e2af89064763e374169d9752cbc2bcb5a63d3b5c22ca7b76b2c37b3f9a67a7"
     },
     {
       "path": "analytics/tracking_benchmark/protocol.json",
@@ -135,13 +185,13 @@
     },
     {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.docx",
-      "bytes": 842274,
-      "sha256": "db3d5127a6f23954870394a2dd49a58510fd722a87695d2df111336c40b7a9d1"
+      "bytes": 905763,
+      "sha256": "67d17a41f4b5382fd4dce43323ecb1236b87ff58bd43a0c12d79dd30362e408f"
     },
     {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.pdf",
-      "bytes": 765004,
-      "sha256": "a8a6fd9da61ff804c6d5e3d8ab427c01e1f7caf1a848d7ed1223161430f92015"
+      "bytes": 878696,
+      "sha256": "00ddda6557aeee4683d5e82f76dc9a86bfa83b9fe9a8fb6a025553b5a62fff7a"
     },
     {
       "path": "docs/PANEL_CAMERA_RIGS.md",
@@ -445,8 +495,8 @@
     },
     {
       "path": "submission/STATUS.json",
-      "bytes": 501,
-      "sha256": "2faa67863831aed5029820af3e497e4dd2bd38778c3ceaa118ba8082c3727d53"
+      "bytes": 482,
+      "sha256": "5bd915734674c1d3b7839eac65de6c7ed1b1779d0dd44834b63ce833b131a811"
     },
     {
       "path": "submission/SUBMIT_THESE_FILES.md",
@@ -475,13 +525,13 @@
     },
     {
       "path": "submission/deliverable_checks.json",
-      "bytes": 539,
-      "sha256": "86a1b35508b069e8fcc750b297b8f7dfc28c1795a29c78d1901a7df33c1860fe"
+      "bytes": 540,
+      "sha256": "150ef10f1c3754b4f613da84d69654874adb0aec0e8dfcfa60c7ca22a5835724"
     },
     {
       "path": "submission/dossier_field_audit.json",
-      "bytes": 2677,
-      "sha256": "213d961f2b9a5ef455e992ac9ac34a4229aac5de683168a70259bd4caac9c45d"
+      "bytes": 2678,
+      "sha256": "5a89e8732e55589e5c0e0d16bc9815806792916dd901e7c5f1109e4f42aa9c58"
     },
     {
       "path": "submission/figures/free_body.png",
@@ -497,6 +547,11 @@
       "path": "submission/package_submission.py",
       "bytes": 4656,
       "sha256": "657000f42437204f01e34187347fe69e25a2423f6dfdd94ef5cf83f787f492f3"
+    },
+    {
+      "path": "submission/published_trials.json",
+      "bytes": 4143,
+      "sha256": "b77a00b634e06b6ea7f3f334932ae28044cdbfeef8732d8b0ec95ddefc6e289a"
     },
     {
       "path": "submission/requirements-document.txt",

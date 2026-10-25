@@ -1,0 +1,15 @@
+{
+  "source": "/workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/analytics/final_validation_v1/summary.csv",
+  "selection": "All proposed attempts at 20 degrees; failures retained",
+  "n": 30,
+  "successes": 30,
+  "success_fraction": 1.0,
+  "mean_attempt_s": 612.7129333326683,
+  "mean_positive_mechanical_work_J": 3087.4057945473246,
+  "mean_modelled_blower_J": 7081.93199999414,
+  "units": {
+    "mean_attempt_s": "s",
+    "mean_positive_mechanical_work_J": "J measured from simulated actuator torque and speed",
+    "mean_modelled_blower_J": "J at assumed 20 W, not measured electrical power"
+  }
+}
