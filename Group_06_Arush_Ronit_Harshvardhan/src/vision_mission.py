@@ -20,7 +20,7 @@ class Trigger:
             self.active=True;self.events.append({'event':'VISION_TRIGGER','time_s':time,'targets':points})
 
 
-def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None):
+def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None,video_factory=None):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False)
     combined=scenario=='combined'
     if combined and guarded_model_path is None:guarded_model_path=ROOT/'models/collection_cleaning_crawler.xml'
@@ -28,7 +28,8 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
     collection=CollectionSystem() if combined else None;solid=PhysicalSolid() if combined else None
     field=SurfaceDebris();fall=FallingDebris(scenario);trigger=Trigger()
     from mission_video import MissionVideo
-    if cinematic:
+    if video_factory is not None:video=video_factory(directory)
+    elif cinematic:
         from cinematic_video import CinematicVideo
         video=CinematicVideo(directory)
     else:video=MissionVideo(directory) if record_video else None

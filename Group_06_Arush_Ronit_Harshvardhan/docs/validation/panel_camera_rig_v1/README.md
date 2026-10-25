@@ -1,0 +1,1 @@
+Initial camera hardware tour. Sensor/physics calibration unchanged; twenty-second preview intentionally stops before mission completion. Superseded visually by v2: lens/front housing coplanarity caused depth artifacts and upward camera close-ups exposed the previous one-sided sky backdrop. Original frames and source preserved.

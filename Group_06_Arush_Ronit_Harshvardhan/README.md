@@ -10,6 +10,8 @@ The combined external-dock development run is independently verified: camera-tri
 
 The fixed brush now uses robust rounded contact geometry and has visible support arms; a fixed diagonal guide handles larger solids separately from the vacuum-intake/bin representation. Fine-dust capture/service are reduced-order models. Actual whole-panel qualifying contact footprint is 89.97917%, with all selected dirt patches below threshold; exact-90 remains false. This is a nominal development result, not hardware validation. See [collection design and evidence](docs/COLLECTION_AND_EXTERNAL_DOCK.md).
 
+A new [20-second camera hardware tour](docs/validation/panel_camera_rig_v4/panel_camera_tour.mp4) shows both panel inspection cameras, their frame-supported overhead mounts, and the onboard camera beside the actual live feeds. Sensor calibration and physics are unchanged. See [camera rig details](docs/PANEL_CAMERA_RIGS.md).
+
 ## Historical tracking evidence
 
 - Physical-model compilation and stationary/forward/reverse/turning checks pass.

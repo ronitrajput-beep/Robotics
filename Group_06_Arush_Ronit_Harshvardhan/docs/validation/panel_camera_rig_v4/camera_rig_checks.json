@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "checks": {
+    "model_unchanged": true,
+    "controller_unchanged": true,
+    "telemetry_matches_full_run_prefix": true,
+    "observations_match_full_run_prefix": true,
+    "saved_detector_rgb_identical": true,
+    "recorded_twenty_second_tour": true
+  },
+  "raw_images_compared": 27,
+  "tests_passed": 49,
+  "scope": "Presentation-only camera hardware; short tour intentionally stops before full mission completion"
+}

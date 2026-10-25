@@ -1,0 +1,74 @@
+{
+  "frames": 500,
+  "fps": 25,
+  "duration_s": 20.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "encoding_crf": 23,
+  "playback": "1x throughout; no held mission-result card",
+  "sensor_views": "Three actual RGB detector inputs, timestamped at 2 Hz, with detected image bounding boxes",
+  "closeup_frames": 114,
+  "scene": "Procedural rooftop, deck, supports, skyline, sky and robot visual details; presentation only",
+  "scope": "Camera equipment tour; actual RGB inputs and actual stepping, not a full cleaning cycle",
+  "camera_poses_at_start": {
+    "edge_left": {
+      "position_world_m": [
+        -2.7,
+        -1.7101014195237332,
+        5.898462848096483
+      ],
+      "position_panel_m": [
+        -2.7,
+        9.909482537666424e-18,
+        5.0
+      ],
+      "optical_direction_world": [
+        -0.0,
+        0.34202028390474665,
+        -0.9396925696192966
+      ],
+      "fovy_deg": 70.0
+    },
+    "edge_right": {
+      "position_world_m": [
+        2.7,
+        -1.7101014195237332,
+        5.898462848096483
+      ],
+      "position_panel_m": [
+        2.7,
+        9.909482537666424e-18,
+        5.0
+      ],
+      "optical_direction_world": [
+        -0.0,
+        0.34202028390474665,
+        -0.9396925696192966
+      ],
+      "fovy_deg": 70.0
+    },
+    "robot_camera": {
+      "position_world_m": [
+        -3.6972607662535713,
+        1.3068555673274627,
+        2.0694025456547127
+      ],
+      "position_panel_m": [
+        -3.6972607662535713,
+        1.5253957716755613,
+        0.36999999999999733
+      ],
+      "optical_direction_world": [
+        0.7071067811865475,
+        0.24184476264797525,
+        -0.6644630243886744
+      ],
+      "fovy_deg": 75.0
+    }
+  },
+  "sensor_calibration": "Unchanged existing sensors: two elevated edge views, one onboard view",
+  "hardware": "Presentation-only housings, lenses, LEDs, posts, frame braces, brackets and cables; no added collision bodies",
+  "tour_source_sha256": "1590a516bc8a11669cb69722f311ef9a158f21a5e50edb240e2e39bb8f3fa6e0"
+}

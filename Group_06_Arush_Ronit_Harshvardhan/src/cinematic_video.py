@@ -8,8 +8,9 @@ from cinematic_scene import RooftopScene,cinematic_camera,make_renderer,render_s
 
 
 class CinematicVideo:
-    def __init__(self,directory):
+    def __init__(self,directory,presentation_shot=None,realtime=False):
         self.directory=Path(directory);self.renderer=None;self.encoder=None;self.environment=RooftopScene()
+        self.presentation_shot=presentation_shot;self.realtime=realtime
         self.sensor_views={};self.sensor_time=0.
         self.last_time=-1;self.frames=0;self.last_picture=None;self.camera=None;self.closeup_frames=0
         self.font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',19)
@@ -26,7 +27,7 @@ class CinematicVideo:
         closeup=d.time>=8 and (near_dirt or 22<d.time%80<26)
         catch_time=next((e['time_s'] for e in solid['events'] if e['event']=='SOLID_TRAY_CONTACT'),-100.) if solid else -100.
         catch_window=0<=d.time-catch_time<3
-        speed=1 if catch_window or d.time<8 or closeup or solid_active or state=="DOCK_SERVICE" else 8
+        speed=1 if self.realtime or catch_window or d.time<8 or closeup or solid_active or state=="DOCK_SERVICE" else 8
         if d.time<self.last_time+speed/25-1e-9:return
         self.last_time=float(d.time)
         if self.renderer is None:
@@ -53,6 +54,8 @@ class CinematicVideo:
             if 0<=d.time-catch_time<3:
                 desired.lookat[:]=origin+rotation@np.asarray(solid['final_panel_position_m']);desired.distance=1.7;desired.elevation=-40;desired.azimuth=100
                 speed=1
+        shot_title=None
+        if self.presentation_shot is not None:desired,shot_title=self.presentation_shot(m,d)
         if self.camera is None:self.camera=desired
         else:
             for name in ('distance','azimuth','elevation'):setattr(self.camera,name,.84*getattr(self.camera,name)+.16*getattr(desired,name))
@@ -93,6 +96,7 @@ class CinematicVideo:
         tilt=float(np.rad2deg(np.arccos(np.clip((rotation.T@d.xmat[m.body('crawler_chassis').id].reshape(3,3))[2,2],-1,1))))
         draw.text((22,80),f'Chassis tilt: {tilt:.2f} degrees',font=self.small,fill=(164,195,207))
         title='SOLID GUIDED TO CATCH TRAY' if solid_active else 'DOCK: EMPTYING BIN + CHARGING (MODEL)' if state=='DOCK_SERVICE' else 'RETURNING HOME' if state=='RETURN_HOME' else 'VISION-REQUESTED BOTTOM EDGE CLEAN' if state=='EDGE_CLEAN_BOTTOM' else 'INSPECTION / BRUSH CONTACT' if closeup else ('MONITORING' if state=='HOME_MONITOR' else 'AUTONOMOUS SOLAR CLEANING')
+        if shot_title is not None:title=shot_title
         draw.text((22,10),title,font=self.font,fill=(224,239,240))
         draw.text((22,38),f'Simulation {d.time:6.2f}s   |   {state}   |   {speed}x playback   |   RGB targets {target_count}   |   Contact footprint {coverage["qualified_contact_fraction"]:.1%}',font=self.small,fill=(164,195,207))
         draw.rectangle((0,694,1280,720),fill=(13,23,32))

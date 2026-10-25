@@ -22,6 +22,36 @@ class RooftopScene:
         g=scene.geoms[scene.ngeom]
         mujoco.mjv_initGeom(g,mujoco.mjtGeom.mjGEOM_CAPSULE,np.ones(3),np.zeros(3),np.eye(3).ravel(),np.array(color,float))
         mujoco.mjv_connector(g,mujoco.mjtGeom.mjGEOM_CAPSULE,radius,np.array(a,float),np.array(b,float));scene.ngeom+=1
+    def panel_camera_rigs(self,scene,m,d):
+        """Draw the real edge-camera poses; hardware is presentation geometry only."""
+        rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3);o=d.xpos[rack]
+        for name,side in [('edge_left',-1),('edge_right',1)]:
+            cam=m.camera(name).id;C=d.cam_xmat[cam].reshape(3,3);cp=d.cam_xpos[cam]
+            # Existing calibrated cameras are 5 m above glass in rack coordinates.
+            # Floor-supported posts outside the glass brace to the panel frame.
+            post=np.array([o[0]+side*3.32,cp[1]-.05,.12])
+            back=cp+C[:,2]*.17;top=np.array([post[0],post[1],back[2]+.06])
+            self.box(scene,[.16,.16,.025],post,[.35,.40,.43,1])
+            self.beam(scene,post,top,.038,[.62,.67,.70,1])
+            anchor=o+R@np.array([side*3.05,-1.85,-.04])
+            collar=np.array([post[0],post[1],anchor[2]])
+            self.beam(scene,anchor,collar,.025,[.30,.36,.39,1])
+            self.beam(scene,collar-[0,0,.07],collar+[0,0,.07],.047,[.25,.31,.34,1])
+            self.beam(scene,top,back,.026,[.38,.43,.46,1])
+            self.beam(scene,post+[.05,0,.10],top+[.05,0,0],.005,[.05,.08,.10,1])
+            self.beam(scene,top+[.05,0,0],back,.005,[.05,.08,.10,1])
+            # Optical axis is -C[:,2], exactly matching the detector camera.
+            # The front lens plane is at cp; the housing extends behind it.
+            housing=self.box(scene,[.105,.075,.115],cp+C[:,2]*.135,[.86,.89,.90,1],C,.55)
+            housing.emission=.08
+            self.box(scene,[.092,.063,.009],cp+C[:,2]*.017,[.055,.075,.09,1],C,.35)
+            self.geom(scene,mujoco.mjtGeom.mjGEOM_CYLINDER,[.044,.004,0],cp+C[:,2]*.006,[.08,.12,.16,1],C,.8)
+            lens=self.geom(scene,mujoco.mjtGeom.mjGEOM_CYLINDER,[.033,.001,0],cp+C[:,2]*.001,[.025,.12,.22,1],C,.95)
+            lens.emission=.25
+            self.geom(scene,mujoco.mjtGeom.mjGEOM_CYLINDER,[.013,.0005,0],cp-C[:,2]*.001,[.009,.02,.035,1],C,.5)
+            self.box(scene,[.12,.012,.14],cp+C@np.array([0,.087,.11]),[.73,.78,.81,1],C,.5)
+            led=self.geom(scene,mujoco.mjtGeom.mjGEOM_SPHERE,[.006,0,0],cp+C@np.array([.075,-.045,.002]),[.1,.9,.4,1])
+            led.emission=.5
     def apply(self,scene,m,d):
         rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3);o=d.xpos[rack]
         world=lambda p:o+R@np.asarray(p)
@@ -48,6 +78,10 @@ class RooftopScene:
         for i in range(18):
             color=[.76-.019*i,.85-.014*i,.91-.006*i,1]
             sky=self.box(scene,[120,.2,2],[0,65,i*4],color);sky.emission=.2;sky.specular=0
+            # Upward hardware close-ups also need sky behind the opposite sides.
+            # Keep these walls away from the incoming sunlight direction.
+            for size,pos in [([120,.2,10.],[0,-65,i*20]),([.2,120,10.],[-65,0,i*20])]:
+                sky=self.box(scene,size,pos,color);sky.emission=.2;sky.specular=0
         for i,(x,y,height,width) in enumerate(self.buildings):
             color=[.34+.025*(i%4),.41+.02*(i%3),.49+.02*(i%4),1]
             self.box(scene,[width,width,height/2],[x,y,-6+height/2],color)
@@ -66,6 +100,7 @@ class RooftopScene:
                 self.beam(scene,[x,y,.1],[x,y,1.12],.018,[.16,.20,.22,1])
         for x in (-4.5,4.5):
             self.beam(scene,[x,-3.45,1.12],[x,3.45,1.12],.025,[.12,.16,.18,1])
+        self.panel_camera_rigs(scene,m,d)
         # Steel panel frame supports with diagonal braces.
         tops=[]
         for x in (-2.6,2.6):

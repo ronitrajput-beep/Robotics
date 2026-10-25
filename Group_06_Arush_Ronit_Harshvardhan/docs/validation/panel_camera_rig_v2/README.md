@@ -1,0 +1,1 @@
+Interrupted appearance draft. Housing/front-face separation and sky improved; final version additionally separates the black lens ring from the blue glass to avoid coplanar faces. Camera calibration and physics unchanged.

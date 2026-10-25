@@ -1,0 +1,1 @@
+Completed twenty-second equipment preview with preserved sensor/physics calibration. Superseded visually by v4: inspection-camera azimuth is corrected to look from the optical front side; sky layer overlap is removed. This is intentionally a short tour, not a full mission. Original frames/source retained.
