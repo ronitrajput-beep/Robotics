@@ -44,4 +44,4 @@ python src/verify_scattered_run.py analytics/NEW_SCATTERED_RUN
 MUJOCO_GL=egl XDG_CACHE_HOME=/workspace/.cache python -m unittest discover -s tests
 ```
 
-The current suite passes 42 tests. These are nominal development checks, not hardware certification, a full statistical evaluation or unrestricted fault robustness. The replacement recording must independently pass before it is described as completed.
+The current suite passes 42 tests. These are nominal development checks, not hardware certification, a full statistical evaluation or unrestricted fault robustness. The completed replacement recording is `docs/validation/no_lift_scattered_demo/cinematic_cleaning.mp4`: 193.12 s, 4828 frames, H.264 1280×720. Every frame decodes, its independent scattered-run checks pass, and its physical trajectory/outcome and dirt score exactly match the headless pilot8 run. The right sidebar displays actual timestamped RGB detector inputs throughout, with green detection boxes.

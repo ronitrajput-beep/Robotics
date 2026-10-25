@@ -88,3 +88,14 @@ MUJOCO_GL=egl XDG_CACHE_HOME=/workspace/.cache python -m unittest discover -s te
 ```
 
 Latest videos: `docs/validation/cinematic_demo_v2/cinematic_cleaning.mp4` (2:24.68) and `docs/validation/solid_object_demo_v1/solid_object_demo.mp4` (0:31). Normal-speed inspections and accelerated traversals are labelled. The rooftop/city/material details are presentation-only; the tested sensor appearance is preserved. See POLISH_AND_EDGE_TESTS.md before interpreting perimeter cleaning or the solid-object force peaks.
+
+## Current no-lift scenario with camera feeds
+
+The latest replacement is `docs/validation/no_lift_scattered_demo/cinematic_cleaning.mp4` (3:13.12). It shows 32 varied spots, a camera-requested bottom-edge task, shallow return routing and actual left/right/onboard RGB feeds at 2 Hz with detection boxes. For a fresh run:
+
+```
+MUJOCO_GL=egl XDG_CACHE_HOME=/workspace/.cache python src/vision_mission.py --scenario scattered --cinematic --duration 1100 --output-dir analytics/NEW_NO_LIFT_RUN
+python src/verify_scattered_run.py analytics/NEW_NO_LIFT_RUN
+```
+
+Use `verify_scattered_run.py` for this new route, rather than the historical verifier requiring all four body-edge contacts. It verifies global height/tilt bounds, all 32 dirt targets, camera causality for edge service, guard-contact policy and settled home return. Contact coverage is independently reported (89.03125% in this run); its exact-90 flag remains false. See LIFT_FIX_AND_CAMERA_FEEDS.md for design tradeoffs and rejected development variants. Raw full-size camera examples are in docs/validation/raw_camera_before_after.png.

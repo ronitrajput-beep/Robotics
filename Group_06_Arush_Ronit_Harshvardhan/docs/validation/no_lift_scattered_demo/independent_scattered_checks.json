@@ -1,0 +1,16 @@
+{
+  "outcome": "CLEAN_AND_HOME",
+  "samples": 242581,
+  "all_32_dirt_patches_below_threshold": true,
+  "maximum_chassis_tilt_deg": 0.08953792966412244,
+  "maximum_normal_height_m": 0.12048279161077459,
+  "maximum_height_above_initial_mm": 0.4827916107745661,
+  "guard_contacts_only_within_camera_requested_edge_task": true,
+  "vision_requested_bottom_passes": 1,
+  "edge_request_sensor_causality_verified": true,
+  "actual_contact_coverage": 0.8903125,
+  "exact_90_percent_coverage_target_met": false,
+  "coverage_note": "Coverage is reported separately; safer turns may trade a little coverage for stability. No old exact-90 criterion is silently changed.",
+  "home_settling_verified": true,
+  "scope": "One development scenario, no hardware or broad robustness claim"
+}

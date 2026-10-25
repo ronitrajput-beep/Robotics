@@ -9,7 +9,7 @@
 - Clean and subthreshold 12 s scenarios remain home; the one subthreshold patch persists. No endless cleaning loop is commanded.
 - Actual RGB camera checks detect three controlled patches with approximately 1 cm position error and no clean-scene false detections in that test.
 - A separate physical larger-crumb pilot moves a persistent rigid body off glass into a catch tray. This is not yet integrated arbitrary central-crumb collection.
-- 32 automated tests pass, plus recorded-run independent checks and a complete ffmpeg video decode. Original telemetry is retained in docs/validation/vision_demo_v1; the newer polished video and independent checks are in docs/validation/cinematic_demo_v2.
+- 42 automated tests pass, plus recorded-run independent checks and a complete ffmpeg video decode. Original telemetry is retained in docs/validation/vision_demo_v1; the newer polished video and independent checks are in docs/validation/cinematic_demo_v2.
 - The original 60-run tracking benchmark remains a narrow 30-second comparison under its older configuration; it is not evidence for the new full-mission architecture.
 
 ## Remaining engineering and validation
@@ -35,3 +35,5 @@
 Recorded project deadline: 26 October 2026, 23:59 IST; showcase 31 October. Check official course instructions for changes. See CONTINUE_HERE.md, GUARDED_IMPLEMENTATION.md and RUN_AND_DEMO.md for current source/evidence locations. Historical synthetic starter data/images remain excluded from results.
 
 Latest explicit edge test clears four of six deposits and reports two unreachable left-strip patches as INCOMPLETE. The prior detector miss is corrected and covered by RGB regression fixtures. The new larger-solid video uses a 120 g physical block and catch tray; high contact loads remain unvalidated for glass safety. See POLISH_AND_EDGE_TESTS.md.
+
+Latest no-lift replacement: `docs/validation/no_lift_scattered_demo/cinematic_cleaning.mp4`, 3:13.12 with actual RGB feeds. All 32 scattered spots clear below the proxy threshold and home settling is verified. Peak tilt 0.08954°, maximum rise 0.4828 mm, contact coverage 89.03125%. This newer safer route supersedes prior 92.1% capability/trajectory statements above; it does not claim exact 90% or full-panel cleaning. Bottom-edge service is requested by RGB observations; ordinary coverage does not deliberately ride the walls. See LIFT_FIX_AND_CAMERA_FEEDS.md. The unpowered-traction, calibration, broad validation, integrated general solids and human submission limitations remain outstanding.
