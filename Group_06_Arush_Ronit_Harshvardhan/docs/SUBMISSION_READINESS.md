@@ -1,5 +1,8 @@
 # Submission readiness — incomplete
 
+Latest implementation: the guarded camera-triggered fine-dirt development scenario completes CLEAN_AND_HOME, 92.083% qualifying projected whole-panel coverage, all six central dirt patches below the proxy residual threshold, one camera-directed revisit and settled home return. A fresh actual-physics video and independent checks are in docs/validation/vision_demo_v1. The suite now has 29 passing tests. Physical larger-crumb ejection is demonstrated separately. These results supersede older ~61% capability statements below, but do not complete the outstanding robustness/calibration/submission requirements. Read GUARDED_IMPLEMENTATION.md for precise scope.
+
+
 ## Working development capabilities
 
 - Pinned Python 3.12 environment, compiling MuJoCo model and physical actuation checks.

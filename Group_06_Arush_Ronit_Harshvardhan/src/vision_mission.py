@@ -20,12 +20,14 @@ class Trigger:
             self.active=True;self.events.append({'event':'VISION_TRIGGER','time_s':time,'targets':points})
 
 
-def run(directory,scenario='dirty',duration=520):
+def run(directory,scenario='dirty',duration=520,record_video=False):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False)
     field=SurfaceDebris();fall=FallingDebris(scenario);trigger=Trigger()
+    from mission_video import MissionVideo
+    video=MissionVideo(directory) if record_video else None
     renderer=None;next_camera=0.;observations=[];last_targets=[]
     stream=(directory/'observations.jsonl').open('w')
-    hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'src/panel_vision.py',ROOT/'src/surface_debris.py',ROOT/'src/debris_events.py']}
+    hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'src/panel_vision.py',ROOT/'src/surface_debris.py',ROOT/'src/debris_events.py',ROOT/'src/mission_video.py']}
 
     def sample(m,d,state,coverage):
         nonlocal renderer,next_camera,last_targets
@@ -39,6 +41,7 @@ def run(directory,scenario='dirty',duration=520):
         if state=='SWEEP':
             field.clean(R.T@(d.geom_xpos[brush]-origin),R.T@d.geom_xmat[brush].reshape(3,3)[:,2],
                         *m.geom_size[brush,:2],force,d.qvel[m.joint('brush_hinge').dofadr[0]],m.opt.timestep)
+        if video is not None:video.capture(m,d,field,origin,R,state,coverage.summary(),len(last_targets))
         if d.time+1e-9<next_camera:return
         next_camera=float(d.time)+.5
         if renderer is None:renderer=mujoco.Renderer(m,height=480,width=640,max_geom=10000)
@@ -66,11 +69,12 @@ def run(directory,scenario='dirty',duration=520):
     report={'status':status,'independent_cleaning_pass':status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']==0,'independent_coverage_pass':result['coverage_metrics_v2']['qualified_contact_fraction']>=.9,'scenario':scenario,'physical_mission':result,'trigger_events':trigger.events,'deposition_events':fall.events,
             'hidden_dirt_score':field.summary(),'last_camera_targets':last_targets,'source_hashes':hashes,
             'limitations':['Controlled-colour RGB detector, not general debris recognition','Ground-truth navigation retained; camera-based dirt trigger only','Aggregate load plus local gap is a soil proxy','Fine-particle conversion is explicit hybrid deposition; larger crumbs not yet implemented','At most two camera-driven revisit cycles; persistent targets end INCOMPLETE']}
+    if video is not None:video.close(report)
     (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n')
     (directory/'camera_observations.json').write_text(json.dumps(observations,indent=2)+'\n')
     print(json.dumps(report,indent=2));return report
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--scenario',choices=['clean','subthreshold','dirty'],default='dirty');p.add_argument('--duration',type=float,default=520);a=p.parse_args()
-    run(a.output_dir,a.scenario,a.duration)
+    p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--scenario',choices=['clean','subthreshold','dirty'],default='dirty');p.add_argument('--record-video',action='store_true');p.add_argument('--duration',type=float,default=520);a=p.parse_args()
+    run(a.output_dir,a.scenario,a.duration,a.record_video)

@@ -1,0 +1,7 @@
+{
+  "physical_outcome": "DOCKED",
+  "time_s": 487.6020000016001,
+  "failure": "Final orchestration report failed JSON serialization of a NumPy boolean; raw CSV, physical manifest and streamed RGB detections remain valid. Hidden final soil score was not saved and must not be invented.",
+  "source_revision": "5eb28ed",
+  "followup": "Explicit Python scalar conversion added and a fresh recorded run launched."
+}

@@ -1,0 +1,23 @@
+{
+  "samples": 243801,
+  "trigger_time_s": 3.999999999999781,
+  "all_six_deposited_before_trigger": true,
+  "initial_idle_verified": true,
+  "measured_qualified_coverage": 0.9208333333333333,
+  "body_reached_all_four_boundaries": true,
+  "minimum_chassis_gaps_m": [
+    -0.00010484620670991873,
+    -8.690220180962438e-05,
+    -0.00019522916814318503,
+    -3.539019137938082e-05
+  ],
+  "revisit_cycles": 1,
+  "home_error_from_initial_pose_m": 0.08294849556735594,
+  "final_settling_window_verified": true,
+  "hidden_dirt_score": {
+    "patches": 6,
+    "uncleared_patches": 0,
+    "mean_residual": 0.020502267264455285
+  },
+  "scope": "One controlled-colour development scenario with physical containment; not held-out robustness evidence"
+}

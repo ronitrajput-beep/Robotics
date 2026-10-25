@@ -43,5 +43,5 @@ class SurfaceDebris:
             scene.ngeom+=1
 
     def summary(self):
-        return {'patches':len(self.patches),'uncleared_patches':sum(p.remaining>=.1 for p in self.patches),
+        return {'patches':len(self.patches),'uncleared_patches':int(sum(p.remaining>=.1 for p in self.patches)),
                 'mean_residual':float(np.mean([p.remaining for p in self.patches])) if self.patches else 0.}

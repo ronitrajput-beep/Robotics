@@ -1,0 +1,7 @@
+{
+  "fps": 25,
+  "frames": 1749,
+  "duration_s": 69.96,
+  "playback": "First 8 simulation seconds at 1x; subsequent motion at 8x; final 2s summary held",
+  "source": "Fresh actual physics with visible hybrid soil field; no robot pose replay"
+}

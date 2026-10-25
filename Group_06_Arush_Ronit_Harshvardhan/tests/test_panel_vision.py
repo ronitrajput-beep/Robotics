@@ -26,6 +26,8 @@ class VisionChecks(unittest.TestCase):
         self.assertEqual(field.patches[0].remaining,1)
         field.clean(np.array([0,0,.08]),np.array([0,1,0]),.06,.4,10,10,.5)
         self.assertLess(field.patches[0].remaining,.1)
+        import json
+        json.dumps(field.summary())
 
 class PhysicalDepositionChecks(unittest.TestCase):
     def test_grain_really_contacts_panel_before_deposition(self):

@@ -53,3 +53,25 @@ Both figure tools refuse existing output paths. Read CONTACT_COVERAGE.md before 
 `src/record_demo.py --output-dir <NEW_DIRECTORY>` records an actual fresh MuJoCo run via EGL and streams RGB frames to the system `ffmpeg` executable. Use the same Python environment as above. A full mission is shown at **8× playback**, with simulation time, controller state and whole-panel qualifying projected coverage overlaid. The renderer's framebuffer dimensions are set at runtime; physics parameters are unchanged. The output directory must be new and receives MP4, preview, video metadata, full telemetry and the mission manifest. Rendering records observation callbacks before integration; it does not replay or overwrite robot state. This is separate from desktop `--viewer` operation and the required team video.
 
 Recorded example: `docs/validation/demo_v2/mujoco_demo.mp4` (32.08 s, 960×720 H.264, 25 FPS, 8× playback). It represents 256.628 s of simulation ending DOCKED, matching the earlier expanded-safe-return seed-0 physical metrics exactly. All 802 frames were decoded successfully with ffmpeg. Its telemetry, coverage map and manifests are alongside the video. This visualises movement and measured coverage statistics; the panel surface does not display a simulated dirt texture.
+
+## New event-driven vision prototype
+
+From the Group 06 folder in the pinned Python environment (EGL required for headless camera rendering; ffmpeg required for recording):
+
+```
+python src/vision_mission.py --scenario dirty --record-video --output-dir analytics/MY_NEW_VISION_RUN
+python src/verify_vision_run.py analytics/MY_NEW_VISION_RUN
+```
+
+The output directory must not exist. The default dirty scene takes about 488 simulated seconds on the current code. It uses actual RGB images to trigger from home, a fixed 0.8 m brush, physical transparent guards, contact-qualified visible dirt attenuation, a camera-directed revisit if needed and return to the initial home region. Fixed cameras are elevated above the panel edges; camera dirt detection does not imply camera-based navigation. The saved clip is `docs/validation/vision_demo_v1/vision_cleaning_demo.mp4`.
+
+Negative scenarios (use fresh directories):
+
+```
+python src/vision_mission.py --scenario clean --duration 12 --output-dir analytics/MY_CLEAN_TEST
+python src/vision_mission.py --scenario subthreshold --duration 12 --output-dir analytics/MY_SMALL_DIRT_TEST
+```
+
+Both should remain in HOME_MONITOR; the subthreshold scene deposits one visible patch and leaves it uncleared. Do not interpret that deliberately idle scene as a cleaning failure. Run `python src/validate_camera_pipeline.py --output-dir analytics/MY_RGB_CHECK` for rendered clean/dirty camera checks. Run `python src/validate_crumb.py --output-dir analytics/MY_CRUMB_TEST` for the separate genuine rigid-crumb ejection/catch-tray test. None of these scripts overwrites existing output directories.
+
+The old controller `--viewer` shows its physics model without the new sensor-rendered dirt overlays. The new event-driven prototype currently supports headless RGB rendering/MP4; a fully interactive integrated viewer remains unfinished.
