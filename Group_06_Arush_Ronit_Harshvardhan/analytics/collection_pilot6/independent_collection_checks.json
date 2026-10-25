@@ -1,0 +1,29 @@
+{
+  "pass": false,
+  "checks": {
+    "completed": false,
+    "all_dust_below_threshold": false,
+    "finite_500Hz_motion": false,
+    "no_lift": false,
+    "external_home": false,
+    "settled_at_home": false,
+    "mass_conserved_every_step": true,
+    "bin_then_station": false,
+    "eight_second_station_service": false,
+    "service_only_transfer": true,
+    "physical_push_and_retention": false,
+    "solid_sequence": false,
+    "solid_continuous_after_release": true,
+    "image_trigger_precedes_motion": true,
+    "camera_verifies_clean": false
+  },
+  "metrics": {
+    "max_tilt_deg": 6.248126493388865,
+    "max_height_m": 0.1470758606892219,
+    "contact_coverage": 0.9076041666666667,
+    "mass_balance_max_abs_kg": 1.5612511283791264e-17,
+    "peak_solid_force_N": 0.0,
+    "terminal_dust_bin_kg": 0.005621894549901245,
+    "terminal_station_waste_kg": 0.0
+  }
+}

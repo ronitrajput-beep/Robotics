@@ -22,7 +22,7 @@ class CinematicVideo:
         near_dirt=any(p.remaining>=.1 and np.linalg.norm(brush[:2]-[p.x,p.y])<.55 for p in field.patches)
         collection=getattr(self,'collection_status',None)
         solid=collection['solid'] if collection else None
-        solid_active=solid is not None and solid['first_brush_contact_s'] is not None and not solid['contacted_catch_tray']
+        solid_active=solid is not None and solid['first_tool_contact_s'] is not None and not solid['contacted_catch_tray']
         closeup=d.time>=8 and (near_dirt or 22<d.time%80<26)
         catch_time=next((e['time_s'] for e in solid['events'] if e['event']=='SOLID_TRAY_CONTACT'),-100.) if solid else -100.
         catch_window=0<=d.time-catch_time<3
@@ -69,7 +69,7 @@ class CinematicVideo:
         picture=base;draw=ImageDraw.Draw(picture)
         if detail is not None:
             picture.paste(detail,(16,133));draw.rectangle((16,110,316,133),fill=(13,23,32))
-            draw.text((22,113),'Same-time rigid object close-up',font=self.small,fill=(225,215,170))
+            draw.text((22,113),'Same-time solid / guide close-up',font=self.small,fill=(225,215,170))
         draw.line((978,66,978,694),fill=(70,100,110),width=2)
         for i,name in enumerate(('edge_left','edge_right','robot_camera')):
             top=70+i*208
@@ -86,13 +86,13 @@ class CinematicVideo:
         if collection is not None:
             draw.rectangle((12,610,958,657),fill=(13,23,32))
             draw.text((22,615),f'Dust bin {collection["bin_g"]:.2f} g  >  station {collection["station_g"]:.2f} g  |  Dock charge {collection["charge_J"]:.0f} J (model)',font=self.small,fill=(225,215,170))
-            phase='solid retained in tray' if solid['retained_in_tray_at_end'] else 'solid contacting tray' if solid['contacted_catch_tray'] else 'physical solid on panel'
+            phase='solid release scheduled at t=3 s' if not solid['spawned'] else 'solid retained in tray' if solid['retained_in_tray_at_end'] else 'solid contacting tray' if solid['contacted_catch_tray'] else 'physical solid on panel'
             draw.text((22,638),f'Brush > intake > bin | {phase} | fixed mounts and permanent lower catch tray',font=self.small,fill=(164,195,207))
         draw.text((22,664),'Raw camera inputs at 2 Hz; green boxes are RGB dirt detections',font=self.small,fill=(164,195,207))
         draw.rectangle((0,0,1280,65),fill=(13,23,32))
         tilt=float(np.rad2deg(np.arccos(np.clip((rotation.T@d.xmat[m.body('crawler_chassis').id].reshape(3,3))[2,2],-1,1))))
         draw.text((22,80),f'Chassis tilt: {tilt:.2f} degrees',font=self.small,fill=(164,195,207))
-        title='DOCK: EMPTYING BIN + CHARGING (MODEL)' if state=='DOCK_SERVICE' else 'RETURNING HOME' if state=='RETURN_HOME' else 'VISION-REQUESTED BOTTOM EDGE CLEAN' if state=='EDGE_CLEAN_BOTTOM' else 'INSPECTION / BRUSH CONTACT' if closeup else ('MONITORING' if state=='HOME_MONITOR' else 'AUTONOMOUS SOLAR CLEANING')
+        title='SOLID GUIDED TO CATCH TRAY' if solid_active else 'DOCK: EMPTYING BIN + CHARGING (MODEL)' if state=='DOCK_SERVICE' else 'RETURNING HOME' if state=='RETURN_HOME' else 'VISION-REQUESTED BOTTOM EDGE CLEAN' if state=='EDGE_CLEAN_BOTTOM' else 'INSPECTION / BRUSH CONTACT' if closeup else ('MONITORING' if state=='HOME_MONITOR' else 'AUTONOMOUS SOLAR CLEANING')
         draw.text((22,10),title,font=self.font,fill=(224,239,240))
         draw.text((22,38),f'Simulation {d.time:6.2f}s   |   {state}   |   {speed}x playback   |   RGB targets {target_count}   |   Contact footprint {coverage["qualified_contact_fraction"]:.1%}',font=self.small,fill=(164,195,207))
         draw.rectangle((0,694,1280,720),fill=(13,23,32))

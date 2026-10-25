@@ -29,12 +29,12 @@ def plot(directory):
     ax.plot(mass.time_s[::100],mass.deposited_kg[::100]*1000,ls='--',color='#555',label='Deposited total')
     ax.set(xlabel='Simulation time (s)',ylabel='Modelled fine-dust mass (g)',title='Explicit dust inventory (assumed loading)');ax.legend(fontsize=8)
     ax=axes[1,0]
-    touch=result['physical_solid']['first_brush_contact_s'];window=solid[(solid.time_s>=touch-1)&(solid.time_s<=touch+5)]
+    touch=result['physical_solid']['first_tool_contact_s'];window=solid[(solid.time_s>=touch-1)&(solid.time_s<=touch+5)]
     ax.plot(window.time_s,window.brush_force_N,color='#b16f24')
     for event in result['physical_solid']['events']:
         if 'OFF_GLASS' in event['event'] or 'TRAY_CONTACT' in event['event']:
             ax.axvline(event['time_s'],ls='--',lw=.8,label=event['event'].replace('SOLID_',''))
-    ax.set(xlabel='Simulation time (s)',ylabel='Brush–block normal force (N)',title='Measured contact; glass damage is not modelled');ax.legend(fontsize=8)
+    ax.set(xlabel='Simulation time (s)',ylabel='Tool–block normal force (N)',title='Measured contact; glass damage is not modelled');ax.legend(fontsize=8)
     ax=axes[1,1];ax.plot(motion.time_s[::25],motion.chassis_tilt_deg[::25],color='#168489')
     ax.set(xlabel='Simulation time (s)',ylabel='Chassis tilt from panel normal (degrees)',title=f"Actual motion: peak {motion.chassis_tilt_deg.max():.3f}°")
     for a in axes.flat:a.grid(alpha=.15)

@@ -30,12 +30,17 @@ class FallingDebris:
             if any({int(c.geom1),int(c.geom2)}=={glass,geom} for c in d.contact):
                 body=m.body(f'falling_{i}').id
                 p=rotation.T@(d.xpos[body]-origin)
+                first_patch=len(surface.patches)
                 if self.scenario in ('scattered','combined'):
                     surface.deposit_scattered(p[:2],self.rng)
                 else:surface.deposit([p[:2]])
+                new_patches=surface.patches[first_patch:]
+                areas=np.array([np.pi*p.radius**2*p.aspect for p in new_patches])
+                for patch,weight in zip(new_patches,areas/areas.sum()):
+                    patch.initial_mass_kg=float(weight*m.body_mass[body])
                 self.deposited.add(i)
                 m.geom_contype[geom]=0;m.geom_conaffinity[geom]=0;m.geom_rgba[geom,3]=0
                 m.body_gravcomp[body]=1
                 dof=m.joint(f'falling_joint_{i}').dofadr[0];d.qvel[dof:dof+6]=0
-                self.events.append({'event':'HYBRID_DEPOSITION','time_s':float(d.time),'id':i,'panel_xy_m':p[:2].tolist(),
+                self.events.append({'event':'HYBRID_DEPOSITION','time_s':float(d.time),'id':i,'panel_xy_m':p[:2].tolist(),'transferred_mass_kg':float(m.body_mass[body]),
                                     'assumption':'Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion'})

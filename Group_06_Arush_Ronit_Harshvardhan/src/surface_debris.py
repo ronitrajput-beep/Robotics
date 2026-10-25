@@ -13,6 +13,7 @@ class DustPatch:
     aspect: float=1.
     angle: float=0.
     shade: float=1.
+    initial_mass_kg: float | None=None
 
 
 class SurfaceDebris:

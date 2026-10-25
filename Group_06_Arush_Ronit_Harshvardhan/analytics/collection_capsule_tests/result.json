@@ -1,0 +1,16 @@
+{
+  "tests": 49,
+  "status": "PASS",
+  "command": "MUJOCO_GL=egl python -m unittest discover -s tests",
+  "source_hashes": {
+    "src/build_collection_model.py": "3c6362d75234d1212933630c54105e6747e0014fcbedecbdcb0b360ffecd5803",
+    "src/collection_system.py": "b68e15bda9c5457f83721d56d50b179d5fdd82915c1c5794748cbca5ce449f26",
+    "src/crawler_cleaning_controller.py": "01025e6402a520b17971a803295a6bc9c108e0f7d9a537e8c8cdf897ad53beb5",
+    "src/surface_debris.py": "9c3a3f7820458cb472ab68fcf1682f47a1ca35e25481811648db79c1fcf8a43c",
+    "src/debris_events.py": "88cfbc18e5f0f8c03f387644d3503a632852da3f0a885454d69a22f1e9d469a3",
+    "src/cinematic_scene.py": "1de75bd84fdc6badc67926f38e6133deddc4cce1e487914d0695835833ab5793",
+    "src/cinematic_video.py": "ffe562efbb20559950a31c3e0b86b1c1554a49b4c6543c644bf0fbd97f31fa0d",
+    "src/guarded_geometry.py": "550bf27dbaf2c14a461ab6b5cf63e2abc00c910b0df14d82fb3e5c684e314081",
+    "models/collection_cleaning_crawler.xml": "3775a18eb645d01539238f2cd866899cb61eb337ae6297454292891b8084bc2e"
+  }
+}

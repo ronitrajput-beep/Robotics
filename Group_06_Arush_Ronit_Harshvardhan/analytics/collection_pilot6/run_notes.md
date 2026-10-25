@@ -1,0 +1,1 @@
+Rejected: ABORT_ATTITUDE at 547.958 s, two residual soil patches and zero brush-block contact (block drifted off before robot). Full trace reproduces the same failure and preserves contact/state snapshots. Brush/glass rigid contact generated a >4 kN kick; do not attribute this to a guard or claim passing motion. Static-block contact drift is separately diagnosed.

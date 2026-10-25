@@ -49,7 +49,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]
     retries=0
-    edge_handled=False;edge_phase=False;edge_exit_index=0;incline_mode=False;service_until=None
+    edge_handled=False;edge_phase=False;edge_exit_index=0;incline_mode=False;service_until=None;slow_until=-1.
     max_height=0.;max_tilt=0.
     minimum_gaps=np.full(4,np.inf); guard_impulse=0.; peak_guard_force=0.
     supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None; docking=False
@@ -149,11 +149,21 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if edge_phase and state=='SWEEP' and p[1]<-1.4:state='EDGE_CLEAN_BOTTOM'
             v=0 if state not in ('SWEEP','EDGE_CLEAN_BOTTOM','RETURN_HOME') else direction*min(.12 if retries>0 or edge_phase else .18,.8*distance)*max(0,np.cos(error))
             if route_profile=='external_dock' and index==0 and retries==0 and p[0]<-2.1:v=float(np.clip(v,-.10,.10))
+            if route_profile=='external_dock' and not returning and state in ('SWEEP','EDGE_CLEAN_BOTTOM') and revisit_targets is not None:
+                nearby=[]
+                bx,by=p[0]+.29*h[0],p[1]+.29*h[1]
+                for tx,ty in revisit_targets():
+                    dx,dy=tx-bx,ty-by
+                    if -.15<direction*(dx*h[0]+dy*h[1])<.65 and abs(-dx*h[1]+dy*h[0])<.43:nearby.append([tx,ty])
+                if nearby:
+                    if d.time>slow_until:events.append({'time_s':float(d.time),'event':'VISION_LOCAL_SLOWDOWN','targets':nearby})
+                    slow_until=float(d.time)+6.
+                if d.time<slow_until:v=float(np.clip(v,-.10,.10))
             omega=0 if state in ('SETTLE','HOME_MONITOR') else np.clip(3*error,-1.2,1.2)
             if stopping: state='DOCK_SERVICE' if service_until is not None else 'DOCKING' if docking else 'BRAKING';v=omega=0.
             if guarded:
                 grade=abs(np.sin(yaw))
-                activate=grade>.58 if not incline_mode else grade>.42
+                activate=(route_profile=='external_dock' and returning) or (grade>.58 if not incline_mode else grade>.42)
                 if activate and not incline_mode:
                     drive.targets=d.qvel[joints].copy();drive.integral[:]=0
                     drive.torque=np.clip(d.ctrl[:4],-drive.torque_limit,drive.torque_limit);drive.mode=None
@@ -169,7 +179,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                     e=speeds[i]-d.qvel[j]
                     integral[i]=np.clip(integral[i]+e*dt,-3,3)
                     d.ctrl[i]=np.clip(.8*e+(.5*integral[i] if variant=="proposed" else 0),-3,3)
-            d.ctrl[4]=(-15 if route_profile=='external_dock' and not returning and index==sweep_goal_count(route_profile)-1 and retries==0 else 15) if state in ('SWEEP','EDGE_CLEAN_BOTTOM') else 0
+            d.ctrl[4]=15 if state in ('SWEEP','EDGE_CLEAN_BOTTOM') else 0
             mujoco.mj_forward(m,d)
             if not np.isfinite(d.qpos).all() or any(w.number for w in d.warning):
                 status='ABORT_PHYSICS';break

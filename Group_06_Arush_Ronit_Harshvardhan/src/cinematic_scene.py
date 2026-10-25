@@ -76,7 +76,7 @@ class RooftopScene:
         for i,j in [(0,1),(2,3)]:self.beam(scene,tops[i][0],tops[j][1],.017,[.32,.36,.39,1])
         if 'dock_platform' in [m.geom(i).name for i in range(m.ngeom)]:
             for y in (1.1,1.9):
-                top=world([-4.05,y,-.025]);base=np.array([top[0],top[1],.12])
+                top=world([-4.3,y,-.025]);base=np.array([top[0],top[1],.12])
                 self.beam(scene,base,top,.03,[.38,.42,.45,1])
                 self.beam(scene,base,world([-3.,y,-.03]),.018,[.38,.42,.45,1])
         # Photovoltaic cell grid and busbars, below the unchanged dirt layer.
@@ -90,7 +90,7 @@ class RooftopScene:
                     self.box(scene,[.0012,.242,.00007],world([x+shift,y,.02068]),[.39,.49,.58,1],R,.7)
         # Home marker follows the physical dock when that prototype is loaded.
         external='dock_platform' in [m.geom(i).name for i in range(m.ngeom)]
-        hx,hy=(-3.65,1.53) if external else (-2.72,1.53)
+        hx,hy=(-3.85,1.53) if external else (-2.72,1.53)
         for cx,cy,sx,sy in [(hx-.10,hy,.012,.13),(hx+.10,hy,.012,.13),(hx,hy,.11,.012)]:
             self.box(scene,[sx,sy,.0001],world([cx,cy,.021]),[.25,.8,.55,1],R)
         # Robot hardware details follow the actual rigid-body pose.
@@ -116,13 +116,13 @@ class RooftopScene:
             if fill>0:
                 self.box(scene,[.10,.13,.002+.022*fill],robot([-.07,0,.060+.022*fill]),[.44,.28,.12,1],B)
             if status.get('state')=='DOCK_SERVICE':
-                self.beam(scene,world([-3.91,1.43,.12]),robot([-.225,-.10,0]),.018,[.12,.16,.18,1])
-                self.beam(scene,world([-3.91,1.68,.12]),robot([-.225,.10,0]),.008,[.85,.68,.14,1])
+                self.beam(scene,world([-4.11,1.43,.12]),robot([-.225,-.10,0]),.018,[.12,.16,.18,1])
+                self.beam(scene,world([-4.11,1.68,.12]),robot([-.225,.10,0]),.008,[.85,.68,.14,1])
             # Visible service indicator and station waste cartridge fill.
             color=[.2,.85,.4,1] if status['charge_J']>0 else [.9,.65,.15,1]
-            self.box(scene,[.008,.09,.008],world([-3.985,1.55,.43]),color,R)
+            self.box(scene,[.008,.09,.008],world([-4.185,1.55,.43]),color,R)
             waste=float(np.clip(status['station_g']/10.,0,1))
-            if waste>0:self.box(scene,[.02,.17,.008+.055*waste],world([-3.955,1.55,.09+.055*waste]),[.44,.28,.12,1],R)
+            if waste>0:self.box(scene,[.02,.17,.008+.055*waste],world([-4.155,1.55,.09+.055*waste]),[.44,.28,.12,1],R)
         for axial in np.linspace(-.38,.38,16):
             for angle in (0,np.pi/2,np.pi,3*np.pi/2):
                 radial=np.array([np.cos(angle),np.sin(angle),0])

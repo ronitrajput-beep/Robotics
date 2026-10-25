@@ -77,3 +77,46 @@ class CollectionChecks(unittest.TestCase):
             np.testing.assert_array_equal(before,after)
             np.testing.assert_array_equal(qpos,d.qpos);np.testing.assert_array_equal(qvel,d.qvel)
             np.testing.assert_array_equal(rgba,m.geom_rgba)
+
+    def test_recorded_contact_instability_does_not_launch_robot(self):
+        root=Path(__file__).resolve().parents[1]
+        evidence=root/'analytics/collection_contact_trace'
+        snapshot=np.load(evidence/'lift_state.npz')
+        old=mujoco.MjModel.from_xml_path(str(evidence/'model.xml'))
+        temp=mujoco.MjData(old);commands=[]
+        for state in snapshot['states']:
+            mujoco.mj_setState(old,temp,state,mujoco.mjtState.mjSTATE_INTEGRATION);commands.append(temp.ctrl.copy())
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'model.xml';build(path)
+            m=mujoco.MjModel.from_xml_path(str(path));d=mujoco.MjData(m)
+            for i in range(old.ngeom):
+                j=m.geom(old.geom(i).name).id
+                m.geom_contype[j]=snapshot['geom_contype'][i];m.geom_conaffinity[j]=snapshot['geom_conaffinity'][i]
+            m.body_gravcomp[:]=snapshot['body_gravcomp']
+            mujoco.mj_setState(m,d,snapshot['states'][0],mujoco.mjtState.mjSTATE_INTEGRATION);mujoco.mj_forward(m,d)
+            rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3).copy();origin=d.xpos[rack].copy();body=m.body('crawler_chassis').id
+            max_height=0.;max_tilt=0.;peak=0.;brush=m.geom('brush_cylinder').id
+            for i in range(375):
+                d.ctrl[:]=commands[min(i,len(commands)-1)];mujoco.mj_forward(m,d)
+                max_height=max(max_height,(R.T@(d.xpos[body]-origin))[2])
+                max_tilt=max(max_tilt,np.degrees(np.arccos(np.clip((R.T@d.xmat[body].reshape(3,3))[2,2],-1,1))))
+                for k,c in enumerate(d.contact):
+                    if brush in (c.geom1,c.geom2):
+                        force=np.zeros(6);mujoco.mj_contactForce(m,d,k,force);peak=max(peak,force[0])
+                mujoco.mj_step(m,d)
+        self.assertLess(max_height,.123);self.assertLess(max_tilt,1.);self.assertLess(peak,150.)
+
+    def test_representative_grain_mass_reaches_surface_inventory(self):
+        from debris_events import FallingDebris
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'model.xml';build(path)
+            m=mujoco.MjModel.from_xml_path(str(path));d=mujoco.MjData(m);mujoco.mj_forward(m,d)
+            rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3).copy();origin=d.xpos[rack].copy()
+            d.qpos[:3]=origin+R@[-3.85,1.53,.12];mujoco.mj_forward(m,d)
+            field=SurfaceDebris();fall=FallingDebris('combined');system=CollectionSystem()
+            for _ in range(2250):
+                fall.update(m,d,origin,R,field);mujoco.mj_step(m,d)
+            self.assertEqual(len(fall.deposited),8)
+            self.assertAlmostEqual(system.deposited_mass(field),.004,places=14)
+            self.assertAlmostEqual(sum(e.get('transferred_mass_kg',0) for e in fall.events),.004,places=14)
+            self.assertEqual(len(field.patches),32)

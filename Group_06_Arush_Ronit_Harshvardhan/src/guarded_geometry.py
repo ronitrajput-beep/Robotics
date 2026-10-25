@@ -8,7 +8,7 @@ def edge_raster(profile="standard"):
     if profile=="external_dock":
         base=edge_raster("inward_turns")
         sweep=base[1:1+sweep_goal_count("inward_turns")]
-        points=[(-3.65,1.53),*map(tuple,sweep)]
+        points=[(-3.85,1.53),*map(tuple,sweep)]
         points.extend(home_transit(points[-1],points[0]))
         return np.asarray(points)
     if profile=="inward_turns":
