@@ -379,7 +379,7 @@
     "Aggregate load plus local gap is a soil proxy",
     "At most two camera-driven revisit cycles; persistent targets end INCOMPLETE",
     "Dust capture, service power and mass flow are reduced-order assumptions; no resolved airflow or battery model",
-    "Solid starts in a declared first-row handling corridor; arbitrary solid routing and scratch safety unvalidated"
+    "Solid starts in a declared lower-strip handling corridor with a fixed guide; arbitrary solid routing and scratch safety unvalidated"
   ],
   "collection": {
     "deposited_dust_kg": 0.004,

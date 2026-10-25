@@ -117,5 +117,5 @@ class CinematicVideo:
         self.encoder.stdin.close();code=self.encoder.wait();self.renderer.close();self.log.close()
         if code:raise RuntimeError('Cinematic ffmpeg encoding failed')
         (self.directory/'cinematic_metadata.json').write_text(json.dumps({'frames':self.frames,'fps':25,'duration_s':self.frames/25,
-            'resolution':[1280,720],'encoding_crf':23,'playback':'1x during initial deposition and brush inspection shots; otherwise 8x; final 3s held outcome',
+            'resolution':[1280,720],'encoding_crf':23,'playback':'1x during initial deposition, brush inspections, solid contact/tray landing and dock service; otherwise 8x; final 3s held outcome',
             'sensor_views':'Three actual RGB detector inputs, timestamped at 2 Hz, with detected image bounding boxes','closeup_frames':self.closeup_frames,'scene':'Procedural rooftop, deck, supports, skyline, sky and robot visual details; presentation only'},indent=2)+'\n')

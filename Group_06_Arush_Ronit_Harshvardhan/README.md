@@ -6,7 +6,7 @@ The MuJoCo model uses four torque-driven rollers as a track approximation, an 8.
 
 ## Latest collection prototype
 
-The combined external-dock development run is independently verified: camera-triggered departure, 32 scattered dust spots including upper-left glass, physical guide-to-tray handling of a persistent 120 g block, settled off-glass return, modelled bin emptying and charging. Headless evidence is in `analytics/collection_pilot8`; the fresh presentation recording in `docs/validation/collection_demo_v6` is still rendering and is not yet a completed video.
+The combined external-dock development run is independently verified: camera-triggered departure, 32 scattered dust spots including upper-left glass, physical guide-to-tray handling of a persistent 120 g block, settled off-glass return, modelled bin emptying and charging. Headless evidence is in `analytics/collection_pilot8`; the completed [3:20 combined simulation](docs/validation/collection_demo_v6/cinematic_cleaning.mp4) and [solid-handling slow motion](docs/validation/collection_demo_v6/solid_contact_slow_motion.mp4) are in `docs/validation/collection_demo_v6`. The fresh recording passes independent checks, matches headless telemetry exactly, and all 5010 frames decode.
 
 The fixed brush now uses robust rounded contact geometry and has visible support arms; a fixed diagonal guide handles larger solids separately from the vacuum-intake/bin representation. Fine-dust capture/service are reduced-order models. Actual whole-panel qualifying contact footprint is 89.97917%, with all selected dirt patches below threshold; exact-90 remains false. This is a nominal development result, not hardware validation. See [collection design and evidence](docs/COLLECTION_AND_EXTERNAL_DOCK.md).
 

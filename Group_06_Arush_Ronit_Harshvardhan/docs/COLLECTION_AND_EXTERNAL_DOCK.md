@@ -1,6 +1,6 @@
 # External dock and collection prototype
 
-The `combined` scenario loads `models/collection_cleaning_crawler.xml`. The previous guarded model and its evidence remain separate. Headless pilot8 passes every independent combined-cycle check. The fresh recording in collection_demo_v6 is being rendered and must independently pass before publication claims.
+The `combined` scenario loads `models/collection_cleaning_crawler.xml`. The previous guarded model and its evidence remain separate. Headless pilot8 passes every independent combined-cycle check. The completed 3:20.40 recording in collection_demo_v6 passes the same checks, exactly matches headless telemetry/outcomes and decodes all 5010 frames without errors.
 
 ## Current mechanism
 
@@ -56,3 +56,5 @@ These are nominal simulation development results, not statistical robustness, sc
 Pilot7 completed physical collection, all dust thresholds and dock service, but a 3.96 mm interior brush-contact transient failed the unchanged .123 m height gate. The next model replaces the long cylinder contact with a capsule: 0.8 m straight span plus rounded end caps. The coverage/soil model still scores the conservative 0.8 m straight span. Support representations move outside the caps. Pilot8 is the fresh full mission with this model and exact grain-to-soil mass transfer; do not claim success until its checks pass. Forty-nine tests pass, including captured-instability regression and hybrid mass transfer.
 
 Completed headless pilot8: CLEAN_AND_HOME at 610.858 s, 32/32 patches below threshold, actual fixed-guide contact and 120 g block retention, settled external home, 8.002 s service, empty onboard bin, 3.98564 g station waste and 14.3625 mg modelled residual soil. Peak rise 0.408684 mm and peak tilt 0.093728 degrees pass the unchanged limits. Contact footprint is 89.97917%; exact-90 flag stays false. Independent checks, matching source snapshots and evidence plots are stored with the run. The legacy solid.csv.gz column `brush_force_N` now represents summed brush-or-guide normal force; in this run the contact is with the guide, and first_brush_contact_s is null.
+
+The final video and 15.96 s labelled quarter-speed solid-handling replay are complete in docs/validation/collection_demo_v6. The replay uses four seconds of those same recorded frames; it does not invent motion. Source snapshots identify the executed version. Two stale descriptive metadata strings were corrected with original metadata retained and explicit annotations; physical data/outcomes are unchanged.

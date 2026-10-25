@@ -1,0 +1,8 @@
+{
+  "source_video": "cinematic_cleaning.mp4",
+  "matched_frame_index": 3233,
+  "thumbnail_mean_absolute_error": 2.215675636574074,
+  "source_start_video_s": 129.32,
+  "source_duration_s": 4,
+  "playback": ".25x replay of already recorded physics; no new simulation"
+}

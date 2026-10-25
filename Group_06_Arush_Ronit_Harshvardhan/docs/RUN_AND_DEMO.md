@@ -99,3 +99,14 @@ python src/verify_scattered_run.py analytics/NEW_NO_LIFT_RUN
 ```
 
 Use `verify_scattered_run.py` for this new route, rather than the historical verifier requiring all four body-edge contacts. It verifies global height/tilt bounds, all 32 dirt targets, camera causality for edge service, guard-contact policy and settled home return. Contact coverage is independently reported (89.03125% in this run); its exact-90 flag remains false. See LIFT_FIX_AND_CAMERA_FEEDS.md for design tradeoffs and rejected development variants. Raw full-size camera examples are in docs/validation/raw_camera_before_after.png.
+
+## Latest combined external-dock simulation
+
+Watch docs/validation/collection_demo_v6/cinematic_cleaning.mp4 (3:20.40, 720p/25 fps) and solid_contact_slow_motion.mp4 (15.96 s at labelled .25×). This fresh run passes independent combined-cycle checks and exactly reproduces pilot8 telemetry. It includes off-glass home, visible fixed brush supports, intake/bin, fixed solids guide, permanent tray, actual camera feeds, fine-dust cleaning, physical block collection and modelled dock service.
+
+```sh
+MUJOCO_GL=egl python src/vision_mission.py --scenario combined --cinematic --duration 1000 --output-dir analytics/NEW_COMBINED_RUN
+python src/verify_collection_run.py analytics/NEW_COMBINED_RUN
+```
+
+Read COLLECTION_AND_EXTERNAL_DOCK.md for mass accounting, the declared lower-strip block corridor and model limitations. The current code preserves the 8.5 kg assumed mass budget; suction airflow, charging/emptying hardware and structural strength are not physically validated. Previous failed/partial collection recordings v1–v5 are retained and explicitly rejected. Forty-nine tests pass.

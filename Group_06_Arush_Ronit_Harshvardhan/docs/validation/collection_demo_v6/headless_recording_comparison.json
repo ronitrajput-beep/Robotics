@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "reference": "analytics/collection_pilot8",
+  "checks": {
+    "physical_report_identical": true,
+    "dirt_report_identical": true,
+    "solid_report_identical": true,
+    "collection_report_identical": true,
+    "telemetry_bytes_identical": true
+  }
+}

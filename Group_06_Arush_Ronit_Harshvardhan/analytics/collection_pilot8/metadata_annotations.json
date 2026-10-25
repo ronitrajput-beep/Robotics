@@ -1,0 +1,12 @@
+{
+  "corrections": [
+    {
+      "field": "limitations",
+      "old": "Solid starts in a declared first-row handling corridor; arbitrary solid routing and scratch safety unvalidated",
+      "new": "Solid starts in a declared lower-strip handling corridor with a fixed guide; arbitrary solid routing and scratch safety unvalidated",
+      "scope": "Correct stale descriptive metadata only; no measurement or outcome changed"
+    }
+  ],
+  "legacy_solid_csv_header": "brush_force_N stores summed brush-or-guide normal force; first_brush_contact_s remains null for this guide-only interaction",
+  "provenance": "Original metadata retained. Source snapshots/hashes identify the executed source before descriptive corrections."
+}

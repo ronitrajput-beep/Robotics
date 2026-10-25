@@ -92,7 +92,7 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
             'limitations':['Controlled-colour RGB detector, not general debris recognition','Ground-truth navigation retained; camera-based dirt trigger only','Aggregate load plus local gap is a soil proxy','Fine-particle conversion is explicit hybrid deposition; larger crumbs not yet implemented','At most two camera-driven revisit cycles; persistent targets end INCOMPLETE']}
     if collection is not None:
         report['collection']=collection.summary(field);report['physical_solid']=solid.summary()
-        report['limitations']=[x for x in report['limitations'] if 'larger crumbs not yet' not in x]+['Dust capture, service power and mass flow are reduced-order assumptions; no resolved airflow or battery model','Solid starts in a declared first-row handling corridor; arbitrary solid routing and scratch safety unvalidated']
+        report['limitations']=[x for x in report['limitations'] if 'larger crumbs not yet' not in x]+['Dust capture, service power and mass flow are reduced-order assumptions; no resolved airflow or battery model','Solid starts in a declared lower-strip handling corridor with a fixed guide; arbitrary solid routing and scratch safety unvalidated']
         for name,headers,rows in [('collection.csv',['time_s','surface_kg','bin_kg','station_kg','deposited_kg','balance_error_kg','blower_J','charge_J'],collection.rows),('solid.csv',['time_s','x_m','y_m','z_m','brush_force_N','off_glass','caught','retained'],solid.rows)]:
             with gzip.open(directory/(name+'.gz'),'wt',newline='') as f:
                 writer=csv.writer(f);writer.writerow(headers);writer.writerows(rows)
