@@ -1,0 +1,24 @@
+{
+  "clean": {
+    "duration_s": 12.000000000000677,
+    "samples": 6000,
+    "idle_displacement_m": 0.00645890239860577,
+    "hidden_dirt_score": {
+      "patches": 0,
+      "uncleared_patches": 0,
+      "mean_residual": 0.0
+    },
+    "trigger_events": []
+  },
+  "subthreshold": {
+    "duration_s": 12.000000000000677,
+    "samples": 6000,
+    "idle_displacement_m": 0.00645890239860577,
+    "hidden_dirt_score": {
+      "patches": 1,
+      "uncleared_patches": 1,
+      "mean_residual": 1.0
+    },
+    "trigger_events": []
+  }
+}

@@ -26,3 +26,20 @@ class VisionChecks(unittest.TestCase):
         self.assertEqual(field.patches[0].remaining,1)
         field.clean(np.array([0,0,.08]),np.array([0,1,0]),.06,.4,10,10,.5)
         self.assertLess(field.patches[0].remaining,.1)
+
+class PhysicalDepositionChecks(unittest.TestCase):
+    def test_grain_really_contacts_panel_before_deposition(self):
+        import mujoco
+        from debris_events import FallingDebris
+        m=mujoco.MjModel.from_xml_path(str(Path(__file__).resolve().parents[1]/'models/guarded_cleaning_crawler.xml'))
+        d=mujoco.MjData(m);mujoco.mj_forward(m,d)
+        rack=m.body('pv_array_rack').id
+        rotation=d.xmat[rack].reshape(3,3).copy();origin=d.xpos[rack].copy()
+        fall=FallingDebris('subthreshold');surface=SurfaceDebris()
+        for _ in range(2100):
+            fall.update(m,d,origin,rotation,surface)
+            mujoco.mj_step(m,d)
+        self.assertEqual(len(surface.patches),1)
+        self.assertEqual(fall.events[-1]['event'],'HYBRID_DEPOSITION')
+        self.assertGreater(fall.events[-1]['time_s'],3.1)
+        self.assertGreater(surface.patches[0].remaining,.99)

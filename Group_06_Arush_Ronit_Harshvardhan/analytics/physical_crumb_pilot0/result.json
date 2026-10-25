@@ -1,0 +1,12 @@
+{
+  "fully_left_glass": true,
+  "contacted_catch_tray": true,
+  "peak_crumb_contact_force_N": 2.9701233871081865,
+  "final_crumb_panel_position_m": [
+    3.098326413907736,
+    -0.4769004923354726,
+    -0.1570040141142109
+  ],
+  "mechanism": "Physical brush contact with reverse brush rotation; crumb remains a rigid body throughout",
+  "scope": "One controlled near-edge ejection pilot, not integrated collection of arbitrary central crumbs"
+}

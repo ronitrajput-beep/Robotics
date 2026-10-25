@@ -1,0 +1,8 @@
+{
+  "vision_clean_pilot0": "Invalid idle evidence: stopped at 0.718 s before scheduled deposition; original IDLE_COMPLETE classification was incorrect.",
+  "vision_subthreshold_pilot0": "Invalid subthreshold evidence: stopped before deposition. Original classification incorrect.",
+  "vision_dirty_pilot0": "Failed early before deposition: initial guard overlap produced a transient and the old guard speed margin latched a stop.",
+  "vision_clean_pilot1": "Valid clean idle duration, but the same source version had broken particle collision activation.",
+  "vision_subthreshold_pilot1": "Invalid subthreshold test: collision-disabled particles passed through glass; no patch deposited.",
+  "vision_dirty_pilot1": "Run interrupted after diagnosis: compiler excluded initially collision-disabled particles. No valid mission outcome; partial telemetry retained."
+}

@@ -10,7 +10,7 @@ from guarded_geometry import edge_raster, body_edge_gaps
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False):
+def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False, should_move=None, revisit_targets=None):
     if fault not in (None,"pose_dropout","brush_jam","traction_loss"): raise ValueError("Unknown fault")
     if not np.isfinite(duration) or duration<=0: raise ValueError("Duration must be positive")
     if variant not in ("baseline", "proposed"): raise ValueError("Unknown controller")
@@ -43,6 +43,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         from mujoco import viewer as mj_viewer
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]
+    retries=0
     minimum_gaps=np.full(4,np.inf); guard_impulse=0.; peak_guard_force=0.
     supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None; docking=False
     brush_dof=m.joint('brush_hinge').dofadr[0]
@@ -54,10 +55,21 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 if fault=='brush_jam': m.dof_damping[brush_dof]=20.
                 if fault=='traction_loss': m.geom_friction[:,0]=.05
             speed=float(np.linalg.norm((R.T@d.qvel[:3])[:2]))
-            gaps=body_edge_gaps(p,R.T@d.xmat[b].reshape(3,3));minimum_gaps=np.minimum(minimum_gaps,gaps)
-            stopping=supervisor.update(d.time,speed,(1. if guarded else clearance(p)),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
+            gaps=body_edge_gaps(p,R.T@d.xmat[b].reshape(3,3),m.geom_size[m.geom('chassis_geom').id]);minimum_gaps=np.minimum(minimum_gaps,gaps)
+            stopping=supervisor.update(d.time,speed,(np.inf if guarded else clearance(p)),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
             if stopping and not any(e['event']=='BRAKING' for e in events):
                 events.append({'time_s':float(d.time),'event':'BRAKING','reason':supervisor.reason});integral[:]=0
+            if stopping=='STOPPED' and docking and revisit_targets is not None and retries<2:
+                targets=revisit_targets()
+                if targets:
+                    home=planned_route[0].copy();new_goals=[]
+                    for tx,ty in targets:
+                        new_goals.extend([(tx-.7,ty),(tx+.2,ty)])
+                    new_goals.append(home)
+                    route=np.asarray(new_goals);initial=p[:2].copy();index=0
+                    docking=False;supervisor=StopSupervisor();integral[:]=0;stall_since=None;retries+=1
+                    events.append({'time_s':float(d.time),'event':'VISION_REVISIT','targets':targets})
+                    continue
             if stopping in ('STOPPED','ABORT_UNSTOPPED'):
                 status=('DOCKED' if np.linalg.norm(route[-1]-p[:2])<=.12 else 'ABORT_DOCK_POSITION') if stopping=='STOPPED' and docking else stopping
                 events.append({'time_s':float(d.time),'event':status});break
@@ -72,16 +84,17 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if direction<0: angle+=np.pi
             error=np.arctan2(np.sin(angle-yaw),np.cos(angle-yaw))
             state='SETTLE' if d.time<1 else ('ALIGN' if abs(error)>.4 else 'SWEEP')
+            if should_move is not None and not should_move():state='HOME_MONITOR'
             if (not guarded and clearance(p)<0) or p[2]<.04 or abs(p[0])>3.1 or abs(p[1])>2.1:
                 status='ABORT_EDGE';break
-            if not stopping and not docking and d.time>=1 and distance<.10:
+            if not stopping and not docking and state!='HOME_MONITOR' and d.time>=1 and distance<(.08 if guarded else .10):
                 index+=1
                 if index==len(route):
                     index-=1;docking=True;supervisor.reason='DOCK';supervisor.triggered_at=d.time
                     stopping='BRAKING';integral[:]=0
                     events.append({'time_s':float(d.time),'event':'DOCKING'})
             v=0 if state!='SWEEP' else direction*min(.18,.8*distance)*max(0,np.cos(error))
-            omega=0 if state=='SETTLE' else np.clip(3*error,-1.2,1.2)
+            omega=0 if state in ('SETTLE','HOME_MONITOR') else np.clip(3*error,-1.2,1.2)
             if stopping: state='DOCKING' if docking else 'BRAKING';v=omega=0.
             speeds=np.array([v-.20*omega]*2+[v+.20*omega]*2)/.06
             for i,j in enumerate(joints):
@@ -125,7 +138,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if display and step%16==0:
                 if not display.is_running():status='USER_STOP';break
                 display.sync()
-        result={**hashes,'guarded':guarded,'minimum_chassis_edge_gaps_m':minimum_gaps.tolist(),'guard_normal_impulse_Ns':guard_impulse,'peak_guard_normal_force_N':peak_guard_force,'layout':('edge_raster' if guarded else layout),'coverage_metrics_v2':coverage_map.summary(),'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
+        result={**hashes,'vision_revisit_cycles':retries,'guarded':guarded,'minimum_chassis_edge_gaps_m':minimum_gaps.tolist(),'guard_normal_impulse_Ns':guard_impulse,'peak_guard_normal_force_N':peak_guard_force,'layout':('edge_raster' if guarded else layout),'coverage_metrics_v2':coverage_map.summary(),'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
         if output:
             coverage_map.save(output.with_suffix('.coverage.npz'))
             output.with_suffix('.json').write_text(json.dumps(result,indent=2))

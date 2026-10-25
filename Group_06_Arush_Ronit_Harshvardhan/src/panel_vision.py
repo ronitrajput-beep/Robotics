@@ -28,7 +28,7 @@ class CameraCalibration:
 def detect_dirt(rgb,calibration,min_pixels=8):
     """Prototype for brown deposition under controlled lighting, not arbitrary dirt."""
     r,g,b=rgb.astype(float).transpose(2,0,1)
-    mask=(r>45)&(r<150)&(g>20)&(g<100)&(r>1.35*g)&(g>1.2*b)&(b<65)&(b>.15*r)&(b<.30*r)
+    mask=(r>45)&(r<150)&(g>20)&(g<100)&(r>1.35*g)&(g>1.2*b)&(b<65)
     labels,count=ndimage.label(mask)
     detections=[]
     for number in range(1,count+1):

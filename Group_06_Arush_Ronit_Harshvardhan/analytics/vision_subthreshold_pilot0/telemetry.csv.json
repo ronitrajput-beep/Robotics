@@ -1,0 +1,59 @@
+{
+  "model_sha256": "398a8baa57c029f2d19659463b48aafc1fd6c88ee431f9f620b1fc49d8183b91",
+  "controller_sha256": "4264031917f27db193b38bf7db307d11c62df7dcb950f3741f9bd109927dadba",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "guarded_geometry_sha256": "1147a218f18977b4b97012ae03c58db51f8892bbc66e74747d2433ab67b6b272",
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    0.0004526320659201388,
+    5.510367496104544,
+    3.4627945999312617,
+    0.044604259740678914
+  ],
+  "guard_normal_impulse_Ns": 36.53585918217092,
+  "peak_guard_normal_force_N": 14243.074725770986,
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.0046875,
+    "qualified_contact_fraction": 0.0,
+    "half_soil_proxy_removed_fraction": 0.0,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.0,
+    "soil_removed_proxy_fraction": 0.0
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 0.002,
+      "event": "BRAKING",
+      "reason": "EDGE_MARGIN"
+    },
+    {
+      "time_s": 0.7180000000000005,
+      "event": "STOPPED"
+    }
+  ],
+  "stop_reason": "EDGE_MARGIN",
+  "terminal_angular_speed_rad_s": 0.0002769647277826212,
+  "terminal_brush_speed_rad_s": 0.028188646421600655,
+  "dock_error_m": 0.11742761636274511,
+  "terminal_speed_mps": 0.0017508192017176905,
+  "variant": "proposed",
+  "planned_duration_s": 12.0,
+  "seed": 0,
+  "status": "STOPPED",
+  "time_s": 0.7180000000000005,
+  "waypoints_reached": 0,
+  "waypoints_total": 20,
+  "visited_contact_fraction": 0.0,
+  "soil_removed_proxy_fraction": 0.0,
+  "path_tracking_rmse_m": 0.10041370301747565,
+  "effort_Nm2_s": 0.17728393053779892,
+  "positive_mechanical_work_J": 4.918722746678286e-07,
+  "mujoco": "3.17.0"
+}

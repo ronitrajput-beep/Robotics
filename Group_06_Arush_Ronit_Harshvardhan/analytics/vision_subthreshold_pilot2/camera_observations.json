@@ -1,0 +1,231 @@
+[
+  {
+    "time_s": 0.0,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 0.5000000000000003,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 1.0000000000000007,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 1.500000000000001,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 2.0000000000000013,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 2.4999999999999463,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 2.999999999999891,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 3.499999999999836,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 3.999999999999781,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 4.499999999999726,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 4.999999999999671,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 5.499999999999616,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 5.999999999999561,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 6.499999999999506,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 6.999999999999451,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 7.499999999999396,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 7.999999999999341,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 8.499999999999508,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 8.999999999999675,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 9.499999999999842,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 10.000000000000009,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 10.500000000000176,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 11.000000000000343,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  },
+  {
+    "time_s": 11.50000000000051,
+    "state": "HOME_MONITOR",
+    "targets": [
+      [
+        -0.8076560100641554,
+        0.4323450369203911
+      ]
+    ],
+    "triggered": false
+  }
+]
