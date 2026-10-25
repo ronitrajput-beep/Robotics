@@ -1,171 +1,131 @@
-# Implementation plan: vision-triggered cleaning of the entire panel
+# Revised plan: simple fixed-brush crawler with vision-triggered cleaning
 
-Planning checkpoint, 25 October 2026. This document changes the implementation objective; it does not claim these features already work. User requested a plan before implementation. No robot, physics, sensing or controller implementation is changed by this checkpoint. This plan takes precedence over older plans where they assume an always-starting fixed raster.
+Planning revision, 25 October 2026. The latest user instruction accepts roughly 90% whole-panel coverage to reduce mechanical complexity, cancels telescoping/deploying brushes and permits an invisible simulation boundary to prevent falls. This supersedes the earlier 100%-coverage/telescoping-tool proposal. No robot or controller code is changed by this planning revision.
 
-## 1. Required behaviour
+## 1. Decisions and unchanged requirements
 
-The robot rests at a repeatable home position with its brush off. Cameras on the robot and at the panel edges monitor the glass. Visible dirt falls onto the panel after the simulation starts. Camera observations, not the deposition schedule or a hidden dirt array, decide whether contamination is sufficient to trigger cleaning. Below the configured trigger threshold the robot stays home. Once triggered, it covers the complete glass surface, including edges and corners, deliberately revisits detected dirty locations, verifies the result with cameras and returns home. After settling, it continues monitoring rather than endlessly driving the same route.
+- **Cancel the telescopic/articulated edge-tool solution.** There will be no deployment sequence or time spent extending a tool. A rotating brush is still required, but its mount/overhang remains fixed.
+- Start with the existing 0.55 m main brush. Investigate a wider/repositioned fixed brush or simple permanently extended sweep attachments only if geometric reach analysis shows they are necessary. Every added component must still have credible mass, collision/contact geometry and any required actuation.
+- Target **at least 90% of the original 24 m² glass surface** in the declared nominal scenario, with the remaining area and locations reported. This is a target, not a result: the current best demonstrated candidate is approximately 61–62%.
+- For a triggered mission, clean every detected target that is reachable in the validated configuration. A patch in the remaining unreachable region must stay visible on the map and produce an INCOMPLETE/unreachable-target result, not be silently excluded. Roughly 90% global coverage does not mean that arbitrarily located debris is guaranteed removable.
+- Keep camera-based detection, idle-at-home behaviour, thresholded triggering, targeted revisits, a whole-panel sweep attempt, verification and return home.
+- Larger physical crumbs must actually be pushed, swept off or collected through modelled contact. They may not vanish under a dirt texture mask.
+- Aesthetic scenery remains deferred.
 
-The priority order is physical feasibility and safety, measurable full-surface cleaning, vision and event-driven autonomy, reproducible evidence, then environment aesthetics. We will build and test these components in that dependency order, then demonstrate them together. No new external model assets are required to begin.
+## 2. Current truth
 
-## 2. Current implementation and why it is insufficient
+The 8.5 kg crawler has four torque-driven rollers approximating tracks and a fixed transverse rotary brush of radius 0.06 m, full width 0.55 m, mounted 0.29 m ahead of the chassis. The brush is the blue cylinder in the video. The rack is tilted 20 degrees and its perimeter is raised about 0.05 m above the glass.
 
-- The panel is 6 m × 4 m, tilted 20 degrees. Four driven rollers approximate tracks on an 8.5 kg free-moving chassis.
-- A transverse blue cylinder at the front is the actual actuated brush: radius 0.06 m, width 0.55 m, offset 0.29 m ahead of the chassis. It is visible, but its cylindrical shape makes rotation hard to see.
-- There are no model cameras, image-processing detector or monitoring/trigger state. The mission starts on invocation and uses simulator ground-truth pose.
-- Current soil is an initially uniform numeric array. It is not rendered as dirt. A contact/speed gate activates exponential attenuation across an approximate rectangular brush footprint. Aggregate contact does not establish contact across the whole brush width.
-- The best current candidate covers roughly 61–62% of the whole panel with a qualifying projected footprint. This does not satisfy the new objective. The 100% denominator remains all 24 m² of glass, not an interior rectangle.
-- The planner uses a 0.45 m enclosing radius for both support and brush clearance. That protects the robot but excludes borders. One wider pilot stopped at the lower edge. The raised perimeter also affects access: its top is 0.05 m above the glass surface.
-- Docking currently means settling near a point, not entering a modelled home station or engaging a latch. Severe traction loss is unsafe. These limitations must be resolved or retained as explicit failed operating conditions.
+There are still no model cameras, RGB dirt detector, visible falling dirt or monitoring trigger. Navigation uses simulator ground-truth pose. The soil array is invisible and uses an uncalibrated removal proxy. No new requirement in this plan is implemented yet.
 
-## 3. Meaning of full cleaning and valid physics
+The former 0.45 m circular clearance guard encloses both chassis and brush. It is conservative, and shrinking the allowed cleaning area follows directly from it. Earlier expanded routes also showed real downhill drift, so not every lost area is caused by conservative geometry alone. The active safety system brakes the wheels; it does not provide a passive holding mechanism or a guarantee against falling.
 
-We cannot promise atom-level cleanliness, perfect perception, or flawless real-world physics. MuJoCo is an approximate rigid-body/contact simulator. The deliverable will be a tested operating envelope with explicit numerical, sensing and cleaning assumptions.
+## 3. First gate: geometric reach with a fixed brush
 
-For this simulation, define the entire glass polygon as the cleaning domain, including boundary cells and corners. Start with a 1 cm scoring grid (600 × 400 cells); clip boundary-cell areas to the actual glass polygon. Verify whether camera resolution supports the chosen visible-debris size and scoring resolution before freezing them. The grid is a finite-resolution acceptance definition, not proof about microscopic dust. Report narrower unsensed/subcell limitations explicitly; never silently shrink the domain.
+Separate the **support envelope** (roller contact/chassis support) from the **cleaning footprint** (fixed overhanging brush). Replace the one-radius planning approximation only after checking the actual oriented geometry and swept motion. Do not equate brush overhang with wheel overhang or mark a chassis partly outside its supported region as safely supported.
 
-A successful mission must satisfy all of the following:
+Compute brush reach along all four edges and corners, frame collisions, turning space, uncertainty and stopping margin. Generate a candidate overlapping lane/edge route and rasterise it against the full panel before attempting long missions. Use real tracking/contact measurements to validate its coverage afterward.
 
-1. 100% of glass cells receive a validated cleaning-tool sweep, with no missing perimeter/corner cells. Tool passage alone is not a contact-dose guarantee.
-2. Every deposited visible dirt patch above the declared detectable size is reduced below the frozen residual threshold, including adversarial edge/corner patches.
-3. The camera verifier observes the whole panel after cleaning and reports no unresolved target-sized patch. Occluded/uncertain cells are UNKNOWN and require another view; they do not count as clean.
-4. Independent hidden scoring confirms residual dirt and coverage. Hidden truth can fail the mission but cannot guide its ordinary trigger, targeting or completion decision.
-5. No fall, invalid state, support-envelope violation or force/actuation-limit violation occurs; the robot returns home and settles.
+The 90% target requires reaching substantially closer to the perimeter: for illustration, an otherwise completely covered 6 m × 4 m rectangle with a uniform uncleaned border reaches 90% only when that border is about 0.123 m wide. This is a geometric sanity check, not a permissible chassis clearance. Brush overhang may allow the chassis to remain farther inward while reaching this cleaning boundary.
 
-Any remaining dirty or unverified cell means INCOMPLETE, not CLEAN. Freeze patch-size, confidence, residual and contact-dose thresholds after pilots but before held-out evaluation. Publish actual values and their assumptions. If mechanics cannot reach every cell safely, redesign the mechanism before declaring the milestone complete.
+Try, in order:
 
-## 4. Phase A — prove full-surface mechanical reach
+1. The existing fixed brush with improved footprint-aware routing and support-envelope analysis.
+2. A modest fixed brush width/position change or permanent sweep attachment if needed, checking added load and collisions.
+3. Supported direction changes or separate edge passes where feasible. Never conceal unsuccessful turns by resetting pose.
 
-This is the first implementation gate. Better vision cannot repair unreachable glass.
+If 90% remains unreachable, report the reach map and identify the smallest physical change required. Do not generate a route that scores 90% on geometry while actual contact only cleans 60%.
 
-### Proposed mechanism
+## 4. Fall prevention: guarded simulation and free-crawler evidence
 
-Retain the crawler for interior cleaning and investigate a lightweight articulated/telescoping edge-cleaning tool with a rotating end brush. The main brush handles wide interior lanes. The auxiliary brush reaches strips and corners while the rollers/chassis stay supported. It must have explicit joints, mass, inertia, actuator limits, physical collision geometry and normal compliance/load measurement. It cannot be a cleaning radius that reaches through space.
+The user authorises an invisible boundary. Implement this as an explicitly documented **collision guard/catch rail** around the rack, preferably matching a plausible physical perimeter restraint. It may be transparent in the main view, but must be visible in a debug view and identified in the final explanation. Its location, height, collision geometry and reactions must be specified.
 
-First calculate the required reach from a safe chassis pose to the farthest corner. For example, a centre 0.45 m inward from two edges is about 0.636 m from their intersection before including uncertainty, stopping margin and tool geometry. This is a geometric estimate, not a selected safe arm length. Derive arm dimensions and mass through reach and stability analysis, including the raised perimeter and brush contact surface.
+A collision guard can prevent exit from the panel edge within tested trajectories; it does not create tyre grip, stop all sliding or prove physical impossibility of falling in every state. Check whether the robot can tip, climb or pass over it and whether it obstructs the brush or home route. If the physical guard cannot guarantee containment in a fault, report that result and revise it.
 
-Separate three constraints: the roller/chassis support envelope, the articulated tool's swept collision envelope, and the glass cleaning footprint. The support envelope stays on supported surface. A brush may reach farther while remaining over glass, subject to arm collisions and tipping/contact-force checks. Never simply remove the old safety guard to gain coverage.
+Keep two named evaluation configurations:
 
-Consider a home bay adjacent to and mechanically supported with the rack, with a level transition/ramp where needed. Its geometry and access must be explicit; it must not cover an uncleanable patch of the 24 m² glass. If a robot parked on glass occludes its starting patch, leaving, cleaning and re-verifying that patch is part of the mission.
+- **Guard-assisted demo:** the disclosed collision boundary is enabled. Report guard contacts/reaction forces and whether the robot relies on the guard during the route.
+- **Free-crawler diagnostic:** the added guard is disabled. Retain traction/slide/fall results to distinguish control/traction performance from containment.
 
-### Required checks
+No silent qpos/qvel clamps, arbitrary friction increases, hidden forces that hold the robot to glass or scoring failures as successful cleaning. If a hard positional constraint is ever desired as an animation-only mode, it must be labelled nonphysical and cannot supply physics/traction evidence. The planned main demonstration uses physical collision containment instead.
 
-- Static reach map for all glass cells, all four boundary strips and four corners; tool/frame/chassis collision checks along transitions.
-- Static support, centre-of-mass and contact-force checks for the extended arm in the worst slope direction; dynamic checks under turning and braking.
-- Measured motor torque/speed saturation, normal contact load, support contacts, chassis roll/pitch and clearance.
-- Flat drive/turn tests, then incline tests; timestep comparison at 0.002 and 0.001 s for representative nominal and edge manoeuvres.
-- Determine a validated friction/tilt/load envelope. Address sliding through credible operating restrictions and, if required, a visibly modelled tether/brake with actual limits. No invisible holding forces or frozen robot state.
+## 5. Traction on the incline: what exists and what must be tested
 
-If the proposed tool cannot satisfy reach/stability, compare a different brush arrangement or explicitly supported edge mechanism. Do not choose an expensive full-perception implementation before passing this gate. No material, force limit or glass-safety claim is validated merely by making a simulation stable.
+Traction is already simulated through real motor torques, roller contacts and friction. It is not currently validated against a physical prototype. The model uses an assumed roller sliding-friction coefficient of 1.2; effective contacts depend on MuJoCo mixing and load distribution. This is not measured rubber-on-dusty-glass data. Four bounded wheel-speed controllers provide active holding/braking when traction is available; this does not hold the robot after power loss.
 
-## 5. Phase B — visible debris and an honest cleaning interaction
+A useful ideal static check is mu >= tan(theta). At 20 degrees this is about 0.364. For 8.5 kg under gravity alone, downhill force is about 28.5 N and normal load about 78.4 N. These are whole-body ideal estimates, not per-wheel contact forces or a dynamic safety certificate. Brush forces, turns, transient load transfer and contamination affect the result.
 
-Use a hybrid scene rather than thousands of expensive contact bodies.
+Existing checks found about 3.7 mm downhill drift during active stationary holding and about 0.292 m downhill displacement during a turning test. Severe low-friction injections reached the edge in all three development seeds. These failures demonstrate that 'we will use grippy wheels' is not sufficient evidence.
 
-- Represent a limited number of visible falling flecks/grains as actual MuJoCo bodies with gravity, collision and declared size/mass/friction. Use small spheres/flakes, not one oversized cube standing in for all dust. Prototype tens of representative particles first and measure solver/runtime behaviour.
-- After physical panel contact and a declared settling/deposition rule, optionally convert deposited fine debris into a persistent surface dirt field rendered on the glass. This is an explicit hybrid abstraction: representative falling grains become a surface layer, with deposition accounting recorded. It does not claim resolved aerosol, adhesion or particulate microphysics.
-- Keep larger crumbs as physical objects if we show them being pushed. They do not disappear simply because a cleaning mask overlaps them. Their trajectory/capture/removal must be physically represented or excluded from the supported debris class.
-- Render the surface field as visible brown/grey patches or an updated texture on the glass. Rendering should be recognisable in robot and edge-camera RGB images. Physics/camera materials and texture updates must be tested before selecting the approach.
-- A local dirt value decreases only under a physically qualified tool contact: actual tool position, local panel gap/contact support, measured load, tool speed and dwell. The whole brush rectangle must not be marked cleaned because one end touched. Prototype segmented contact sensing/contact-patch bounds or a validated local-contact approximation.
-- Dirt fades/disappears progressively in those cells. No disappearance on camera detection, waypoint arrival, chassis proximity or elapsed mission time. No-contact and brush-off tests must preserve dirt.
+Planned work:
 
-Visible fade is acceptable as the requested easy-to-understand cleaning effect. Its coefficient and load/speed response remain a labelled removal proxy until calibrated. We will distinguish removal from collection: a disappearing surface proxy does not establish a real vacuum/bin mechanism. Fine grains/soil rendering will be confirmed as consistent across all cameras.
+1. Measure roller slip speed from encoder motion versus estimated chassis velocity, with a low-speed validity rule. Separate simulation scoring velocity from the navigation estimate.
+2. Use low speed, acceleration/yaw limits, suitable mass distribution and the bidirectional route to reduce aggressive skid turns.
+3. Test assumed friction across a declared range, incline changes, brush on/off, loads, straight motion, turning, idle and braking. Include conditions below the ideal static bound rather than excluding all failures.
+4. Validate bounded slip-aware slowdown/stop behaviour. If gravity exceeds available tangential contact force, software wheel control cannot guarantee holding; containment/tether/brake must supply an explicit physical mechanism.
+5. For a future prototype, propose a nonmarking high-friction rubber/EPDM or silicone tread only as a candidate. Measure actual grip on the relevant clean/dusty/wet glass and check coating compatibility before selecting a material or claiming safety. Include a real perimeter restraint/tether or other engineered fall protection where appropriate.
 
-## 6. Phase C — real RGB vision on robot and panel edges
+The viva explanation must distinguish assumed friction, demonstrated nominal simulation, failed low-friction trials, the added simulated guard and the physical testing still required. No claim that a tyre material automatically solves the slope problem.
 
-Add one forward/downward robot camera and fixed cameras on small raised brackets at the panel corners/edges. Start with four edge cameras with overlapping views; use visibility tests to adjust placement. No camera support may create an uncleanable patch on the glass. Add a top-down presentation camera separately; it is not secretly the detector.
+## 6. Visible debris and actual brush interaction
 
-Pipeline:
+Prototype tens of small physical grains/flakes falling under gravity and colliding with the panel. Fine deposited dust can then use a persistent visible surface field, with the conversion from representative grains logged as an explicit hybrid abstraction. This is not a resolved aerosol/adhesion model.
 
-1. Calibrate camera intrinsics/extrinsics and the panel plane, using declared fiducials or a known camera mounting model. Project detected image regions onto panel coordinates with homography/ray-plane intersection, checking distortion, frame boundaries and uncertainty.
-2. Maintain a clean reference and panel mask per camera. Prototype colour/appearance differences plus connected components and temporal persistence in controlled illumination. OpenCV-style classical vision is sufficient initially; a trained neural detector is not mandatory for camera-based sensing.
-3. Fuse detections across views into an estimated dirty-probability/uncertainty map. Account for robot/tool shadows, occlusions, frame structure and stale images. Robot-camera close views verify suspicious cells and fine residuals.
-4. Detect the visible fall/arrival where possible and confirm persistent deposited contamination. Do not trigger from the scenario's spawn notification or hidden dirt field.
-5. Measure detection rate, false alarms, localisation error and latency, especially for corners, panel texture, robot occlusion and different lighting.
+Surface dirt fades only under qualified **local** tool contact, measured load, brush rotation and dwell. Aggregate force at one end must not clean the whole width. Add a segmented-contact/contact-patch approximation and test no-contact, brush-off and insufficient-dose cases. Use stripes or noncolliding bristle visuals so actual actuator rotation is obvious.
 
-The detector receives RGB images, camera calibration and its own history—not segmentation IDs, object labels, hidden contamination masks or the injection schedule. Ground truth remains isolated for scoring. Camera rendering can naturally depend on the actual dirt field; reading pixels of that rendering is the intended sensing route.
+Larger crumbs stay as rigid bodies and are moved by actual brush/crumb/panel contacts. Decide and model their removal destination: off-glass into an external collection region, or into a simple explicit catch tray. Score actual positions and retained mass/object IDs. If a crumb becomes trapped at the frame, it remains a failed target until genuinely moved. Test both physical feasibility and solver/runtime cost before promising all debris sizes.
 
-Camera-known calibration does not prove vision-based robot localisation. Replace direct ground-truth navigation input in stages with fiducial localisation from edge views and robot encoders/IMU, keeping simulator state solely for scoring. If a ground-truth control mode is retained for diagnostic comparison, label it explicitly and never present it as vision localisation. Start with a feasible camera rate, e.g. 5–10 Hz, and benchmark; preserve 500 Hz physics with timestamped latest observations and stale-data guards.
+## 7. Cameras, localisation and dirt estimates
 
-## 7. Phase D — start only when sufficiently dirty
+Add a forward/downward robot camera plus overlapping fixed cameras at raised panel-edge/corner brackets, without obstructing the glass. Use an independent presentation camera.
 
-Implement a monitoring state machine:
+Calibrate the camera views and panel projection. Begin with RGB appearance/reference differences, connected components and temporal persistence. Fuse observations into a dirt/confidence/unknown map. Treat shadows, reflections, robot occlusion and stale images explicitly. Unknown is not clean.
 
-HOME_MONITOR → DIRT_CONFIRM → PLAN → UNDOCK → SPOT_CLEAN / FULL_COVERAGE → EDGE_AND_CORNER_CLEAN → VERIFY → RETURN_HOME → DOCK_AND_SETTLE → HOME_MONITOR.
+The detector reads RGB images and calibration, not hidden soil/object IDs or the deposition schedule. Hidden truth is isolated for evaluation. Prototype actual camera-based robot localisation using fiducials, with wheel encoders/IMU for continuity. If ground-truth navigation is retained temporarily, label it; camera-based dirt detection alone does not imply vision-based localisation.
 
-FAULT_BRAKE and INCOMPLETE are explicit alternatives; they cannot transition into a clean-success state without valid evidence.
+Benchmark a candidate 5–10 Hz camera pipeline while retaining 500 Hz physics. Choose detectable patch/crumb size and scoring resolution based on actual camera visibility before freezing evaluation thresholds.
 
-- At home, observe periodically with the drive/brush off or the explicit holding mechanism engaged. Long idle tests must establish that the robot does not slide.
-- Accumulate dirty area/confidence over multiple frames and use hysteresis. A small transient speck below the configured trigger stays on the map but does not launch a mission. Several small patches can accumulate past the trigger. Define a separate rule for a single significant patch.
-- Once the threshold persists for the declared confirmation time, latch a mission request. Repeated detections must not repeatedly restart the mission.
-- Clean the whole panel once the mission is triggered, as requested, and prioritise or explicitly revisit detected dirty regions. Return home after verification and wait for genuinely new contamination. No endless loop.
-- Newly falling dirt during cleaning updates the estimated map and queues revisits. Bound retries and mission time; persistent replenishment or undetectable/uncleanable material yields INCOMPLETE rather than an infinite run.
+## 8. Event-driven mission and coverage-aware routing
 
-Trigger thresholds are configurable and visible in the evidence; "do not move for too little dirt" and "remove dirt wherever it exists once triggered" are separate requirements. The demonstration will show both a subthreshold idle case and an above-threshold cleaning case.
+HOME_MONITOR → DIRT_CONFIRM → PLAN → UNDOCK → TARGETED_CLEAN + PANEL_SWEEP → VERIFY/REVISIT → RETURN_HOME → SETTLE → HOME_MONITOR.
 
-## 8. Phase E — routing that guarantees the planned glass sweep
+A subthreshold amount stays on the estimated map while the robot remains home. Dirt area/confidence must exceed the configured trigger for a declared persistence interval. A significant single patch can have its own trigger. Once triggered, perform the planned sweep and revisit detected dirt; do not continually restart the mission from repeated detections.
 
-Use complete coverage planning with measured tool footprints, not a fixed centre-only route. Combine overlapping interior lanes with explicit boundary-strip and corner passes using the edge tool. Compute overlap from effective cleaning width and validated pose/tracking uncertainty, not the brush's decorative width.
+Track estimated dirt, qualified physical contact/dose and hidden evaluation truth separately. Newly deposited dirt queues another inspection/pass. Bound retries and mission time; an unreachable or persistent patch yields INCOMPLETE. Leave home physically and check pose/orientation and planar/angular/brush settling on return. A supported adjacent home bay may be needed so a parked robot does not hide or permanently occupy dirty glass.
 
-Before execution, rasterise the swept tool footprint against every glass cell and reject a plan with holes. Check supported chassis trajectories and arm collision/stability continuously along transitions. Include safe approach, turn, retreat and return-home segments. Never assume that the planner's geometric pass means actual contact occurred.
+## 9. Acceptance and test gates
 
-During execution, maintain three separate maps: camera-estimated contamination/unknown, physically qualified cleaning dose, and independent hidden evaluation truth. Track actual progress; missed-contact cells get replanned. Camera-detected patches get targeted revisits even when nominal coverage says they were visited. If cameras see a clean surface but actual physical coverage is incomplete, the full-sweep requirement still fails.
+Primary nominal target: at least 90% **measured qualified coverage of the original 24 m²**, plus removal of every detected target within the supported/reachable debris domain. Report every uncovered area, unknown cell and failed target. A literal 100%/microscopic-cleanliness claim is no longer required or supported. Do not equate geometric sweep, qualifying contact, dose and residue.
 
-The completion condition includes actual full-surface passage, visually verified residual thresholds, valid observations, no unresolved targets and safe return/settling. Homing must check pose, orientation and translation/rotation/brush speeds over a settling window, not just arrival at a waypoint. Home is a physical repeatable place, not a runtime robot teleport.
+Required cases:
 
-## 9. Phase F — test gates before the final clip
+- Long clean idle and subthreshold deposits: no unwanted launch or slide.
+- Significant central deposit: image-triggered departure, physical removal, sweep and home return.
+- Edge/corner deposits: reach/remove or explicitly flag unreachable; never silently ignore them.
+- Multiple patches and new debris during motion: queue/revisit/verify.
+- Larger crumbs: genuine displacement/removal, with retained physics evidence.
+- Lost brush contact: persistent dirt and retry/INCOMPLETE.
+- Camera occlusion/dropout or lighting change: unknown/stale handling, no false clean.
+- Jam, excessive load, low friction, incline and power/holding assumptions: explicit safe response or documented failure.
+- Guard on/off: report contact forces and whether containment is carrying the robot.
+- Numerical/timestep consistency and repeatable seeds; no state forcing.
 
-| Case | Required evidence |
-|---|---|
-| Clean panel, long idle | No spontaneous departure, no sliding, no rotating brush |
-| Small/subthreshold debris | Persistent mapped detection if visible; stays home until trigger criterion is met |
-| Central significant patch | Camera-based trigger, targeted pass, full-surface sweep, verification, settled home |
-| Four edges and four corners | Each individual worst-case patch removed; 100% glass-grid sweep; no cropped denominator |
-| Multiple separated patches | All local targets cleared, no target silently dropped |
-| Deliberately interrupted brush contact | Dirt remains where contact/dose was absent; retry or INCOMPLETE |
-| Dirt added during mission | New target queued and re-verified before success |
-| Shadows/lighting change, clean glass | No unsupported dirt trigger; uncertainty tracked |
-| Camera occlusion/dropout | Unknown/stale observations detected; safe response; no false clean |
-| Jam or excessive brush load | Bounded response and honest outcome |
-| Low friction/unsafe incline | Physically justified braking/holding or explicit failure, never frozen state |
-| Timeout and unreachable target | INCOMPLETE with remaining dirty/unknown cells reported |
-| Repeated seed and timestep test | Consistent qualitative outcome, quantified numerical differences |
+Develop on pilot seeds, then freeze camera/trigger/removal thresholds, geometry, controller, guarded mode, scenario distributions and success rules before held-out trials. For statistical comparisons run at least 30 complete missions per controller/condition and retain failures; the old 30-second tracking study is not a substitute. Log actual contact/load/speed, support and guard reactions, detections, confidence, physical crumbs, contamination accounting, pose estimate versus scoring truth, coverage and docking. Pilot runtime/storage before the final batch.
 
-Develop on pilot seeds first. Freeze scene parameters, detector/trigger thresholds, supported debris class, controller/mechanism versions, scenario distribution and success metrics before held-out runs. Then run at least 30 full missions per compared controller/condition where a statistical comparison is claimed, retaining failures. Do not reuse the old 30-second benchmark or tune on held-out failures. Use run-level statistics and coverage/residual maps rather than treating video frames as independent trials.
+## 10. Final recording and deferred scenery
 
-Log image timestamps/camera IDs, detections, confidence/uncertainty, event reasons, estimated pose and scoring pose separately, initial/deposited/residual soil, physical contact/load/brush speed, full-cell coverage, actuator effort, state transitions, faults and docking. Hash code/model/config/scenario at launch. Measure rendering and storage cost before large batches; save selected camera frames and full detection logs rather than every high-resolution image indefinitely.
+Show home idle, visible falling dirt, actual camera detection with mapped location, triggered departure, visible rotating brush and genuine crumb interaction, panel sweep/edge approaches, residual inspection/revisits and settled return home. Display measured whole-panel percentage and remaining targets. Label accelerated playback and the invisible collision guard. Do not animate the overlay to 100% or imply complete coverage if the measured result is around 90%.
 
-## 10. Final simulation storyboard
+Balcony/rooftop, sun/sky/clouds and city meshes follow the functional gates. Start with primitives or licensed assets; no external model is required now. Keep scenery noncolliding unless intentionally physical, and rerun vision checks when lighting changes.
 
-1. Show the entire panel and home station, with robot stationary and brush off. Overlay HOME_MONITOR and estimated dirty area.
-2. Show a small subthreshold deposit and no launch, then a clearly visible significant fall onto the panel including an edge/corner patch.
-3. Briefly show the actual edge/robot camera feed, detection outline, confidence and mapped panel location. Trigger is traceable to image evidence.
-4. Robot leaves home physically, cleans significant patches and performs overlapping full-panel coverage. Brush rotation is visible through a striped texture or lightweight noncolliding bristle visuals matching the real actuated brush.
-5. Show close views of dirt fading only under qualified tool contact, plus edge/corner tool operation. The coverage overlay must show measured progress, not a preprogrammed 100% animation.
-6. Show residual checks and any required revisit. Finish with full-domain scoring and a camera verification map, including previously occluded home cells.
-7. Robot returns home, stops the brush, settles and stays there. Overlay actual outcome and remaining-dirt count. Any accelerated playback is labelled; do not fabricate a successful run with edits.
+## 11. Execution order and deliverables
 
-Record a complete successful trace after validation, with raw evidence preserved. Also retain an honest fault clip. The required human team presentation remains a separate deliverable.
+1. Fixed-brush reach map, support-aware route and disclosed guard design; prove whether >=90% is geometrically and dynamically plausible.
+2. Traction/containment checks and local brush contact validation.
+3. Visible falling dust plus real physical crumbs and contact-gated removal.
+4. RGB camera detector, mapped targets and localisation interface.
+5. Idle trigger, mission lifecycle, targeted revisits, verification and home return.
+6. Integrated development tests, held-out evaluation and real-data figures.
+7. Record actual behaviour; then add scenery and prepare the human team submission.
 
-## 11. Aesthetics: deferred and isolated
-
-Once behaviour gates pass, add a balcony/rooftop, sky/sun lighting, clouds and contextual buildings. MuJoCo supports cameras, lights, textures, skyboxes and mesh visuals; an entire city is optional and may be imported or rendered with an external visual workflow. Background geometry should normally be noncolliding unless intentionally part of the physical environment. Keep simulation/sensor and presentation camera roles explicit; scenery changes that affect sensor lighting require perception regression checks.
-
-Begin with primitives or freely licensed assets if sufficient. Ask the user for models only if a specific visual requirement cannot be met efficiently. Check licence, units, orientation, mesh complexity and file format support before importing; convert unsupported scene formats through a documented asset pipeline. No asset hunt is a prerequisite for mechanics or cameras. A polished scene must not hide missed dirt or substitute for physical validation.
-
-## 12. Planned files and work order
-
-Existing model/controller/planning/safety modules will be extended only after this planning checkpoint. Add modules with clear boundaries, provisionally:
-
-- `src/debris.py`: physical deposition events, surface field and visual representation.
-- `src/vision.py`: RGB processing, calibration/projection, confidence and camera fusion.
-- `src/coverage_planner.py`: full-glass interior/boundary/corner paths and hole checks.
-- `src/mission_manager.py`: idle/trigger/task/retry/verify/home lifecycle.
-- `src/contact_cleaning.py`: local contact/dose updates and independent physical coverage.
-- `src/localisation.py`: explicit image/encoder/IMU navigation estimate.
-- `src/evaluation.py`: isolated truth scoring, manifests and completion checks.
-- `tests/`: geometry/reach, debris persistence, image detections, triggers, contact cleaning, complete missions, edge/corner cases and faults.
-
-Keep existing historical telemetry and models reproducible through commits; do not relabel old outcomes as results of the new architecture. Push reviewable milestones after (A) mechanics/reach, (B) visible deposition/contact removal, (C–D) camera detection and idle trigger, (E) integrated routing/verification/home, and (F) held-out evidence. Update CONTINUE_HERE at each milestone.
-
-The first next action after this plan is approved for execution is a mechanical reach/stability prototype and camera/debris rendering feasibility check—not background modelling or a final statistical batch. No secret/API key or neural-model service is currently needed. Major geometry choices remain conditional on the first physical gate. If a required gate fails, report its measured failure and revise the design rather than weakening the completion definition.
+Extend the existing model/planning/controller/safety modules and add separate debris, vision, mission-management, local-contact and isolated-evaluation modules as needed. Preserve historical evidence and push reviewable milestones. No telescoping mechanism, API credential or neural service is a prerequisite. Only the plan changes in this checkpoint; implementation starts in a subsequent work step.

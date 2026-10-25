@@ -65,3 +65,7 @@ Recording finished: `docs/validation/demo_v2/mujoco_demo.mp4` shows the full fre
 ## New user requirement — plan before implementation
 
 Read `VISION_FULL_CLEANING_PLAN.md` before further engineering. The user now requires full-panel edge/corner cleaning, visible falling dirt, real RGB detection from robot/edge cameras, thresholded departure from home, targeted revisits plus complete coverage, visual verification and return home. Aesthetics are deferred. The latest checkpoint adds the plan only; vision, debris rendering, edge-tool redesign and event-driven control are NOT implemented. The old ~61% route is insufficient. Do not begin implementation as part of the planning request.
+
+## Latest scope revision — fixed brush, ~90% target, disclosed containment
+
+The user cancelled telescoping/deploying edge brushes and accepts roughly 90% whole-panel coverage for simplicity. Permanently extended/fixed brush geometry is acceptable. The revised `VISION_FULL_CLEANING_PLAN.md` supersedes the prior 100%-coverage and articulated-tool plan. It prioritises footprint/support-aware routing, a documented physical collision guard (allowed to be invisible in presentation), traction tests and a fixed brush. Do not use hidden pose clamps or present guard-assisted containment as demonstrated wheel grip. Larger crumbs require actual physical pushing/removal. Camera-triggered home/clean/verify/return behaviour remains required; unreachable dirt is reported rather than silently ignored. This is a plan-only revision; current demonstrated coverage remains ~61–62%.
