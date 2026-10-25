@@ -35,7 +35,7 @@ class PhysicalSolid:
     def update(self,m,d,o,R):
         geom=m.geom('combined_solid_geom').id;body=m.body('combined_solid').id;joint=m.joint('combined_solid_joint');q=joint.qposadr[0];v=joint.dofadr[0]
         if not self.spawned and d.time>=3:
-            d.qpos[q:q+3]=o+R@np.array([-.8,-1.78,.12]);d.qpos[q+3:q+7]=[np.cos(.349066/2),np.sin(.349066/2),0,0];d.qvel[v:v+6]=0
+            d.qpos[q:q+3]=o+R@np.array([-.8,-1.78,.12]);quat=np.empty(4);mujoco.mju_mat2Quat(quat,R.ravel());d.qpos[q+3:q+7]=quat;d.qvel[v:v+6]=0
             m.body_gravcomp[body]=0;m.geom_rgba[geom,3]=1;self.spawned=True
             self.events.append({'event':'SOLID_RELEASED','time_s':float(d.time)});mujoco.mj_forward(m,d)
         if not self.spawned:return

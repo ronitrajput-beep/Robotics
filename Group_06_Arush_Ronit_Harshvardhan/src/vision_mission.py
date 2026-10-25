@@ -2,7 +2,7 @@
 import os
 os.environ.setdefault('MUJOCO_GL','egl')
 from pathlib import Path
-import argparse,json,hashlib,csv,gzip
+import argparse,json,hashlib,csv,gzip,lzma
 import mujoco
 import numpy as np
 from PIL import Image
@@ -20,25 +20,26 @@ class Trigger:
             self.active=True;self.events.append({'event':'VISION_TRIGGER','time_s':time,'targets':points})
 
 
-def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None,video_factory=None):
+def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None,video_factory=None,seed=0,variant='proposed',debris_seed=603,save_images=True,telemetry_sink=None,compact_logs=False):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False)
     combined=scenario=='combined'
     if combined and guarded_model_path is None:guarded_model_path=ROOT/'models/collection_cleaning_crawler.xml'
     from collection_system import CollectionSystem,PhysicalSolid
     collection=CollectionSystem() if combined else None;solid=PhysicalSolid() if combined else None
-    field=SurfaceDebris();fall=FallingDebris(scenario);trigger=Trigger()
+    field=SurfaceDebris();fall=FallingDebris(scenario,rng_seed=debris_seed);trigger=Trigger()
     from mission_video import MissionVideo
     if video_factory is not None:video=video_factory(directory)
     elif cinematic:
         from cinematic_video import CinematicVideo
         video=CinematicVideo(directory)
     else:video=MissionVideo(directory) if record_video else None
-    renderer=None;next_camera=0.;observations=[];last_targets=[]
+    renderer=None;next_camera=0.;observations=[];last_targets=[];last_coverage=None
     stream=(directory/'observations.jsonl').open('w')
     hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'src/panel_vision.py',ROOT/'src/surface_debris.py',ROOT/'src/debris_events.py',ROOT/'src/mission_video.py',ROOT/'src/cinematic_video.py',ROOT/'src/cinematic_scene.py',ROOT/'src/collection_system.py',ROOT/'src/build_collection_model.py']}
 
     def sample(m,d,state,coverage):
-        nonlocal renderer,next_camera,last_targets
+        nonlocal renderer,next_camera,last_targets,last_coverage
+        last_coverage=coverage
         rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3);origin=d.xpos[rack]
         fall.update(m,d,origin,R,field)
         if solid is not None:solid.update(m,d,origin,R)
@@ -66,7 +67,7 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
                 for detection in detections:
                     point=np.array([detection['panel_x_m'],detection['panel_y_m']])
                     if detection['confidence']>=.8 and all(np.linalg.norm(point-np.array(t))>.12 for t in targets):targets.append(point.tolist())
-                if (not trigger.active and d.time<5) or int(d.time)%30==0:
+                if save_images and ((not trigger.active and d.time<5) or int(d.time)%30==0):
                     Image.fromarray(rgb).save(directory/f'{name}_{d.time:.1f}.png')
             if video is not None and hasattr(video,'update_sensor_views'):video.update_sensor_views(float(d.time),sensor_views)
             trigger.observe(float(d.time),targets)
@@ -77,8 +78,8 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
             video.collection_status={'bin_g':collection.bin_kg*1000,'station_g':collection.station_kg*1000,'charge_J':collection.charge_J,'solid':solid.summary(),'state':state}
         if video is not None:video.capture(m,d,field,origin,R,state,coverage.summary(),len(last_targets))
     try:
-        result=mission(seed=0,duration=duration,guarded=True,output=directory/'telemetry.csv.gz',on_sample=sample,should_move=lambda:trigger.active,revisit_targets=lambda:last_targets,edge_service_targets=lambda:last_targets,
-                       route_profile="external_dock" if combined else "inward_turns",guarded_model_path=guarded_model_path,dock_service_s=8. if combined else 0.)
+        result=mission(seed=seed,variant=variant,duration=duration,guarded=True,output=None if telemetry_sink is not None else directory/'telemetry.csv.gz',on_sample=sample,should_move=lambda:trigger.active,revisit_targets=lambda:last_targets,edge_service_targets=lambda:last_targets,
+                       route_profile="external_dock" if combined else "inward_turns",guarded_model_path=guarded_model_path,dock_service_s=8. if combined else 0.,telemetry_sink=telemetry_sink)
     finally:
         stream.close()
         if renderer is not None:renderer.close()
@@ -95,11 +96,17 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
         report['collection']=collection.summary(field);report['physical_solid']=solid.summary()
         report['limitations']=[x for x in report['limitations'] if 'larger crumbs not yet' not in x]+['Dust capture, service power and mass flow are reduced-order assumptions; no resolved airflow or battery model','Solid starts in a declared lower-strip handling corridor with a fixed guide; arbitrary solid routing and scratch safety unvalidated']
         for name,headers,rows in [('collection.csv',['time_s','surface_kg','bin_kg','station_kg','deposited_kg','balance_error_kg','blower_J','charge_J'],collection.rows),('solid.csv',['time_s','x_m','y_m','z_m','brush_force_N','off_glass','caught','retained'],solid.rows)]:
-            with gzip.open(directory/(name+'.gz'),'wt',newline='') as f:
-                writer=csv.writer(f);writer.writerow(headers);writer.writerows(rows)
+            opener=lzma.open if compact_logs else gzip.open
+            options={'preset':1} if compact_logs else {}
+            with opener(directory/(name+('.xz' if compact_logs else '.gz')),'wt',newline='',**options) as f:
+                writer=csv.writer(f);writer.writerow(headers)
+                if compact_logs:
+                    writer.writerows([[format(value,'.9g') if isinstance(value,(float,np.floating)) else value for value in row] for row in rows])
+                else:writer.writerows(rows)
+    if telemetry_sink is not None and last_coverage is not None:last_coverage.save(directory/'coverage.npz')
     if video is not None:video.close(report)
     (directory/'result.json').write_text(json.dumps(report,indent=2)+'\n')
-    (directory/'camera_observations.json').write_text(json.dumps(observations,indent=2)+'\n')
+    if not compact_logs:(directory/'camera_observations.json').write_text(json.dumps(observations,indent=2)+'\n')
     print(json.dumps(report,indent=2));return report
 
 

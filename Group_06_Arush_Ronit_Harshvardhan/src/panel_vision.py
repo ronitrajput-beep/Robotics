@@ -31,11 +31,17 @@ def detect_dirt(rgb,calibration,min_pixels=8):
     mask=(r>45)&(r<235)&(g>20)&(g<190)&(r>1.20*g)&(g>1.12*b)&(b<155)
     labels,count=ndimage.label(mask)
     detections=[]
-    for number in range(1,count+1):
-        yy,xx=np.nonzero(labels==number)
+    # Connected-component bounds avoid rescanning the entire frame per speck.
+    for number,bounds in enumerate(ndimage.find_objects(labels),1):
+        if bounds is None:continue
+        yy,xx=np.nonzero(labels[bounds]==number)
         if len(xx)<min_pixels:continue
-        point=calibration.project_pixel(float(xx.mean()),float(yy.mean()),rgb.shape[1],rgb.shape[0])
+        y0,x0=bounds[0].start,bounds[1].start
+        # Integer sums preserve the original full-frame mean exactly.
+        u=float(int(xx.sum())+x0*len(xx))/len(xx)
+        v=float(int(yy.sum())+y0*len(yy))/len(yy)
+        point=calibration.project_pixel(u,v,rgb.shape[1],rgb.shape[0])
         if point is not None:
             detections.append({'panel_x_m':float(point[0]),'panel_y_m':float(point[1]),
-                               'bbox_xyxy':[int(xx.min()),int(yy.min()),int(xx.max()),int(yy.max())],'pixels':len(xx),'confidence':min(1.,len(xx)/12.)})
+                               'bbox_xyxy':[x0,y0,bounds[1].stop-1,bounds[0].stop-1],'pixels':len(xx),'confidence':min(1.,len(xx)/12.)})
     return detections,mask

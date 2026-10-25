@@ -1,0 +1,28 @@
+{
+  "input_status": "Commercial inputs are scenario assumptions, not supplier quotes or measured site costs. Simulation-derived inputs are loaded separately from final validation.",
+  "sections_per_day": 21,
+  "section_area_m2": 24,
+  "operating_days_per_month": 30,
+  "operating_hours_per_day": 8,
+  "manual_person_hours_per_month": 120,
+  "supervision_fraction": 0.20,
+  "maintenance_person_hours_per_month": 10,
+  "capital_to_one_year_manual_cost_ratio": 0.65,
+  "life_years": 5,
+  "battery_and_spares_annual_cost_ratio": 0.05,
+  "consumables_annual_cost_ratio": 0.03,
+  "electricity_cost_per_kWh_to_one_year_manual_cost_ratio": 0.0003,
+  "electromechanical_efficiency": 0.60,
+  "robot_electronics_W": 5,
+  "external_camera_count": 2,
+  "external_camera_W_each": 3,
+  "between_section_transfer_s": 180,
+  "failed_attempt_recovery_s": 180,
+  "notes": [
+    "A section is one 6 x 4 m modeled bay, not one raster lane. The 504 m2/day workload is assumed and is not inferred from an electrical 100 kWp model.",
+    "Manual labour price cancels under normalization; no real currency amount or verified commercial saving is claimed.",
+    "Repeated independent attempts after failure, human recovery and between-bay transfer are business assumptions; the simulator does not demonstrate autonomous between-bay movement.",
+    "M/M/1 assumes Poisson arrivals and exponential service. Measured service capacity calibrates the mean, not these distribution assumptions.",
+    "No electrical PV-yield or power-restoration percentage is inferred from dust mass or coverage. Discounting, financing, tax and coating damage are outside this simple-payback scenario."
+  ]
+}

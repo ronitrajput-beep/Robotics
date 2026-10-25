@@ -21,13 +21,22 @@ class CoverageMap:
             return
         lateral = axle / norm
         forward = np.array([lateral[1], -lateral[0]])
-        dx, dy = self.X - center[0], self.Y - center[1]
+        # Conservative bounding box plus one cell; all qualifying cells retain
+        # the exact original dot-product test and update order.
+        extent=np.abs(forward)*radius+np.abs(lateral)*(halfwidth*norm)
+        x0=max(0,int(np.searchsorted(self.x,center[0]-extent[0]))-1)
+        x1=min(len(self.x),int(np.searchsorted(self.x,center[0]+extent[0],side='right'))+1)
+        y0=max(0,int(np.searchsorted(self.y,center[1]-extent[1]))-1)
+        y1=min(len(self.y),int(np.searchsorted(self.y,center[1]+extent[1],side='right'))+1)
+        if x0>=x1 or y0>=y1:return
+        region=np.s_[y0:y1,x0:x1]
+        dx, dy = self.X[region] - center[0], self.Y[region] - center[1]
         mask = ((abs(dx * forward[0] + dy * forward[1]) < radius) &
                 (abs(dx * lateral[0] + dy * lateral[1]) < halfwidth * norm))
-        self.geometric |= mask
+        self.geometric[region] |= mask
         if sweeping and force > .1 and abs(speed) > 1:
-            self.qualified |= mask
-            self.soil[mask] *= np.exp(-2 * dt)
+            self.qualified[region] |= mask
+            soil=self.soil[region];soil[mask] *= np.exp(-2 * dt)
 
     def summary(self):
         area = self.dx * self.dy

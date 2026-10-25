@@ -4,12 +4,12 @@ import mujoco
 
 
 class FallingDebris:
-    def __init__(self,scenario='dirty'):
+    def __init__(self,scenario='dirty',rng_seed=603):
         self.scenario=scenario;self.spawned=False;self.deposited=set();self.events=[]
         self.positions=[(-.8,.65),(-.4,.65),(0,.65),(.4,-.45),(.8,-.45),(0,-.45)]
         if scenario in ('scattered','combined'):self.positions=[(-1.25,1.18),(-.35,.95),(.85,1.20),(-.90,.05),(.35,-.10),(1.2,-.70),(-.50,-1.00),(.70,-1.55)]
         if scenario=='combined':self.positions[0]=(-2.72,1.78)  # visible test of the now-unoccupied upper-left glass
-        self.rng=np.random.default_rng(603)
+        self.rng=np.random.default_rng(rng_seed)
         if scenario=='edges':self.positions=[(-2.85,.65),(2.85,.65),(0,2.0),(0,-1.55),(-2.7,2.0),(2.7,-1.55)]
         if scenario=='clean':self.positions=[]
         if scenario=='subthreshold':self.positions=self.positions[:1]
