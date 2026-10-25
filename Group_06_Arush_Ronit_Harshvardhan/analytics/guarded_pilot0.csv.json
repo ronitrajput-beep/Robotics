@@ -1,0 +1,63 @@
+{
+  "model_sha256": "76fc43f9e685949c25ee8d197df65ffea63e3b3e59ddc777bb18cddaef7b5a97",
+  "controller_sha256": "01160bdbef581318381711e1e7282188fcc9643a07401201dc70c6ec609eeb8c",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "guarded_geometry_sha256": "b25f7b8b264ce04167d62e239edf69949149681eee671f2a60a30f0e7f1020c4",
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    0.0627349705900068,
+    0.12030602559953474,
+    0.04786073713666322,
+    0.12460425974067921
+  ],
+  "guard_normal_impulse_Ns": 1337.431280080957,
+  "peak_guard_normal_force_N": 572.8076459296752,
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.9029166666666667,
+    "qualified_contact_fraction": 0.9029166666666667,
+    "half_soil_proxy_removed_fraction": 0.7372916666666667,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.9780202403542062,
+    "soil_removed_proxy_fraction": 0.5931076811525271
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 343.74800000091324,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 343.75000000091325,
+      "event": "BRAKING",
+      "reason": "DOCK"
+    },
+    {
+      "time_s": 344.2640000009157,
+      "event": "DOCKED"
+    }
+  ],
+  "stop_reason": "DOCK",
+  "terminal_angular_speed_rad_s": 0.00031204484717573666,
+  "terminal_brush_speed_rad_s": 0.19200471697035865,
+  "dock_error_m": 0.10571462593837991,
+  "terminal_speed_mps": 0.011569834849973516,
+  "variant": "proposed",
+  "planned_duration_s": 500.0,
+  "seed": 0,
+  "status": "DOCKED",
+  "time_s": 344.2640000009157,
+  "waypoints_reached": 18,
+  "waypoints_total": 18,
+  "visited_contact_fraction": 0.8563541666666666,
+  "soil_removed_proxy_fraction": 0.46537352007727006,
+  "path_tracking_rmse_m": 0.05316216781320234,
+  "effort_Nm2_s": 1081.0259304255605,
+  "positive_mechanical_work_J": 3323.6837686896606,
+  "mujoco": "3.17.0"
+}

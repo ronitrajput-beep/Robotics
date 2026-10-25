@@ -1,0 +1,7 @@
+# Guarded development prototype
+
+First physical pilot: fixed 0.8 m brush, explicit transparent collision guards and a wider nine-row route. Seed 0 completed all 18 waypoints and settled DOCKED in 344.264 s. New-grid qualifying projected footprint: 90.292% of the entire 24 m². This is a contact-gated footprint proxy, not demonstrated removal of visible dirt. Guard normal impulse was 1337.43 N s, peak normal force 572.81 N: the robot actively relies on containment. Minimum oriented chassis-box distances to left/right/lower/upper glass boundaries were 0.0627/0.1203/0.0479/0.1246 m. It approaches the edges more closely but has not touched all four with its body.
+
+Source hashes and raw 500 Hz telemetry are in analytics/guarded_pilot0.*. Base model and standard historical routes remain separate. Raised trim is visual in the guarded model; containment is supplied by taller transparent collision walls, which collide with chassis/rollers. Brush does not collide with the containment wall, modelling a flexible overhanging cleaning tool; this is an explicit approximation. No robot state is clamped or reset during motion.
+
+Initial RGB prototype locates rendered brown dirt from camera images and calibrated plane projection. Initial tests also exposed false detections on the orange chassis and view-dependent colour thresholds. Those artifacts are retained; perception is not yet ready to trigger autonomous cleaning. The first checkpoint does not implement a full event-driven mission or physical crumb removal.

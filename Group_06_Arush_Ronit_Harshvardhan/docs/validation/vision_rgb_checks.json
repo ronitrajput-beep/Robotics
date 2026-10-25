@@ -1,0 +1,53 @@
+{
+  "edge_left_False": [
+    {
+      "panel_x_m": -0.15737137687599212,
+      "panel_y_m": -0.8935523446978657,
+      "pixels": 8,
+      "confidence": 0.6666666666666666
+    }
+  ],
+  "edge_right_False": [],
+  "robot_camera_False": [],
+  "edge_left_True": [
+    {
+      "panel_x_m": 0.4945846803352931,
+      "panel_y_m": 0.3069781663669133,
+      "pixels": 39,
+      "confidence": 1.0
+    },
+    {
+      "panel_x_m": -0.0063546465328689905,
+      "panel_y_m": 0.007044512202595102,
+      "pixels": 33,
+      "confidence": 1.0
+    },
+    {
+      "panel_x_m": -0.15737137687599212,
+      "panel_y_m": -0.8935523446978657,
+      "pixels": 8,
+      "confidence": 0.6666666666666666
+    }
+  ],
+  "edge_right_True": [
+    {
+      "panel_x_m": 0.4663612933622998,
+      "panel_y_m": 0.305115434774881,
+      "pixels": 15,
+      "confidence": 1.0
+    },
+    {
+      "panel_x_m": -0.00817465988498256,
+      "panel_y_m": 0.007484794215256658,
+      "pixels": 33,
+      "confidence": 1.0
+    },
+    {
+      "panel_x_m": -0.7090341058306255,
+      "panel_y_m": -0.393438323788662,
+      "pixels": 38,
+      "confidence": 1.0
+    }
+  ],
+  "robot_camera_True": []
+}

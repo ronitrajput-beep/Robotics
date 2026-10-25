@@ -6,17 +6,18 @@ import numpy as np
 from planning import raster, segment_reference, clearance
 from safety import StopSupervisor
 from cleaning_coverage import CoverageMap
+from guarded_geometry import edge_raster, body_edge_gaps
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None):
+def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False):
     if fault not in (None,"pose_dropout","brush_jam","traction_loss"): raise ValueError("Unknown fault")
     if not np.isfinite(duration) or duration<=0: raise ValueError("Duration must be positive")
     if variant not in ("baseline", "proposed"): raise ValueError("Unknown controller")
-    planned_route=raster(layout)
+    planned_route=edge_raster() if guarded else raster(layout)
     rng = np.random.default_rng(seed)
-    model_path = ROOT/'models/solar_cleaning_crawler.xml'
-    hashes={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'model_sha256':model_path,'controller_sha256':Path(__file__),'planner_sha256':ROOT/'src/planning.py','safety_sha256':ROOT/'src/safety.py','coverage_sha256':ROOT/'src/cleaning_coverage.py'}.items()}
+    model_path = ROOT/('models/guarded_cleaning_crawler.xml' if guarded else 'models/solar_cleaning_crawler.xml')
+    hashes={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'model_sha256':model_path,'controller_sha256':Path(__file__),'planner_sha256':ROOT/'src/planning.py','safety_sha256':ROOT/'src/safety.py','coverage_sha256':ROOT/'src/cleaning_coverage.py','guarded_geometry_sha256':ROOT/'src/guarded_geometry.py'}.items()}
     m = mujoco.MjModel.from_xml_path(str(model_path)); d = mujoco.MjData(m)
     mujoco.mj_forward(m,d)
     b=m.body('crawler_chassis').id; rack=m.body('pv_array_rack').id
@@ -42,6 +43,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         from mujoco import viewer as mj_viewer
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]
+    minimum_gaps=np.full(4,np.inf); guard_impulse=0.; peak_guard_force=0.
     supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None; docking=False
     brush_dof=m.joint('brush_hinge').dofadr[0]
     try:
@@ -52,7 +54,8 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 if fault=='brush_jam': m.dof_damping[brush_dof]=20.
                 if fault=='traction_loss': m.geom_friction[:,0]=.05
             speed=float(np.linalg.norm((R.T@d.qvel[:3])[:2]))
-            stopping=supervisor.update(d.time,speed,clearance(p),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
+            gaps=body_edge_gaps(p,R.T@d.xmat[b].reshape(3,3));minimum_gaps=np.minimum(minimum_gaps,gaps)
+            stopping=supervisor.update(d.time,speed,(1. if guarded else clearance(p)),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
             if stopping and not any(e['event']=='BRAKING' for e in events):
                 events.append({'time_s':float(d.time),'event':'BRAKING','reason':supervisor.reason});integral[:]=0
             if stopping in ('STOPPED','ABORT_UNSTOPPED'):
@@ -69,7 +72,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if direction<0: angle+=np.pi
             error=np.arctan2(np.sin(angle-yaw),np.cos(angle-yaw))
             state='SETTLE' if d.time<1 else ('ALIGN' if abs(error)>.4 else 'SWEEP')
-            if clearance(p)<0 or p[2]<.04:
+            if (not guarded and clearance(p)<0) or p[2]<.04 or abs(p[0])>3.1 or abs(p[1])>2.1:
                 status='ABORT_EDGE';break
             if not stopping and not docking and d.time>=1 and distance<.10:
                 index+=1
@@ -90,11 +93,16 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if not np.isfinite(d.qpos).all() or any(w.number for w in d.warning):
                 status='ABORT_PHYSICS';break
             brush=m.geom('brush_cylinder').id; glass=m.geom('pv_glass_surface').id
-            normal_force=0.
+            normal_force=0.; guard_force=0.
             for contact_index,c in enumerate(d.contact):
+                names=[m.geom(int(g)).name for g in (c.geom1,c.geom2)]
+                if any(name.startswith('guard_') for name in names):
+                    wrench=np.zeros(6);mujoco.mj_contactForce(m,d,contact_index,wrench)
+                    guard_force+=max(0.,wrench[0])
                 if {int(c.geom1),int(c.geom2)}=={brush,glass}:
                     wrench=np.zeros(6);mujoco.mj_contactForce(m,d,contact_index,wrench)
                     normal_force+=max(0.,wrench[0])
+            guard_impulse+=guard_force*dt;peak_guard_force=max(peak_guard_force,guard_force)
             contact=normal_force>.1
             brush_speed=abs(d.qvel[m.joint('brush_hinge').dofadr[0]])
             if state=='SWEEP' and brush_speed<1:
@@ -117,7 +125,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if display and step%16==0:
                 if not display.is_running():status='USER_STOP';break
                 display.sync()
-        result={**hashes,'layout':layout,'coverage_metrics_v2':coverage_map.summary(),'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
+        result={**hashes,'guarded':guarded,'minimum_chassis_edge_gaps_m':minimum_gaps.tolist(),'guard_normal_impulse_Ns':guard_impulse,'peak_guard_normal_force_N':peak_guard_force,'layout':('edge_raster' if guarded else layout),'coverage_metrics_v2':coverage_map.summary(),'fault':fault,'fault_time_s':fault_time if fault else None,'events':events,'stop_reason':supervisor.reason,'terminal_angular_speed_rad_s':float(np.linalg.norm(d.qvel[3:6])),'terminal_brush_speed_rad_s':float(abs(d.qvel[brush_dof])),'dock_error_m':float(np.linalg.norm(route[-1]-(R.T@(d.xpos[b]-origin))[:2])),'terminal_speed_mps':float(np.linalg.norm((R.T@d.qvel[:3])[:2])),'variant':variant,'planned_duration_s':duration,'seed':seed,'status':status,'time_s':float(d.time),'waypoints_reached':index+int(docking),'waypoints_total':len(route),'visited_contact_fraction':float(visited.mean()),'soil_removed_proxy_fraction':float(1-soil.mean()),'path_tracking_rmse_m':float(np.sqrt(np.mean(np.square(errors)))),'effort_Nm2_s':effort,'positive_mechanical_work_J':work,'mujoco':mujoco.__version__}
         if output:
             coverage_map.save(output.with_suffix('.coverage.npz'))
             output.with_suffix('.json').write_text(json.dumps(result,indent=2))
@@ -127,5 +135,5 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         if display:display.close()
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('--layout',choices=['standard','expanded','expanded_safe_return'],default='standard');a.add_argument('--seed',type=int,default=0);a.add_argument('--duration',type=float,default=360);a.add_argument('--output');a.add_argument('--viewer',action='store_true');a.add_argument('--fault',choices=['pose_dropout','brush_jam','traction_loss']);a.add_argument('--fault-time',type=float,default=3.);args=a.parse_args()
-    mission(args.seed,args.output,args.duration,args.viewer,fault=args.fault,fault_time=args.fault_time,layout=args.layout)
+    a=argparse.ArgumentParser();a.add_argument('--guarded',action='store_true');a.add_argument('--layout',choices=['standard','expanded','expanded_safe_return'],default='standard');a.add_argument('--seed',type=int,default=0);a.add_argument('--duration',type=float,default=360);a.add_argument('--output');a.add_argument('--viewer',action='store_true');a.add_argument('--fault',choices=['pose_dropout','brush_jam','traction_loss']);a.add_argument('--fault-time',type=float,default=3.);args=a.parse_args()
+    mission(args.seed,args.output,args.duration,args.viewer,fault=args.fault,fault_time=args.fault_time,layout=args.layout,guarded=args.guarded)
