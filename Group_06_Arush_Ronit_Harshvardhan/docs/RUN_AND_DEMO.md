@@ -75,3 +75,16 @@ python src/vision_mission.py --scenario subthreshold --duration 12 --output-dir 
 Both should remain in HOME_MONITOR; the subthreshold scene deposits one visible patch and leaves it uncleared. Do not interpret that deliberately idle scene as a cleaning failure. Run `python src/validate_camera_pipeline.py --output-dir analytics/MY_RGB_CHECK` for rendered clean/dirty camera checks. Run `python src/validate_crumb.py --output-dir analytics/MY_CRUMB_TEST` for the separate genuine rigid-crumb ejection/catch-tray test. None of these scripts overwrites existing output directories.
 
 The old controller `--viewer` shows its physics model without the new sensor-rendered dirt overlays. The new event-driven prototype currently supports headless RGB rendering/MP4; a fully interactive integrated viewer remains unfinished.
+
+## Rooftop cinematic and larger solid-object recording
+
+Use fresh output directories. On a headless Linux machine set EGL before Python imports MuJoCo:
+
+```
+MUJOCO_GL=egl XDG_CACHE_HOME=/workspace/.cache python src/vision_mission.py --scenario dirty --cinematic --duration 650 --output-dir analytics/NEW_ROOFTOP_RUN
+python src/verify_vision_run.py analytics/NEW_ROOFTOP_RUN
+MUJOCO_GL=egl XDG_CACHE_HOME=/workspace/.cache python src/record_solid_object.py --output-dir analytics/NEW_SOLID_RUN
+MUJOCO_GL=egl XDG_CACHE_HOME=/workspace/.cache python -m unittest discover -s tests
+```
+
+Latest videos: `docs/validation/cinematic_demo_v2/cinematic_cleaning.mp4` (2:24.68) and `docs/validation/solid_object_demo_v1/solid_object_demo.mp4` (0:31). Normal-speed inspections and accelerated traversals are labelled. The rooftop/city/material details are presentation-only; the tested sensor appearance is preserved. See POLISH_AND_EDGE_TESTS.md before interpreting perimeter cleaning or the solid-object force peaks.

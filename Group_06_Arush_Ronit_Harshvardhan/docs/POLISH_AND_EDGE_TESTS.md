@@ -24,7 +24,7 @@ Measured events: first brush contact 3.132 s; fully off glass 17.608 s; catch-tr
 
 Render-only framebuffer/shadow settings and model extent are restored before sensor rendering/physics. Tests compare actual sensor RGB before and after a studio render and assert identical model colours, camera/render settings, qpos and qvel. The sensor pipeline retains its validated controlled scene. This proves isolation, not perception robustness under the rooftop's new appearance.
 
-Cinematic recording slows deposition and brush inspections to labelled 1×, using labelled 8× for long traversals. No robot poses are manufactured. Scene complexity was reduced after profiling; the interrupted first cinematic draft is labelled incomplete with source snapshots. The current cinematic_demo_v2 run is being completed and must be checked before publication claims.
+Cinematic recording slows deposition and brush inspections to labelled 1×, using labelled 8× for long traversals. No robot poses are manufactured. Scene complexity was reduced after profiling; the interrupted first cinematic draft is labelled incomplete with source snapshots. The completed cinematic_demo_v2 run reports CLEAN_AND_HOME at 486.722 simulated seconds. Independent checks confirm all six central patches below the declared residual threshold, 92.083% contact footprint, four chassis boundary contacts, one revisit and settled home return. Its 3617-frame, 1280×720 H.264 clip is 144.68 s and fully decodes. It remains a controlled development result, not final robustness evidence.
 
 ## Commands
 

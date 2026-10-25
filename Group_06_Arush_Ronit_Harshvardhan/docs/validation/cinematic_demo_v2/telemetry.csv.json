@@ -1,0 +1,78 @@
+{
+  "model_sha256": "8521074d2bab83e36ff85c7f805eca9a319553605f0ffb94affb47e62e1f9e87",
+  "controller_sha256": "c33430c8a9d467029fecc9357dddc623499bd945802727150fbc1c49bf9dcb14",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "guarded_geometry_sha256": "5c65152d50bdccbf382b0893b195c8efe65752ffa031ffde7632a014a282085d",
+  "vision_revisit_cycles": 1,
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    -0.00010484620670991873,
+    -8.690220180962438e-05,
+    -0.00019522916814318503,
+    -3.539019137938082e-05
+  ],
+  "guard_normal_impulse_Ns": 4562.815057528737,
+  "peak_guard_normal_force_N": 573.8937596559124,
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.9210416666666666,
+    "qualified_contact_fraction": 0.9208333333333333,
+    "half_soil_proxy_removed_fraction": 0.7815625,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.9919354838709677,
+    "soil_removed_proxy_fraction": 0.640052207233271
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 445.34200000139833,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 445.34400000139834,
+      "event": "BRAKING",
+      "reason": "DOCK"
+    },
+    {
+      "time_s": 445.8620000014008,
+      "event": "VISION_REVISIT",
+      "targets": [
+        [
+          -0.8045859354893761,
+          0.430595808383598
+        ]
+      ]
+    },
+    {
+      "time_s": 486.20400000159344,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 486.7220000015959,
+      "event": "DOCKED"
+    }
+  ],
+  "stop_reason": "DOCK",
+  "terminal_angular_speed_rad_s": 0.00018904333906479307,
+  "terminal_brush_speed_rad_s": 0.25982847171275636,
+  "dock_error_m": 0.08846543063672403,
+  "terminal_speed_mps": 0.015647656199391843,
+  "variant": "proposed",
+  "planned_duration_s": 650.0,
+  "seed": 0,
+  "status": "DOCKED",
+  "time_s": 486.7220000015959,
+  "waypoints_reached": 3,
+  "waypoints_total": 3,
+  "visited_contact_fraction": 0.8830208333333334,
+  "soil_removed_proxy_fraction": 0.5160497569493736,
+  "path_tracking_rmse_m": 0.08679413605477977,
+  "effort_Nm2_s": 1603.8726109679478,
+  "positive_mechanical_work_J": 4884.162948767172,
+  "mujoco": "3.17.0"
+}

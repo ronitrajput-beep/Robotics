@@ -9,7 +9,7 @@
 - Clean and subthreshold 12 s scenarios remain home; the one subthreshold patch persists. No endless cleaning loop is commanded.
 - Actual RGB camera checks detect three controlled patches with approximately 1 cm position error and no clean-scene false detections in that test.
 - A separate physical larger-crumb pilot moves a persistent rigid body off glass into a catch tray. This is not yet integrated arbitrary central-crumb collection.
-- 29 automated tests pass, plus recorded-run independent checks and a complete ffmpeg video decode. Full telemetry and evidence are retained in docs/validation/vision_demo_v1.
+- 32 automated tests pass, plus recorded-run independent checks and a complete ffmpeg video decode. Original telemetry is retained in docs/validation/vision_demo_v1; the newer polished video and independent checks are in docs/validation/cinematic_demo_v2.
 - The original 60-run tracking benchmark remains a narrow 30-second comparison under its older configuration; it is not evidence for the new full-mission architecture.
 
 ## Remaining engineering and validation
@@ -21,7 +21,7 @@
 5. Freeze the new full-mission protocol and run held-out baseline/proposed conditions with sufficient runs, retaining failures. Development seeds and the old short study do not substitute for this evaluation.
 6. Harden output/exception handling and test remaining sensor/numeric faults. Earlier invalid pilots and the corrected final-report serialization failure are explicitly retained and labelled.
 7. Verify primary references, standards applicability and economic inputs. Cost/queue assumptions are not measured commercial benefits; a partial-coverage route is not a whole-panel cleaning service time.
-8. Background scenery and final presentation polish remain deferred.
+8. A procedural rooftop/deck/skyline and cinematic close-ups are now recorded at 720p. Higher-fidelity assets and final team presentation remain separate work.
 
 ## Submission and human actions
 
@@ -33,3 +33,5 @@
 - Nothing has been submitted to faculty, Teams or LinkedIn by this implementation.
 
 Recorded project deadline: 26 October 2026, 23:59 IST; showcase 31 October. Check official course instructions for changes. See CONTINUE_HERE.md, GUARDED_IMPLEMENTATION.md and RUN_AND_DEMO.md for current source/evidence locations. Historical synthetic starter data/images remain excluded from results.
+
+Latest explicit edge test clears four of six deposits and reports two unreachable left-strip patches as INCOMPLETE. The prior detector miss is corrected and covered by RGB regression fixtures. The new larger-solid video uses a 120 g physical block and catch tray; high contact loads remain unvalidated for glass safety. See POLISH_AND_EDGE_TESTS.md.

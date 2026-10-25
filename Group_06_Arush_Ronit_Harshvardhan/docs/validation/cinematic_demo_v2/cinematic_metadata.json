@@ -1,0 +1,12 @@
+{
+  "frames": 3617,
+  "fps": 25,
+  "duration_s": 144.68,
+  "resolution": [
+    1280,
+    720
+  ],
+  "playback": "1x during initial deposition and brush inspection shots; otherwise 8x; final 3s held outcome",
+  "closeup_frames": 2114,
+  "scene": "Procedural rooftop, deck, supports, skyline, sky and robot visual details; presentation only"
+}

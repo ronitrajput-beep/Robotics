@@ -97,3 +97,11 @@ Read POLISH_AND_EDGE_TESTS.md. Corrected bright-edge RGB detection now sees patc
 A new 31-second 720p physical solid-object clip is in docs/validation/solid_object_demo_v1/solid_object_demo.mp4: a persistent 70×70×50 mm, 120 g block is moved by real brush contact and gravity into a lower catch tray. It is a scripted interaction test, not integrated camera-selected object collection. The measured ~283.8 N peak normal load is explicitly unvalidated for glass safety.
 
 Presentation-only rooftop scenery and cinematic cameras are implemented without changing sensor RGB or physical state. 32 tests pass with MUJOCO_GL=egl set before import in the headless environment. The full cinematic_demo_v2 run is still being recorded at this checkpoint; do not claim its result before independent checks. The interrupted cinematic_demo_v1 draft is retained and labelled incomplete. No external assets or credentials were required.
+
+## Latest completed polish checkpoint
+
+`docs/validation/cinematic_demo_v2/cinematic_cleaning.mp4` is the completed 720p rooftop presentation: 144.68 s, 3617 frames, all frames decoded. Fresh physics reaches CLEAN_AND_HOME at 486.722 simulated seconds, all six central patches below the proxy threshold, 92.083% contact footprint, four actual chassis edge contacts, one camera-directed revisit and settled home return. `independent_checks.json` passes. Sensor/physics presentation-isolation tests pass; scenery does not appear in the validated sensor RGB pipeline.
+
+The larger solid clip is `docs/validation/solid_object_demo_v1/solid_object_demo.mp4` (31 s at 1×): actual brush interaction moves a persistent 120 g block off the lower glass edge into a real catch tray. Peak normal force ~283.8 N is a genuine unresolved handling-load issue. This is a controlled scripted test, not autonomous arbitrary-solid collection.
+
+The corrected edge-dirt test clears four of six deposits and honestly reports INCOMPLETE for two left-strip targets. No full-perimeter cleaning claim is supported. Read POLISH_AND_EDGE_TESTS.md for details and reproduction commands. 32 tests pass with headless EGL set before import. Old cinematic draft and failed/invalid diagnostics remain labelled and preserved.
