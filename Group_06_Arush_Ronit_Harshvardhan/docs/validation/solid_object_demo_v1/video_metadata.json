@@ -1,0 +1,10 @@
+{
+  "fps": 25,
+  "frames": 775,
+  "duration_s": 31.0,
+  "playback": "29 seconds of physical stepping at 1x, final 2s held summary",
+  "resolution": [
+    1280,
+    720
+  ]
+}

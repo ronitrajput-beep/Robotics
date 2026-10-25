@@ -1,0 +1,33 @@
+{
+  "size_m": [
+    0.07,
+    0.07,
+    0.05
+  ],
+  "mass_kg": 0.12,
+  "material_assumption": "Solid wood-like block, assumed density about 490 kg/m3; no scratch/damage model",
+  "first_brush_contact_s": 3.1319999999998767,
+  "fully_left_glass": true,
+  "contacted_catch_tray": true,
+  "peak_brush_object_force_N": 283.842807573741,
+  "final_panel_position_m": [
+    2.0298204371354513,
+    -2.4676032567716315,
+    -0.14000400238350633
+  ],
+  "events": [
+    {
+      "time_s": 3.1319999999998767,
+      "event": "BRUSH_CONTACT"
+    },
+    {
+      "time_s": 17.60800000000112,
+      "event": "FULLY_OFF_GLASS"
+    },
+    {
+      "time_s": 17.710000000001063,
+      "event": "CAUGHT_IN_TRAY"
+    }
+  ],
+  "scope": "Controlled physical object-ejection test; scripted drive, not camera-selected autonomous collection"
+}

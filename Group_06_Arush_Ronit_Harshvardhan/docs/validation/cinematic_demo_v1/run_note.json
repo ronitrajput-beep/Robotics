@@ -1,0 +1,4 @@
+{
+  "outcome": "Stopped intentionally during rendering-cost diagnosis; incomplete physics/video trace, not a completed mission",
+  "followup": "Reduced background detail and render-only shadow/multisample cost; fresh recording in cinematic_demo_v2"
+}

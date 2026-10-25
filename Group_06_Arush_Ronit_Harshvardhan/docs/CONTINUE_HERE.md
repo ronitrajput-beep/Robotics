@@ -89,3 +89,11 @@ Independent CSV/event checks passed via `src/verify_vision_run.py`; all 1749 H.2
 The prior `analytics/vision_dirty_pilot3` physically completed the same trajectory but failed saving the final orchestration report on a NumPy scalar. The corrected recorded run saved successfully and independently confirms the final dirt score. Earlier invalid/failed runs and source snapshots remain labelled; never count them as passing evidence.
 
 Next: extend sensing beyond controlled dirt colours, integrate general central-crumb collection, implement estimated localisation/uncertainty, finish interactive viewer and fault handling for the new pipeline, validate wider conditions/held-out runs, then scenery and submission work. Ground-truth navigation and the soil-removal proxy remain explicit assumptions. The new successful development clip does not complete final statistical validation, hardware safety or any human submission actions.
+
+## Visual polish and explicit edge/solid diagnostics
+
+Read POLISH_AND_EDGE_TESTS.md. Corrected bright-edge RGB detection now sees patches previously missed; the explicit edge run clears four of six and reports the two unreachable left-strip patches as INCOMPLETE. Hidden scoring also overrides false camera-clean success with VERIFICATION_MISS. Do not claim every edge is cleaned just because the body touches it.
+
+A new 31-second 720p physical solid-object clip is in docs/validation/solid_object_demo_v1/solid_object_demo.mp4: a persistent 70×70×50 mm, 120 g block is moved by real brush contact and gravity into a lower catch tray. It is a scripted interaction test, not integrated camera-selected object collection. The measured ~283.8 N peak normal load is explicitly unvalidated for glass safety.
+
+Presentation-only rooftop scenery and cinematic cameras are implemented without changing sensor RGB or physical state. 32 tests pass with MUJOCO_GL=egl set before import in the headless environment. The full cinematic_demo_v2 run is still being recorded at this checkpoint; do not claim its result before independent checks. The interrupted cinematic_demo_v1 draft is retained and labelled incomplete. No external assets or credentials were required.

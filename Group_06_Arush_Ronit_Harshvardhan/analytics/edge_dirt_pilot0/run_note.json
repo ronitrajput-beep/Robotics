@@ -1,0 +1,21 @@
+{
+  "corrected_interpretation": "VERIFICATION_MISS: camera estimated clean but independent truth retains three of six patches. Do not count this as successful edge cleaning.",
+  "uncleared": [
+    {
+      "x_m": -2.85,
+      "y_m": 0.42404613266705204,
+      "remaining": 1.0
+    },
+    {
+      "x_m": 2.85,
+      "y_m": 0.42404613266705204,
+      "remaining": 1.0
+    },
+    {
+      "x_m": -2.700026381254627,
+      "y_m": 1.1438186551654095,
+      "remaining": 1.0
+    }
+  ],
+  "followup": "RGB brightness bounds broadened; all six patches recovered when reprocessing captured sensor images. New run edge_dirt_pilot1 uses the corrected detector and reach-bounded revisit planning."
+}

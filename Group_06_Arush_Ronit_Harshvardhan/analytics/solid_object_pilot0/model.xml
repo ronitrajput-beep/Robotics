@@ -1,0 +1,102 @@
+<mujoco model="solar_cleaning_crawler">
+  <compiler angle="radian" coordinate="local" />
+  <option gravity="0 0 -9.81" timestep="0.002" solver="Newton" iterations="40" integrator="implicitfast" />
+  <default>
+    <geom condim="4" friction="1.8 0.08 0.005" solref="0.005 1.0" solimp="0.9 0.95 0.001 0.5 2" />
+    <motor ctrllimited="true" />
+  </default>
+  <worldbody>
+    <geom name="floor" type="plane" size="10 10 0.1" rgba="0.3 0.3 0.3 1" />
+    <light directional="true" pos="0 0 10" dir="0 0 -1" castshadow="false" />
+    <body name="pv_array_rack" pos="0 0 1.2" euler="0.349066 0 0">
+      <geom name="pv_glass_surface" type="box" size="3.0 2.0 0.02" rgba="0.1 0.18 0.32 0.9" friction="0.4 0.005 0.0001" mass="150.0" />
+      <geom name="frame_top" type="box" size="3.05 0.025 0.035" pos="0 2.025 0.035" rgba="0.7 0.7 0.7 1" contype="0" conaffinity="0" />
+      <geom name="frame_bottom" type="box" size="3.05 0.025 0.035" pos="0 -2.025 0.035" rgba="0.7 0.7 0.7 1" contype="0" conaffinity="0" />
+      <geom name="frame_left" type="box" size="0.025 2.05 0.035" pos="-3.025 0 0.035" rgba="0.7 0.7 0.7 1" contype="0" conaffinity="0" />
+      <geom name="frame_right" type="box" size="0.025 2.05 0.035" pos="3.025 0 0.035" rgba="0.7 0.7 0.7 1" contype="0" conaffinity="0" />
+      <geom name="guard_left" type="box" pos="-3.025 0 .25" size=".025 2.05 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction=".3 .005 .0001" />
+      <geom name="guard_right" type="box" pos="3.025 0 .25" size=".025 2.05 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction=".3 .005 .0001" />
+      <geom name="guard_lower" type="box" pos="0 -2.025 .25" size="3.05 .025 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction=".3 .005 .0001" />
+      <geom name="guard_upper" type="box" pos="0 2.025 .25" size="3.05 .025 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction=".3 .005 .0001" />
+      <camera name="edge_left" pos="-2.7 0 5" fovy="70" />
+      <camera name="edge_right" pos="2.7 0 5" fovy="70" />
+    <geom name="solid_catch_tray" type="box" pos="3.3 0 -.20" size=".30 1.1 .025" rgba=".28 .34 .38 1" friction="1 .005 .001" /></body>
+    <body name="crawler_chassis" pos="0 -0.9807350379849886 0.9707429711686403" euler="0.3490658503988659 0 0">
+      <freejoint name="crawler_root" />
+      <geom name="chassis_geom" type="box" size=".22 .235 .04" rgba=".12 .65 .75 1" mass="5.3" conaffinity="3" />
+      <site name="chassis_imu" pos="0 0 0.02" />
+      <body name="rotary_brush" pos=".29 0 -.04">
+        <joint name="brush_hinge" type="hinge" axis="0 1 0" damping="0.05" />
+        <geom name="brush_cylinder" type="cylinder" size=".06 .40" zaxis="0 1 0" rgba="0.2 0.6 0.9 0.8" mass="1.2" friction=".25 .001 .0001" />
+        <site name="brush_contact" pos="0 0 -0.06" />
+        <geom name="brush_stripe" type="box" size=".008 .39 .008" pos=".042 0 .042" rgba="1 .9 .2 1" contype="0" conaffinity="0" mass="0" />
+      </body>
+      <site name="bumper_fl" pos="0.25 0.20 0" />
+      <site name="bumper_fr" pos="0.25 -0.20 0" />
+      <site name="bumper_rl" pos="-0.25 0.20 0" />
+      <site name="bumper_rr" pos="-0.25 -0.20 0" />
+      <body name="left_front" pos="0.16 0.2 -.04">
+        <joint name="left_front" type="hinge" axis="0 1 0" damping=".02" armature=".005" />
+        <geom name="left_front_roller" type="cylinder" size=".06 .035" zaxis="0 1 0" mass=".5" friction="1.2 .005 .0001" condim="3" rgba=".12 .12 .12 1" conaffinity="3" />
+      </body>
+      <body name="left_rear" pos="-0.16 0.2 -.04">
+        <joint name="left_rear" type="hinge" axis="0 1 0" damping=".02" armature=".005" />
+        <geom name="left_rear_roller" type="cylinder" size=".06 .035" zaxis="0 1 0" mass=".5" friction="1.2 .005 .0001" condim="3" rgba=".12 .12 .12 1" conaffinity="3" />
+      </body>
+      <body name="right_front" pos="0.16 -0.2 -.04">
+        <joint name="right_front" type="hinge" axis="0 1 0" damping=".02" armature=".005" />
+        <geom name="right_front_roller" type="cylinder" size=".06 .035" zaxis="0 1 0" mass=".5" friction="1.2 .005 .0001" condim="3" rgba=".12 .12 .12 1" conaffinity="3" />
+      </body>
+      <body name="right_rear" pos="-0.16 -0.2 -.04">
+        <joint name="right_rear" type="hinge" axis="0 1 0" damping=".02" armature=".005" />
+        <geom name="right_rear_roller" type="cylinder" size=".06 .035" zaxis="0 1 0" mass=".5" friction="1.2 .005 .0001" condim="3" rgba=".12 .12 .12 1" conaffinity="3" />
+      </body>
+      <camera name="robot_camera" pos=".15 0 .25" xyaxes="0 -1 0 .70710678 0 .70710678" fovy="75" />
+    </body>
+    <body name="falling_0" pos="0 0 100" gravcomp="1">
+      <freejoint name="falling_joint_0" />
+      <geom name="falling_geom_0" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_1" pos="1 0 100" gravcomp="1">
+      <freejoint name="falling_joint_1" />
+      <geom name="falling_geom_1" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_2" pos="2 0 100" gravcomp="1">
+      <freejoint name="falling_joint_2" />
+      <geom name="falling_geom_2" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_3" pos="3 0 100" gravcomp="1">
+      <freejoint name="falling_joint_3" />
+      <geom name="falling_geom_3" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_4" pos="4 0 100" gravcomp="1">
+      <freejoint name="falling_joint_4" />
+      <geom name="falling_geom_4" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_5" pos="5 0 100" gravcomp="1">
+      <freejoint name="falling_joint_5" />
+      <geom name="falling_geom_5" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_6" pos="6 0 100" gravcomp="1">
+      <freejoint name="falling_joint_6" />
+      <geom name="falling_geom_6" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+    <body name="falling_7" pos="7 0 100" gravcomp="1">
+      <freejoint name="falling_joint_7" />
+      <geom name="falling_geom_7" type="sphere" size=".014" mass=".0005" rgba=".4 .22 .075 0" contype="1" conaffinity="1" friction=".8 .01 .001" />
+    </body>
+  <body name="solid_object" pos="0.8 -0.015390912775713599 1.2422861656328683" euler=".349066 0 0"><freejoint name="solid_joint" /><geom name="solid_object_geom" type="box" size=".035 .035 .025" mass=".015" rgba=".42 .24 .10 1" friction=".7 .005 .001" /></body></worldbody>
+  <actuator>
+    <motor name="motor_left_front" joint="left_front" gear="1" ctrllimited="true" ctrlrange="-3 3" forcelimited="true" forcerange="-3 3" />
+    <motor name="motor_left_rear" joint="left_rear" gear="1" ctrllimited="true" ctrlrange="-3 3" forcelimited="true" forcerange="-3 3" />
+    <motor name="motor_right_front" joint="right_front" gear="1" ctrllimited="true" ctrlrange="-3 3" forcelimited="true" forcerange="-3 3" />
+    <motor name="motor_right_rear" joint="right_rear" gear="1" ctrllimited="true" ctrlrange="-3 3" forcelimited="true" forcerange="-3 3" />
+    <velocity name="motor_brush" joint="brush_hinge" kv=".1" ctrllimited="true" ctrlrange="-100 100" forcelimited="true" forcerange="-1 1" />
+  </actuator>
+  <sensor>
+    <accelerometer name="crawler_accel" site="chassis_imu" />
+    <gyro name="crawler_gyro" site="chassis_imu" />
+    <touch name="touch_fl" site="bumper_fl" />
+    <touch name="touch_fr" site="bumper_fr" />
+  </sensor>
+</mujoco>

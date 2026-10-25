@@ -64,12 +64,18 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 if targets:
                     home=planned_route[0].copy();new_goals=[]
                     for tx,ty in targets:
-                        new_goals.extend([(tx-.7,ty),(tx+.2,ty)])
-                    new_goals.append(home)
-                    route=np.asarray(new_goals);initial=p[:2].copy();index=0
-                    docking=False;supervisor=StopSupervisor();integral[:]=0;stall_since=None;retries+=1
-                    events.append({'time_s':float(d.time),'event':'VISION_REVISIT','targets':targets})
-                    continue
+                        if tx< -2.48:
+                            events.append({'time_s':float(d.time),'event':'UNREACHABLE_VISION_TARGET','target':[tx,ty],
+                                           'reason':'Fixed forward brush cannot reach left strip with current heading policy'})
+                            continue
+                        safe_y=float(np.clip(ty,-1.62,1.62))
+                        new_goals.extend([(max(-2.72,tx-.7),safe_y),(min(2.76,tx+.2),safe_y)])
+                    if new_goals:
+                        new_goals.append(home)
+                        route=np.asarray(new_goals);initial=p[:2].copy();index=0
+                        docking=False;supervisor=StopSupervisor();integral[:]=0;stall_since=None;retries+=1
+                        events.append({'time_s':float(d.time),'event':'VISION_REVISIT','targets':targets})
+                        continue
             if stopping in ('STOPPED','ABORT_UNSTOPPED'):
                 status=('DOCKED' if np.linalg.norm(route[-1]-p[:2])<=.12 else 'ABORT_DOCK_POSITION') if stopping=='STOPPED' and docking else stopping
                 events.append({'time_s':float(d.time),'event':status});break

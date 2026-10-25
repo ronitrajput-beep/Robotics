@@ -1,0 +1,25 @@
+{
+  "size_m": [
+    0.07,
+    0.07,
+    0.05
+  ],
+  "mass_kg": 0.015,
+  "material_assumption": "Lightweight solid block, e.g. dry foam/organic litter; not a stone",
+  "first_brush_contact_s": 3.1319999999998767,
+  "fully_left_glass": false,
+  "contacted_catch_tray": false,
+  "peak_brush_object_force_N": 1.3825498920006418,
+  "final_panel_position_m": [
+    1.9923724460306982,
+    -2.2247947907387595,
+    -0.44068274302291
+  ],
+  "events": [
+    {
+      "time_s": 3.1319999999998767,
+      "event": "BRUSH_CONTACT"
+    }
+  ],
+  "scope": "Controlled physical object-ejection test; scripted drive, not camera-selected autonomous collection"
+}

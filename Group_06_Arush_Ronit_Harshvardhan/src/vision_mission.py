@@ -20,14 +20,17 @@ class Trigger:
             self.active=True;self.events.append({'event':'VISION_TRIGGER','time_s':time,'targets':points})
 
 
-def run(directory,scenario='dirty',duration=520,record_video=False):
+def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False)
     field=SurfaceDebris();fall=FallingDebris(scenario);trigger=Trigger()
     from mission_video import MissionVideo
-    video=MissionVideo(directory) if record_video else None
+    if cinematic:
+        from cinematic_video import CinematicVideo
+        video=CinematicVideo(directory)
+    else:video=MissionVideo(directory) if record_video else None
     renderer=None;next_camera=0.;observations=[];last_targets=[]
     stream=(directory/'observations.jsonl').open('w')
-    hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'src/panel_vision.py',ROOT/'src/surface_debris.py',ROOT/'src/debris_events.py',ROOT/'src/mission_video.py']}
+    hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'src/panel_vision.py',ROOT/'src/surface_debris.py',ROOT/'src/debris_events.py',ROOT/'src/mission_video.py',ROOT/'src/cinematic_video.py',ROOT/'src/cinematic_scene.py']}
 
     def sample(m,d,state,coverage):
         nonlocal renderer,next_camera,last_targets
@@ -66,7 +69,9 @@ def run(directory,scenario='dirty',duration=520,record_video=False):
         stream.close()
         if renderer is not None:renderer.close()
     status='CLEAN_AND_HOME' if result['status']=='DOCKED' and not last_targets else ('IDLE_COMPLETE' if not trigger.active and result['status']=='TIMEOUT' and result['time_s']>=duration-.003 else 'INCOMPLETE')
-    report={'status':status,'independent_cleaning_pass':status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']==0,'independent_coverage_pass':result['coverage_metrics_v2']['qualified_contact_fraction']>=.9,'scenario':scenario,'physical_mission':result,'trigger_events':trigger.events,'deposition_events':fall.events,
+    estimated_status=status
+    if status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']>0:status='VERIFICATION_MISS'
+    report={'camera_estimated_status':estimated_status,'status':status,'independent_cleaning_pass':status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']==0,'independent_coverage_pass':result['coverage_metrics_v2']['qualified_contact_fraction']>=.9,'scenario':scenario,'physical_mission':result,'trigger_events':trigger.events,'deposition_events':fall.events,
             'hidden_dirt_score':field.summary(),'last_camera_targets':last_targets,'source_hashes':hashes,
             'limitations':['Controlled-colour RGB detector, not general debris recognition','Ground-truth navigation retained; camera-based dirt trigger only','Aggregate load plus local gap is a soil proxy','Fine-particle conversion is explicit hybrid deposition; larger crumbs not yet implemented','At most two camera-driven revisit cycles; persistent targets end INCOMPLETE']}
     if video is not None:video.close(report)
@@ -76,5 +81,5 @@ def run(directory,scenario='dirty',duration=520,record_video=False):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--scenario',choices=['clean','subthreshold','dirty'],default='dirty');p.add_argument('--record-video',action='store_true');p.add_argument('--duration',type=float,default=520);a=p.parse_args()
-    run(a.output_dir,a.scenario,a.duration,a.record_video)
+    p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--scenario',choices=['clean','subthreshold','dirty','edges'],default='dirty');p.add_argument('--cinematic',action='store_true');p.add_argument('--record-video',action='store_true');p.add_argument('--duration',type=float,default=520);a=p.parse_args()
+    run(a.output_dir,a.scenario,a.duration,a.record_video,a.cinematic)

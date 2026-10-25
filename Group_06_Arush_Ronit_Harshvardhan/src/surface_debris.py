@@ -44,4 +44,5 @@ class SurfaceDebris:
 
     def summary(self):
         return {'patches':len(self.patches),'uncleared_patches':int(sum(p.remaining>=.1 for p in self.patches)),
+                'residual_patches':[{'x_m':p.x,'y_m':p.y,'remaining':float(p.remaining)} for p in self.patches if p.remaining>=.1],
                 'mean_residual':float(np.mean([p.remaining for p in self.patches])) if self.patches else 0.}

@@ -7,6 +7,7 @@ class FallingDebris:
     def __init__(self,scenario='dirty'):
         self.scenario=scenario;self.spawned=False;self.deposited=set();self.events=[]
         self.positions=[(-.8,.65),(-.4,.65),(0,.65),(.4,-.45),(.8,-.45),(0,-.45)]
+        if scenario=='edges':self.positions=[(-2.85,.65),(2.85,.65),(0,2.0),(0,-1.55),(-2.7,2.0),(2.7,-1.55)]
         if scenario=='clean':self.positions=[]
         if scenario=='subthreshold':self.positions=self.positions[:1]
 
