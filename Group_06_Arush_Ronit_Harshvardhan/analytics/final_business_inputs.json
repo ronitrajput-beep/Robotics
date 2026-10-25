@@ -5,14 +5,14 @@
   "operating_days_per_month": 30,
   "operating_hours_per_day": 8,
   "manual_person_hours_per_month": 120,
-  "supervision_fraction": 0.20,
+  "supervision_fraction": 0.2,
   "maintenance_person_hours_per_month": 10,
   "capital_to_one_year_manual_cost_ratio": 0.65,
   "life_years": 5,
   "battery_and_spares_annual_cost_ratio": 0.05,
   "consumables_annual_cost_ratio": 0.03,
   "electricity_cost_per_kWh_to_one_year_manual_cost_ratio": 0.0003,
-  "electromechanical_efficiency": 0.60,
+  "electromechanical_efficiency": 0.6,
   "robot_electronics_W": 5,
   "external_camera_count": 2,
   "external_camera_W_each": 3,
@@ -23,6 +23,9 @@
     "Manual labour price cancels under normalization; no real currency amount or verified commercial saving is claimed.",
     "Repeated independent attempts after failure, human recovery and between-bay transfer are business assumptions; the simulator does not demonstrate autonomous between-bay movement.",
     "M/M/1 assumes Poisson arrivals and exponential service. Measured service capacity calibrates the mean, not these distribution assumptions.",
-    "No electrical PV-yield or power-restoration percentage is inferred from dust mass or coverage. Discounting, financing, tax and coating damage are outside this simple-payback scenario."
-  ]
+    "No electrical PV-yield or power-restoration percentage is inferred from dust mass or coverage. Discounting, financing, tax and coating damage are outside this simple-payback scenario.",
+    "Base case conservatively counts all assumed inter-bay transfer and recovery time as direct human labour; supervision fraction applies only during the robot attempt."
+  ],
+  "between_section_transfer_human_fraction": 1.0,
+  "failed_attempt_recovery_human_fraction": 1.0
 }

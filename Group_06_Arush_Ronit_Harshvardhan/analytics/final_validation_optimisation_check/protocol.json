@@ -1,0 +1,74 @@
+{
+  "phase": "excluded development pilot",
+  "runs_per_controller_per_tilt": 1,
+  "angles_deg": [
+    20.0
+  ],
+  "jobs": [
+    {
+      "variant": "baseline",
+      "seed": 420,
+      "debris_seed": 50420,
+      "tilt_deg": 20.0,
+      "horizon_s": 1000.0,
+      "model_path": "/workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/analytics/final_validation_optimisation_check/models/tilt_20.xml",
+      "directory": "/workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/analytics/final_validation_optimisation_check/tilt_20/baseline_420"
+    },
+    {
+      "variant": "proposed",
+      "seed": 620,
+      "debris_seed": 50620,
+      "tilt_deg": 20.0,
+      "horizon_s": 1000.0,
+      "model_path": "/workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/analytics/final_validation_optimisation_check/models/tilt_20.xml",
+      "directory": "/workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/analytics/final_validation_optimisation_check/tilt_20/proposed_620"
+    }
+  ],
+  "horizon_s": 1000.0,
+  "source_hashes": {
+    "build_collection_model.py": "3c6362d75234d1212933630c54105e6747e0014fcbedecbdcb0b360ffecd5803",
+    "build_guarded_model.py": "23d6eea68b82a77eddc8a4a687a5db6f59617baa7c63bfa0fe3d65f1280013f5",
+    "cinematic_scene.py": "ebb06cb526e9f6afa26478f57b58f62de07414f8f71fd2467d2ab958e47ae0d9",
+    "cinematic_video.py": "646404ee13f85cacc2d9acaddb0d9a22236a18cd7a1c5a931e4ae9cf54088521",
+    "cleaning_coverage.py": "9a471512d5cd2fbb2380e2c28d303c7064b66b7ad07a1e4a747e772db148f41e",
+    "collection_system.py": "130a8ad0ee61d69d698688a2afb73eecbba4c0126be17cfb6450f969f9056d58",
+    "crawler_cleaning_controller.py": "fc729958a2ea22e55879e7131a84dbf8599264e7c5bc664874de64d6a4ca0d5c",
+    "debris_events.py": "660d8b2832cfb5213ecbb6f527a4327c69522164e662c762602050b38a04fbdc",
+    "diagnose_guard_lift.py": "a50d1b6c76e5a7524969cf85df0f7815885fce62f6c7d8a9f62f1478a3f828a5",
+    "drive_regulator.py": "cc9d69578e94c4b2439f31fa6ee2e787baa53a40c2fb365c242f937c5a570da8",
+    "extract_solid_replay.py": "c843cd71c209b1d68e77d6459b47727951a4b58878777131468a4a88f92d0afa",
+    "guarded_geometry.py": "550bf27dbaf2c14a461ab6b5cf63e2abc00c910b0df14d82fb3e5c684e314081",
+    "mission_video.py": "123ff11f75bddf8b851d8317f491d667b3b48d0a1b77307c57c8d51928683fc7",
+    "panel_vision.py": "2ba670ef483f33ff5532b424a8e25c8b4a00860dde8688dd2ee4de1d51091d63",
+    "planning.py": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+    "plot_collection_evidence.py": "bbc04a186a9306131e495925f266db2729669691908f0936e30ecf44ab6c3a5a",
+    "record_demo.py": "8cd5f1789859fb92caf83e02921708060c74ff9c97f90d9bf8176481d2a6b7dc",
+    "record_panel_cameras.py": "c5bcdf0bb07058b9d81786a9835637ea313b49666350e660f3f9f76b9eb58f75",
+    "record_solid_object.py": "9ad08efa54771587b5ad22ff6d35b415e32f930ecaefa6c3b8c347959e7de1cb",
+    "run_fault_checks.py": "d8130b8e20adea3cc180647538a5630d20ea220a05ecbf36623477383c87b2d9",
+    "run_final_validation.py": "d92bb2395f2f0928f2ff5293de3da0204234a5a0d74c1347f68304df0baff568",
+    "run_tracking_benchmark.py": "8d53cea2ffa15e62e0cac88f865103dbc166a8db929d60dedb095ac518965a8e",
+    "safety.py": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+    "solid_object_demo.py": "2949a6b913d5ed1521ba214b462f7fffc4dfbf481d1e303e4f9d139777a8dfb0",
+    "surface_debris.py": "9c3a3f7820458cb472ab68fcf1682f47a1ca35e25481811648db79c1fcf8a43c",
+    "test_env.py": "d3b44a8f31b52d64bbcd0f9071541c5c3f9f87d19d5bf4a7c7fcd1f5c03888d2",
+    "transit_planning.py": "20009ac6d9e6084128a31a118260eb26725208ddbf68a1a8fd52ae81a06704d1",
+    "validate_camera_pipeline.py": "00bfc06db22c33ef264a081eede180923b6f855160b374756b1bb346b0c88c21",
+    "validate_crumb.py": "5a247634c0d31a5b7e6adb16c283a9285c2151f82dd8d8301e1b83a4c6dcd273",
+    "validate_physics.py": "f700cacc6b788ec5d3184199f5affc1c169045bee9da87c7dd4b3a6bf4de1fdd",
+    "verify_collection_run.py": "03671e5c73b975861d0159e9ae69336a3bbe9e613bfc8cf6117ad8f2aa46a0b6",
+    "verify_scattered_run.py": "5c7428e413e7fa7419c9261eda9e42366db580113ed35a1c0a6c7fe7fd2e43aa",
+    "verify_vision_run.py": "42876e61343b4e60a7e3e55c572e9cd6457982cec11ae786f7b05cffbd145fb9",
+    "vision_mission.py": "12837454cdb9f9603d0c0c202209c1b8833dcb9232a9e566aa88c1f69cb57df0"
+  },
+  "randomisation": "Independent initial x/y U(-.01,.01) m from trial seed; independent scattered-patch shape/offset RNG from debris_seed; fixed deposit clusters and 120 g solid corridor. Dry nominal friction held fixed.",
+  "primary_continuous_metric": "Geometric tracking RMSE over common 0<=t<30 s window (15000 measured samples), not old model/data; every trial continues to docking/abort/horizon.",
+  "secondary_endpoints": [
+    "complete camera-clean AND safe AND solid retained AND settled external home",
+    "whole-panel contact footprint",
+    "observed full mission duration/effort/work; failures retained and differing exposure explicitly reported"
+  ],
+  "statistics": "Run is unit of analysis; independent-seed baseline/proposed Welch t, two-sided .05, 95% Welch CI, pooled-SD Cohen d; Holm adjustment across tilt conditions. Early aborts under 30 s have unavailable primary metric, not favourable imputation. Completion Fisher exact and Wilson CI.",
+  "logging": "500 Hz CSV.xz with state, pose, reference, error, 5 actual actuator torques, panel velocity, contact/load/coverage, effort/work and safety fields. 9 significant digits, timestamp quantization <=0.5 us; numeric quantization disclosed, not synthetic data.",
+  "scope": "Controlled simulation repeatability over 10/20/30 degrees, initial pose and soil-layout variation; not field reliability, calibrated PV yield, coating/structural safety or unrestricted vision/localisation."
+}

@@ -1,0 +1,15 @@
+{
+  "source": "analytics/collection_pilot8/result.json",
+  "selection": "PROVISIONAL: one completed nominal development demonstration, not the frozen Monte Carlo study",
+  "n": 1,
+  "successes": 1,
+  "success_fraction": 1.0,
+  "mean_attempt_s": 610.8579999993789,
+  "mean_positive_mechanical_work_J": 3079.941367648451,
+  "mean_modelled_blower_J": 7046.799999994171,
+  "units": {
+    "mean_attempt_s": "s",
+    "mean_positive_mechanical_work_J": "J simulated mechanical work",
+    "mean_modelled_blower_J": "J at assumed 20 W, not measured electrical power"
+  }
+}

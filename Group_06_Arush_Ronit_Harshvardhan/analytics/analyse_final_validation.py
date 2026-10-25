@@ -1,6 +1,6 @@
 """Independent run-level analysis of the frozen full-mission validation batch."""
 from pathlib import Path
-import argparse,json,math
+import argparse,hashlib,json,math
 import numpy as np,pandas as pd
 from scipy import stats
 import matplotlib
@@ -37,9 +37,17 @@ def analyse(folder):
     data=pd.read_csv(folder/'summary.csv');expected={(j['tilt_deg'],j['variant'],j['seed']) for j in protocol['jobs']}
     observed=set(zip(data.tilt_deg,data.variant,data.seed));assert expected==observed and len(data)==len(expected)
     if complete['exceptions']:raise ValueError('Batch contains setup/runtime exceptions; inspect rather than silently exclude')
+    for name,digest in protocol['source_hashes'].items():
+        assert hashlib.sha256((folder/'source_snapshot'/name).read_bytes()).hexdigest()==digest,('snapshot',name)
+    for angle in protocol['angles_deg']:
+        digest=hashlib.sha256((folder/'models'/f'tilt_{angle:g}.xml').read_bytes()).hexdigest()
+        assert data.loc[data.tilt_deg==angle,'model_sha256'].eq(digest).all(),('model',angle)
+    assert data.controller_sha256.eq(protocol['source_hashes']['crawler_cleaning_controller.py']).all()
     audits={};conditions=[];figdir=folder/'figures';figdir.mkdir(exist_ok=False)
     for row in data.itertuples():
         directory=folder/f'tilt_{row.tilt_deg:g}'/f'{row.variant}_{row.seed}'
+        report=json.loads((directory/'result.json').read_text())
+        assert all(protocol['source_hashes'][name]==digest for name,digest in report['source_hashes'].items()),directory
         audits[directory.name+'_'+str(row.tilt_deg)]=audit_trace(directory,row)
     if not all(all(v[k] for k in ('finite','sample_count_matches','sampling_500Hz','primary_rmse_matches','effort_30s_matches')) for v in audits.values()):raise AssertionError('Trace audit failed')
     for angle in protocol['angles_deg']:
@@ -51,7 +59,8 @@ def analyse(folder):
         for v,group in groups.items():
             success=group.success.astype(str).str.lower().eq('true');n=len(group);ns=int(success.sum());report={'attempted':n,'successes':ns,'success_fraction':ns/n,'wilson95':wilson(ns,n),'statuses':{str(k):int(x) for k,x in group.status.value_counts().items()},'metrics':{}}
             for col in ('primary_30s_rmse_m','effort_first30_Nm2_s','full_observed_rmse_m','duration_s','effort_Nm2_s','work_J','coverage_fraction','mean_patch_residual','max_height_m','max_tilt_deg','peak_tool_force_N'):
-                vals=group[col].dropna();report['metrics'][col]={'n':len(vals),'mean':float(vals.mean()),'sd':float(vals.std(ddof=1)),'min':float(vals.min()),'max':float(vals.max())}
+                vals=group.loc[group.primary_window_samples==15000,col] if col=='effort_first30_Nm2_s' else group[col]
+                vals=vals.dropna();report['metrics'][col]={'n':len(vals),'mean':float(vals.mean()) if len(vals) else None,'sd':float(vals.std(ddof=1)) if len(vals)>1 else None,'min':float(vals.min()) if len(vals) else None,'max':float(vals.max()) if len(vals) else None}
             vals=group.loc[success,'duration_s'];report['successful_cycle_duration_s']={'n':len(vals),'mean':float(vals.mean()) if len(vals) else None,'sd':float(vals.std(ddof=1)) if len(vals)>1 else None}
             result['controllers'][v]=report
         counts=[[result['controllers'][v]['successes'],result['controllers'][v]['attempted']-result['controllers'][v]['successes']] for v in ('proposed','baseline')]
@@ -60,12 +69,12 @@ def analyse(folder):
     for rank,(i,pvalue) in enumerate(valid):
         previous=max(previous,min(1.,(len(valid)-rank)*pvalue));conditions[i]['statistics']['p_holm']=previous
     report={'scope':protocol['scope'],'protocol':'protocol.json','attempted_runs':len(data),'conditions':conditions,'sampling_audit_pass':True,'primary_interpretation':'Common 30-second exposure is comparable even when later missions terminate at different times. Full-run observed RMSE/effort/duration are secondary and are not interpreted as equal-exposure superiority.','randomisation':protocol['randomisation']}
-    (folder/'statistics.json').write_text(json.dumps(report,indent=2,default=lambda x:x.item() if isinstance(x,np.generic) else x,allow_nan=False)+'\n');(folder/'trace_audit.json').write_text(json.dumps(audits,indent=2)+'\n')
+    (folder/'statistics.json').write_text(json.dumps(report,indent=2,default=lambda x:x.item() if isinstance(x,np.generic) else x,allow_nan=False)+'\n');(folder/'trace_audit.json').write_text(json.dumps(audits,indent=2,default=lambda x:x.item() if isinstance(x,np.generic) else x,allow_nan=False)+'\n')
     fig,axes=plt.subplots(1,2,figsize=(11,4.2),constrained_layout=True);boxes=[];efforts=[];labels=[]
     for angle in protocol['angles_deg']:
         for v in ('baseline','proposed'):
-            g=data[(data.tilt_deg==angle)&(data.variant==v)];boxes.append(g.primary_30s_rmse_m.dropna()*100);efforts.append(g.effort_first30_Nm2_s);labels.append(f'{angle:g}°\n{v.title()}')
-    axes[0].boxplot(boxes,tick_labels=labels);axes[0].set(ylabel='Run-level first-30-s RMSE (cm)',title='Equal-exposure tracking; 30 trials per box')
+            g=data[(data.tilt_deg==angle)&(data.variant==v)];boxes.append(g.primary_30s_rmse_m.dropna()*100);efforts.append(g.loc[g.primary_window_samples==15000,'effort_first30_Nm2_s']);labels.append(f'{angle:g}°\n{v.title()}')
+    axes[0].boxplot(boxes,tick_labels=labels);axes[0].set(ylabel='Run-level first-30-s RMSE (cm)',title='30 attempts/group; available common windows')
     axes[1].boxplot(efforts,tick_labels=labels);axes[1].set(ylabel='First-30-s ∫Στ²dt (N² m² s)',title='Actual actuator control effort')
     for ax in axes:ax.grid(axis='y',alpha=.2)
     fig.savefig(figdir/'tracking_and_effort.png',dpi=260);plt.close(fig)

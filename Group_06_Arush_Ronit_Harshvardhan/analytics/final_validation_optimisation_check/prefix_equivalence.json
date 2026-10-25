@@ -1,0 +1,10 @@
+{
+  "baseline": {
+    "bytes_compared": 70313489,
+    "csv_prefix_identical": true
+  },
+  "proposed": {
+    "bytes_compared": 73376391,
+    "csv_prefix_identical": true
+  }
+}

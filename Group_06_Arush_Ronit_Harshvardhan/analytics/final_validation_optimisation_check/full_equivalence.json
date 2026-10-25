@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "old": "36914d3f29ca042a66af598cdb4fb4fa100c0a904982619cc17bb72e054f964e",
+    "optimised": "36914d3f29ca042a66af598cdb4fb4fa100c0a904982619cc17bb72e054f964e",
+    "exact_csv_match": true
+  },
+  "proposed": {
+    "old": "c3a02efea84d63998e938e8b55db669ac2a0a9d5a320641d16f82c81abac329d",
+    "optimised": "c3a02efea84d63998e938e8b55db669ac2a0a9d5a320641d16f82c81abac329d",
+    "exact_csv_match": true
+  }
+}

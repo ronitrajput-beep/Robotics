@@ -1,0 +1,53 @@
+         11498275 function calls (11471644 primitive calls) in 21.184 seconds
+
+   Ordered by: cumulative time
+   List reduced from 2279 to 45 due to restriction <45>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      180    0.039    0.000    5.849    0.032 /workspace/venvs/group06/lib/python3.12/site-packages/mujoco/rendering/classic/renderer.py:132(render)
+      180    5.204    0.029    5.204    0.029 {built-in method mujoco._render.mjr_readPixels}
+   190819    0.129    0.000    2.702    0.000 {built-in method builtins.any}
+      180    0.426    0.002    1.863    0.010 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/panel_vision.py:28(detect_dirt)
+   181647    0.098    0.000    1.774    0.000 /workspace/venvs/group06/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:48(_wrapfunc)
+    15000    0.264    0.000    1.751    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/run_final_validation.py:17(__call__)
+   120000    1.430    0.000    1.430    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/crawler_cleaning_controller.py:185(<genexpr>)
+    12999    1.022    0.000    1.270    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/surface_debris.py:33(clean)
+    15000    1.262    0.000    1.262    0.000 {built-in method mujoco._functions.mj_step}
+    15003    0.115    0.000    1.189    0.000 {method 'writerow' of '_csv.writer' objects}
+      845    0.005    0.000    1.094    0.001 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lzma.py:224(write)
+      845    1.082    0.001    1.082    0.001 {method 'compress' of '_lzma.LZMACompressor' objects}
+     1719    0.001    0.000    1.064    0.001 /workspace/venvs/group06/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:2031(nonzero)
+     1719    1.060    0.001    1.060    0.001 {method 'nonzero' of 'numpy.ndarray' objects}
+    15004    1.039    0.000    1.039    0.000 {built-in method mujoco._functions.mj_forward}
+   151892    1.004    0.000    1.004    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/debris_events.py:30(<genexpr>)
+    15000    0.754    0.000    0.964    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/cleaning_coverage.py:17(update)
+   179928    0.172    0.000    0.883    0.000 /workspace/venvs/group06/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:2245(clip)
+    71003    0.251    0.000    0.823    0.000 {built-in method builtins.sum}
+    41000    0.028    0.000    0.630    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/collection_system.py:14(soil_mass)
+      180    0.595    0.003    0.595    0.003 {built-in method mujoco._render.mjr_render}
+    461/8    0.002    0.000    0.574    0.072 <frozen importlib._bootstrap>:1349(_find_and_load)
+    457/8    0.002    0.000    0.574    0.072 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
+    449/8    0.001    0.000    0.574    0.072 <frozen importlib._bootstrap>:911(_load_unlocked)
+    397/8    0.001    0.000    0.573    0.072 <frozen importlib._bootstrap_external>:993(exec_module)
+  1126/16    0.002    0.000    0.572    0.036 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
+    417/8    0.003    0.000    0.572    0.072 {built-in method builtins.exec}
+        1    0.000    0.000    0.568    0.568 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/vision_mission.py:1(<module>)
+   130741    0.261    0.000    0.553    0.000 /workspace/venvs/group06/lib/python3.12/site-packages/numpy/linalg/_linalg.py:2615(norm)
+   872/73    0.001    0.000    0.540    0.007 <frozen importlib._bootstrap>:1390(_handle_fromlist)
+   171438    0.156    0.000    0.532    0.000 {method 'clip' of 'numpy.generic' objects}
+    33435    0.022    0.000    0.505    0.000 {method 'mean' of 'numpy.ndarray' objects}
+    33437    0.136    0.000    0.483    0.000 /workspace/venvs/group06/lib/python3.12/site-packages/numpy/_core/_methods.py:115(_mean)
+  1299112    0.287    0.000    0.417    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/collection_system.py:15(<genexpr>)
+39666/37187    0.010    0.000    0.413    0.000 {built-in method builtins.hasattr}
+        1    0.000    0.000    0.412    0.412 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/panel_vision.py:1(<module>)
+      3/1    0.000    0.000    0.402    0.402 /workspace/venvs/group06/lib/python3.12/site-packages/scipy/__init__.py:135(__getattr__)
+      6/1    0.000    0.000    0.402    0.402 /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:73(import_module)
+      6/1    0.000    0.000    0.402    0.402 <frozen importlib._bootstrap>:1375(_gcd_import)
+        1    0.000    0.000    0.402    0.402 /workspace/venvs/group06/lib/python3.12/site-packages/scipy/ndimage/__init__.py:1(<module>)
+        1    0.000    0.000    0.401    0.401 /workspace/venvs/group06/lib/python3.12/site-packages/scipy/ndimage/_support_alternative_backends.py:1(<module>)
+   179928    0.395    0.000    0.395    0.000 /workspace/venvs/group06/lib/python3.12/site-packages/numpy/_core/_methods.py:96(_clip)
+    15000    0.028    0.000    0.370    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/collection_system.py:20(sample)
+    15000    0.172    0.000    0.366    0.000 /workspace/Robotics/Group_06_Arush_Ronit_Harshvardhan/src/planning.py:17(segment_reference)
+   526/45    0.001    0.000    0.358    0.008 {built-in method builtins.__import__}
+
+
