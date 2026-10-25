@@ -4,7 +4,13 @@ from transit_planning import cross_slope_transit
 
 
 def edge_raster(profile="standard"):
-    if profile not in ("standard","inward_turns"):raise ValueError("Unknown guarded route profile")
+    if profile not in ("standard","inward_turns","external_dock"):raise ValueError("Unknown guarded route profile")
+    if profile=="external_dock":
+        base=edge_raster("inward_turns")
+        sweep=base[1:1+sweep_goal_count("inward_turns")]
+        points=[(-3.65,1.53),*map(tuple,sweep)]
+        points.extend(home_transit(points[-1],points[0]))
+        return np.asarray(points)
     if profile=="inward_turns":
         points=[(-2.72,1.53)]
         for i,y in enumerate(np.linspace(1.60,-1.60,9)):
@@ -31,4 +37,17 @@ def body_edge_gaps(position,rotation,halfsize=(.22,.18,.04)):
 
 def sweep_goal_count(profile):
     # Nine rows: one first endpoint + eight pairs of connector points/endpoints.
-    return 25 if profile=='inward_turns' else 17
+    return 25 if profile in ('external_dock','inward_turns') else 17
+
+
+def home_transit(start,home):
+    if home[0]<-3.:
+        return cross_slope_transit(start,(-2.72,1.53))+[tuple(home)]
+    return cross_slope_transit(start,home)
+
+
+def supported_position(position,external_dock=False):
+    x,y,z=position
+    panel=abs(x)<=3.1 and abs(y)<=2.1
+    dock=external_dock and -4.4<=x<=-2.9 and 1.0<=y<=2.1
+    return bool(z>=.04 and (panel or dock))

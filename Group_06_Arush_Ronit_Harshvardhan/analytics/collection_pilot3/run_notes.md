@@ -1,0 +1,1 @@
+Interrupted development draft, not a completed or passing run. New upper-left patches received only about 0.37 s qualifying contact on the initial entry, leaving visible residual. Restart with reduced entry speed and support-aware upper-left revisit handling. Preserve all partial data.

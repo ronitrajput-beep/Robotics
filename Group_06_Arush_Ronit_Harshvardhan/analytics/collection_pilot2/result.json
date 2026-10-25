@@ -1,0 +1,340 @@
+{
+  "independent_no_lift_pass": false,
+  "camera_estimated_status": "INCOMPLETE",
+  "status": "INCOMPLETE",
+  "independent_cleaning_pass": false,
+  "independent_coverage_pass": true,
+  "scenario": "combined",
+  "physical_mission": {
+    "model_sha256": "4a9a3a2e7cc5197d3ac6c227f3a503d0f26e689522d23f44d6424fa130ae418b",
+    "controller_sha256": "932e6e1b80a2ba4aef925eb594d4643565e51f8cc6779c44352b7123cc4cb4ad",
+    "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+    "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+    "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+    "guarded_geometry_sha256": "928fc7475265b9f61a216d7f4b8045aee9020a7e541db1a0ac3a0509d902373b",
+    "drive_regulator_sha256": "cc9d69578e94c4b2439f31fa6ee2e787baa53a40c2fb365c242f937c5a570da8",
+    "transit_planner_sha256": "20009ac6d9e6084128a31a118260eb26725208ddbf68a1a8fd52ae81a06704d1",
+    "maximum_chassis_height_m": 0.127920204376741,
+    "maximum_chassis_tilt_deg": 2.814546650124779,
+    "vision_revisit_cycles": 0,
+    "guarded": true,
+    "minimum_chassis_edge_gaps_m": [
+      -0.8674637870176071,
+      0.06707155132831394,
+      -8.125168618217105e-05,
+      0.1345140162464446
+    ],
+    "guard_normal_impulse_Ns": 15.170210239396871,
+    "peak_guard_normal_force_N": 151.82611184439935,
+    "route_profile": "external_dock",
+    "layout": "edge_raster",
+    "coverage_metrics_v2": {
+      "grid_cell_area_m2": 0.0025000000000000005,
+      "panel_area_m2": 24.0,
+      "geometric_footprint_fraction": 0.9090625,
+      "qualified_contact_fraction": 0.9079166666666667,
+      "half_soil_proxy_removed_fraction": 0.768125,
+      "interior_area_m2": 15.810000000000002,
+      "interior_qualified_fraction": 0.9887729285262492,
+      "soil_removed_proxy_fraction": 0.6002929931906997
+    },
+    "fault": null,
+    "fault_time_s": null,
+    "events": [
+      {
+        "time_s": 332.3040000008586,
+        "event": "VISION_EDGE_SERVICE",
+        "edge": "bottom",
+        "targets": [
+          [
+            0.5759550053805662,
+            -1.6971037079740403
+          ],
+          [
+            0.830621459537908,
+            -1.8379572618582116
+          ]
+        ]
+      },
+      {
+        "time_s": 369.7460000010374,
+        "event": "EDGE_SERVICE_COMPLETE"
+      },
+      {
+        "time_s": 492.84800000162517,
+        "event": "DOCKING"
+      },
+      {
+        "time_s": 492.8500000016252,
+        "event": "BRAKING",
+        "reason": "DOCK"
+      },
+      {
+        "time_s": 493.36600000162764,
+        "event": "UNREACHABLE_VISION_TARGET",
+        "target": [
+          -2.5123824345173094,
+          0.7782654568170879
+        ],
+        "reason": "Fixed forward brush cannot reach left strip with current heading policy"
+      },
+      {
+        "time_s": 493.36600000162764,
+        "event": "DOCK_SERVICE_START"
+      },
+      {
+        "time_s": 501.36600000166584,
+        "event": "DOCKED"
+      }
+    ],
+    "stop_reason": "DOCK",
+    "terminal_angular_speed_rad_s": 0.00019376595689824826,
+    "terminal_brush_speed_rad_s": 0.001522529008730505,
+    "dock_error_m": 0.08764068529452734,
+    "terminal_speed_mps": 0.000499345526013906,
+    "variant": "proposed",
+    "planned_duration_s": 620.0,
+    "seed": 0,
+    "status": "DOCKED",
+    "time_s": 501.36600000166584,
+    "waypoints_reached": 11,
+    "waypoints_total": 11,
+    "visited_contact_fraction": 0.8060416666666667,
+    "soil_removed_proxy_fraction": 0.4519816755816777,
+    "path_tracking_rmse_m": 0.05791333090384517,
+    "effort_Nm2_s": 963.320154429144,
+    "positive_mechanical_work_J": 3576.725471339402,
+    "mujoco": "3.17.0"
+  },
+  "trigger_events": [
+    {
+      "event": "VISION_TRIGGER",
+      "time_s": 3.999999999999781,
+      "targets": [
+        [
+          -0.7893962060525312,
+          1.699928850888623
+        ],
+        [
+          0.8168186184409492,
+          1.0159617512682646
+        ],
+        [
+          0.9465467767016174,
+          1.010868765667539
+        ],
+        [
+          -1.319164144490774,
+          0.932818255080288
+        ],
+        [
+          -1.190933401600426,
+          0.8763813462040416
+        ],
+        [
+          -0.24906744404643222,
+          0.6828774016390197
+        ],
+        [
+          -0.9786698734418393,
+          -0.059491619521742825
+        ],
+        [
+          0.302431070192394,
+          -0.28545077005416797
+        ],
+        [
+          -0.8490927041606602,
+          -0.26468606039477255
+        ],
+        [
+          1.1509419824244946,
+          -0.8308735925929485
+        ],
+        [
+          1.171891214933955,
+          -0.9971158892809241
+        ],
+        [
+          -0.3958713124143092,
+          -1.2796755161986926
+        ],
+        [
+          -0.6020944950571852,
+          -1.3379596083917142
+        ],
+        [
+          0.579309862591634,
+          -1.7001558713014018
+        ],
+        [
+          0.7965334714037184,
+          -1.8410307689850647
+        ]
+      ]
+    }
+  ],
+  "deposition_events": [
+    {
+      "event": "PARTICLES_SPAWNED",
+      "time_s": 3.001999999999891,
+      "count": 8
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 0,
+      "panel_xy_m": [
+        -1.25,
+        0.9540461326670511
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 1,
+      "panel_xy_m": [
+        -0.35,
+        0.724046132667051
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 2,
+      "panel_xy_m": [
+        0.85,
+        0.974046132667051
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 3,
+      "panel_xy_m": [
+        -0.9,
+        -0.17595386733294907
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 4,
+      "panel_xy_m": [
+        0.35,
+        -0.325953867332949
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 5,
+      "panel_xy_m": [
+        1.2,
+        -0.9259538673329495
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 6,
+      "panel_xy_m": [
+        -0.5,
+        -1.2259538673329495
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3679999999998507,
+      "id": 7,
+      "panel_xy_m": [
+        0.7,
+        -1.7759538673329496
+      ],
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    }
+  ],
+  "hidden_dirt_score": {
+    "patches": 32,
+    "uncleared_patches": 0,
+    "residual_patches": [],
+    "mean_residual": 0.04453098764095878
+  },
+  "last_camera_targets": [
+    [
+      -2.5117244043353417,
+      0.7742909545180013
+    ]
+  ],
+  "source_hashes": {
+    "vision_mission.py": "810fdea69fff0bbb553e8098fac96609cc507516b13d5b891b40f4d7602e076f",
+    "panel_vision.py": "221b1e22667b3e0b6e89dbecf556acc9072da64369c8a966321252365597a937",
+    "surface_debris.py": "65e32d7afd84c20d62c3b5bd6b8e8a96536c56b8c2bc44a45e4d59319880aa23",
+    "debris_events.py": "39b4f2149995c8dd7ad41d32800f71585ab30265e6eabcfcbd031ebcef216249",
+    "mission_video.py": "123ff11f75bddf8b851d8317f491d667b3b48d0a1b77307c57c8d51928683fc7",
+    "cinematic_video.py": "98f4dbea5dfcd9997ac4d99478dfb8f79e251135acfc05522727c0a4f8a4135a",
+    "cinematic_scene.py": "2e011c20a66e0b8c5d7b7b5fef0c023a9789a8025cb4c4557e36cc1041a26fcc"
+  },
+  "limitations": [
+    "Controlled-colour RGB detector, not general debris recognition",
+    "Ground-truth navigation retained; camera-based dirt trigger only",
+    "Aggregate load plus local gap is a soil proxy",
+    "At most two camera-driven revisit cycles; persistent targets end INCOMPLETE",
+    "Dust capture, service power and mass flow are reduced-order assumptions; no resolved airflow or battery model",
+    "Solid starts in a declared first-row handling corridor; arbitrary solid routing and scratch safety unvalidated"
+  ],
+  "collection": {
+    "deposited_dust_kg": 0.005812564800495664,
+    "remaining_on_glass_kg": 0.00024051731575987798,
+    "onboard_bin_kg": 0.0,
+    "station_waste_kg": 0.005572047484735758,
+    "captured_dust_kg": 0.005572047484735758,
+    "mass_balance_error_kg": -2.7755575615628914e-17,
+    "blower_energy_J": 7041.359999994176,
+    "dock_charge_energy_J": 240.00000000000756,
+    "events": [
+      {
+        "event": "DOCK_SERVICE_START",
+        "time_s": 493.36600000162764,
+        "bin_kg": 0.005572047484735758
+      }
+    ],
+    "assumptions": "20 g/m2 initial areal soil; contact-gated exponential capture into bin; 20 W blower; dock 2 g/s emptying and 30 W charge energy. No airflow, seals, electrochemistry or connector contact solved."
+  },
+  "physical_solid": {
+    "size_m": [
+      0.07,
+      0.07,
+      0.05
+    ],
+    "mass_kg": 0.12,
+    "first_brush_contact_s": 19.939999999999827,
+    "fully_left_glass": false,
+    "contacted_catch_tray": false,
+    "retained_in_tray_at_end": false,
+    "peak_brush_object_force_N": 28.200622546727008,
+    "final_panel_position_m": [
+      -2.50750637892028,
+      0.7597043815488301,
+      0.0449988750616278
+    ],
+    "events": [
+      {
+        "event": "SOLID_RELEASED",
+        "time_s": 3.001999999999891
+      },
+      {
+        "event": "SOLID_BRUSH_CONTACT",
+        "time_s": 19.939999999999827
+      }
+    ],
+    "scope": "Persistent rigid body after release; fixed first-row reverse-brush policy, not arbitrary object-specific planning; glass scratching/damage not modelled."
+  }
+}

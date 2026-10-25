@@ -1,0 +1,1 @@
+TIMEOUT at the declared 650-second horizon, during the return from one RGB-requested revisit. All 32 patches below threshold, block physically off glass and retained in tray. Not a completed combined cycle: station service has not occurred. A fresh 900-second recording is required. Source snapshots retained.

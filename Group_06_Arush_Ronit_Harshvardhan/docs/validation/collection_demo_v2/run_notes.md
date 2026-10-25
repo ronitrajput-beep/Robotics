@@ -1,0 +1,1 @@
+Interrupted recording draft with a 650-second horizon. Matching headless pilot4 cleared all 32 patches and physically retained the block in the tray, but the extra RGB revisit and cross-slope return exceeded that horizon. Restart the complete fresh recording with 900 seconds; this draft is not completed evidence.

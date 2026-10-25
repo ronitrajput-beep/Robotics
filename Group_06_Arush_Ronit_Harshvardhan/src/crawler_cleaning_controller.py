@@ -7,12 +7,12 @@ from planning import raster, segment_reference, clearance
 from safety import StopSupervisor
 from drive_regulator import DriveRegulator
 from cleaning_coverage import CoverageMap
-from guarded_geometry import edge_raster, body_edge_gaps, sweep_goal_count
+from guarded_geometry import edge_raster, body_edge_gaps, sweep_goal_count, home_transit, supported_position
 from transit_planning import cross_slope_transit
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False, should_move=None, revisit_targets=None, guarded_model_path=None, route_profile="standard", edge_service_targets=None):
+def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False, should_move=None, revisit_targets=None, guarded_model_path=None, route_profile="standard", edge_service_targets=None, dock_service_s=0.):
     if fault not in (None,"pose_dropout","brush_jam","traction_loss"): raise ValueError("Unknown fault")
     if not np.isfinite(duration) or duration<=0: raise ValueError("Duration must be positive")
     if variant not in ("baseline", "proposed"): raise ValueError("Unknown controller")
@@ -49,7 +49,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]
     retries=0
-    edge_handled=False;edge_phase=False;edge_exit_index=0;incline_mode=False
+    edge_handled=False;edge_phase=False;edge_exit_index=0;incline_mode=False;service_until=None
     max_height=0.;max_tilt=0.
     minimum_gaps=np.full(4,np.inf); guard_impulse=0.; peak_guard_force=0.
     supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None; docking=False
@@ -70,11 +70,17 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             stopping=supervisor.update(d.time,speed,(np.inf if guarded else clearance(p)),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
             if stopping and not any(e['event']=='BRAKING' for e in events):
                 events.append({'time_s':float(d.time),'event':'BRAKING','reason':supervisor.reason});integral[:]=0
-            if stopping=='STOPPED' and docking and revisit_targets is not None and retries<2:
+            if stopping=='STOPPED' and service_until is None and docking and revisit_targets is not None and retries<2:
                 targets=revisit_targets()
                 if targets:
                     home=planned_route[0].copy();new_goals=[]
                     for tx,ty in targets:
+                        if tx< -2.48 and route_profile=='external_dock' and 1.15<ty<1.90:
+                            start=p[:2] if not new_goals else new_goals[-1]
+                            if start[0]>-3.:new_goals.extend(home_transit(start,home))
+                            new_goals.append((-2.1,1.53))
+                            events.append({'time_s':float(d.time),'event':'VISION_UPPER_LEFT_SERVICE','target':[tx,ty]})
+                            continue
                         if tx< -2.48:
                             events.append({'time_s':float(d.time),'event':'UNREACHABLE_VISION_TARGET','target':[tx,ty],
                                            'reason':'Fixed forward brush cannot reach left strip with current heading policy'})
@@ -82,18 +88,26 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                         safe_y=float(np.clip(ty,-1.62,1.62))
                         start=p[:2] if not new_goals else new_goals[-1]
                         approach=(max(-2.72,tx-.7),safe_y)
+                        if start[0]<-3.:
+                            new_goals.append((-2.1,1.53));start=np.array(new_goals[-1])
                         new_goals.extend(cross_slope_transit(start,approach))
                         new_goals.append((min(2.76,tx+.2),safe_y))
                     if new_goals:
                         return_after=len(new_goals);returning=False
-                        new_goals.extend(cross_slope_transit(new_goals[-1],home))
+                        new_goals.extend(home_transit(new_goals[-1],home))
                         route=np.asarray(new_goals);initial=p[:2].copy();index=0
                         docking=False;supervisor=StopSupervisor();integral[:]=0;stall_since=None;retries+=1
                         events.append({'time_s':float(d.time),'event':'VISION_REVISIT','targets':targets})
                         continue
             if stopping in ('STOPPED','ABORT_UNSTOPPED'):
                 status=('DOCKED' if np.linalg.norm(route[-1]-p[:2])<=.12 else 'ABORT_DOCK_POSITION') if stopping=='STOPPED' and docking else stopping
-                events.append({'time_s':float(d.time),'event':status});break
+                if status=='DOCKED' and dock_service_s>0 and service_until is None:
+                    service_until=float(d.time)+dock_service_s
+                    events.append({'time_s':float(d.time),'event':'DOCK_SERVICE_START'})
+                if service_until is None or d.time>=service_until:
+                    if service_until is not None:events.append({'time_s':float(d.time),'event':'DOCK_SERVICE_COMPLETE'})
+                    events.append({'time_s':float(d.time),'event':status});break
+                status='TIMEOUT'
             goal=route[index]; distance=np.linalg.norm(goal-p[:2])
             reference,cross_error=segment_reference(p[:2],initial if index==0 else route[index-1],goal)
             if variant=="baseline": reference=goal.copy()
@@ -106,14 +120,14 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             error=np.arctan2(np.sin(angle-yaw),np.cos(angle-yaw))
             state='SETTLE' if d.time<1 else ('ALIGN' if abs(error)>.4 else 'SWEEP')
             if should_move is not None and not should_move():state='HOME_MONITOR'
-            if (not guarded and clearance(p)<0) or p[2]<.04 or abs(p[0])>3.1 or abs(p[1])>2.1:
+            if (not guarded and clearance(p)<0) or not supported_position(p,route_profile=='external_dock'):
                 status='ABORT_EDGE';break
             if not stopping and not docking and state!='HOME_MONITOR' and d.time>=1 and distance<(.08 if guarded else .10):
                 index+=1
                 if index>=return_after:returning=True
                 if edge_phase and index>=edge_exit_index:
                     edge_phase=False;events.append({'time_s':float(d.time),'event':'EDGE_SERVICE_COMPLETE'})
-                if guarded and route_profile=="inward_turns" and not edge_handled and index==sweep_goal_count(route_profile):
+                if guarded and route_profile in ("inward_turns","external_dock") and not edge_handled and index==sweep_goal_count(route_profile):
                     edge_handled=True
                     tasks=edge_service_targets() if edge_service_targets is not None else []
                     bottom=[(tx,ty) for tx,ty in tasks if ty< -1.65 and -1.6<tx<1.6]
@@ -122,7 +136,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                         entry_y=float(np.clip(p[1],-1.64,-1.55))
                         new_goals=[(low-1.,entry_y),(high+.25,entry_y),(high+.6,entry_y)]
                         edge_exit_index=3
-                        new_goals.extend(cross_slope_transit(new_goals[-1],planned_route[0]))
+                        new_goals.extend(home_transit(new_goals[-1],planned_route[0]))
                         return_after=3;returning=False
                         route=np.asarray(new_goals);initial=p[:2].copy();index=0;edge_phase=True
                         events.append({'time_s':float(d.time),'event':'VISION_EDGE_SERVICE','edge':'bottom','targets':bottom})
@@ -134,8 +148,9 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
             if returning and state=='SWEEP':state='RETURN_HOME'
             if edge_phase and state=='SWEEP' and p[1]<-1.4:state='EDGE_CLEAN_BOTTOM'
             v=0 if state not in ('SWEEP','EDGE_CLEAN_BOTTOM','RETURN_HOME') else direction*min(.12 if retries>0 or edge_phase else .18,.8*distance)*max(0,np.cos(error))
+            if route_profile=='external_dock' and index==0 and retries==0 and p[0]<-2.1:v=float(np.clip(v,-.10,.10))
             omega=0 if state in ('SETTLE','HOME_MONITOR') else np.clip(3*error,-1.2,1.2)
-            if stopping: state='DOCKING' if docking else 'BRAKING';v=omega=0.
+            if stopping: state='DOCK_SERVICE' if service_until is not None else 'DOCKING' if docking else 'BRAKING';v=omega=0.
             if guarded:
                 grade=abs(np.sin(yaw))
                 activate=grade>.58 if not incline_mode else grade>.42
@@ -154,7 +169,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                     e=speeds[i]-d.qvel[j]
                     integral[i]=np.clip(integral[i]+e*dt,-3,3)
                     d.ctrl[i]=np.clip(.8*e+(.5*integral[i] if variant=="proposed" else 0),-3,3)
-            d.ctrl[4]=15 if state in ('SWEEP','EDGE_CLEAN_BOTTOM') else 0
+            d.ctrl[4]=(-15 if route_profile=='external_dock' and not returning and index==sweep_goal_count(route_profile)-1 and retries==0 else 15) if state in ('SWEEP','EDGE_CLEAN_BOTTOM') else 0
             mujoco.mj_forward(m,d)
             if not np.isfinite(d.qpos).all() or any(w.number for w in d.warning):
                 status='ABORT_PHYSICS';break

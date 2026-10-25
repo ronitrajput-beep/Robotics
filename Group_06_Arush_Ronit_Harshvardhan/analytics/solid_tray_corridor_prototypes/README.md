@@ -1,0 +1,1 @@
+Controlled initial-condition diagnostic, not a full mission. Four lower-strip starting positions were tested with scripted .14 m/s drive and -15 rad/s brush command; persistent object updates and actual tray contacts were scored. The source and console contain the actual outcomes including peak force and tilt. Full combined mission validation remains separate.
