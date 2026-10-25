@@ -32,7 +32,7 @@ class GuardContactChecks(unittest.TestCase):
         np.testing.assert_array_equal(route[0],route[-1])
     def test_scattered_deposits_vary_shape_size_and_position(self):
         field=SurfaceDebris();field.deposit_scattered([0,0],np.random.default_rng(603))
-        self.assertEqual(len(field.patches),3)
+        self.assertEqual(len(field.patches),4)
         self.assertGreater(np.ptp([p.radius for p in field.patches]),.001)
         self.assertGreater(np.ptp([p.angle for p in field.patches]),.1)
         json.dumps(field.summary())
@@ -53,3 +53,28 @@ class ActualFeedLayoutChecks(unittest.TestCase):
             self.assertTrue(((region[:,:,1]>240)&(region[:,:,0]<100)).any())
             video.close()
         np.testing.assert_array_equal(source,original)
+
+class CameraClippingAndResidualChecks(unittest.TestCase):
+    def model(self):
+        root=Path(__file__).resolve().parents[1]
+        m=mujoco.MjModel.from_xml_path(str(root/'models/guarded_cleaning_crawler.xml'));d=mujoco.MjData(m);mujoco.mj_forward(m,d)
+        return m,d
+    def test_onboard_camera_sees_nearby_glass(self):
+        m,d=self.model()
+        with mujoco.Renderer(m,height=480,width=640) as renderer:
+            renderer.update_scene(d,camera='robot_camera');rgb=renderer.render().astype(float)
+        r,g,b=rgb.transpose(2,0,1)
+        self.assertLess(m.stat.extent*m.vis.map.znear,.1)
+        self.assertGreater(((b>1.25*g)&(g>1.2*r)).mean(),.4)
+    def test_small_dirty_residual_at_bottom_remains_detectable(self):
+        from surface_debris import DustPatch
+        from panel_vision import CameraCalibration,detect_dirt
+        m,d=self.model();rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3);o=d.xpos[rack]
+        field=SurfaceDebris();field.patches=[DustPatch(.7,-1.8,.035,.101,.6,.7,.8)]
+        found=[]
+        with mujoco.Renderer(m,height=480,width=640) as renderer:
+            for name in ('edge_left','edge_right'):
+                c=m.camera(name).id;renderer.update_scene(d,camera=c);field.append_visuals(renderer.scene,o,R)
+                cal=CameraCalibration(d.cam_xpos[c],d.cam_xmat[c].reshape(3,3),m.cam_fovy[c],o,R)
+                detections,_=detect_dirt(renderer.render(),cal);found.extend(detections)
+        self.assertTrue(any(p['confidence']>=.8 for p in found))

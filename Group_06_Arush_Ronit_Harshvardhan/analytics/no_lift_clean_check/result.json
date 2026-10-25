@@ -1,0 +1,94 @@
+{
+  "independent_no_lift_pass": true,
+  "camera_estimated_status": "IDLE_COMPLETE",
+  "status": "IDLE_COMPLETE",
+  "independent_cleaning_pass": false,
+  "independent_coverage_pass": false,
+  "scenario": "clean",
+  "physical_mission": {
+    "model_sha256": "84062c3d58ec5948caa742e6e4df4fb58cb8700c1df513bfa18980fc933f226b",
+    "controller_sha256": "654f93791c7dc690373c7a703f0018c5126df50775d6254657e13554b5df35cd",
+    "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+    "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+    "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+    "guarded_geometry_sha256": "ae1445a75215e90806f1871fa500646633a01629175e6e1713fe677ad0bc8a1e",
+    "drive_regulator_sha256": "cc9d69578e94c4b2439f31fa6ee2e787baa53a40c2fb365c242f937c5a570da8",
+    "transit_planner_sha256": "20009ac6d9e6084128a31a118260eb26725208ddbf68a1a8fd52ae81a06704d1",
+    "maximum_chassis_height_m": 0.12000000000000002,
+    "maximum_chassis_tilt_deg": 0.006019156464406062,
+    "vision_revisit_cycles": 0,
+    "guarded": true,
+    "minimum_chassis_edge_gaps_m": [
+      0.0622821477960632,
+      5.496809794494349,
+      3.2835044306043213,
+      0.23960425974067953
+    ],
+    "guard_normal_impulse_Ns": 0.0,
+    "peak_guard_normal_force_N": 0.0,
+    "route_profile": "inward_turns",
+    "layout": "edge_raster",
+    "coverage_metrics_v2": {
+      "grid_cell_area_m2": 0.0025000000000000005,
+      "panel_area_m2": 24.0,
+      "geometric_footprint_fraction": 0.0053125,
+      "qualified_contact_fraction": 0.0,
+      "half_soil_proxy_removed_fraction": 0.0,
+      "interior_area_m2": 15.810000000000002,
+      "interior_qualified_fraction": 0.0,
+      "soil_removed_proxy_fraction": 0.0
+    },
+    "fault": null,
+    "fault_time_s": null,
+    "events": [],
+    "stop_reason": null,
+    "terminal_angular_speed_rad_s": 0.00018040377274754877,
+    "terminal_brush_speed_rad_s": 0.0005001954185423098,
+    "dock_error_m": 0.011405424793924201,
+    "terminal_speed_mps": 0.0005429703340967029,
+    "variant": "proposed",
+    "planned_duration_s": 12.0,
+    "seed": 0,
+    "status": "TIMEOUT",
+    "time_s": 12.000000000000677,
+    "waypoints_reached": 0,
+    "waypoints_total": 32,
+    "visited_contact_fraction": 0.0,
+    "soil_removed_proxy_fraction": 0.0,
+    "path_tracking_rmse_m": 0.0037348534169424374,
+    "effort_Nm2_s": 0.0002163470801197569,
+    "positive_mechanical_work_J": 1.188363350003071e-06,
+    "mujoco": "3.17.0"
+  },
+  "trigger_events": [],
+  "deposition_events": [
+    {
+      "event": "PARTICLES_SPAWNED",
+      "time_s": 3.001999999999891,
+      "count": 0
+    }
+  ],
+  "hidden_dirt_score": {
+    "patches": 0,
+    "uncleared_patches": 0,
+    "residual_patches": [],
+    "mean_residual": 0.0
+  },
+  "last_camera_targets": [],
+  "source_hashes": {
+    "vision_mission.py": "e10f79d9683cd364457e363944358e3b674833c329cc1c395f8a5c82fdd4bf71",
+    "panel_vision.py": "221b1e22667b3e0b6e89dbecf556acc9072da64369c8a966321252365597a937",
+    "surface_debris.py": "65e32d7afd84c20d62c3b5bd6b8e8a96536c56b8c2bc44a45e4d59319880aa23",
+    "debris_events.py": "c93346666753b54d9fa0832e023c639caaa692ff41a53c3af66c34f64197ec28",
+    "mission_video.py": "123ff11f75bddf8b851d8317f491d667b3b48d0a1b77307c57c8d51928683fc7",
+    "cinematic_video.py": "d368d2af7210ccd7d93988778c60a043990a5d16de00098f7cea132c109d2853",
+    "cinematic_scene.py": "7a7524c4f58117506cadfa47875d3c77be176be1310964869a1ca615da3be59b"
+  },
+  "limitations": [
+    "Controlled-colour RGB detector, not general debris recognition",
+    "Ground-truth navigation retained; camera-based dirt trigger only",
+    "Aggregate load plus local gap is a soil proxy",
+    "Fine-particle conversion is explicit hybrid deposition; larger crumbs not yet implemented",
+    "At most two camera-driven revisit cycles; persistent targets end INCOMPLETE"
+  ]
+}

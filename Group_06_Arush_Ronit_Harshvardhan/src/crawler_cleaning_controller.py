@@ -5,8 +5,10 @@ import mujoco
 import numpy as np
 from planning import raster, segment_reference, clearance
 from safety import StopSupervisor
+from drive_regulator import DriveRegulator
 from cleaning_coverage import CoverageMap
-from guarded_geometry import edge_raster, body_edge_gaps
+from guarded_geometry import edge_raster, body_edge_gaps, sweep_goal_count
+from transit_planning import cross_slope_transit
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,7 +19,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
     planned_route=edge_raster(route_profile) if guarded else raster(layout)
     rng = np.random.default_rng(seed)
     model_path = ROOT/('models/guarded_cleaning_crawler.xml' if guarded else 'models/solar_cleaning_crawler.xml')
-    hashes={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'model_sha256':model_path,'controller_sha256':Path(__file__),'planner_sha256':ROOT/'src/planning.py','safety_sha256':ROOT/'src/safety.py','coverage_sha256':ROOT/'src/cleaning_coverage.py','guarded_geometry_sha256':ROOT/'src/guarded_geometry.py'}.items()}
+    hashes={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'model_sha256':model_path,'controller_sha256':Path(__file__),'planner_sha256':ROOT/'src/planning.py','safety_sha256':ROOT/'src/safety.py','coverage_sha256':ROOT/'src/cleaning_coverage.py','guarded_geometry_sha256':ROOT/'src/guarded_geometry.py','drive_regulator_sha256':ROOT/'src/drive_regulator.py','transit_planner_sha256':ROOT/'src/transit_planning.py'}.items()}
     if guarded_model_path is not None:
         model_path=Path(guarded_model_path);hashes['model_sha256']=hashlib.sha256(model_path.read_bytes()).hexdigest()
     m = mujoco.MjModel.from_xml_path(str(model_path)); d = mujoco.MjData(m)
@@ -28,7 +30,8 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
     d.qpos[0:3] = origin + R @ np.array([planned_route[0,0]+rng.uniform(-.01,.01),planned_route[0,1]+rng.uniform(-.01,.01),.12])
     mujoco.mj_forward(m,d)
     joints=[m.joint(s+'_'+e).dofadr[0] for s in ('left','right') for e in ('front','rear')]
-    route=planned_route[1:]; index=0; integral=np.zeros(4); dt=m.opt.timestep
+    route=planned_route[1:];return_after=sweep_goal_count(route_profile) if guarded else len(route);returning=False; index=0; integral=np.zeros(4); dt=m.opt.timestep
+    drive=DriveRegulator(dt) if guarded else None
     initial=(R.T@(d.xpos[b]-origin))[:2].copy()
     axisx=np.linspace(-3,3,120); axisy=np.linspace(-2,2,80)
     X,Y=np.meshgrid(axisx,axisy); soil=np.ones(X.shape); visited=np.zeros(X.shape,bool)
@@ -46,7 +49,7 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]
     retries=0
-    edge_handled=False;edge_phase=False
+    edge_handled=False;edge_phase=False;edge_exit_index=0;incline_mode=False
     max_height=0.;max_tilt=0.
     minimum_gaps=np.full(4,np.inf); guard_impulse=0.; peak_guard_force=0.
     supervisor=StopSupervisor(); events=[]; injected=False; stall_since=None; docking=False
@@ -60,6 +63,8 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 if fault=='traction_loss': m.geom_friction[:,0]=.05
             tilt=float(np.rad2deg(np.arccos(np.clip((R.T@d.xmat[b].reshape(3,3))[2,2],-1,1))))
             max_height=max(max_height,float(p[2]));max_tilt=max(max_tilt,tilt)
+            if guarded and (tilt>8 or p[2]>.15):
+                status='ABORT_ATTITUDE';events.append({'time_s':float(d.time),'event':status,'tilt_deg':tilt,'height_m':float(p[2])});break
             speed=float(np.linalg.norm((R.T@d.qvel[:3])[:2]))
             gaps=body_edge_gaps(p,R.T@d.xmat[b].reshape(3,3),m.geom_size[m.geom('chassis_geom').id]);minimum_gaps=np.minimum(minimum_gaps,gaps)
             stopping=supervisor.update(d.time,speed,(np.inf if guarded else clearance(p)),not(injected and fault=='pose_dropout'),stall_since is not None and d.time-stall_since>.5, float(np.linalg.norm(d.qvel[3:6])),abs(d.qvel[brush_dof]))
@@ -75,9 +80,13 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                                            'reason':'Fixed forward brush cannot reach left strip with current heading policy'})
                             continue
                         safe_y=float(np.clip(ty,-1.62,1.62))
-                        new_goals.extend([(max(-2.72,tx-.7),safe_y),(min(2.76,tx+.2),safe_y)])
+                        start=p[:2] if not new_goals else new_goals[-1]
+                        approach=(max(-2.72,tx-.7),safe_y)
+                        new_goals.extend(cross_slope_transit(start,approach))
+                        new_goals.append((min(2.76,tx+.2),safe_y))
                     if new_goals:
-                        new_goals.append(home)
+                        return_after=len(new_goals);returning=False
+                        new_goals.extend(cross_slope_transit(new_goals[-1],home))
                         route=np.asarray(new_goals);initial=p[:2].copy();index=0
                         docking=False;supervisor=StopSupervisor();integral[:]=0;stall_since=None;retries+=1
                         events.append({'time_s':float(d.time),'event':'VISION_REVISIT','targets':targets})
@@ -101,15 +110,20 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                 status='ABORT_EDGE';break
             if not stopping and not docking and state!='HOME_MONITOR' and d.time>=1 and distance<(.08 if guarded else .10):
                 index+=1
-                if guarded and route_profile=="inward_turns" and not edge_handled and index==len(planned_route)-4:
+                if index>=return_after:returning=True
+                if edge_phase and index>=edge_exit_index:
+                    edge_phase=False;events.append({'time_s':float(d.time),'event':'EDGE_SERVICE_COMPLETE'})
+                if guarded and route_profile=="inward_turns" and not edge_handled and index==sweep_goal_count(route_profile):
                     edge_handled=True
                     tasks=edge_service_targets() if edge_service_targets is not None else []
                     bottom=[(tx,ty) for tx,ty in tasks if ty< -1.65 and -1.6<tx<1.6]
                     if bottom:
-                        new_goals=[]
-                        for tx,ty in sorted(bottom):
-                            new_goals.extend([(tx-1.,-1.40),(tx+.25,-1.74),(tx+1.,-1.40)])
-                        new_goals.extend([(0.,-1.1),(0.,1.0),planned_route[0]])
+                        low=min(tx for tx,ty in bottom);high=max(tx for tx,ty in bottom)
+                        entry_y=float(np.clip(p[1],-1.64,-1.55))
+                        new_goals=[(low-1.,entry_y),(high+.25,entry_y),(high+.6,entry_y)]
+                        edge_exit_index=3
+                        new_goals.extend(cross_slope_transit(new_goals[-1],planned_route[0]))
+                        return_after=3;returning=False
                         route=np.asarray(new_goals);initial=p[:2].copy();index=0;edge_phase=True
                         events.append({'time_s':float(d.time),'event':'VISION_EDGE_SERVICE','edge':'bottom','targets':bottom})
                         continue
@@ -117,15 +131,29 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
                     index-=1;docking=True;supervisor.reason='DOCK';supervisor.triggered_at=d.time
                     stopping='BRAKING';integral[:]=0
                     events.append({'time_s':float(d.time),'event':'DOCKING'})
+            if returning and state=='SWEEP':state='RETURN_HOME'
             if edge_phase and state=='SWEEP' and p[1]<-1.4:state='EDGE_CLEAN_BOTTOM'
-            v=0 if state not in ('SWEEP','EDGE_CLEAN_BOTTOM') else direction*min(.12 if retries>0 or edge_phase else .18,.8*distance)*max(0,np.cos(error))
+            v=0 if state not in ('SWEEP','EDGE_CLEAN_BOTTOM','RETURN_HOME') else direction*min(.12 if retries>0 or edge_phase else .18,.8*distance)*max(0,np.cos(error))
             omega=0 if state in ('SETTLE','HOME_MONITOR') else np.clip(3*error,-1.2,1.2)
             if stopping: state='DOCKING' if docking else 'BRAKING';v=omega=0.
+            if guarded:
+                grade=abs(np.sin(yaw))
+                activate=grade>.58 if not incline_mode else grade>.42
+                if activate and not incline_mode:
+                    drive.targets=d.qvel[joints].copy();drive.integral[:]=0
+                    drive.torque=np.clip(d.ctrl[:4],-drive.torque_limit,drive.torque_limit);drive.mode=None
+                if not activate and incline_mode:integral[:]=0
+                incline_mode=activate
+                if incline_mode:v=float(np.clip(v,-.09,.09));omega=float(np.clip(omega,-.7,.7))
             speeds=np.array([v-.20*omega]*2+[v+.20*omega]*2)/.06
-            for i,j in enumerate(joints):
-                e=speeds[i]-d.qvel[j]
-                integral[i]=np.clip(integral[i]+e*dt,-3,3)
-                d.ctrl[i]=np.clip(.8*e+(.5*integral[i] if variant=="proposed" else 0),-3,3)
+            if drive is not None and incline_mode:
+                mode=('DRIVE',direction) if state in ('SWEEP','EDGE_CLEAN_BOTTOM','RETURN_HOME') else (state,)
+                d.ctrl[:4]=drive.update(speeds,d.qvel[joints],mode)
+            else:
+                for i,j in enumerate(joints):
+                    e=speeds[i]-d.qvel[j]
+                    integral[i]=np.clip(integral[i]+e*dt,-3,3)
+                    d.ctrl[i]=np.clip(.8*e+(.5*integral[i] if variant=="proposed" else 0),-3,3)
             d.ctrl[4]=15 if state in ('SWEEP','EDGE_CLEAN_BOTTOM') else 0
             mujoco.mj_forward(m,d)
             if not np.isfinite(d.qpos).all() or any(w.number for w in d.warning):
@@ -173,5 +201,5 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         if display:display.close()
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('--guarded',action='store_true');a.add_argument('--layout',choices=['standard','expanded','expanded_safe_return'],default='standard');a.add_argument('--seed',type=int,default=0);a.add_argument('--duration',type=float,default=360);a.add_argument('--output');a.add_argument('--viewer',action='store_true');a.add_argument('--fault',choices=['pose_dropout','brush_jam','traction_loss']);a.add_argument('--fault-time',type=float,default=3.);args=a.parse_args()
-    mission(args.seed,args.output,args.duration,args.viewer,fault=args.fault,fault_time=args.fault_time,layout=args.layout,guarded=args.guarded)
+    a=argparse.ArgumentParser();a.add_argument('--route-profile',choices=['standard','inward_turns'],default='inward_turns');a.add_argument('--guarded',action='store_true');a.add_argument('--layout',choices=['standard','expanded','expanded_safe_return'],default='standard');a.add_argument('--seed',type=int,default=0);a.add_argument('--duration',type=float,default=360);a.add_argument('--output');a.add_argument('--viewer',action='store_true');a.add_argument('--fault',choices=['pose_dropout','brush_jam','traction_loss']);a.add_argument('--fault-time',type=float,default=3.);args=a.parse_args()
+    mission(args.seed,args.output,args.duration,args.viewer,fault=args.fault,fault_time=args.fault_time,layout=args.layout,guarded=args.guarded,route_profile=args.route_profile)

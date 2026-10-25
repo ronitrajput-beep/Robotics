@@ -28,7 +28,7 @@ class CinematicVideo:
             self.renderer=make_renderer(m)
             self.log=(self.directory/'cinematic_ffmpeg.log').open('w')
             self.encoder=subprocess.Popen(['ffmpeg','-hide_banner','-loglevel','warning','-n','-f','rawvideo','-pix_fmt','rgb24','-s','1280x720',
-                '-r','25','-i','-','-an','-c:v','libx264','-preset','fast','-crf','19','-pix_fmt','yuv420p','-movflags','+faststart',
+                '-r','25','-i','-','-an','-c:v','libx264','-preset','fast','-crf','23','-pix_fmt','yuv420p','-movflags','+faststart',
                 str(self.directory/'cinematic_cleaning.mp4')],stdin=subprocess.PIPE,stderr=self.log)
         desired=cinematic_camera(float(d.time),d,m)
         if closeup:
@@ -45,7 +45,7 @@ class CinematicVideo:
         draw.line((978,66,978,694),fill=(70,100,110),width=2)
         for i,name in enumerate(('edge_left','edge_right','robot_camera')):
             top=70+i*208
-            draw.text((994,top),f'{name} RGB  t={self.sensor_time:.1f}s',font=self.small,fill=(185,225,230))
+            draw.text((994,top),f'{dict(edge_left="Panel left",edge_right="Panel right",robot_camera="Onboard")[name]} RGB  t={self.sensor_time:.1f}s',font=self.small,fill=(185,225,230))
             if name in self.sensor_views:
                 view=self.sensor_views[name];image=Image.fromarray(view['rgb']).resize((250,187),Image.Resampling.LANCZOS)
                 boxes=ImageDraw.Draw(image)
@@ -57,7 +57,9 @@ class CinematicVideo:
                 picture.paste(image,(994,top+18))
         draw.text((22,664),'Raw camera inputs at 2 Hz; green boxes are RGB dirt detections',font=self.small,fill=(164,195,207))
         draw.rectangle((0,0,1280,65),fill=(13,23,32))
-        title='VISION-REQUESTED BOTTOM EDGE CLEAN' if state=='EDGE_CLEAN_BOTTOM' else 'INSPECTION / BRUSH CONTACT' if closeup else ('MONITORING' if state=='HOME_MONITOR' else 'AUTONOMOUS SOLAR CLEANING')
+        tilt=float(np.rad2deg(np.arccos(np.clip((rotation.T@d.xmat[m.body('crawler_chassis').id].reshape(3,3))[2,2],-1,1))))
+        draw.text((22,80),f'Chassis tilt: {tilt:.2f} degrees',font=self.small,fill=(164,195,207))
+        title='RETURNING HOME' if state=='RETURN_HOME' else 'VISION-REQUESTED BOTTOM EDGE CLEAN' if state=='EDGE_CLEAN_BOTTOM' else 'INSPECTION / BRUSH CONTACT' if closeup else ('MONITORING' if state=='HOME_MONITOR' else 'AUTONOMOUS SOLAR CLEANING')
         draw.text((22,10),title,font=self.font,fill=(224,239,240))
         draw.text((22,38),f'Simulation {d.time:6.2f}s   |   {state}   |   {speed}x playback   |   RGB targets {target_count}   |   Contact footprint {coverage["qualified_contact_fraction"]:.1%}',font=self.small,fill=(164,195,207))
         draw.rectangle((0,694,1280,720),fill=(13,23,32))
@@ -72,12 +74,12 @@ class CinematicVideo:
             picture=self.last_picture.copy();draw=ImageDraw.Draw(picture)
             draw.rectangle((300,250,980,425),fill=(13,23,32))
             lines=[report['status'],f"Measured contact footprint: {report['physical_mission']['coverage_metrics_v2']['qualified_contact_fraction']:.1%}",
-                   f"Uncleared deposited patches: {report['hidden_dirt_score']['uncleared_patches']}",'Held outcome card / controlled development scenario']
+                   f"Uncleared deposited patches: {report['hidden_dirt_score']['uncleared_patches']}",f"Maximum chassis tilt: {report['physical_mission']['maximum_chassis_tilt_deg']:.2f} degrees"]
             for i,line in enumerate(lines):draw.text((330,275+i*32),line,font=self.font,fill=(224,239,240))
             picture.save(self.directory/'cinematic_final.png')
             for _ in range(75):self.encoder.stdin.write(picture.tobytes());self.frames+=1
         self.encoder.stdin.close();code=self.encoder.wait();self.renderer.close();self.log.close()
         if code:raise RuntimeError('Cinematic ffmpeg encoding failed')
         (self.directory/'cinematic_metadata.json').write_text(json.dumps({'frames':self.frames,'fps':25,'duration_s':self.frames/25,
-            'resolution':[1280,720],'playback':'1x during initial deposition and brush inspection shots; otherwise 8x; final 3s held outcome',
+            'resolution':[1280,720],'encoding_crf':23,'playback':'1x during initial deposition and brush inspection shots; otherwise 8x; final 3s held outcome',
             'sensor_views':'Three actual RGB detector inputs, timestamped at 2 Hz, with detected image bounding boxes','closeup_frames':self.closeup_frames,'scene':'Procedural rooftop, deck, supports, skyline, sky and robot visual details; presentation only'},indent=2)+'\n')

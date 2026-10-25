@@ -99,4 +99,5 @@
     <touch name="touch_fl" site="bumper_fl" />
     <touch name="touch_fr" site="bumper_fr" />
   </sensor>
+  <statistic extent="6" center="0 0 1.2" />
 </mujoco>

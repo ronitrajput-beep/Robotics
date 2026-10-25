@@ -1,0 +1,101 @@
+{
+  "model_sha256": "84062c3d58ec5948caa742e6e4df4fb58cb8700c1df513bfa18980fc933f226b",
+  "controller_sha256": "c3e702d60b733102fc23900f8454dadb8e99b2fea660e814b762dd2cb56ef4b5",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "guarded_geometry_sha256": "72540d94bb4ec415588f5773dcdfbe5bbbbf8723575ff2deb2f9372793faf0d9",
+  "drive_regulator_sha256": "1be979b05a18524a2435b9398e1869e7b383605cfd25cd204276c4861a6479f5",
+  "maximum_chassis_height_m": 0.13490693862857914,
+  "maximum_chassis_tilt_deg": 3.07696354533783,
+  "vision_revisit_cycles": 1,
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    -4.293375707642433e-05,
+    0.0196929289442338,
+    -0.00020671394096027917,
+    0.13695429700388284
+  ],
+  "guard_normal_impulse_Ns": 232.03164292688274,
+  "peak_guard_normal_force_N": 633.3762918876408,
+  "route_profile": "inward_turns",
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.9057291666666667,
+    "qualified_contact_fraction": 0.90375,
+    "half_soil_proxy_removed_fraction": 0.8692708333333333,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.9911448450347881,
+    "soil_removed_proxy_fraction": 0.6967012172156962
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 348.2220000009346,
+      "event": "VISION_EDGE_SERVICE",
+      "edge": "bottom",
+      "targets": [
+        [
+          0.5759550053805662,
+          -1.6971037079740403
+        ],
+        [
+          0.830621459537908,
+          -1.8379572618582116
+        ]
+      ]
+    },
+    {
+      "time_s": 419.6400000012756,
+      "event": "EDGE_SERVICE_COMPLETE"
+    },
+    {
+      "time_s": 491.31600000161785,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 491.31800000161786,
+      "event": "BRAKING",
+      "reason": "DOCK"
+    },
+    {
+      "time_s": 492.3280000016227,
+      "event": "VISION_REVISIT",
+      "targets": [
+        [
+          -1.0146004555292292,
+          -0.06922787175564502
+        ]
+      ]
+    },
+    {
+      "time_s": 577.7880000001609,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 578.8780000001351,
+      "event": "DOCKED"
+    }
+  ],
+  "stop_reason": "DOCK",
+  "terminal_angular_speed_rad_s": 0.005860820393223477,
+  "terminal_brush_speed_rad_s": 0.16744165940438666,
+  "dock_error_m": 0.09290705123377307,
+  "terminal_speed_mps": 0.014158197563481158,
+  "variant": "proposed",
+  "planned_duration_s": 1100.0,
+  "seed": 0,
+  "status": "DOCKED",
+  "time_s": 578.8780000001351,
+  "waypoints_reached": 3,
+  "waypoints_total": 3,
+  "visited_contact_fraction": 0.8082291666666667,
+  "soil_removed_proxy_fraction": 0.5418408045888647,
+  "path_tracking_rmse_m": 0.10238364060302231,
+  "effort_Nm2_s": 1196.2025006068488,
+  "positive_mechanical_work_J": 4818.55005506457,
+  "mujoco": "3.17.0"
+}

@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def build(destination):
     tree=ET.parse(ROOT/'models/solar_cleaning_crawler.xml'); root=tree.getroot()
+    ET.SubElement(root,'statistic',extent='6',center='0 0 1.2')  # visible rack bounds; inactive particles at 100 m must not clip onboard camera
     rack=root.find(".//body[@name='pv_array_rack']")
     # Original raised trim remains visual. Separate guard supplies containment.
     for geom in rack.findall('geom'):

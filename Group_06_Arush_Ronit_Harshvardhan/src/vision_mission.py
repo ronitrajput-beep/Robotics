@@ -67,14 +67,16 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
         if video is not None:video.capture(m,d,field,origin,R,state,coverage.summary(),len(last_targets))
     try:
         result=mission(seed=0,duration=duration,guarded=True,output=directory/'telemetry.csv.gz',on_sample=sample,should_move=lambda:trigger.active,revisit_targets=lambda:last_targets,edge_service_targets=lambda:last_targets,
-                       route_profile="inward_turns" if scenario=="scattered" else "standard",guarded_model_path=guarded_model_path)
+                       route_profile="inward_turns",guarded_model_path=guarded_model_path)
     finally:
         stream.close()
         if renderer is not None:renderer.close()
     status='CLEAN_AND_HOME' if result['status']=='DOCKED' and not last_targets else ('IDLE_COMPLETE' if not trigger.active and result['status']=='TIMEOUT' and result['time_s']>=duration-.003 else 'INCOMPLETE')
     estimated_status=status
     if status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']>0:status='VERIFICATION_MISS'
-    report={'camera_estimated_status':estimated_status,'status':status,'independent_cleaning_pass':status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']==0,'independent_coverage_pass':result['coverage_metrics_v2']['qualified_contact_fraction']>=.9,'scenario':scenario,'physical_mission':result,'trigger_events':trigger.events,'deposition_events':fall.events,
+    no_lift=result['maximum_chassis_tilt_deg']<1. and result['maximum_chassis_height_m']<.123
+    if status=='CLEAN_AND_HOME' and not no_lift:status='UNSAFE_MOTION'
+    report={'independent_no_lift_pass':no_lift,'camera_estimated_status':estimated_status,'status':status,'independent_cleaning_pass':status=='CLEAN_AND_HOME' and field.summary()['uncleared_patches']==0,'independent_coverage_pass':result['coverage_metrics_v2']['qualified_contact_fraction']>=.9,'scenario':scenario,'physical_mission':result,'trigger_events':trigger.events,'deposition_events':fall.events,
             'hidden_dirt_score':field.summary(),'last_camera_targets':last_targets,'source_hashes':hashes,
             'limitations':['Controlled-colour RGB detector, not general debris recognition','Ground-truth navigation retained; camera-based dirt trigger only','Aggregate load plus local gap is a soil proxy','Fine-particle conversion is explicit hybrid deposition; larger crumbs not yet implemented','At most two camera-driven revisit cycles; persistent targets end INCOMPLETE']}
     if video is not None:video.close(report)

@@ -84,7 +84,7 @@ class RooftopScene:
                 for shift in (-.11,.11):
                     self.box(scene,[.0012,.242,.00007],world([x+shift,y,.02068]),[.39,.49,.58,1],R,.7)
         # A home marker, painted on top of the panel, not a physical obstacle.
-        for cx,cy,sx,sy in [(-2.82,1.70,.012,.13),(-2.62,1.70,.012,.13),(-2.72,1.70,.11,.012)]:
+        for cx,cy,sx,sy in [(-2.82,1.53,.012,.13),(-2.62,1.53,.012,.13),(-2.72,1.53,.11,.012)]:
             self.box(scene,[sx,sy,.0001],world([cx,cy,.021]),[.25,.8,.55,1],R)
         # Robot hardware details follow the actual rigid-body pose.
         b=m.body('crawler_chassis').id;B=d.xmat[b].reshape(3,3);p=d.xpos[b]

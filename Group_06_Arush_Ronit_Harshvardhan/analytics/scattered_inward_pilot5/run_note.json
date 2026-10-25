@@ -1,0 +1,4 @@
+{
+  "interpretation": "Interrupted/rejected: smaller torque cap still produced >2 degree pitch during row reversal.",
+  "evidence": "Retained raw CSV and source snapshots; do not count as passing evidence"
+}
