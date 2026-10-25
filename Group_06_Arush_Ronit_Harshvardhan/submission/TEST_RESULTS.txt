@@ -1,8 +1,8 @@
 Actual full repository test suite, 25-Oct-2026 UTC
 Command: MUJOCO_GL=egl python -m unittest discover -s tests
-Ran 56 tests in 19.960s
+Ran 58 tests in 22.219s
 OK
 
-The compact ZIP includes current-system tests and small fixtures; the full repository also retains legacy scaffold rejection/geometry-economics tests. No Monte Carlo outcome is inferred from unit tests.
+Earlier extracted compact bundle smoke check: 51 focused tests passed before adding two Wilson-interval boundary tests. Full repository retains legacy scaffold rejection and geometry/economics tests, excluded from the compact download. These are code checks, not Monte Carlo outcome evidence.
 
-Extracted compact ZIP smoke check: 51 current-system tests passed in 22.228 s.
+Updated extracted compact ZIP: Ran 53 tests in 23.743s; OK

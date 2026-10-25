@@ -1,12 +1,12 @@
 {
-  "created_utc": "2026-10-25T17:24:31.278881+00:00",
+  "created_utc": "2026-10-25T17:28:43.295893+00:00",
   "status": "PRELIMINARY REVIEW COPY: final validation pending",
   "bulk_raw_data": "Full real 500 Hz trial logs are retained separately in the personal Robotics repository; see submission/REPRODUCE.md. Archive is not a substitute for raw data.",
   "files": [
     {
       "path": "analytics/analyse_final_validation.py",
-      "bytes": 10139,
-      "sha256": "d592c687a6eb3ed101654ef696d3ad2445b65a5c969b1f13634f3b6bed92ef77"
+      "bytes": 10327,
+      "sha256": "6b7d4afd84134f0cb92dcb5064badbf8122b203bae3b40d5d24c7b27567a5f33"
     },
     {
       "path": "analytics/analyse_tracking_benchmark.py",
@@ -455,8 +455,8 @@
     },
     {
       "path": "submission/TEST_RESULTS.txt",
-      "bytes": 422,
-      "sha256": "f309c8f1fb807dccc597669aac801b799e8bd71e1d53cfa5911fcf7e99db9da7"
+      "bytes": 492,
+      "sha256": "0d1549fc39997d3bdad194f7e6118d0d78754360093441ab12e8cdec4055d905"
     },
     {
       "path": "submission/WORK_IN_PROGRESS.md",
@@ -572,6 +572,11 @@
       "path": "tests/test_final_business.py",
       "bytes": 1823,
       "sha256": "5c7d941c2dfdd7ee8cb0b610417a856947189daaa49b393d6aa75e9dfc6b9687"
+    },
+    {
+      "path": "tests/test_final_validation_statistics.py",
+      "bytes": 1066,
+      "sha256": "7d5452a754998fdf26056dabb5b77656a11f1edb28af27e34b03d602b0e8ebc9"
     },
     {
       "path": "tests/test_guard_contact_and_feed.py",

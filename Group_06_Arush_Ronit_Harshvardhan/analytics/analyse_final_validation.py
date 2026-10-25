@@ -13,7 +13,9 @@ from analyse_tracking_benchmark import comparison
 def wilson(successes,n):
     z=stats.norm.ppf(.975);p=successes/n;den=1+z*z/n
     centre=(p+z*z/(2*n))/den;half=z*np.sqrt(p*(1-p)/n+z*z/(4*n*n))/den
-    return [float(centre-half),float(centre+half)]
+    # Keep exact boundary proportions inside the interval despite cancellation.
+    # Otherwise 30/30 can yield upper=0.9999999999999999 and a negative yerr.
+    return [float(max(0.,min(p,centre-half))),float(min(1.,max(p,centre+half)))]
 
 
 def audit_trace(directory,row):
