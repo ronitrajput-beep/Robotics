@@ -7,7 +7,7 @@ import pandas as pd
 
 def verify(directory,require_hybrid_mass=True):
     directory=Path(directory);report=json.loads((directory/'result.json').read_text())
-    motion=pd.read_csv(directory/'telemetry.csv.gz');mass=pd.read_csv(directory/'collection.csv.gz');solid=pd.read_csv(directory/'solid.csv.gz')
+    motion=pd.read_csv(directory/'telemetry.csv.gz',low_memory=False);mass=pd.read_csv(directory/'collection.csv.gz');solid=pd.read_csv(directory/'solid.csv.gz')
     observations=[json.loads(line) for line in (directory/'observations.jsonl').read_text().splitlines()]
     checks={}
     checks['completed']=report['status']=='CLEAN_AND_HOME' and report['physical_mission']['status']=='DOCKED'
@@ -33,6 +33,7 @@ def verify(directory,require_hybrid_mass=True):
     trigger=report['trigger_events'][0]['time_s']
     checks['image_trigger_precedes_motion']=bool((motion[motion.time_s<trigger-1e-6].state=='HOME_MONITOR').all() and max(len(o['targets']) for o in observations if o['time_s']<=trigger)>=3)
     checks['camera_verifies_clean']=not report['last_camera_targets']
+    checks={key:bool(value) for key,value in checks.items()}
     result={'pass':all(checks.values()),'mass_balance_scope':'grain-to-soil plus surface/bin/station' if require_hybrid_mass else 'legacy surface/bin/station only; grain transfer not verified','checks':checks,'metrics':{'max_tilt_deg':float(motion.chassis_tilt_deg.max()),'max_height_m':float(motion.chassis_height_m.max()),'contact_coverage':report['physical_mission']['coverage_metrics_v2']['qualified_contact_fraction'],'mass_balance_max_abs_kg':float(mass.balance_error_kg.abs().max()),'peak_solid_force_N':float(solid.brush_force_N.max()),'terminal_dust_bin_kg':float(mass.bin_kg.iloc[-1]),'terminal_station_waste_kg':float(mass.station_kg.iloc[-1])}}
     (directory/'independent_collection_checks.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
     if not result['pass']:raise AssertionError('Combined mission did not satisfy every acceptance check')

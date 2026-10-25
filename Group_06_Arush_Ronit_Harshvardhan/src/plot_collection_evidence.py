@@ -17,7 +17,7 @@ def plot(directory):
     mass=pd.read_csv(directory/'collection.csv.gz');solid=pd.read_csv(directory/'solid.csv.gz')
     fig,axes=plt.subplots(2,2,figsize=(12,8),constrained_layout=True)
     ax=axes[0,0];ax.add_patch(Rectangle((-3,-2),6,4,fc='#e5edf5',ec='#476176'))
-    ax.add_patch(Rectangle((-4.3,1),1.3,1,fc='#d9e2df',ec='#476176'))
+    ax.add_patch(Rectangle((-4.5,1),1.5,1,fc='#d9e2df',ec='#476176'))
     ax.add_patch(Rectangle((-3.25,-2.66),6.5,.66,fc='#c5cdd0',ec='#476176'))
     ax.plot(motion.x_m[::100],motion.y_m[::100],lw=.7,color='#168489',label='Actual chassis path')
     ax.plot(solid.x_m[::10],solid.y_m[::10],lw=1.5,color='#b16f24',label='Persistent block path')

@@ -1,6 +1,6 @@
 # External dock and collection prototype
 
-The `combined` scenario loads `models/collection_cleaning_crawler.xml`. The previous guarded model and its evidence remain separate. Full-run acceptance is pending until its independent checks and recorded video are complete.
+The `combined` scenario loads `models/collection_cleaning_crawler.xml`. The previous guarded model and its evidence remain separate. Headless pilot8 passes every independent combined-cycle check. The fresh recording in collection_demo_v6 is being rendered and must independently pass before publication claims.
 
 ## Current mechanism
 
@@ -49,8 +49,10 @@ The validator requires completion, dust thresholds, fixed motion limits, settled
 
 Early collection pilots and recording drafts are rejected or interrupted and labelled. Pilot1/2 failed solid retention. Pilot3 exposed insufficient entry dose. Pilot4 exceeded its horizon and failed the dock motion gate. Dock friction matching reduced that transition. Pilot5/6 and a repeated force trace exposed a deeper rigid-brush/glass numerical instability during return. The captured state/control sequence reproduced a launch with the old .005 s contact law (>4 kN at initial detection, >14 kN in the diagnostic replay); .01–.04 s contact laws avoided that launch in the controlled replay. The current brush uses .02 s and unchanged effective friction. A regression test uses this captured state.
 
-Static-block tests found numerical drift with the original contact impedance, including unsuccessful no-slip postprocessing trials. Higher block contact impedance reduced 400 s drift to ~2 mm while keeping it dynamic. A brush-only solid test still pulled blocks underneath and was rejected. The fixed guide then passed four declared lower-strip positions: physical contact, ejection and retention, ~5–6 N peak load and <0.024° chassis tilt in that controlled diagnostic. Full mission evidence remains separate.
+Static-block tests found numerical drift with the original contact impedance, including unsuccessful no-slip postprocessing trials. Higher block contact impedance reduced 400 s drift to ~2 mm while keeping it dynamic. Brush-only solid tests jammed or lifted the robot and were rejected. The fixed guide then passed four declared lower-strip positions: physical contact, ejection and retention, ~5–6 N peak load and <0.024° chassis tilt in that controlled diagnostic. Full mission evidence remains separate.
 
 These are nominal simulation development results, not statistical robustness, scratch safety, structural validation or hardware certification. All source snapshots and failed data remain available.
 
 Pilot7 completed physical collection, all dust thresholds and dock service, but a 3.96 mm interior brush-contact transient failed the unchanged .123 m height gate. The next model replaces the long cylinder contact with a capsule: 0.8 m straight span plus rounded end caps. The coverage/soil model still scores the conservative 0.8 m straight span. Support representations move outside the caps. Pilot8 is the fresh full mission with this model and exact grain-to-soil mass transfer; do not claim success until its checks pass. Forty-nine tests pass, including captured-instability regression and hybrid mass transfer.
+
+Completed headless pilot8: CLEAN_AND_HOME at 610.858 s, 32/32 patches below threshold, actual fixed-guide contact and 120 g block retention, settled external home, 8.002 s service, empty onboard bin, 3.98564 g station waste and 14.3625 mg modelled residual soil. Peak rise 0.408684 mm and peak tilt 0.093728 degrees pass the unchanged limits. Contact footprint is 89.97917%; exact-90 flag stays false. Independent checks, matching source snapshots and evidence plots are stored with the run. The legacy solid.csv.gz column `brush_force_N` now represents summed brush-or-guide normal force; in this run the contact is with the guide, and first_brush_contact_s is null.
