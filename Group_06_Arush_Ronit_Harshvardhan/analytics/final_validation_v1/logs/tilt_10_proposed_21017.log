@@ -1,0 +1,681 @@
+{
+  "model_sha256": "fc0849aaca734fb057fd3c1cdd91dd61673e8e1c8969dd3d8a516b2e37b2c903",
+  "controller_sha256": "fc729958a2ea22e55879e7131a84dbf8599264e7c5bc664874de64d6a4ca0d5c",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "9a471512d5cd2fbb2380e2c28d303c7064b66b7ad07a1e4a747e772db148f41e",
+  "guarded_geometry_sha256": "550bf27dbaf2c14a461ab6b5cf63e2abc00c910b0df14d82fb3e5c684e314081",
+  "drive_regulator_sha256": "cc9d69578e94c4b2439f31fa6ee2e787baa53a40c2fb365c242f937c5a570da8",
+  "transit_planner_sha256": "20009ac6d9e6084128a31a118260eb26725208ddbf68a1a8fd52ae81a06704d1",
+  "maximum_chassis_height_m": 0.12036540627843482,
+  "maximum_chassis_tilt_deg": 0.07313349697470894,
+  "vision_revisit_cycles": 0,
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    -1.0740740446503068,
+    0.12892733730800646,
+    0.0909347681213219,
+    0.16001879851988812
+  ],
+  "guard_normal_impulse_Ns": 0.0,
+  "peak_guard_normal_force_N": 0.0,
+  "route_profile": "external_dock",
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.90125,
+    "qualified_contact_fraction": 0.8997916666666667,
+    "half_soil_proxy_removed_fraction": 0.8908333333333334,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.9743833017077799,
+    "soil_removed_proxy_fraction": 0.7668564434670075
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 5.237999999999645,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -2.778647767348805,
+          1.6012243235934362
+        ]
+      ]
+    },
+    {
+      "time_s": 36.001999999998034,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          0.8768510708674349,
+          1.1676278975800645
+        ]
+      ]
+    },
+    {
+      "time_s": 59.07400000002623,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          0.973492972646782,
+          1.0792045933704126
+        ]
+      ]
+    },
+    {
+      "time_s": 71.51200000001474,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -0.43299770084723344,
+          0.8276323433576137
+        ]
+      ]
+    },
+    {
+      "time_s": 100.57999999994699,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -0.4620397560687852,
+          0.7599944895491545
+        ]
+      ]
+    },
+    {
+      "time_s": 149.88599999998758,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -0.9620385528999427,
+          0.011217479219664879
+        ]
+      ]
+    },
+    {
+      "time_s": 173.25200000009914,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -1.0436590683649323,
+          -0.02179395962677709
+        ]
+      ]
+    },
+    {
+      "time_s": 185.55200000015788,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          0.29423954743612235,
+          -0.17004298614547536
+        ]
+      ]
+    },
+    {
+      "time_s": 220.50200000032476,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          1.28782229085029,
+          -0.7059116679112226
+        ]
+      ]
+    },
+    {
+      "time_s": 253.11200000048046,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -0.6035887297473148,
+          -1.0550511737270614
+        ]
+      ]
+    },
+    {
+      "time_s": 266.9780000005467,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          1.1228022678676286,
+          -0.8770739849800586
+        ]
+      ]
+    },
+    {
+      "time_s": 297.7120000006934,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          0.7984043018287585,
+          -1.6910849252429734
+        ]
+      ]
+    },
+    {
+      "time_s": 331.1980000008533,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -0.7911258853879894,
+          -1.8002502523452166
+        ]
+      ]
+    },
+    {
+      "time_s": 344.16600000091523,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          0.6964165502572284,
+          -1.6486939282572517
+        ]
+      ]
+    },
+    {
+      "time_s": 604.129999999538,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 604.1319999995379,
+      "event": "BRAKING",
+      "reason": "DOCK"
+    },
+    {
+      "time_s": 604.8679999995205,
+      "event": "DOCK_SERVICE_START"
+    },
+    {
+      "time_s": 612.8699999993313,
+      "event": "DOCK_SERVICE_COMPLETE"
+    },
+    {
+      "time_s": 612.8699999993313,
+      "event": "DOCKED"
+    }
+  ],
+  "stop_reason": "DOCK",
+  "terminal_angular_speed_rad_s": 1.2939565593071168e-05,
+  "terminal_brush_speed_rad_s": 5.820706135591381e-06,
+  "dock_error_m": 0.06824520754082689,
+  "terminal_speed_mps": 0.0002489251466406385,
+  "variant": "proposed",
+  "planned_duration_s": 1000.0,
+  "seed": 21017,
+  "status": "DOCKED",
+  "time_s": 612.8699999993313,
+  "waypoints_reached": 33,
+  "waypoints_total": 33,
+  "visited_contact_fraction": 0.7479166666666667,
+  "soil_removed_proxy_fraction": 0.5856713241204213,
+  "path_tracking_rmse_m": 0.018632116949844978,
+  "effort_Nm2_s": 763.8650421583809,
+  "positive_mechanical_work_J": 2924.1864947100053,
+  "mujoco": "3.17.0"
+}
+{
+  "independent_no_lift_pass": true,
+  "camera_estimated_status": "CLEAN_AND_HOME",
+  "status": "CLEAN_AND_HOME",
+  "independent_cleaning_pass": true,
+  "independent_coverage_pass": false,
+  "scenario": "combined",
+  "physical_mission": {
+    "model_sha256": "fc0849aaca734fb057fd3c1cdd91dd61673e8e1c8969dd3d8a516b2e37b2c903",
+    "controller_sha256": "fc729958a2ea22e55879e7131a84dbf8599264e7c5bc664874de64d6a4ca0d5c",
+    "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+    "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+    "coverage_sha256": "9a471512d5cd2fbb2380e2c28d303c7064b66b7ad07a1e4a747e772db148f41e",
+    "guarded_geometry_sha256": "550bf27dbaf2c14a461ab6b5cf63e2abc00c910b0df14d82fb3e5c684e314081",
+    "drive_regulator_sha256": "cc9d69578e94c4b2439f31fa6ee2e787baa53a40c2fb365c242f937c5a570da8",
+    "transit_planner_sha256": "20009ac6d9e6084128a31a118260eb26725208ddbf68a1a8fd52ae81a06704d1",
+    "maximum_chassis_height_m": 0.12036540627843482,
+    "maximum_chassis_tilt_deg": 0.07313349697470894,
+    "vision_revisit_cycles": 0,
+    "guarded": true,
+    "minimum_chassis_edge_gaps_m": [
+      -1.0740740446503068,
+      0.12892733730800646,
+      0.0909347681213219,
+      0.16001879851988812
+    ],
+    "guard_normal_impulse_Ns": 0.0,
+    "peak_guard_normal_force_N": 0.0,
+    "route_profile": "external_dock",
+    "layout": "edge_raster",
+    "coverage_metrics_v2": {
+      "grid_cell_area_m2": 0.0025000000000000005,
+      "panel_area_m2": 24.0,
+      "geometric_footprint_fraction": 0.90125,
+      "qualified_contact_fraction": 0.8997916666666667,
+      "half_soil_proxy_removed_fraction": 0.8908333333333334,
+      "interior_area_m2": 15.810000000000002,
+      "interior_qualified_fraction": 0.9743833017077799,
+      "soil_removed_proxy_fraction": 0.7668564434670075
+    },
+    "fault": null,
+    "fault_time_s": null,
+    "events": [
+      {
+        "time_s": 5.237999999999645,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -2.778647767348805,
+            1.6012243235934362
+          ]
+        ]
+      },
+      {
+        "time_s": 36.001999999998034,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            0.8768510708674349,
+            1.1676278975800645
+          ]
+        ]
+      },
+      {
+        "time_s": 59.07400000002623,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            0.973492972646782,
+            1.0792045933704126
+          ]
+        ]
+      },
+      {
+        "time_s": 71.51200000001474,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -0.43299770084723344,
+            0.8276323433576137
+          ]
+        ]
+      },
+      {
+        "time_s": 100.57999999994699,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -0.4620397560687852,
+            0.7599944895491545
+          ]
+        ]
+      },
+      {
+        "time_s": 149.88599999998758,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -0.9620385528999427,
+            0.011217479219664879
+          ]
+        ]
+      },
+      {
+        "time_s": 173.25200000009914,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -1.0436590683649323,
+            -0.02179395962677709
+          ]
+        ]
+      },
+      {
+        "time_s": 185.55200000015788,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            0.29423954743612235,
+            -0.17004298614547536
+          ]
+        ]
+      },
+      {
+        "time_s": 220.50200000032476,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            1.28782229085029,
+            -0.7059116679112226
+          ]
+        ]
+      },
+      {
+        "time_s": 253.11200000048046,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -0.6035887297473148,
+            -1.0550511737270614
+          ]
+        ]
+      },
+      {
+        "time_s": 266.9780000005467,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            1.1228022678676286,
+            -0.8770739849800586
+          ]
+        ]
+      },
+      {
+        "time_s": 297.7120000006934,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            0.7984043018287585,
+            -1.6910849252429734
+          ]
+        ]
+      },
+      {
+        "time_s": 331.1980000008533,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            -0.7911258853879894,
+            -1.8002502523452166
+          ]
+        ]
+      },
+      {
+        "time_s": 344.16600000091523,
+        "event": "VISION_LOCAL_SLOWDOWN",
+        "targets": [
+          [
+            0.6964165502572284,
+            -1.6486939282572517
+          ]
+        ]
+      },
+      {
+        "time_s": 604.129999999538,
+        "event": "DOCKING"
+      },
+      {
+        "time_s": 604.1319999995379,
+        "event": "BRAKING",
+        "reason": "DOCK"
+      },
+      {
+        "time_s": 604.8679999995205,
+        "event": "DOCK_SERVICE_START"
+      },
+      {
+        "time_s": 612.8699999993313,
+        "event": "DOCK_SERVICE_COMPLETE"
+      },
+      {
+        "time_s": 612.8699999993313,
+        "event": "DOCKED"
+      }
+    ],
+    "stop_reason": "DOCK",
+    "terminal_angular_speed_rad_s": 1.2939565593071168e-05,
+    "terminal_brush_speed_rad_s": 5.820706135591381e-06,
+    "dock_error_m": 0.06824520754082689,
+    "terminal_speed_mps": 0.0002489251466406385,
+    "variant": "proposed",
+    "planned_duration_s": 1000.0,
+    "seed": 21017,
+    "status": "DOCKED",
+    "time_s": 612.8699999993313,
+    "waypoints_reached": 33,
+    "waypoints_total": 33,
+    "visited_contact_fraction": 0.7479166666666667,
+    "soil_removed_proxy_fraction": 0.5856713241204213,
+    "path_tracking_rmse_m": 0.018632116949844978,
+    "effort_Nm2_s": 763.8650421583809,
+    "positive_mechanical_work_J": 2924.1864947100053,
+    "mujoco": "3.17.0"
+  },
+  "trigger_events": [
+    {
+      "event": "VISION_TRIGGER",
+      "time_s": 3.999999999999781,
+      "targets": [
+        [
+          -2.7290586128357033,
+          1.7362521169332512
+        ],
+        [
+          -2.778647767348805,
+          1.6012243235934362
+        ],
+        [
+          0.8237449939050316,
+          1.0894761598668325
+        ],
+        [
+          0.973492972646782,
+          1.0792045933704126
+        ],
+        [
+          -0.43299770084723344,
+          0.8276323433576137
+        ],
+        [
+          -0.23169436739807914,
+          0.7348476130567186
+        ],
+        [
+          -0.9620385528999427,
+          0.011217479219664879
+        ],
+        [
+          0.29423954743612235,
+          -0.17004298614547536
+        ],
+        [
+          1.195383520659758,
+          -0.8128764590619014
+        ],
+        [
+          -0.6035887297473148,
+          -1.0550511737270614
+        ],
+        [
+          0.6794019677415859,
+          -1.617723564577095
+        ],
+        [
+          0.7984043018287585,
+          -1.6910849252429734
+        ],
+        [
+          -0.7911258853879894,
+          -1.8002502523452166
+        ]
+      ]
+    }
+  ],
+  "deposition_events": [
+    {
+      "event": "PARTICLES_SPAWNED",
+      "time_s": 3.001999999999891,
+      "count": 8
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 0,
+      "panel_xy_m": [
+        -2.72,
+        1.6702271931395132
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 1,
+      "panel_xy_m": [
+        -0.35,
+        0.840227193139513
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 2,
+      "panel_xy_m": [
+        0.85,
+        1.0902271931395138
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 3,
+      "panel_xy_m": [
+        -0.9,
+        -0.05977280686048707
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 4,
+      "panel_xy_m": [
+        0.35,
+        -0.20977280686048708
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 5,
+      "panel_xy_m": [
+        1.2,
+        -0.809772806860487
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 6,
+      "panel_xy_m": [
+        -0.5,
+        -1.1097728068604873
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    },
+    {
+      "event": "HYBRID_DEPOSITION",
+      "time_s": 3.3599999999998515,
+      "id": 7,
+      "panel_xy_m": [
+        0.7,
+        -1.6597728068604876
+      ],
+      "transferred_mass_kg": 0.0005,
+      "assumption": "Fine rigid grain converted to visible stationary soil layer; velocity discarded, not resolved adhesion"
+    }
+  ],
+  "hidden_dirt_score": {
+    "patches": 32,
+    "uncleared_patches": 0,
+    "residual_patches": [],
+    "mean_residual": 0.0038302497847113423
+  },
+  "last_camera_targets": [],
+  "source_hashes": {
+    "vision_mission.py": "12837454cdb9f9603d0c0c202209c1b8833dcb9232a9e566aa88c1f69cb57df0",
+    "panel_vision.py": "2ba670ef483f33ff5532b424a8e25c8b4a00860dde8688dd2ee4de1d51091d63",
+    "surface_debris.py": "9c3a3f7820458cb472ab68fcf1682f47a1ca35e25481811648db79c1fcf8a43c",
+    "debris_events.py": "660d8b2832cfb5213ecbb6f527a4327c69522164e662c762602050b38a04fbdc",
+    "mission_video.py": "123ff11f75bddf8b851d8317f491d667b3b48d0a1b77307c57c8d51928683fc7",
+    "cinematic_video.py": "646404ee13f85cacc2d9acaddb0d9a22236a18cd7a1c5a931e4ae9cf54088521",
+    "cinematic_scene.py": "ebb06cb526e9f6afa26478f57b58f62de07414f8f71fd2467d2ab958e47ae0d9",
+    "collection_system.py": "130a8ad0ee61d69d698688a2afb73eecbba4c0126be17cfb6450f969f9056d58",
+    "build_collection_model.py": "3c6362d75234d1212933630c54105e6747e0014fcbedecbdcb0b360ffecd5803"
+  },
+  "limitations": [
+    "Controlled-colour RGB detector, not general debris recognition",
+    "Ground-truth navigation retained; camera-based dirt trigger only",
+    "Aggregate load plus local gap is a soil proxy",
+    "At most two camera-driven revisit cycles; persistent targets end INCOMPLETE",
+    "Dust capture, service power and mass flow are reduced-order assumptions; no resolved airflow or battery model",
+    "Solid starts in a declared lower-strip handling corridor with a fixed guide; arbitrary solid routing and scratch safety unvalidated"
+  ],
+  "collection": {
+    "deposited_dust_kg": 0.004,
+    "remaining_on_glass_kg": 1.4115211801245677e-05,
+    "onboard_bin_kg": 0.0,
+    "station_waste_kg": 0.003985884788198775,
+    "captured_dust_kg": 0.003985884788198775,
+    "mass_balance_error_kg": 1.9949319973733282e-17,
+    "blower_energy_J": 7241.199999993994,
+    "dock_charge_energy_J": 240.06000000000756,
+    "events": [
+      {
+        "event": "DOCK_SERVICE_START",
+        "time_s": 604.8679999995205,
+        "bin_kg": 0.003985884788198775
+      }
+    ],
+    "assumptions": "Released representative grain mass assigned to its deposited patches by area (20 g/m2 fallback for manual patches); contact-gated exponential capture into bin; 20 W blower; dock 2 g/s emptying and 30 W charge energy. No airflow, seals, electrochemistry or connector contact solved."
+  },
+  "physical_solid": {
+    "spawned": true,
+    "size_m": [
+      0.07,
+      0.07,
+      0.05
+    ],
+    "mass_kg": 0.12,
+    "first_tool_contact_s": 334.47400000086895,
+    "first_brush_contact_s": null,
+    "fully_left_glass": true,
+    "contacted_catch_tray": true,
+    "retained_in_tray_at_end": true,
+    "peak_tool_object_force_N": 5.838471072686655,
+    "final_panel_position_m": [
+      -0.604943123921949,
+      -2.1503875854513916,
+      -0.08000001472115736
+    ],
+    "events": [
+      {
+        "event": "SOLID_RELEASED",
+        "time_s": 3.001999999999891
+      },
+      {
+        "event": "SOLID_TOOL_CONTACT",
+        "tool": "solid_deflector",
+        "time_s": 334.47400000086895
+      },
+      {
+        "event": "SOLID_OFF_GLASS",
+        "time_s": 337.47200000088327
+      },
+      {
+        "event": "SOLID_TRAY_CONTACT",
+        "time_s": 337.5240000008835
+      }
+    ],
+    "scope": "Persistent rigid body after release; fixed diagonal deflector and bottom-row handling corridor, not arbitrary object-specific planning; glass scratching/damage not modelled."
+  }
+}
