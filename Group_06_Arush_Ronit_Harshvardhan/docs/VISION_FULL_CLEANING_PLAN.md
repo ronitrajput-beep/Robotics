@@ -2,12 +2,26 @@
 
 Planning revision, 25 October 2026. The latest user instruction accepts roughly 90% whole-panel coverage to reduce mechanical complexity, cancels telescoping/deploying brushes and permits an invisible simulation boundary to prevent falls. This supersedes the earlier 100%-coverage/telescoping-tool proposal. No robot or controller code is changed by this planning revision.
 
+## Latest presentation requirement — visible chassis reaches the edges
+
+The demonstration requires the robot chassis to visibly reach/touch the panel edges, with approximately 90% actual cleaning coverage as the engineering target. This section supersedes earlier requirements for removing arbitrary edge deposits or proving every corner cleaned in the final demonstration.
+
+The main demonstration will deliberately deposit dust/physical crumbs in a predefined central service region. The region and deposition distribution must be stored in its scenario metadata. This selected scene does not test arbitrary perimeter contamination. Detection must still operate on actual camera images; central deposition must not become a timed command for the robot to leave home.
+
+**Required visible behaviour:** a perimeter pass in which the chassis itself approaches/touches each of the four inner panel boundaries, followed by an overlapping sweep of the panel and actual removal of the central deposited dirt. A brush tip reaching the boundary while the body stays far inward does not satisfy the requested visual behaviour. Include sufficiently wide, uninterrupted views that body position against the frame can be seen. Test feasible corner transitions rather than promising unsupported body positions at corners.
+
+Use the fixed-brush mechanism and the authorised concealed collision guard. Validate body-to-frame gap/contact, roller support, brush/frame collisions and guard reaction forces during each edge approach. Plan headings deliberately: a forward brush projecting beyond the chassis can hit a frame before the body reaches it, so a suitable sideways/tangential approach may be required. If the current geometry prevents body contact, investigate a simple fixed geometry/frame adjustment with explicit collision behaviour rather than pose resets or clipping through the frame. No telescoping tool is introduced.
+
+Maintain two distinct outcomes: (1) the robot visibly performs its edge/perimeter pass; (2) measured qualifying cleaning coverage targets approximately 90% of all 24 m² and central deposited dirt is actually removed. Neither result is established by the current ~61–62% prototype. The main scene need not contain edge dirt. Keep actual coverage and residual metrics unchanged by presentation choices; do not turn chassis proximity into a cleaning/contact measurement. A future wider brush is a proposed hardware change, not an implemented capability.
+
+Final storyboard: idle at home → central dirt falls → RGB detection/confirmation → physical departure → deliberate body-to-edge perimeter pass and overlapping cleaning sweep (order chosen for a feasible route) → targeted central cleaning/reinspection → return home and settle. The guard may remain invisible in the main render as requested, with its presence and modelling role recorded in the technical documentation. This checkpoint revises the plan only.
+
 ## 1. Decisions and unchanged requirements
 
 - **Cancel the telescopic/articulated edge-tool solution.** There will be no deployment sequence or time spent extending a tool. A rotating brush is still required, but its mount/overhang remains fixed.
 - Start with the existing 0.55 m main brush. Investigate a wider/repositioned fixed brush or simple permanently extended sweep attachments only if geometric reach analysis shows they are necessary. Every added component must still have credible mass, collision/contact geometry and any required actuation.
 - Target **at least 90% of the original 24 m² glass surface** in the declared nominal scenario, with the remaining area and locations reported. This is a target, not a result: the current best demonstrated candidate is approximately 61–62%.
-- For a triggered mission, clean every detected target that is reachable in the validated configuration. A patch in the remaining unreachable region must stay visible on the map and produce an INCOMPLETE/unreachable-target result, not be silently excluded. Roughly 90% global coverage does not mean that arbitrarily located debris is guaranteed removable.
+- For the selected central-deposition demonstration, remove all detected central targets and attempt the full planned sweep/perimeter pass. Arbitrary edge-deposit removal is outside this demonstration scope. If used in a diagnostic test, an unreachable target is still logged rather than falsely marked removed.
 - Keep camera-based detection, idle-at-home behaviour, thresholded triggering, targeted revisits, a whole-panel sweep attempt, verification and return home.
 - Larger physical crumbs must actually be pushed, swept off or collected through modelled contact. They may not vanish under a dirt texture mask.
 - Aesthetic scenery remains deferred.
