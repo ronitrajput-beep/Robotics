@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-25T17:20:36.995095+00:00",
+  "created_utc": "2026-10-25T17:24:31.278881+00:00",
   "status": "PRELIMINARY REVIEW COPY: final validation pending",
   "bulk_raw_data": "Full real 500 Hz trial logs are retained separately in the personal Robotics repository; see submission/REPRODUCE.md. Archive is not a substitute for raw data.",
   "files": [
@@ -135,13 +135,13 @@
     },
     {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.docx",
-      "bytes": 842184,
-      "sha256": "6a1f83e2fd4b918ca5d211cc9c8e77aae029f3ed3cb79dbb5cd197958e665c90"
+      "bytes": 842274,
+      "sha256": "db3d5127a6f23954870394a2dd49a58510fd722a87695d2df111336c40b7a9d1"
     },
     {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.pdf",
-      "bytes": 764254,
-      "sha256": "0f72522192981ba953947b54581526af2970025165ab69fe3439315f603c37b5"
+      "bytes": 765004,
+      "sha256": "a8a6fd9da61ff804c6d5e3d8ab427c01e1f7caf1a848d7ed1223161430f92015"
     },
     {
       "path": "docs/PANEL_CAMERA_RIGS.md",
@@ -465,8 +465,8 @@
     },
     {
       "path": "submission/build_dossier.py",
-      "bytes": 36406,
-      "sha256": "cb596d982eadb3d7583dbd50787ef933e69fdfee1b90f1e6de5501d410074dcf"
+      "bytes": 36908,
+      "sha256": "1ffacfcaa09e714b10e55209b3bd8c66404dcad542d3b6ea6b1b44221b491638"
     },
     {
       "path": "submission/check_deliverables.py",
@@ -476,12 +476,12 @@
     {
       "path": "submission/deliverable_checks.json",
       "bytes": 539,
-      "sha256": "7a2f433e57e663517a3d6f07ab57e7d6905cdfeb62dccc98c297b60037b4e199"
+      "sha256": "86a1b35508b069e8fcc750b297b8f7dfc28c1795a29c78d1901a7df33c1860fe"
     },
     {
       "path": "submission/dossier_field_audit.json",
       "bytes": 2677,
-      "sha256": "5e1cdacd48edfe99db6a4b4cf4cdea812258edcf71a5a287c1dbeadeb0df9c8e"
+      "sha256": "213d961f2b9a5ef455e992ac9ac34a4229aac5de683168a70259bd4caac9c45d"
     },
     {
       "path": "submission/figures/free_body.png",
