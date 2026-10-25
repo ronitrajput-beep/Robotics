@@ -20,7 +20,7 @@
       <geom name="guard_upper" type="box" pos="0 2.025 .25" size="3.05 .025 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction="0 0 0" condim="1" priority="2" />
       <camera name="edge_left" pos="-2.7 0 5" fovy="70" />
       <camera name="edge_right" pos="2.7 0 5" fovy="70" />
-      <geom name="dock_platform" type="box" pos="-3.65 1.50 0" size=".65 .50 .02" rgba=".27 .32 .36 1" friction="1.2 .005 .001" />
+      <geom name="dock_platform" type="box" pos="-3.65 1.50 0" size=".65 .50 .02" rgba=".27 .32 .36 1" friction=".4 .005 .0001" />
       <geom name="guard_dock_outer" type="box" pos="-4.325 1.50 .25" size=".025 .55 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction="0 0 0" condim="1" priority="2" />
       <geom name="guard_dock_lower" type="box" pos="-3.65 .975 .25" size=".65 .025 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction="0 0 0" condim="1" priority="2" />
       <geom name="guard_dock_upper" type="box" pos="-3.65 2.025 .25" size=".65 .025 .25" rgba=".8 .2 .1 0" contype="2" conaffinity="0" friction="0 0 0" condim="1" priority="2" />

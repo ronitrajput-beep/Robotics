@@ -1,0 +1,1 @@
+Interrupted draft. Independent review of pilot4 found a 3.699 mm rise at the glass-to-dock brush transition, exceeding the unchanged .123 m height limit. A controlled diagnostic isolated the dock friction jump (1.2 vs glass .4). Replacement matches dock friction to glass .4 and requires fresh full-run checks. This draft is not passing evidence.

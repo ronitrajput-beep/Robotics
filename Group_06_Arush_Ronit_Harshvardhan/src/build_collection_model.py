@@ -10,7 +10,7 @@ def build(destination):
     guarded_build(destination)
     tree=ET.parse(destination);root=tree.getroot();rack=root.find(".//body[@name='pv_array_rack']")
     # A coplanar, physically supported side extension. Glass and dock top are z=.02.
-    ET.SubElement(rack,'geom',name='dock_platform',type='box',pos='-3.65 1.50 0',size='.65 .50 .02',rgba='.27 .32 .36 1',friction='1.2 .005 .001')
+    ET.SubElement(rack,'geom',name='dock_platform',type='box',pos='-3.65 1.50 0',size='.65 .50 .02',rgba='.27 .32 .36 1',friction='.4 .005 .0001')
     left=rack.find("geom[@name='guard_left']");left.set('pos','-3.025 -.50 .25');left.set('size','.025 1.50 .25')
     for name,pos,size in [('dock_outer','-4.325 1.50 .25','.025 .55 .25'),('dock_lower','-3.65 .975 .25','.65 .025 .25'),('dock_upper','-3.65 2.025 .25','.65 .025 .25')]:
         ET.SubElement(rack,'geom',name='guard_'+name,type='box',pos=pos,size=size,rgba='.8 .2 .1 0',contype='2',conaffinity='0',friction='0 0 0',condim='1',priority='2')

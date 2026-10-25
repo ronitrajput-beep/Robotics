@@ -1,0 +1,6 @@
+{
+  "tests": 47,
+  "status": "PASS",
+  "command": "MUJOCO_GL=egl python -m unittest discover -s tests",
+  "scope": "Includes external dock support, mass conservation, service timeout, presentation/sensor isolation, existing camera/coverage/safety/solid tests; not hardware validation"
+}

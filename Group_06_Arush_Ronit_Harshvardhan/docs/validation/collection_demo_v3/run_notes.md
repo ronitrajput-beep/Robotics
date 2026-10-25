@@ -1,0 +1,1 @@
+Interrupted performance draft, not a completed run. Presentation was rendered at 1280x720 and immediately reduced to a 960x540 viewport. The replacement renders that viewport natively at 960x540; the output composite stays 1280x720/25fps and camera inputs/physical stepping remain unchanged.

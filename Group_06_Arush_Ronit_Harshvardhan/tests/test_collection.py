@@ -58,3 +58,22 @@ class CollectionChecks(unittest.TestCase):
         self.assertIn('DOCK_SERVICE',states)
         self.assertEqual(result['status'],'TIMEOUT')
         self.assertFalse(any(e['event']=='DOCK_SERVICE_COMPLETE' for e in result['events']))
+
+    def test_collection_cutaway_and_service_preserve_sensor_rgb(self):
+        from cinematic_scene import RooftopScene,make_renderer,render_studio,cinematic_camera
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'model.xml';build(path)
+            m=mujoco.MjModel.from_xml_path(str(path));d=mujoco.MjData(m);mujoco.mj_forward(m,d)
+            rack=m.body('pv_array_rack').id;R=d.xmat[rack].reshape(3,3).copy();origin=d.xpos[rack].copy()
+            d.qpos[:3]=origin+R@[-3.65,1.53,.12];mujoco.mj_forward(m,d)
+            qpos=d.qpos.copy();qvel=d.qvel.copy();rgba=m.geom_rgba.copy()
+            scene=RooftopScene();scene.collection_status={'bin_g':5.,'station_g':2.,'charge_J':120.,'state':'DOCK_SERVICE'}
+            with mujoco.Renderer(m,height=240,width=320) as sensor:
+                sensor.update_scene(d,camera='edge_left');before=sensor.render().copy()
+                studio=make_renderer(m,width=960,height=540)
+                image=render_studio(studio,m,d,cinematic_camera(0,d,m),scene);studio.close()
+                sensor.update_scene(d,camera='edge_left');after=sensor.render().copy()
+            self.assertEqual(image.shape,(540,960,3))
+            np.testing.assert_array_equal(before,after)
+            np.testing.assert_array_equal(qpos,d.qpos);np.testing.assert_array_equal(qvel,d.qvel)
+            np.testing.assert_array_equal(rgba,m.geom_rgba)

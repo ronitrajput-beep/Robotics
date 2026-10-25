@@ -30,7 +30,7 @@ class CinematicVideo:
         if d.time<self.last_time+speed/25-1e-9:return
         self.last_time=float(d.time)
         if self.renderer is None:
-            self.renderer=make_renderer(m)
+            self.renderer=make_renderer(m,width=960,height=540)
             self.log=(self.directory/'cinematic_ffmpeg.log').open('w')
             self.encoder=subprocess.Popen(['ffmpeg','-hide_banner','-loglevel','warning','-n','-f','rawvideo','-pix_fmt','rgb24','-s','1280x720',
                 '-r','25','-i','-','-an','-c:v','libx264','-preset','fast','-crf','23','-pix_fmt','yuv420p','-movflags','+faststart',

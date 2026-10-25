@@ -1,1 +1,2 @@
 TIMEOUT at the declared 650-second horizon, during the return from one RGB-requested revisit. All 32 patches below threshold, block physically off glass and retained in tray. Not a completed combined cycle: station service has not occurred. A fresh 900-second recording is required. Source snapshots retained.
+Additional audit: maximum chassis height .123699 m at the glass-to-dock brush transition exceeds the unchanged .123 m gate. Thus this run also fails motion quality, independently of the timeout. See dock_transition_diagnostic and replacement pilot5.
