@@ -18,7 +18,7 @@ def build(destination):
         ('lower','0 -2.025 .25','3.05 .025 .25'),
         ('upper','0 2.025 .25','3.05 .025 .25')]:
         ET.SubElement(rack,'geom',name='guard_'+name,type='box',pos=pos,size=size,
-                      rgba='.8 .2 .1 0',contype='2',conaffinity='0',friction='.3 .005 .0001')
+                      rgba='.8 .2 .1 0',contype='2',conaffinity='0',friction='0 0 0',condim='1',priority='2')
     for geom in root.findall('.//geom'):
         if geom.get('name')=='chassis_geom' or geom.get('name','').endswith('_roller'):
             geom.set('conaffinity','3')

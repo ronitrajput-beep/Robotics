@@ -1,0 +1,67 @@
+{
+  "model_sha256": "0c86bef3dabe45f7cddb3868438b4d7f76896560c80bef8080fee9b28dab8cda",
+  "controller_sha256": "c37c11774f56a11dc7f51b6644c2d0179fc7a10819649f6a81697af9042867e5",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "09be10edbad21c91bdca60c147bc91c62a777a7de823918635a9ced10dbd6b03",
+  "guarded_geometry_sha256": "72540d94bb4ec415588f5773dcdfbe5bbbbf8723575ff2deb2f9372793faf0d9",
+  "maximum_chassis_height_m": 0.12048279161077459,
+  "maximum_chassis_tilt_deg": 0.12427648669783099,
+  "vision_revisit_cycles": 0,
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    0.03440350666050318,
+    0.10648467378018772,
+    0.0035303979931333163,
+    0.14127208532994534
+  ],
+  "guard_normal_impulse_Ns": 0.0,
+  "peak_guard_normal_force_N": 0.0,
+  "route_profile": "inward_turns",
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.8928125,
+    "qualified_contact_fraction": 0.891875,
+    "half_soil_proxy_removed_fraction": 0.8210416666666667,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.9879822896900696,
+    "soil_removed_proxy_fraction": 0.6185929086082043
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 389.53200000113185,
+      "event": "DOCKING"
+    },
+    {
+      "time_s": 389.53400000113186,
+      "event": "BRAKING",
+      "reason": "DOCK"
+    },
+    {
+      "time_s": 390.06000000113437,
+      "event": "DOCKED"
+    }
+  ],
+  "stop_reason": "DOCK",
+  "terminal_angular_speed_rad_s": 0.0002000042434542499,
+  "terminal_brush_speed_rad_s": 0.18738502455399092,
+  "dock_error_m": 0.08600374815293886,
+  "terminal_speed_mps": 0.011300393677391132,
+  "variant": "proposed",
+  "planned_duration_s": 850.0,
+  "seed": 0,
+  "status": "DOCKED",
+  "time_s": 390.06000000113437,
+  "waypoints_reached": 28,
+  "waypoints_total": 28,
+  "visited_contact_fraction": 0.7794791666666666,
+  "soil_removed_proxy_fraction": 0.46508319176091584,
+  "path_tracking_rmse_m": 0.09107180288760638,
+  "effort_Nm2_s": 832.898993491136,
+  "positive_mechanical_work_J": 3271.676317055278,
+  "mujoco": "3.17.0"
+}

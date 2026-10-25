@@ -20,7 +20,7 @@ class Trigger:
             self.active=True;self.events.append({'event':'VISION_TRIGGER','time_s':time,'targets':points})
 
 
-def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False):
+def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False)
     field=SurfaceDebris();fall=FallingDebris(scenario);trigger=Trigger()
     from mission_video import MissionVideo
@@ -41,30 +41,33 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
         for i,c in enumerate(d.contact):
             if {int(c.geom1),int(c.geom2)}=={brush,glass}:
                 wrench=np.zeros(6);mujoco.mj_contactForce(m,d,i,wrench);force+=max(0.,wrench[0])
-        if state=='SWEEP':
+        if state in ('SWEEP','EDGE_CLEAN_BOTTOM'):
             field.clean(R.T@(d.geom_xpos[brush]-origin),R.T@d.geom_xmat[brush].reshape(3,3)[:,2],
                         *m.geom_size[brush,:2],force,d.qvel[m.joint('brush_hinge').dofadr[0]],m.opt.timestep)
+        if d.time+1e-9>=next_camera:
+            next_camera=float(d.time)+.5
+            if renderer is None:renderer=mujoco.Renderer(m,height=480,width=640,max_geom=10000)
+            targets=[];sensor_views={}
+            for name in ('edge_left','edge_right','robot_camera'):
+                camera=m.camera(name).id;renderer.update_scene(d,camera=camera);field.append_visuals(renderer.scene,origin,R)
+                rgb=renderer.render()
+                calibration=CameraCalibration(d.cam_xpos[camera].copy(),d.cam_xmat[camera].reshape(3,3).copy(),m.cam_fovy[camera],origin.copy(),R.copy())
+                detections,_=detect_dirt(rgb,calibration)
+                sensor_views[name]={'rgb':rgb.copy(),'detections':detections}
+                for detection in detections:
+                    point=np.array([detection['panel_x_m'],detection['panel_y_m']])
+                    if detection['confidence']>=.8 and all(np.linalg.norm(point-np.array(t))>.12 for t in targets):targets.append(point.tolist())
+                if (not trigger.active and d.time<5) or int(d.time)%30==0:
+                    Image.fromarray(rgb).save(directory/f'{name}_{d.time:.1f}.png')
+            if video is not None and hasattr(video,'update_sensor_views'):video.update_sensor_views(float(d.time),sensor_views)
+            trigger.observe(float(d.time),targets)
+            last_targets=targets
+            observation={'time_s':float(d.time),'state':state,'targets':targets,'triggered':trigger.active}
+            observations.append(observation);stream.write(json.dumps(observation)+'\n');stream.flush()
         if video is not None:video.capture(m,d,field,origin,R,state,coverage.summary(),len(last_targets))
-        if d.time+1e-9<next_camera:return
-        next_camera=float(d.time)+.5
-        if renderer is None:renderer=mujoco.Renderer(m,height=480,width=640,max_geom=10000)
-        targets=[]
-        for name in ('edge_left','edge_right','robot_camera'):
-            camera=m.camera(name).id;renderer.update_scene(d,camera=camera);field.append_visuals(renderer.scene,origin,R)
-            rgb=renderer.render()
-            calibration=CameraCalibration(d.cam_xpos[camera].copy(),d.cam_xmat[camera].reshape(3,3).copy(),m.cam_fovy[camera],origin.copy(),R.copy())
-            detections,_=detect_dirt(rgb,calibration)
-            for detection in detections:
-                point=np.array([detection['panel_x_m'],detection['panel_y_m']])
-                if detection['confidence']>=.8 and all(np.linalg.norm(point-np.array(t))>.12 for t in targets):targets.append(point.tolist())
-            if (not trigger.active and d.time<5) or int(d.time)%30==0:
-                Image.fromarray(rgb).save(directory/f'{name}_{d.time:.1f}.png')
-        trigger.observe(float(d.time),targets)
-        last_targets=targets
-        observation={'time_s':float(d.time),'state':state,'targets':targets,'triggered':trigger.active}
-        observations.append(observation);stream.write(json.dumps(observation)+'\n');stream.flush()
     try:
-        result=mission(seed=0,duration=duration,guarded=True,output=directory/'telemetry.csv.gz',on_sample=sample,should_move=lambda:trigger.active,revisit_targets=lambda:last_targets)
+        result=mission(seed=0,duration=duration,guarded=True,output=directory/'telemetry.csv.gz',on_sample=sample,should_move=lambda:trigger.active,revisit_targets=lambda:last_targets,edge_service_targets=lambda:last_targets,
+                       route_profile="inward_turns" if scenario=="scattered" else "standard",guarded_model_path=guarded_model_path)
     finally:
         stream.close()
         if renderer is not None:renderer.close()
@@ -81,5 +84,5 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--scenario',choices=['clean','subthreshold','dirty','edges'],default='dirty');p.add_argument('--cinematic',action='store_true');p.add_argument('--record-video',action='store_true');p.add_argument('--duration',type=float,default=520);a=p.parse_args()
-    run(a.output_dir,a.scenario,a.duration,a.record_video,a.cinematic)
+    p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--scenario',choices=['clean','subthreshold','dirty','edges','scattered'],default='dirty');p.add_argument('--model',type=Path);p.add_argument('--cinematic',action='store_true');p.add_argument('--record-video',action='store_true');p.add_argument('--duration',type=float,default=520);a=p.parse_args()
+    run(a.output_dir,a.scenario,a.duration,a.record_video,a.cinematic,a.model)

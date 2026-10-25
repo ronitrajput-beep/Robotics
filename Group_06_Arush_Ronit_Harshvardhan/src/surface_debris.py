@@ -10,6 +10,9 @@ class DustPatch:
     y: float
     radius: float=.055
     remaining: float=1.
+    aspect: float=1.
+    angle: float=0.
+    shade: float=1.
 
 
 class SurfaceDebris:
@@ -18,6 +21,13 @@ class SurfaceDebris:
 
     def deposit(self,positions):
         self.patches.extend(DustPatch(float(x),float(y)) for x,y in positions)
+
+    def deposit_scattered(self,position,rng):
+        for _ in range(3):
+            x=float(np.clip(position[0]+rng.uniform(-.075,.075),-2.95,2.95))
+            y=float(np.clip(position[1]+rng.uniform(-.055,.055),-1.91,1.91))
+            self.patches.append(DustPatch(x,y,float(rng.uniform(.040,.070)),1.,
+                float(rng.uniform(.6,1.35)),float(rng.uniform(0,2*np.pi)),float(rng.uniform(.8,1.15))))
 
     def clean(self,center,axle,radius,halfwidth,normal_force,brush_speed,dt):
         norm=np.linalg.norm(axle[:2])
@@ -35,11 +45,15 @@ class SurfaceDebris:
         for patch in self.patches:
             if patch.remaining<.1:continue
             if scene.ngeom>=scene.maxgeom:raise RuntimeError('Scene geometry capacity exceeded')
-            color=np.array([.40,.22,.075,1.])
+            color=np.array([.40*patch.shade,.22*patch.shade,.075*patch.shade,1.])
+            c,s=np.cos(patch.angle),np.sin(patch.angle)
+            patch_rotation=rotation@np.array([[c,-s,0],[s,c,0],[0,0,1]])
             # Radius shrinks with remaining area so the RGB verifier sees residuals.
-            mujoco.mjv_initGeom(scene.geoms[scene.ngeom],mujoco.mjtGeom.mjGEOM_CYLINDER,
-                np.array([patch.radius*np.sqrt(patch.remaining),.001,0.]),
-                origin+rotation@np.array([patch.x,patch.y,.022]),rotation.ravel(),color)
+            uniform=patch.aspect==1. and patch.angle==0.
+            kind=mujoco.mjtGeom.mjGEOM_CYLINDER if uniform else mujoco.mjtGeom.mjGEOM_ELLIPSOID
+            size=np.array([patch.radius*np.sqrt(patch.remaining),.001,0.]) if uniform else np.array([patch.radius*np.sqrt(patch.remaining),patch.radius*patch.aspect*np.sqrt(patch.remaining),.001])
+            mujoco.mjv_initGeom(scene.geoms[scene.ngeom],kind,size,
+                origin+rotation@np.array([patch.x,patch.y,.022]),patch_rotation.ravel(),color)
             scene.ngeom+=1
 
     def summary(self):

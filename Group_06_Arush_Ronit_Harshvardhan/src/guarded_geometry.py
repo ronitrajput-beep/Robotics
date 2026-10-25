@@ -2,7 +2,17 @@
 import numpy as np
 
 
-def edge_raster():
+def edge_raster(profile="standard"):
+    if profile not in ("standard","inward_turns"):raise ValueError("Unknown guarded route profile")
+    if profile=="inward_turns":
+        points=[(-2.72,1.53)]
+        for i,y in enumerate(np.linspace(1.60,-1.60,9)):
+            if i:
+                edge=points[-1][0];previous_y=points[-1][1]
+                points.extend([(edge-np.sign(edge)*.70,previous_y),(edge-np.sign(edge)*1.70,float(y))])
+            points.append((2.72 if i%2==0 else -2.72,float(y)))
+        points.extend([(0.,-1.1),(0.,1.0),points[0]])
+        return np.array(points)
     points=[(-2.72,1.70)]
     for i,y in enumerate(np.linspace(1.77,-1.77,9)):
         if i:points.append((points[-1][0]-np.sign(points[-1][0])*.65,float(y)))

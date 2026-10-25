@@ -7,6 +7,8 @@ class FallingDebris:
     def __init__(self,scenario='dirty'):
         self.scenario=scenario;self.spawned=False;self.deposited=set();self.events=[]
         self.positions=[(-.8,.65),(-.4,.65),(0,.65),(.4,-.45),(.8,-.45),(0,-.45)]
+        if scenario=='scattered':self.positions=[(-1.25,1.18),(-.35,.95),(.85,1.20),(-.90,.05),(.35,-.10),(1.2,-.70),(-.50,-1.00),(.70,-1.55)]
+        self.rng=np.random.default_rng(603)
         if scenario=='edges':self.positions=[(-2.85,.65),(2.85,.65),(0,2.0),(0,-1.55),(-2.7,2.0),(2.7,-1.55)]
         if scenario=='clean':self.positions=[]
         if scenario=='subthreshold':self.positions=self.positions[:1]
@@ -27,7 +29,9 @@ class FallingDebris:
             if any({int(c.geom1),int(c.geom2)}=={glass,geom} for c in d.contact):
                 body=m.body(f'falling_{i}').id
                 p=rotation.T@(d.xpos[body]-origin)
-                surface.deposit([p[:2]])
+                if self.scenario=='scattered':
+                    surface.deposit_scattered(p[:2],self.rng)
+                else:surface.deposit([p[:2]])
                 self.deposited.add(i)
                 m.geom_contype[geom]=0;m.geom_conaffinity[geom]=0;m.geom_rgba[geom,3]=0
                 m.body_gravcomp[body]=1

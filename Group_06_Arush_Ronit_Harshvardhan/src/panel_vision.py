@@ -37,5 +37,5 @@ def detect_dirt(rgb,calibration,min_pixels=8):
         point=calibration.project_pixel(float(xx.mean()),float(yy.mean()),rgb.shape[1],rgb.shape[0])
         if point is not None:
             detections.append({'panel_x_m':float(point[0]),'panel_y_m':float(point[1]),
-                               'pixels':len(xx),'confidence':min(1.,len(xx)/12.)})
+                               'bbox_xyxy':[int(xx.min()),int(yy.min()),int(xx.max()),int(yy.max())],'pixels':len(xx),'confidence':min(1.,len(xx)/12.)})
     return detections,mask
