@@ -1,6 +1,6 @@
 """Guarded camera-triggered development mission; perception never reads dirt truth."""
-import os
-os.environ.setdefault('MUJOCO_GL','egl')
+import os,sys
+os.environ.setdefault('MUJOCO_GL','cgl' if sys.platform=='darwin' else 'glfw' if sys.platform=='win32' else 'egl')
 from pathlib import Path
 import argparse,json,hashlib,csv,gzip,lzma
 import mujoco

@@ -1,6 +1,6 @@
 """Short actual-physics equipment tour of visible, calibrated camera housings."""
-import os
-os.environ.setdefault('MUJOCO_GL','egl')
+import os,sys
+os.environ.setdefault('MUJOCO_GL','cgl' if sys.platform=='darwin' else 'glfw' if sys.platform=='win32' else 'egl')
 from pathlib import Path
 import argparse,hashlib,json
 import mujoco,numpy as np

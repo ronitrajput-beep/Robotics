@@ -1,0 +1,14 @@
+[
+  {
+    "time_s": 0.0,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  },
+  {
+    "time_s": 0.5000000000000003,
+    "state": "HOME_MONITOR",
+    "targets": [],
+    "triggered": false
+  }
+]

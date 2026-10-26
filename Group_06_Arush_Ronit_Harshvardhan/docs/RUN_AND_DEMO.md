@@ -1,5 +1,7 @@
 # Run the current implementation
 
+**MacBook:** follow [MACBOOK_SETUP.md](MACBOOK_SETUP.md) for the current combined simulation. Use the compact ZIP, native CGL graphics and `requirements-macos.txt`; the cloud `/workspace` paths and EGL setting are Linux-specific.
+
 From the Group 06 directory, with Python 3.12:
 
 ```

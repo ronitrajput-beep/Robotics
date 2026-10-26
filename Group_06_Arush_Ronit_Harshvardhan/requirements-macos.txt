@@ -1,0 +1,10 @@
+# Portable local demo dependencies; pip resolves wheels for the Mac's CPU.
+# requirements.txt retains the exact Linux validation environment separately.
+mujoco
+numpy
+scipy
+pandas
+matplotlib
+Pillow>=10.1
+glfw
+PyOpenGL

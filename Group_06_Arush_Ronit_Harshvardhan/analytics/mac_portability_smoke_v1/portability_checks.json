@@ -1,0 +1,8 @@
+{
+  "linux_render_smoke_pass": true,
+  "duration_s": 1,
+  "full_video_decode_pass": true,
+  "telemetry_identical_to_validated_nominal_prefix": true,
+  "mac_hardware_tested": false,
+  "scope": "Short portability smoke, not a completed cleaning mission. Linux rendering and existing physics prefix verified; Mac CGL backend/native fonts require a Mac to exercise."
+}

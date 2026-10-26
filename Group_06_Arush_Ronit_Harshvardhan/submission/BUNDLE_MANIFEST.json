@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-25T23:42:25.220812+00:00",
+  "created_utc": "2026-10-26T04:35:32.124624+00:00",
   "status": "TECHNICAL REVIEW COPY: unsigned personal fields and team submission actions remain",
   "bulk_raw_data": "Full real 500 Hz trial logs are retained separately in the personal Robotics repository; see submission/REPRODUCE.md. Archive is not a substitute for raw data.",
   "files": [
@@ -184,6 +184,11 @@
       "sha256": "b331de37fb44feff0f7534514900c379c11a950c6e5467780e043cb248dbfeed"
     },
     {
+      "path": "docs/MACBOOK_SETUP.md",
+      "bytes": 3110,
+      "sha256": "9c39f17d6ccd7cc8139fe7778556191cd01f953f5d50440bae87c02338a6e690"
+    },
+    {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.docx",
       "bytes": 905763,
       "sha256": "67d17a41f4b5382fd4dce43323ecb1236b87ff58bd43a0c12d79dd30362e408f"
@@ -200,8 +205,8 @@
     },
     {
       "path": "docs/RUN_AND_DEMO.md",
-      "bytes": 10311,
-      "sha256": "1180148bcb53adac619e9b90934429d190ef75a2e07559bde3b9c9d16eab5c91"
+      "bytes": 10542,
+      "sha256": "b01e3d08da9be3cbd405cbe5e14b30100be4996d40b6e7682aa00d4963f42edc"
     },
     {
       "path": "docs/validation/collection_demo_v6/README.md",
@@ -309,6 +314,11 @@
       "sha256": "93abd3ac44bb9d2e093bb4e59cf70108914480d2e9cecf7523743ded0af3b6a6"
     },
     {
+      "path": "requirements-macos.txt",
+      "bytes": 217,
+      "sha256": "8d80744216a3433de40039fe87738ceb8dc715e587a484b2eab1770a4f28c7b2"
+    },
+    {
       "path": "requirements.txt",
       "bytes": 372,
       "sha256": "ec49185a8acd415ab613d9ccb5beacfbba828b34542e4153c13cfdd4748f79dc"
@@ -330,8 +340,8 @@
     },
     {
       "path": "src/cinematic_video.py",
-      "bytes": 10674,
-      "sha256": "646404ee13f85cacc2d9acaddb0d9a22236a18cd7a1c5a931e4ae9cf54088521"
+      "bytes": 11050,
+      "sha256": "473e365065c004a090363b7304dfbf7a74eec0837f55fffa2c661078d439081b"
     },
     {
       "path": "src/cleaning_coverage.py",
@@ -400,8 +410,8 @@
     },
     {
       "path": "src/record_panel_cameras.py",
-      "bytes": 3887,
-      "sha256": "c5bcdf0bb07058b9d81786a9835637ea313b49666350e660f3f9f76b9eb58f75"
+      "bytes": 3965,
+      "sha256": "f96e206f54367959728b32c130b30e9d373afecaa6af6a3bdd92457e7f1a7e6f"
     },
     {
       "path": "src/record_solid_object.py",
@@ -480,8 +490,8 @@
     },
     {
       "path": "src/vision_mission.py",
-      "bytes": 9593,
-      "sha256": "12837454cdb9f9603d0c0c202209c1b8833dcb9232a9e566aa88c1f69cb57df0"
+      "bytes": 9671,
+      "sha256": "e2bf7ff83675089e240e1c564853c316979f4879dd7252a3b14a206dac18f0ef"
     },
     {
       "path": "submission/RECORDING_GUIDE.md",
@@ -545,8 +555,8 @@
     },
     {
       "path": "submission/package_submission.py",
-      "bytes": 4656,
-      "sha256": "657000f42437204f01e34187347fe69e25a2423f6dfdd94ef5cf83f787f492f3"
+      "bytes": 4676,
+      "sha256": "367a40ce241f994cdfc6d163450195fda7eefde4c7d29646e321f15bc7dcec02"
     },
     {
       "path": "submission/published_trials.json",

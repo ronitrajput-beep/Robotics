@@ -7,14 +7,25 @@ from PIL import Image,ImageDraw,ImageFont
 from cinematic_scene import RooftopScene,cinematic_camera,make_renderer,render_studio
 
 
+def presentation_font(size):
+    # Preserve the validated Linux appearance, then try native Mac/Windows fonts.
+    for name in ('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+                 '/System/Library/Fonts/Supplemental/Arial.ttf',
+                 '/Library/Fonts/Arial.ttf','C:/Windows/Fonts/arial.ttf',
+                 'DejaVuSans.ttf'):
+        try:return ImageFont.truetype(name,size)
+        except OSError:pass
+    return ImageFont.load_default(size=size)
+
+
 class CinematicVideo:
     def __init__(self,directory,presentation_shot=None,realtime=False):
         self.directory=Path(directory);self.renderer=None;self.encoder=None;self.environment=RooftopScene()
         self.presentation_shot=presentation_shot;self.realtime=realtime
         self.sensor_views={};self.sensor_time=0.
         self.last_time=-1;self.frames=0;self.last_picture=None;self.camera=None;self.closeup_frames=0
-        self.font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',19)
-        self.small=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',15)
+        self.font=presentation_font(19)
+        self.small=presentation_font(15)
     def update_sensor_views(self,time,views):
         self.sensor_time=time;self.sensor_views=views
 

@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def package():
     audit=json.loads((ROOT/'submission/deliverable_checks.json').read_text());files=set()
     def add(pattern):files.update(p for p in ROOT.glob(pattern) if p.is_file())
-    for pattern in ['requirements.txt','src/*.py','models/*.xml','tests/*.py','tests/fixtures/*.json','analytics/final_business_model.py','analytics/final_business_inputs.json','analytics/analyse_final_validation.py','analytics/analyse_tracking_benchmark.py','submission/*.py','submission/*.md','submission/*.json','submission/*.txt','submission/templates/*.docx','submission/source_audit/*','submission/figures/*.png']:
+    for pattern in ['requirements*.txt','src/*.py','models/*.xml','tests/*.py','tests/fixtures/*.json','analytics/final_business_model.py','analytics/final_business_inputs.json','analytics/analyse_final_validation.py','analytics/analyse_tracking_benchmark.py','submission/*.py','submission/*.md','submission/*.json','submission/*.txt','submission/templates/*.docx','submission/source_audit/*','submission/figures/*.png']:
         add(pattern)
     files.discard(ROOT/'submission/BUNDLE_MANIFEST.json')
     # The full repository retains legacy scaffold tests. The compact bundle
@@ -17,7 +17,7 @@ def package():
     add('tests/fixtures/*.png')
     for fixture in json.loads((ROOT/'tests/fixtures/rgb_components_before_optimisation.json').read_text()):add(fixture['image'])
     for name in ['model.xml','lift_state.npz']:add('analytics/collection_contact_trace/'+name)
-    for filename in ['MDRIIA_Group_06_Technical_Dossier.docx','MDRIIA_Group_06_Technical_Dossier.pdf','COLLECTION_AND_EXTERNAL_DOCK.md','PANEL_CAMERA_RIGS.md','RUN_AND_DEMO.md','AI_AUDIT.md']:
+    for filename in ['MDRIIA_Group_06_Technical_Dossier.docx','MDRIIA_Group_06_Technical_Dossier.pdf','COLLECTION_AND_EXTERNAL_DOCK.md','PANEL_CAMERA_RIGS.md','RUN_AND_DEMO.md','MACBOOK_SETUP.md','AI_AUDIT.md']:
         add('docs/'+filename)
     for filename in ['cinematic_cleaning.mp4','solid_contact_slow_motion.mp4','README.md','result.json','independent_collection_checks.json','headless_recording_comparison.json','video_decode_check.json','collection_evidence.pdf','collection_evidence.png','solid_contact_closeup.png','solid_in_tray.png','brush_closeup.png','dock_empty_bin.png','dock_service.png']:
         add('docs/validation/collection_demo_v6/'+filename)

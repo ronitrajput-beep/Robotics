@@ -168,3 +168,8 @@ Final pre-share checks: 58 repository tests pass, including Wilson-interval boun
 ## Frozen final validation and technical review bundle completed
 
 All 180 frozen attempts are retained in analytics/final_validation_v1. Read statistics.json and trace_audit.json for actual outcomes; no success count is assumed here. Business outputs are analytics/final_business_v1, calibrated to all 30 nominal proposed attempts including failures. The original Word form, matching PDF and compact ZIP have been rebuilt and checked; submission/STATUS.json and deliverable_checks.json record status. Yellow personal controls, signatures, real peer reviews and final team video/LinkedIn remain human actions. Nothing has been signed or submitted to the faculty repository or Teams.
+
+
+## Mac local launch support
+
+User asked how to run on a MacBook. docs/MACBOOK_SETUP.md gives Homebrew Python 3.12/ffmpeg, compact ZIP download, local venv with requirements-macos.txt, native CGL and the current combined cinematic command. vision_mission.py and record_panel_cameras.py now choose platform-specific GL defaults; cinematic_video.py preserves the prior Linux font first and falls back to native Mac/Windows/bundled fonts. No model/control equations or retained statistical data were changed. One-second Linux rendering smoke fully decodes and has byte-identical telemetry to the validated nominal prefix; the presentation isolation check passes. Mac hardware was not available, so native Mac execution is not claimed tested. Current polished pipeline renders an MP4, not an integrated interactive desktop window. Mac package wheels resolve locally; frozen Linux requirements and all 180 executed source snapshots remain unchanged.
