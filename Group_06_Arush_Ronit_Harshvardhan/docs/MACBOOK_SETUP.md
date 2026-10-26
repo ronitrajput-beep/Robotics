@@ -47,6 +47,18 @@ This runs fresh physics, camera detection, dust cleaning, solid-object pushing, 
 
 The current polished pipeline records a video; it does not open an interactive full-scene window. The older controller's `--viewer` is a separate physics-only viewer and does not show the complete camera/dirt/collection presentation. macOS passive viewer launches require `mjpython`; that is not needed for the MP4 command above.
 
+## Open the interactive robot-model window
+
+From the group directory with `.venv` activated:
+
+```sh
+MUJOCO_GL=glfw python -m mujoco.viewer --mjcf=models/collection_cleaning_crawler.xml
+```
+
+Use ordinary `python` for this standalone viewer. `mjpython` is required for scripts using `viewer.launch_passive` on macOS; it is not the launcher for the standalone command above. Launching `mjpython -m mujoco.viewer` can import the viewer twice and start the managed window on the wrong thread, with an "already in sys.modules" warning followed by `RuntimeError: Caught an unknown exception!` during `_Simulate` construction. The inline GLFW setting applies only to this command and leaves the CGL recording setting intact.
+
+Drag to rotate, scroll to zoom and press Space to pause/resume physics. This opens the model; it does not run the autonomous mission controller. The official mode distinctions and standalone command are documented at https://mujoco.readthedocs.io/en/stable/python.html#interactive-viewer.
+
 ## Watch the already finished videos immediately
 
 ```sh

@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-26T04:35:32.124624+00:00",
+  "created_utc": "2026-10-26T04:59:47.454200+00:00",
   "status": "TECHNICAL REVIEW COPY: unsigned personal fields and team submission actions remain",
   "bulk_raw_data": "Full real 500 Hz trial logs are retained separately in the personal Robotics repository; see submission/REPRODUCE.md. Archive is not a substitute for raw data.",
   "files": [
@@ -185,8 +185,8 @@
     },
     {
       "path": "docs/MACBOOK_SETUP.md",
-      "bytes": 3110,
-      "sha256": "9c39f17d6ccd7cc8139fe7778556191cd01f953f5d50440bae87c02338a6e690"
+      "bytes": 4118,
+      "sha256": "e1464bbd09ad28751ada9c8578b8a94be2258909293dd85341e0c984a1409f51"
     },
     {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.docx",
