@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-26T04:59:47.454200+00:00",
+  "created_utc": "2026-10-26T05:16:31.343481+00:00",
   "status": "TECHNICAL REVIEW COPY: unsigned personal fields and team submission actions remain",
   "bulk_raw_data": "Full real 500 Hz trial logs are retained separately in the personal Robotics repository; see submission/REPRODUCE.md. Archive is not a substitute for raw data.",
   "files": [
@@ -185,8 +185,8 @@
     },
     {
       "path": "docs/MACBOOK_SETUP.md",
-      "bytes": 4118,
-      "sha256": "e1464bbd09ad28751ada9c8578b8a94be2258909293dd85341e0c984a1409f51"
+      "bytes": 5719,
+      "sha256": "df7444a6729f44882b63a62098855a87c498e76504a5ba80eae3c4fc327bd0b8"
     },
     {
       "path": "docs/MDRIIA_Group_06_Technical_Dossier.docx",
@@ -205,8 +205,8 @@
     },
     {
       "path": "docs/RUN_AND_DEMO.md",
-      "bytes": 10542,
-      "sha256": "b01e3d08da9be3cbd405cbe5e14b30100be4996d40b6e7682aa00d4963f42edc"
+      "bytes": 10976,
+      "sha256": "d7470618f2224241f255b0fe746e1bf9761a4602de30619e955b300afb8bec8a"
     },
     {
       "path": "docs/validation/collection_demo_v6/README.md",
@@ -355,8 +355,8 @@
     },
     {
       "path": "src/crawler_cleaning_controller.py",
-      "bytes": 18895,
-      "sha256": "fc729958a2ea22e55879e7131a84dbf8599264e7c5bc664874de64d6a4ca0d5c"
+      "bytes": 18980,
+      "sha256": "ad8864f742d775a73d65d6c016eca0dc6f3589161e72276bfdd00500fd826fe1"
     },
     {
       "path": "src/debris_events.py",
@@ -382,6 +382,11 @@
       "path": "src/guarded_geometry.py",
       "bytes": 2169,
       "sha256": "550bf27dbaf2c14a461ab6b5cf63e2abc00c910b0df14d82fb3e5c684e314081"
+    },
+    {
+      "path": "src/live_mission_viewer.py",
+      "bytes": 2915,
+      "sha256": "a9e915dd246a78ff58cf6d18cc28912b7b1af681449909e555fcc8fefe58e925"
     },
     {
       "path": "src/mission_video.py",
@@ -427,6 +432,11 @@
       "path": "src/run_final_validation.py",
       "bytes": 9031,
       "sha256": "d92bb2395f2f0928f2ff5293de3da0204234a5a0d74c1347f68304df0baff568"
+    },
+    {
+      "path": "src/run_live.py",
+      "bytes": 1284,
+      "sha256": "69a3d4eb17869b03072bc70f61a69f8b7137d7bcf68b47d38852715cb48a75bd"
     },
     {
       "path": "src/run_tracking_benchmark.py",
@@ -490,8 +500,13 @@
     },
     {
       "path": "src/vision_mission.py",
-      "bytes": 9671,
-      "sha256": "e2bf7ff83675089e240e1c564853c316979f4879dd7252a3b14a206dac18f0ef"
+      "bytes": 10050,
+      "sha256": "5afd4c100c4af44e446dd0174cf6afb7dd9fa5d394c3789dcf6c6b0afec4a19d"
+    },
+    {
+      "path": "submission/LIVE_VIEWER_UPDATE.json",
+      "bytes": 528,
+      "sha256": "f67ac4b0dd96c8c933a38195ae3fa7429ffdf8ee2af240a8eadbdeb7d99ecc2e"
     },
     {
       "path": "submission/RECORDING_GUIDE.md",
@@ -515,8 +530,8 @@
     },
     {
       "path": "submission/TEST_RESULTS.txt",
-      "bytes": 492,
-      "sha256": "0d1549fc39997d3bdad194f7e6118d0d78754360093441ab12e8cdec4055d905"
+      "bytes": 718,
+      "sha256": "bcea184c4ee6dd5836eaa0889a97b9db50ac539c8b0704f9fbf3db3468b4d320"
     },
     {
       "path": "submission/WORK_IN_PROGRESS.md",
@@ -527,6 +542,11 @@
       "path": "submission/build_dossier.py",
       "bytes": 36908,
       "sha256": "1ffacfcaa09e714b10e55209b3bd8c66404dcad542d3b6ea6b1b44221b491638"
+    },
+    {
+      "path": "submission/build_live_update.py",
+      "bytes": 839,
+      "sha256": "be7642b05dd1d3022e4822a638474430163511a0b9e49f434ebab61ef6bf7ccd"
     },
     {
       "path": "submission/check_deliverables.py",
@@ -652,6 +672,11 @@
       "path": "tests/test_guarded_mission.py",
       "bytes": 2511,
       "sha256": "d68d3e81b9620a9c6e435bb75a17a7aae4756974e99e9cfda47be88eb6f44122"
+    },
+    {
+      "path": "tests/test_live_mission.py",
+      "bytes": 3277,
+      "sha256": "cb2edc8dd966ea96579124831c5c74cae75a87903b9e5e113214f6893b10f2f7"
     },
     {
       "path": "tests/test_mission.py",

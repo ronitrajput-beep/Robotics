@@ -13,7 +13,7 @@ from transit_planning import cross_slope_transit
 ROOT = Path(__file__).resolve().parents[1]
 TELEMETRY_FIELDS=['time_s','state','x_m','y_m','yaw_rad','ref_x_m','ref_y_m','path_error_m','brush_rad_s','brush_contact','brush_normal_N','coverage_fraction','soil_removed_fraction','effort_Nm2_s','work_J','speed_mps','clearance_m','stop_reason','angular_speed_rad_s','brush_x_m','brush_y_m','brush_axle_x','brush_axle_y','chassis_height_m','chassis_tilt_deg','guard_normal_N']
 
-def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False, should_move=None, revisit_targets=None, guarded_model_path=None, route_profile="standard", edge_service_targets=None, dock_service_s=0., telemetry_sink=None):
+def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed", fault=None, fault_time=3., layout="standard", on_sample=None, guarded=False, should_move=None, revisit_targets=None, guarded_model_path=None, route_profile="standard", edge_service_targets=None, dock_service_s=0., telemetry_sink=None, viewer_factory=None):
     if fault not in (None,"pose_dropout","brush_jam","traction_loss"): raise ValueError("Unknown fault")
     if not np.isfinite(duration) or duration<=0: raise ValueError("Duration must be positive")
     if variant not in ("baseline", "proposed"): raise ValueError("Unknown controller")
@@ -46,7 +46,8 @@ def mission(seed=0, output=None, duration=360., viewer=False, variant="proposed"
         f=gzip.open(output,'wt',newline='') if output.suffix=='.gz' else output.open('w',newline='');writer=csv.writer(f)
         writer.writerow(TELEMETRY_FIELDS)
     display=None
-    if viewer:
+    if viewer_factory is not None:display=viewer_factory(m,d)
+    elif viewer:
         from mujoco import viewer as mj_viewer
         display=mj_viewer.launch_passive(m,d)
     effort=work=0.; status='TIMEOUT'; errors=[]

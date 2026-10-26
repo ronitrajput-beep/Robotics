@@ -6,3 +6,5 @@ OK
 Earlier extracted compact bundle smoke check: 51 focused tests passed before adding two Wilson-interval boundary tests. Full repository retains legacy scaffold rejection and geometry/economics tests, excluded from the compact download. These are code checks, not Monte Carlo outcome evidence.
 
 Updated extracted compact ZIP: Ran 53 tests in 23.743s; OK
+
+Live-window update: Ran 61 tests in 34.021s; OK. Three actual Linux GLFW window smokes have byte-identical telemetry to validated nominal prefixes, and screenshots confirm the displayed scene/debris. Mac hardware not tested.

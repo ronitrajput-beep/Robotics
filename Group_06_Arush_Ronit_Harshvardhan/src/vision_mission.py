@@ -20,7 +20,7 @@ class Trigger:
             self.active=True;self.events.append({'event':'VISION_TRIGGER','time_s':time,'targets':points})
 
 
-def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None,video_factory=None,seed=0,variant='proposed',debris_seed=603,save_images=True,telemetry_sink=None,compact_logs=False):
+def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=False,guarded_model_path=None,video_factory=None,seed=0,variant='proposed',debris_seed=603,save_images=True,telemetry_sink=None,compact_logs=False,live_viewer=False,viewer_speed=1.):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False)
     combined=scenario=='combined'
     if combined and guarded_model_path is None:guarded_model_path=ROOT/'models/collection_cleaning_crawler.xml'
@@ -34,6 +34,12 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
         video=CinematicVideo(directory)
     else:video=MissionVideo(directory) if record_video else None
     renderer=None;next_camera=0.;observations=[];last_targets=[];last_coverage=None
+    live=None
+    def make_live_viewer(m,d):
+        nonlocal live
+        from live_mission_viewer import LiveMissionViewer
+        live=LiveMissionViewer(m,d,field,speed=viewer_speed)
+        return live
     stream=(directory/'observations.jsonl').open('w')
     hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),ROOT/'src/panel_vision.py',ROOT/'src/surface_debris.py',ROOT/'src/debris_events.py',ROOT/'src/mission_video.py',ROOT/'src/cinematic_video.py',ROOT/'src/cinematic_scene.py',ROOT/'src/collection_system.py',ROOT/'src/build_collection_model.py']}
 
@@ -77,9 +83,10 @@ def run(directory,scenario='dirty',duration=520,record_video=False,cinematic=Fal
         if video is not None and collection is not None:
             video.collection_status={'bin_g':collection.bin_kg*1000,'station_g':collection.station_kg*1000,'charge_J':collection.charge_J,'solid':solid.summary(),'state':state}
         if video is not None:video.capture(m,d,field,origin,R,state,coverage.summary(),len(last_targets))
+        if live is not None:live.update(state,len(last_targets),collection,solid)
     try:
         result=mission(seed=seed,variant=variant,duration=duration,guarded=True,output=None if telemetry_sink is not None else directory/'telemetry.csv.gz',on_sample=sample,should_move=lambda:trigger.active,revisit_targets=lambda:last_targets,edge_service_targets=lambda:last_targets,
-                       route_profile="external_dock" if combined else "inward_turns",guarded_model_path=guarded_model_path,dock_service_s=8. if combined else 0.,telemetry_sink=telemetry_sink)
+                       route_profile="external_dock" if combined else "inward_turns",guarded_model_path=guarded_model_path,dock_service_s=8. if combined else 0.,telemetry_sink=telemetry_sink,viewer_factory=make_live_viewer if live_viewer else None)
     finally:
         stream.close()
         if renderer is not None:renderer.close()

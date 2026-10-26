@@ -1,0 +1,9 @@
+{
+  "scope": "Source-only interactive mission update; no documents, venv, model or experiment data replaced",
+  "files": {
+    "src/crawler_cleaning_controller.py": "ad8864f742d775a73d65d6c016eca0dc6f3589161e72276bfdd00500fd826fe1",
+    "src/vision_mission.py": "5afd4c100c4af44e446dd0174cf6afb7dd9fa5d394c3789dcf6c6b0afec4a19d",
+    "src/live_mission_viewer.py": "a9e915dd246a78ff58cf6d18cc28912b7b1af681449909e555fcc8fefe58e925",
+    "src/run_live.py": "69a3d4eb17869b03072bc70f61a69f8b7137d7bcf68b47d38852715cb48a75bd"
+  }
+}

@@ -1,5 +1,7 @@
 # Run the current implementation
 
+Current live autonomous demo: `mjpython src/run_live.py` on Mac (with `MUJOCO_GL=cgl`); `MUJOCO_GL=glfw python src/run_live.py` on a Linux desktop. It runs the combined camera-triggered mission with interactive scenery/dust. Use P to pause/resume; logs go to a fresh timestamped directory. The standalone XML viewer only loads the model and does not drive the robot. See MACBOOK_SETUP.md for the source-only update and launch steps.
+
 **MacBook:** follow [MACBOOK_SETUP.md](MACBOOK_SETUP.md) for the current combined simulation. Use the compact ZIP, native CGL graphics and `requirements-macos.txt`; the cloud `/workspace` paths and EGL setting are Linux-specific.
 
 From the Group 06 directory, with Python 3.12:

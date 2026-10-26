@@ -1,0 +1,66 @@
+{
+  "model_sha256": "3775a18eb645d01539238f2cd866899cb61eb337ae6297454292891b8084bc2e",
+  "controller_sha256": "ad8864f742d775a73d65d6c016eca0dc6f3589161e72276bfdd00500fd826fe1",
+  "planner_sha256": "cccd2a2e621b752c47fc224690741a5a37c8c9a9ebdacda684f9c6ffb4c3bbf8",
+  "safety_sha256": "c46052365d354b9df8f1f1cb0822d0998141d7ac1a7491e6a62ce781e679c0fb",
+  "coverage_sha256": "9a471512d5cd2fbb2380e2c28d303c7064b66b7ad07a1e4a747e772db148f41e",
+  "guarded_geometry_sha256": "550bf27dbaf2c14a461ab6b5cf63e2abc00c910b0df14d82fb3e5c684e314081",
+  "drive_regulator_sha256": "cc9d69578e94c4b2439f31fa6ee2e787baa53a40c2fb365c242f937c5a570da8",
+  "transit_planner_sha256": "20009ac6d9e6084128a31a118260eb26725208ddbf68a1a8fd52ae81a06704d1",
+  "maximum_chassis_height_m": 0.1204086840397312,
+  "maximum_chassis_tilt_deg": 0.09372787208545608,
+  "vision_revisit_cycles": 0,
+  "guarded": true,
+  "minimum_chassis_edge_gaps_m": [
+    -1.067411634625183,
+    5.775748018769188,
+    3.264870992777608,
+    0.23422549066554352
+  ],
+  "guard_normal_impulse_Ns": 0.0,
+  "peak_guard_normal_force_N": 0.0,
+  "route_profile": "external_dock",
+  "layout": "edge_raster",
+  "coverage_metrics_v2": {
+    "grid_cell_area_m2": 0.0025000000000000005,
+    "panel_area_m2": 24.0,
+    "geometric_footprint_fraction": 0.011354166666666667,
+    "qualified_contact_fraction": 0.011354166666666667,
+    "half_soil_proxy_removed_fraction": 0.009895833333333333,
+    "interior_area_m2": 15.810000000000002,
+    "interior_qualified_fraction": 0.0,
+    "soil_removed_proxy_fraction": 0.008133580530487405
+  },
+  "fault": null,
+  "fault_time_s": null,
+  "events": [
+    {
+      "time_s": 5.085999999999662,
+      "event": "VISION_LOCAL_SLOWDOWN",
+      "targets": [
+        [
+          -2.7893828217604537,
+          1.530910716736654
+        ]
+      ]
+    }
+  ],
+  "stop_reason": null,
+  "terminal_angular_speed_rad_s": 0.047596511771217154,
+  "terminal_brush_speed_rad_s": 5.683008141080348,
+  "dock_error_m": 0.8414739855454251,
+  "terminal_speed_mps": 0.1005229670220411,
+  "variant": "proposed",
+  "planned_duration_s": 12.0,
+  "seed": 0,
+  "status": "TIMEOUT",
+  "time_s": 12.000000000000677,
+  "waypoints_reached": 0,
+  "waypoints_total": 33,
+  "visited_contact_fraction": 0.008125,
+  "soil_removed_proxy_fraction": 0.005910804051950991,
+  "path_tracking_rmse_m": 0.01305004648495625,
+  "effort_Nm2_s": 11.084453629869818,
+  "positive_mechanical_work_J": 50.70016623422222,
+  "mujoco": "3.17.0"
+}
