@@ -1,0 +1,28 @@
+{
+  "status": "Updated unsigned review copy; remaining self-assessment responses and assigned Group12 review still needed.",
+  "source_sha256": "0ab603e1c6e50e1f583e6710228d136feed9534271e86aef51bdb8f2a707a8a8",
+  "output_sha256": "b996be3c90f69ccb17285dbd7a7294f5eefd7cb16b44b5a2b138939407149bf4",
+  "hours": {
+    "Arush_E048": 20,
+    "Ronit_E052": 17,
+    "Harshvardhan_E058": 17,
+    "basis": "User supplied approximate totals; supersedes the earlier 32-hour illustrative estimate. Not logged timesheets."
+  },
+  "learning": {
+    "prior_simulator_use": "Yes for all three, from user response to the prior-use question.",
+    "most_useful": "Learning MuJoCo end-to-end: modelling robots, writing MuJoCo/Python simulation scripts and building a functioning digital prototype for business demonstrations.",
+    "course_improvement": "No changes suggested; positive teaching/guidance feedback, supplied collectively by user."
+  },
+  "peer_review": {
+    "Group07": "Provisional user assessment: full marks; no verified video/timestamp.",
+    "Group10": "Confirmed as Group10, not Group12. Additional informal full-marks user feedback recorded, not substituted.",
+    "Group12": "User explicitly has not assessed it; marks remain blank."
+  },
+  "pending": [
+    "Individual role-fidelity scores, cross-disciplinary learning yes/no, AI-draft share, personally caught AI-error counts (async question sent)",
+    "Individual commit shares are not established by project role descriptions",
+    "Actual personal sign-off, signatures and optional research consent",
+    "Group12 review and peer-video standout timestamps",
+    "Final team presentation/LinkedIn URL"
+  ]
+}
