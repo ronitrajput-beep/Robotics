@@ -1,0 +1,54 @@
+{
+  "sources": [
+    {
+      "path": "analytics/final_business_v1/results.json",
+      "sha256": "1b5866e28492c77ce80017b347242b17c33644c44530e8e73d1095f2f8aa1c04"
+    },
+    {
+      "path": "analytics/final_business_v1/sensitivity.csv",
+      "sha256": "ff9a2436263d1ba177fc2fcc43d7c2fd9af38c415da43283bd1b7ea37ccb2845"
+    },
+    {
+      "path": "analytics/final_business_v1/business_sensitivity.png",
+      "sha256": "cdc08f1ed5875f0db454a94426ae63724b6f3b255fb1a36b0fa147ad65cc0094"
+    },
+    {
+      "path": "analytics/final_business_v1/queue_and_labour.png",
+      "sha256": "ac151d3a29fb575d625f518176d6e286460c4cbd06c4079ae9c81109a75322aa"
+    },
+    {
+      "path": "analytics/final_business_model.py",
+      "sha256": "4005c4844b52c1aea77407a06d6dcad68023a07a9724c9251359e791eded823e"
+    },
+    {
+      "path": "analytics/final_business_inputs.json",
+      "sha256": "5b9a4df27114ba5813b28949f104113444dfd305437a89d6752dbfa40f3f4961"
+    },
+    {
+      "path": "analytics/final_validation_v1/summary.csv",
+      "sha256": "f488d1db4915ec53f9c3873951788610f8c6c1f8d496b8750d049fdeb3961a0e"
+    },
+    {
+      "path": "analytics/final_validation_v1/protocol.json",
+      "sha256": "cbe7b084244983a835867fcecbc01dac21d28530ed40bf6e7c4a79be434387ab"
+    },
+    {
+      "path": "analytics/final_validation_v1/statistics.json",
+      "sha256": "288023f2fdbec355921748d5e0d5169a1e46ba46b85ae86a8a70aaa702be2432"
+    },
+    {
+      "path": "submission/dossier_revision_v6/Group06_Dossier_Updated.docx",
+      "sha256": "1f99a6c99c283815f2726b870b791ad5ec3f40eb2ffbba68badff0f83c6a3d05"
+    }
+  ],
+  "word_sha256": "0c94970a9404595a05cf254512982b0682586c3ec09f49d34b30877f24402bf5",
+  "declared_document_sections": 12,
+  "business_headlines": {
+    "kappa": 0.6199257112062972,
+    "NCRI": 0.38007428879370275,
+    "payback_months": 20.522303744239053,
+    "labour_reclaimed_person_h_month": 57.05504733335661
+  },
+  "commercial_inputs": "Assumptions, not verified quotations or field savings",
+  "faculty_requirement_source_commit": "d5b7da279a034fcd08b090766ef96ed31b196684"
+}

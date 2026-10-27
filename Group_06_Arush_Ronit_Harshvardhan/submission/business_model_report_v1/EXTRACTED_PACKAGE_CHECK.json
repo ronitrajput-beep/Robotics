@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "extracted_business_only_package_runs": true,
+  "base_and_Wilson_scenario_match_exactly": true,
+  "full_project_or_MuJoCo_not_required_for_this_recalculation": true,
+  "zip_sha256": "52218164c36422f187ff5ee502577e08188ad058dadd24335ce53c4f5c89d87b"
+}

@@ -1,0 +1,13 @@
+{
+  "repository": "sunny-nanade/NMIMS-MPSTME-MDRIIA-2026",
+  "commit": "d5b7da279a034fcd08b090766ef96ed31b196684",
+  "path": "GRADING_RUBRIC_AND_EVALUATION_POLICY.md",
+  "sha256": "958c072ba6335d619d2f7daee8ffd5c29ccf447937c46c3e112aa18e6b0ad660",
+  "checked_main_same_commit": true,
+  "required_Teams": "Final group dossier PDF; every member individually turns in.",
+  "required_GitHub": "Filled dossier Word/PDF, model/controller/business script, genuine simulation data and analysis in group folder.",
+  "required_video": "Actual final LinkedIn URL in dossier Section5; rubric3\u20134minutes, simulation+business graph+all members webcam.",
+  "separate_business_report": "Supporting document; not separately listed as mandatory Teams attachment.",
+  "PPT": "No PPT",
+  "IEEE_paper": "Optional publication track, not an additional requirement of the current20-mark submission list."
+}

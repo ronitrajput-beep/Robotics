@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "fresh_calculation_command": "python analytics/final_business_model.py --validation-dir analytics/final_validation_v1 --output-dir <new-directory>",
+  "numeric_fields_compared": 52,
+  "maximum_absolute_difference": 0,
+  "base_and_Wilson_scenarios_match": true,
+  "all24_sensitivity_rows_byte_identical": true,
+  "commercial_assumptions_match": true,
+  "focused_business_tests": {
+    "passed": 4,
+    "command": "python -m unittest discover -s tests -p test_final_business.py"
+  },
+  "no_new_simulation_runs": true
+}

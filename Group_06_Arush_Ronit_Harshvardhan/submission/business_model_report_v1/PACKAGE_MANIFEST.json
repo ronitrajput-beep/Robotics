@@ -1,0 +1,125 @@
+{
+  "files": [
+    {
+      "path": "ASSIGNMENT_CHECKLIST.md",
+      "bytes": 4762,
+      "sha256": "ff4cbe79fb3e724687723362f9df8a533d642b7c5c56b0cf9de97e77d0cc8d99"
+    },
+    {
+      "path": "ASSIGNMENT_SOURCE.json",
+      "bytes": 887,
+      "sha256": "d218f5a205f6f16270e0af7c1469f06913105b09d74d8668b21accdcadbd2c72"
+    },
+    {
+      "path": "CHECKS.json",
+      "bytes": 834,
+      "sha256": "3089ef9e38ad9b3f560fa15bf97b751ab0da880c298b66e696beea68e9407b2c"
+    },
+    {
+      "path": "FACULTY_RUBRIC_SNAPSHOT.md",
+      "bytes": 5257,
+      "sha256": "958c072ba6335d619d2f7daee8ffd5c29ccf447937c46c3e112aa18e6b0ad660"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1905,
+      "sha256": "ece3d20ad4de851f95893344aff6903a9ac91bd95b39ada7c32a712baf05e597"
+    },
+    {
+      "path": "RECALCULATION_CHECK.json",
+      "bytes": 537,
+      "sha256": "b616d6ae2adf6c5d711e38f816ee49d1cc6a4d7f81cef2e8c01e36a1f862dd66"
+    },
+    {
+      "path": "REPORT_SOURCE_MANIFEST.json",
+      "bytes": 2082,
+      "sha256": "463019a2ab831f6696246707bd8a063211b2787dd163a4d63a826506b3f3f91a"
+    },
+    {
+      "path": "analytics/final_business_inputs.json",
+      "bytes": 1929,
+      "sha256": "5b9a4df27114ba5813b28949f104113444dfd305437a89d6752dbfa40f3f4961"
+    },
+    {
+      "path": "analytics/final_business_model.py",
+      "bytes": 11467,
+      "sha256": "4005c4844b52c1aea77407a06d6dcad68023a07a9724c9251359e791eded823e"
+    },
+    {
+      "path": "analytics/final_business_v1/business_sensitivity.png",
+      "bytes": 169902,
+      "sha256": "cdc08f1ed5875f0db454a94426ae63724b6f3b255fb1a36b0fa147ad65cc0094"
+    },
+    {
+      "path": "analytics/final_business_v1/inputs.json",
+      "bytes": 1929,
+      "sha256": "5b9a4df27114ba5813b28949f104113444dfd305437a89d6752dbfa40f3f4961"
+    },
+    {
+      "path": "analytics/final_business_v1/queue_and_labour.png",
+      "bytes": 151169,
+      "sha256": "ac151d3a29fb575d625f518176d6e286460c4cbd06c4079ae9c81109a75322aa"
+    },
+    {
+      "path": "analytics/final_business_v1/results.json",
+      "bytes": 6066,
+      "sha256": "1b5866e28492c77ce80017b347242b17c33644c44530e8e73d1095f2f8aa1c04"
+    },
+    {
+      "path": "analytics/final_business_v1/sensitivity.csv",
+      "bytes": 13923,
+      "sha256": "ff9a2436263d1ba177fc2fcc43d7c2fd9af38c415da43283bd1b7ea37ccb2845"
+    },
+    {
+      "path": "analytics/final_business_v1/simulation_inputs.json",
+      "bytes": 606,
+      "sha256": "93e8e9bd99ef5c6445e60c82b6e1d4cbe32cbb8dbf473744a67cf2945fe06430"
+    },
+    {
+      "path": "analytics/final_validation_v1/batch_complete.json",
+      "bytes": 95,
+      "sha256": "0f5a5599150568ca612409edbba2353350667e54ca8461779251b4b80b31fab5"
+    },
+    {
+      "path": "analytics/final_validation_v1/protocol.json",
+      "bytes": 76190,
+      "sha256": "cbe7b084244983a835867fcecbc01dac21d28530ed40bf6e7c4a79be434387ab"
+    },
+    {
+      "path": "analytics/final_validation_v1/statistics.json",
+      "bytes": 21868,
+      "sha256": "288023f2fdbec355921748d5e0d5169a1e46ba46b85ae86a8a70aaa702be2432"
+    },
+    {
+      "path": "analytics/final_validation_v1/summary.csv",
+      "bytes": 95670,
+      "sha256": "f488d1db4915ec53f9c3873951788610f8c6c1f8d496b8750d049fdeb3961a0e"
+    },
+    {
+      "path": "analytics/final_validation_v1/trace_audit.json",
+      "bytes": 46803,
+      "sha256": "81e2af89064763e374169d9752cbc2bcb5a63d3b5c22ca7b76b2c37b3f9a67a7"
+    },
+    {
+      "path": "docs/Group06_Business_Model_Report.docx",
+      "bytes": 328564,
+      "sha256": "0c94970a9404595a05cf254512982b0682586c3ec09f49d34b30877f24402bf5"
+    },
+    {
+      "path": "docs/Group06_Business_Model_Report.pdf",
+      "bytes": 520958,
+      "sha256": "bb5528bad4ebd46aa523dc5ff6e1466553c285dbc27634db55a546434f273f38"
+    },
+    {
+      "path": "requirements-business.txt",
+      "bytes": 136,
+      "sha256": "568d6fa6451e185bba0f915c080d865f758c0317760af80afe0515ce70d37ce7"
+    },
+    {
+      "path": "tests/test_final_business.py",
+      "bytes": 1823,
+      "sha256": "5c7d941c2dfdd7ee8cb0b610417a856947189daaa49b393d6aa75e9dfc6b9687"
+    }
+  ],
+  "zip_sha256": "52218164c36422f187ff5ee502577e08188ad058dadd24335ce53c4f5c89d87b"
+}

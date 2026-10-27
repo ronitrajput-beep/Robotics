@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "pdf_pages": 12,
+  "tables": 16,
+  "embedded_figures": 2,
+  "text_within_page_bounds": true,
+  "all_12_report_sections_present": true,
+  "recalculation_matches_retained_results": true,
+  "focused_business_tests_passed": 4,
+  "commercial_assumptions_labelled": true,
+  "no_currency_amounts_or_PV_yield_claims_added": true,
+  "current_role_credit_Harsh_business_script": true,
+  "faculty_main_checked_commit": "d5b7da279a034fcd08b090766ef96ed31b196684",
+  "Word_editable_without_dropdowns": true,
+  "word_sha256": "0c94970a9404595a05cf254512982b0682586c3ec09f49d34b30877f24402bf5",
+  "pdf_sha256": "bb5528bad4ebd46aa523dc5ff6e1466553c285dbc27634db55a546434f273f38",
+  "full_raw_telemetry": "Retained separately in full project; compact business package contains run-level calibration summary/protocol/statistics."
+}
