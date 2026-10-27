@@ -1,0 +1,42 @@
+{
+  "status": "Requested Sections5.2/6 and academic declarations populated from user answers; signatures and optional consent intentionally blank. Final publication/submission actions are separate.",
+  "input_sha256": "b996be3c90f69ccb17285dbd7a7294f5eefd7cb16b44b5a2b138939407149bf4",
+  "output_sha256": "aa54d1b7a4ef0e5b80198b95940b0127141bd5b320026b9f7ddf30ccab8acf99",
+  "peer_review": {
+    "basis": "Latest user confirms they watched both Group07/12 videos and gives full marks; Group10 was a mistaken reference.",
+    "scores": "2 in all five criteria for each assigned group; no asterisks or added review footnote.",
+    "Group10_mentioned_in_document": false,
+    "standout_timestamps": "No timestamps supplied or recalled. Best-moment cell says Overall demonstration, reflecting overall user assessment; no exact observed scene or mm:ss invented."
+  },
+  "academic_signoff": {
+    "basis": "Latest user explicitly confirms Yes to all three academic statements for all members.",
+    "original_work_sources_AI_declared": "Yes",
+    "code_runs": "Yes",
+    "viva_ready": "Yes",
+    "signatures": "Blank as requested; each member signs personally.",
+    "optional_research_consent": "Blank as explicitly requested."
+  },
+  "hours": "Approximate user estimates retained:20/17/17; redundant added footnote removed.",
+  "pending": [
+    "Personal signatures",
+    "Optional research consent deliberately left blank",
+    "Exact peer-video timestamps not supplied; no values invented",
+    "Final team presentation/LinkedIn URL and faculty/Teams submission, separate from requested section edits"
+  ],
+  "commit_shares": "Computed from actual pinned Git author metadata; labelled in table header, not inferred from team roles. See COMMIT_SHARE_RECEIPT.json.",
+  "section6_answers": {
+    "basis": "Latest explicit user responses.",
+    "role_fidelity": {
+      "Arush": 5,
+      "Ronit": 3,
+      "Harshvardhan": 3
+    },
+    "cross_disciplinary_skill": "Yes, all three",
+    "AI_draft_share": "26\u201350 %, all three (user self-report)",
+    "AI_errors_personally_caught": {
+      "Arush": "6 or more",
+      "Ronit": "3\u20135",
+      "Harshvardhan": "3\u20135"
+    }
+  }
+}

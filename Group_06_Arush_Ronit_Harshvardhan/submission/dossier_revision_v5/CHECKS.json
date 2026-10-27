@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "pages": 10,
+  "tables": 30,
+  "drawings": 6,
+  "no_dropdowns": true,
+  "all_Section6_cells_populated": true,
+  "Section6_matches_explicit_user_answers": true,
+  "both_assigned_groups_score_2": true,
+  "no_Group10_mention": true,
+  "no_score_asterisks_or_added_footnote": true,
+  "peer_timestamps_not_invented": true,
+  "academic_statements_Yes_confirmed_by_user": true,
+  "signatures_and_optional_consent_blank_as_requested": true,
+  "commit_shares_match_pinned_receipt": true,
+  "all_text_within_page_bounds": true,
+  "word_sha256": "aa54d1b7a4ef0e5b80198b95940b0127141bd5b320026b9f7ddf30ccab8acf99",
+  "pdf_sha256": "56fb008f820f332c725245f141b79c6fe576569ff1aa6c53bc07ae305f1070b0",
+  "remaining": "Personal signatures; optional consent intentionally blank; public team-video URL and external submission remain separate. No exact peer-video timestamps supplied."
+}
