@@ -1,0 +1,57 @@
+{
+  "status": "Requested Sections5.2/6 and academic declarations populated from user answers; signatures and optional consent intentionally blank. Final publication/submission actions are separate.",
+  "input_sha256": "aa54d1b7a4ef0e5b80198b95940b0127141bd5b320026b9f7ddf30ccab8acf99",
+  "output_sha256": "1f99a6c99c283815f2726b870b791ad5ec3f40eb2ffbba68badff0f83c6a3d05",
+  "peer_review": {
+    "basis": "Latest user confirms they watched both Group07/12 videos and gives full marks; Group10 was a mistaken reference.",
+    "scores": "2 in all five criteria for each assigned group; no asterisks or added review footnote.",
+    "Group10_mentioned_in_document": false,
+    "standout_timestamps": "No timestamps supplied or recalled. Best-moment cell says Overall demonstration, reflecting overall user assessment; no exact observed scene or mm:ss invented."
+  },
+  "academic_signoff": {
+    "basis": "Latest user explicitly confirms Yes to all three academic statements for all members.",
+    "original_work_sources_AI_declared": "Yes",
+    "code_runs": "Yes",
+    "viva_ready": "Yes",
+    "signatures": "Blank as requested; each member signs personally.",
+    "optional_research_consent": "Blank as explicitly requested."
+  },
+  "hours": "Approximate user estimates retained:20/17/17; redundant added footnote removed.",
+  "pending": [
+    "Personal signatures",
+    "Optional research consent deliberately left blank",
+    "Exact peer-video timestamps not supplied; no values invented",
+    "Final team presentation/LinkedIn URL and faculty/Teams submission, separate from requested section edits"
+  ],
+  "commit_shares": "Pinned 55-commit metadata shares preserved as Git:94.5/5.5/0.0; not rewritten as 60/20/20. Work estimate shown separately in the same column.",
+  "section6_answers": {
+    "basis": "Latest explicit user responses.",
+    "role_fidelity": {
+      "Arush": 5,
+      "Ronit": 3,
+      "Harshvardhan": 3
+    },
+    "cross_disciplinary_skill": "Yes, all three",
+    "AI_draft_share": "26\u201350 %, all three (user self-report)",
+    "AI_errors_personally_caught": {
+      "Arush": "6 or more",
+      "Ronit": "3\u20135",
+      "Harshvardhan": "3\u20135"
+    }
+  },
+  "latest_role_correction": {
+    "basis": "Latest explicit user statement.",
+    "Arush": "Physics and logic; controller/vision/simulation implementation.",
+    "Ronit": "Robot and XML file work; earlier user-provided business support retained.",
+    "Harshvardhan": "Led the business-model script, not just economic inputs.",
+    "business_script_main_author": "E058",
+    "model_file_authorship": "Shared E048/E052",
+    "AI_assistance": "Retained."
+  },
+  "work_share_estimate": {
+    "Arush": 60,
+    "Ronit": 20,
+    "Harshvardhan": 20,
+    "basis": "User-requested team estimate of work allocation. Explicitly distinct from Git commit counts."
+  }
+}
