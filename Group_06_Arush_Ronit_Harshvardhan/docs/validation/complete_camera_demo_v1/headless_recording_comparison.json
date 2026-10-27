@@ -1,0 +1,48 @@
+{
+  "telemetry.csv.gz": {
+    "fresh": {
+      "sha256": "2efea66420e0d8fd5256d5a6792766a3d38bd9bce7ad7293ce5bdfe2421e5517",
+      "decompressed_bytes": 133250774
+    },
+    "validated_nominal": {
+      "sha256": "2efea66420e0d8fd5256d5a6792766a3d38bd9bce7ad7293ce5bdfe2421e5517",
+      "decompressed_bytes": 133250774
+    },
+    "identical": true
+  },
+  "collection.csv.gz": {
+    "fresh": {
+      "sha256": "cad5e0d24fe4753700872ab51acefe052d60ba21645f135ac70e0e9a70161bd1",
+      "decompressed_bytes": 32813122
+    },
+    "validated_nominal": {
+      "sha256": "cad5e0d24fe4753700872ab51acefe052d60ba21645f135ac70e0e9a70161bd1",
+      "decompressed_bytes": 32813122
+    },
+    "identical": true
+  },
+  "solid.csv.gz": {
+    "fresh": {
+      "sha256": "0943fb2b204efa471b929f42b42e5469a94b99902b1f4fc4e7d54cdeed4ac445",
+      "decompressed_bytes": 30386135
+    },
+    "validated_nominal": {
+      "sha256": "0943fb2b204efa471b929f42b42e5469a94b99902b1f4fc4e7d54cdeed4ac445",
+      "decompressed_bytes": 30386135
+    },
+    "identical": true
+  },
+  "observations.jsonl": {
+    "fresh": {
+      "sha256": "55515f0ce22fb865691a1f88d23474ab2c86170b974fe69df7b3f8506346eb0a",
+      "bytes": 348381
+    },
+    "validated_nominal": {
+      "sha256": "55515f0ce22fb865691a1f88d23474ab2c86170b974fe69df7b3f8506346eb0a",
+      "bytes": 348381
+    },
+    "identical": true
+  },
+  "all_identical": true,
+  "executed_snapshot_hashes_match": true
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "speaker": "Arush",
+    "start_s": 0.0,
+    "end_s": 90.0,
+    "words": 174,
+    "words_per_minute": 116.0
+  },
+  {
+    "speaker": "Ronit",
+    "start_s": 90.0,
+    "end_s": 143.08,
+    "words": 106,
+    "words_per_minute": 119.81914091936696
+  },
+  {
+    "speaker": "Harshvardhan",
+    "start_s": 143.08,
+    "end_s": 201.52,
+    "words": 118,
+    "words_per_minute": 121.1498973305955
+  }
+]

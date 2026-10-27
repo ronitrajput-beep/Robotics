@@ -1,0 +1,102 @@
+{
+  "Group06_Complete_Simulation_With_Cameras.mp4": {
+    "bytes": 46664875,
+    "sha256": "7d5bf1b1ad1617591a2eb14cae205fd4382449f00ad7024910db99b7d0203dfe"
+  },
+  "README.md": {
+    "bytes": 1530,
+    "sha256": "5d634e601bc44195a1ba2cec4d118dabcd5736727767ab4ff279b4cb86348f5d"
+  },
+  "VIDEO_CHECKS.json": {
+    "bytes": 820,
+    "sha256": "d623706ea4e782fcb548d4967f61f63735f99961db9a1aaac78b2d0168df21b1"
+  },
+  "VIDEO_TIMELINE.json": {
+    "bytes": 1070,
+    "sha256": "869a309ec88e7ef97e5f8bd9fabca299e94c64c0a679ad3f0c5eb79f71a8ce28"
+  },
+  "VOICEOVER_CUES.json": {
+    "bytes": 403,
+    "sha256": "8729132637dc243f434fefc9b3d7ec42e49b9b46e97aefe9d11e681b46f86950"
+  },
+  "VOICEOVER_SCRIPT.docx": {
+    "bytes": 38218,
+    "sha256": "7eccf9f29e887e1a1d4a7b51affbcfe1df111a5d27870f584ff048650cd0e806"
+  },
+  "VOICEOVER_SCRIPT.md": {
+    "bytes": 4171,
+    "sha256": "0c22b9273bd6ae480913d8765d674bd76cc622f7c699dbb22d73967a688aaf01"
+  },
+  "VOICEOVER_SCRIPT.pdf": {
+    "bytes": 39154,
+    "sha256": "30723cd5f053838341cdebe34fe39b7eb56ba8ed84f7c5f0cc84574a00451338"
+  },
+  "VOICEOVER_SCRIPT.txt": {
+    "bytes": 2920,
+    "sha256": "5fb92cb6d43af69ea8e74b384a2710d4aa0e43230e47cfc75123244c25d30d43"
+  },
+  "brush_contact_closeup.png": {
+    "bytes": 602747,
+    "sha256": "5dea7e284f395dc3c37ab09e407cbdc3c9215a99125d18cc9e49e5596898b9f4"
+  },
+  "business_analysis_card.png": {
+    "bytes": 120553,
+    "sha256": "5564c2559012912b323f212bd68aab231ef7f52b7aebfa9e02e67862cfcf2e68"
+  },
+  "camera_rigs_and_panel.png": {
+    "bytes": 219695,
+    "sha256": "00da87554811cd47e456650d87c1f4791aaa752c0979fcc7b6e8cf5c924d27a0"
+  },
+  "camera_rigs_overview.png": {
+    "bytes": 216885,
+    "sha256": "f0f1b52b0e456abfa680be1a81825719b1075e7faa29de1316cad43bec09cafe"
+  },
+  "cinematic_final.png": {
+    "bytes": 180891,
+    "sha256": "3142ed443a2745e0b083294fd69f5188b015fb11d08a5f35aa16a8958ca7dabe"
+  },
+  "dock_service.png": {
+    "bytes": 325171,
+    "sha256": "667e22c051e4ac8460612c7d1b5184f39615226234accbcb5c4e40c00ec6215f"
+  },
+  "external_dock_service.png": {
+    "bytes": 463920,
+    "sha256": "51d25170a340a155be869785d260d5a0782f977e46abf1a90938fbf938d1e196"
+  },
+  "ffprobe.json": {
+    "bytes": 287,
+    "sha256": "93ecc9d21640fd431ee718f92f657c218a91a8905ee64ffb0d9da9ffb3d615b7"
+  },
+  "headless_recording_comparison.json": {
+    "bytes": 1437,
+    "sha256": "4b99f7e77ca59013e8fe505131273d4510ad02e78c35b3248e9e58945730e2f3"
+  },
+  "independent_collection_checks.json": {
+    "bytes": 977,
+    "sha256": "b4e118870c7bb7f7da499757ed5407394caab717ccdadfd8b5487f8ad6412b11"
+  },
+  "launch_manifest.json": {
+    "bytes": 3813,
+    "sha256": "66f144c8f6232da594e65b64c10dc3a403700a94412ce954476bb687bf3d6ee1"
+  },
+  "left_panel_camera.png": {
+    "bytes": 121639,
+    "sha256": "01376d3b40325988651ebb65a9d6b66ac8670013b2acfa9091b530b14bcae80a"
+  },
+  "onboard_camera.png": {
+    "bytes": 124384,
+    "sha256": "d21feb662ee7b79db25e4df0dd943f639ca006b18c7295da32aaba23af34838d"
+  },
+  "right_panel_camera.png": {
+    "bytes": 122815,
+    "sha256": "c9199f3bd0ca6e0d856c8772e113786efb2ac9d8f9b76354a9a4d265cac930a1"
+  },
+  "solid_contact_closeup.png": {
+    "bytes": 435623,
+    "sha256": "f89fa905cc7e5d0f35764e1e9c95db1f3451f1afef60f59f4eaa02c1cbfe4d9d"
+  },
+  "solid_in_tray.png": {
+    "bytes": 387443,
+    "sha256": "4e4eb4b491691567244a5b57433f29555f1902c58e69ac49d884bc19087eb7b7"
+  }
+}

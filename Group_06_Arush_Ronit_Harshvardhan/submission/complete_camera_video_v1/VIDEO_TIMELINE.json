@@ -1,0 +1,52 @@
+[
+  {
+    "feature": "Off-glass home",
+    "video_time_s": 0.0,
+    "simulation_time_s": 0.0
+  },
+  {
+    "feature": "Dirt/RGB trigger",
+    "video_time_s": 4.04,
+    "simulation_time_s": 4.0
+  },
+  {
+    "feature": "Two camera rigs",
+    "video_time_s": 8.04,
+    "simulation_time_s": 8.0
+  },
+  {
+    "feature": "Left panel camera",
+    "video_time_s": 11.52,
+    "simulation_time_s": 11.5
+  },
+  {
+    "feature": "Right panel camera",
+    "video_time_s": 15.0,
+    "simulation_time_s": 15.0
+  },
+  {
+    "feature": "Onboard camera",
+    "video_time_s": 18.52,
+    "simulation_time_s": 18.5
+  },
+  {
+    "feature": "Camera-rig overview",
+    "video_time_s": 22.04,
+    "simulation_time_s": 22.0
+  },
+  {
+    "feature": "Solid first tool contact",
+    "video_time_s": 128.76,
+    "simulation_time_s": 324.67000000082214
+  },
+  {
+    "feature": "Solid tray contact",
+    "video_time_s": 131.08,
+    "simulation_time_s": 326.97800000083316
+  },
+  {
+    "feature": "Assumption-based business analysis card",
+    "video_time_s": 189.52,
+    "simulation_time_s": null
+  }
+]

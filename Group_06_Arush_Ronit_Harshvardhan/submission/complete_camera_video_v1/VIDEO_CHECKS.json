@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "mission_independently_verified": true,
+  "video_seconds": 201.52,
+  "frames": 5038,
+  "resolution": [
+    1280,
+    720
+  ],
+  "full_decode_pass": true,
+  "raw_capture_frames_have_provenance": true,
+  "business_card_s": 12,
+  "audio": "None; record the supplied human voice-over",
+  "physical_source": "docs/validation/complete_camera_demo_v1",
+  "checks": "docs/validation/complete_camera_demo_v1/independent_collection_checks.json",
+  "raw_video_sha256": "30efa628b416377d12e651e20afc0f7d93e88ba04fd33cdfbd7fd15c592e37da",
+  "final_video_sha256": "7d5bf1b1ad1617591a2eb14cae205fd4382449f00ad7024910db99b7d0203dfe",
+  "source_snapshot_and_model_hashes_match": true,
+  "all_physics_and_observation_streams_match_validated_nominal": true,
+  "voiceover_pdf_pages": 2,
+  "voiceover_total_words": 398
+}

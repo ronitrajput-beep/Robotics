@@ -53,22 +53,24 @@ def build(run_dir,output_dir,analysis_seconds=12):
     ronit_end=min(duration-55.,max(arush_end+45.,tray_time+12.))
     paragraphs=[
       ('Arush',0.,arush_end,
-       'I worked on the primary 3D robot model, controller coding and integration of the MuJoCo simulation. The model includes mass, motor limits, rotating joints and contact geometry.\n\n'
-       'The robot begins at its external dock. After dirt falls, persistent camera detections trigger the cleaning mission. These close-ups show both panel inspection cameras and the onboard camera at their calibrated sensor positions. Their actual RGB inputs appear on the right, with green detection boxes.\n\n'
+       'My main contribution was the 3D robot model, controller coding and integration of this MuJoCo simulation.\n\n'
+       'These close-ups show both panel inspection cameras and the onboard camera at their calibrated sensor positions. Their actual RGB inputs appear on the right, with green detection boxes.\n\n'
+       'The robot begins at an external dock. Persistent dirt detections trigger its mission. I modelled mass, motor limits, rotating joints and collision geometry, then linked these to the controller.\n\n'
        'I used a back-and-forth coverage route with proportional-integral wheel-speed control. Motor torques are bounded, and the safety supervisor monitors chassis height, tilt and stopping behaviour. Camera observations can request local slowdowns and targeted revisits when dirt remains. Position feedback currently comes from the simulator.\n\n'
-       'The brush is physically connected to the chassis. Fine-dirt patches shrink when the rotating brush makes qualifying contact, and removed mass is tracked through the onboard bin. This capture process is a reduced-order model; suction airflow is not resolved. The camera feedback and contact checks connect the cleaning behaviour to the simulated state.'),
+       'The brush is physically connected to the chassis. Fine-dirt patches shrink when the rotating brush makes qualifying contact, and removed mass is tracked through the onboard bin. This capture process is a reduced-order model; suction airflow is not resolved. The completed run clears all thirty-two selected patches below the threshold, with approximately ninety percent qualifying brush-contact coverage.'),
       ('Ronit',arush_end,ronit_end,
-       'I helped refine the 3D model and contributed to the business modelling. The design connects an external docking platform, fixed brush supports, a solids guide and a permanent catch tray.\n\n'
+       'I helped refine the 3D model and contributed to the business modelling. The design connects an external docking platform, fixed brush supports, a solids guide and a permanent catch tray. Keeping the home platform off the glass also leaves that corner available for the cleaning route.\n\n'
        'Here, the larger object is a persistent rigid body with mass and gravity. The diagonal guide physically redirects it off the glass into the tray through collision contact. This test uses a prescribed handling corridor.\n\n'
        'The fixed mechanism keeps the concept relatively simple. I also helped connect practical operating requirements, including supervision, maintenance and panel-to-panel transfer, to the economic analysis.'),
       ('Harshvardhan',ronit_end,duration,
-       'My focus was the business and economics of the product. I worked on capital and operating costs, labour requirements, payback and sensitivity analysis.\n\n'
+       'My focus was the business and economics of the product. I worked on capital and operating costs, labour requirements, payback and sensitivity analysis. The robot finishes its cycle by returning to the dock for modelled emptying and charging service.\n\n'
        'The operating model uses measured simulation throughput, while commercial inputs remain declared assumptions. It includes human supervision, maintenance and manual transfer between separate panel sections.\n\n'
        f"Under this scenario, the model estimates about {base['NCRI']*100:.0f} percent normalised cost reduction, a {base['payback_months']:.1f}-month simple payback and {base['labour_reclaimed_person_h_month']:.0f} person-hours reclaimed per month. These are scenario outputs, not measured commercial savings.\n\n"
-       'The final graph shows how the conclusion changes with supervision and other uncertain inputs. The simulation returns the robot to its dock for modelled bin emptying and charging service. Prototype traction, coating safety and suction performance remain future tests.')
+       'The final graph shows how the conclusion changes with supervision and other uncertain inputs. Prototype traction, coating safety and suction performance remain future tests.')
     ]
     title='Group 06 — voice-over for the complete camera simulation'
-    lines=[f'# {title}',f'\nVideo length: **{stamp(duration)}** ({duration:.2f} seconds). The MP4 is silent so the three members can record their own voices. Intro/outro face clips are separate.\n',
+    face_budget=max(0.,300-duration)
+    lines=[f'# {title}',f'\nVideo length: **{stamp(duration)}** ({duration:.2f} seconds). The MP4 is silent so the three members can record their own voices. Intro/outro face clips are separate. For a five-minute final post, the combined face introduction and conclusion budget is approximately **{face_budget:.0f} seconds**.\n',
            'Speak at the rates shown below; short pauses can follow the camera and solid-object close-ups. These are suggested project-contribution statements based on the team roles supplied by the user.\n']
     doc=Document();doc.add_heading(title,0);doc.add_paragraph(f'Video length: {stamp(duration)}. Three-person narration. Record your own voices; no synthetic narration is included.')
     cues=[]
