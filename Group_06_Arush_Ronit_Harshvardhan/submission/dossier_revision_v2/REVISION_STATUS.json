@@ -1,0 +1,402 @@
+{
+  "input_file_name": "1-Group06_Dossier_.docx",
+  "input_sha256": "2f8d4140f77e2783695a979f89fbe8bac3faccf3365ab3fbf319060becdd914f",
+  "working_sha256": "6b9a0c744e307c7021ec164e6a8307ddf4455b956808da3f24888851b0fdc887",
+  "status": "Working copy awaiting factual user answers; not complete or signed.",
+  "changes": [
+    "Retained all technical results, tables, figures and AI disclosure.",
+    "Inserted user-supplied team roles without inferring per-file authorship.",
+    "Removed unreported/not-assessed labels and left the corresponding answer cells blank."
+  ],
+  "answer_cells_awaiting_facts": [
+    {
+      "table": 8,
+      "row": 1,
+      "column": 1,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 1,
+      "column": 2,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 2,
+      "column": 1,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 2,
+      "column": 2,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 3,
+      "column": 1,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 3,
+      "column": 2,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 4,
+      "column": 1,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 4,
+      "column": 2,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 5,
+      "column": 1,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 8,
+      "row": 5,
+      "column": 2,
+      "previous_text": "Per-file authorship not confirmed"
+    },
+    {
+      "table": 24,
+      "row": 1,
+      "column": 1,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 1,
+      "column": 2,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 1,
+      "column": 3,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 1,
+      "column": 4,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 1,
+      "column": 5,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 1,
+      "column": 6,
+      "previous_text": "Not assessed; video not reviewed."
+    },
+    {
+      "table": 24,
+      "row": 2,
+      "column": 1,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 2,
+      "column": 2,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 2,
+      "column": 3,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 2,
+      "column": 4,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 2,
+      "column": 5,
+      "previous_text": "Not assessed"
+    },
+    {
+      "table": 24,
+      "row": 2,
+      "column": 6,
+      "previous_text": "Not assessed; video not reviewed."
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 1,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 2,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 3,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 4,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 5,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 6,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 1,
+      "column": 7,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 1,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 2,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 3,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 4,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 5,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 6,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 2,
+      "column": 7,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 1,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 2,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 3,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 4,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 5,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 6,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 25,
+      "row": 3,
+      "column": 7,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 1,
+      "column": 1,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 1,
+      "column": 2,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 1,
+      "column": 3,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 2,
+      "column": 1,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 2,
+      "column": 2,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 2,
+      "column": 3,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 3,
+      "column": 1,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 3,
+      "column": 2,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 26,
+      "row": 3,
+      "column": 3,
+      "previous_text": "Not reported"
+    },
+    {
+      "table": 28,
+      "row": 1,
+      "column": 1,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 1,
+      "column": 2,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 1,
+      "column": 3,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 1,
+      "column": 5,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 2,
+      "column": 1,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 2,
+      "column": 2,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 2,
+      "column": 3,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 2,
+      "column": 5,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 3,
+      "column": 1,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 3,
+      "column": 2,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 3,
+      "column": 3,
+      "previous_text": "Not confirmed by member"
+    },
+    {
+      "table": 28,
+      "row": 3,
+      "column": 5,
+      "previous_text": "Not confirmed by member"
+    }
+  ],
+  "questions_pending": [
+    "Best honest hours estimates for each member",
+    "Actual review/modification of each listed file",
+    "Assigned peer videos and/or user assessment"
+  ]
+}
