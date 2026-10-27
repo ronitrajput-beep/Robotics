@@ -8,7 +8,7 @@ This checklist follows the faculty's current **20-mark capstone rubric**, not th
 - **Arush, Ronit and Harshvardhan each click Turn in individually**, using the same final group PDF.
 - The business-model report PDF can be added as supporting material if the assignment accepts additional attachments. The rubric explicitly requires the dossier PDF on Teams; it does not separately mandate a business-report PDF.
 
-Use the team's latest completed local dossier, with its final public LinkedIn video URL and personal signatures. The latest cloud copy includes the three user-supplied signature photographs; retain any later local edits, including the final video URL. Optional research consent may remain blank as the team requested.
+Use the team's latest completed local dossier, with its final public LinkedIn video URL and personal signatures. The latest cloud copy includes all three supplied signature photographs and the user-provided public video URL. Retain any later local edits. Optional research consent may remain blank as the team requested.
 
 ## 2. Faculty GitHub repository: group folder
 

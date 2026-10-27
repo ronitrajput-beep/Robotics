@@ -1,0 +1,35 @@
+{
+  "source": "submission/dossier_signed_v1/Group_06_E048_E052_E058_Technical_Dossier.docx",
+  "source_sha256": "ad0c4cf417bc55e2194947a021e4e14a2eac5291ac652ae9604789a7b6c294ac",
+  "output_sha256": "ae9658d51c66d515e4cea7221fbf0b6f83381c5a4bb404aba314ef38202d50f7",
+  "filename_unchanged": "Group_06_E048_E052_E058_Technical_Dossier.docx",
+  "Section6": {
+    "hours": [
+      20,
+      20,
+      20
+    ],
+    "role_match": [
+      5,
+      5,
+      5
+    ],
+    "estimated_work_percent": [
+      45,
+      27.5,
+      27.5
+    ],
+    "interpretation": "User typed .45%; interpreted as45% in context, with equal split of remainder. Optional clarification asked; default stated before editing.",
+    "Git_metadata_percent_unchanged": [
+      94.5,
+      5.5,
+      0.0
+    ]
+  },
+  "video_url": "https://lnkd.in/p/d_en8Zas",
+  "url_added_as_clickable_Word_hyperlink": true,
+  "final_video_duration": "Not inferred from the URL; only original simulation-segment duration retained.",
+  "signature_images": "Preserved exactly from signed source, no new signature generated.",
+  "optional_consent": "Blank as requested.",
+  "all_members_appear_and_speak": "Yes; explicitly confirmed by user in latest reply."
+}
