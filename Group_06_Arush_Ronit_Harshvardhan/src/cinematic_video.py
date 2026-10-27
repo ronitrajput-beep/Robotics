@@ -19,9 +19,10 @@ def presentation_font(size):
 
 
 class CinematicVideo:
-    def __init__(self,directory,presentation_shot=None,realtime=False):
+    def __init__(self,directory,presentation_shot=None,realtime=False,cruise_speed=8):
         self.directory=Path(directory);self.renderer=None;self.encoder=None;self.environment=RooftopScene()
         self.presentation_shot=presentation_shot;self.realtime=realtime
+        self.cruise_speed=cruise_speed
         self.sensor_views={};self.sensor_time=0.
         self.last_time=-1;self.frames=0;self.last_picture=None;self.camera=None;self.closeup_frames=0
         self.font=presentation_font(19)
@@ -38,7 +39,7 @@ class CinematicVideo:
         closeup=d.time>=8 and (near_dirt or 22<d.time%80<26)
         catch_time=next((e['time_s'] for e in solid['events'] if e['event']=='SOLID_TRAY_CONTACT'),-100.) if solid else -100.
         catch_window=0<=d.time-catch_time<3
-        speed=1 if self.realtime or catch_window or d.time<8 or closeup or solid_active or state=="DOCK_SERVICE" else 8
+        speed=1 if self.realtime or catch_window or d.time<8 or closeup or solid_active or state=="DOCK_SERVICE" else self.cruise_speed
         if d.time<self.last_time+speed/25-1e-9:return
         self.last_time=float(d.time)
         if self.renderer is None:
@@ -66,7 +67,9 @@ class CinematicVideo:
                 desired.lookat[:]=origin+rotation@np.asarray(solid['final_panel_position_m']);desired.distance=1.7;desired.elevation=-40;desired.azimuth=100
                 speed=1
         shot_title=None
-        if self.presentation_shot is not None:desired,shot_title=self.presentation_shot(m,d)
+        if self.presentation_shot is not None:
+            shot=self.presentation_shot(m,d)
+            if shot is not None:desired,shot_title=shot
         if self.camera is None:self.camera=desired
         else:
             for name in ('distance','azimuth','elevation'):setattr(self.camera,name,.84*getattr(self.camera,name)+.16*getattr(desired,name))

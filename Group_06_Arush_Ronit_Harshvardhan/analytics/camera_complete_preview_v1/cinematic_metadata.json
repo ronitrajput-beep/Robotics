@@ -1,0 +1,58 @@
+{
+  "frames": 700,
+  "fps": 25,
+  "duration_s": 28.0,
+  "resolution": [
+    1280,
+    720
+  ],
+  "encoding_crf": 23,
+  "playback": "1x during initial deposition, camera-hardware inspection at simulation t=8..25 s, brush inspections, solid contact/tray landing and dock service; other transits 12x; final result held 3 s",
+  "sensor_views": "Three actual RGB detector inputs, timestamped at 2 Hz, with detected image bounding boxes",
+  "closeup_frames": 188,
+  "scene": "Procedural rooftop, deck, supports, skyline, sky and robot visual details; presentation only",
+  "scope": "Complete fresh combined cleaning mission with visible calibrated inspection hardware",
+  "frame_provenance": "frame_map.csv maps every encoded frame to actual integrated simulation time; final hold is explicitly labelled",
+  "camera_hardware": "Two elevated panel units and one onboard camera, rendered at the actual sensor poses; presentation-only housings",
+  "initial_sensor_poses": {
+    "edge_left": {
+      "position_world_m": [
+        -2.7,
+        -1.7101014195237332,
+        5.898462848096483
+      ],
+      "optical_axis_world": [
+        -0.0,
+        0.34202028390474665,
+        -0.9396925696192966
+      ],
+      "fovy_deg": 70.0
+    },
+    "edge_right": {
+      "position_world_m": [
+        2.7,
+        -1.7101014195237332,
+        5.898462848096483
+      ],
+      "optical_axis_world": [
+        -0.0,
+        0.34202028390474665,
+        -0.9396925696192966
+      ],
+      "fovy_deg": 70.0
+    },
+    "robot_camera": {
+      "position_world_m": [
+        -3.6972607662535713,
+        1.3068555673274627,
+        2.0694025456547127
+      ],
+      "optical_axis_world": [
+        0.7071067811865475,
+        0.24184476264797525,
+        -0.6644630243886744
+      ],
+      "fovy_deg": 75.0
+    }
+  }
+}
