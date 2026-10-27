@@ -1,0 +1,2392 @@
+{
+  "source": "docs/MDRIIA_Group_06_Technical_Dossier.docx",
+  "source_sha256": "67d17a41f4b5382fd4dce43323ecb1236b87ff58bd43a0c12d79dd30362e408f",
+  "output_sha256": "2f8d4140f77e2783695a979f89fbe8bac3faccf3365ab3fbf319060becdd914f",
+  "fields": [
+    {
+      "tag": "M06.S1.claim1.source",
+      "original_answer": "No verified site-specific yield source obtained; delete numerical Mumbai claim. No electrical PV model is implemented.",
+      "answer": "No verified site-specific yield source obtained; delete numerical Mumbai claim. No electrical PV model is implemented.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim1.source_type",
+      "original_answer": "No source found",
+      "answer": "No source found",
+      "original_options": [
+        "Select ▾",
+        "Standard (ISO / IEC / ANSI)",
+        "Peer-reviewed paper (DOI)",
+        "Government / official report",
+        "Industry report / datasheet",
+        "Other web page",
+        "No source found"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim1.verdict",
+      "original_answer": "Delete",
+      "answer": "Delete",
+      "original_options": [
+        "Select ▾",
+        "Keep",
+        "Correct",
+        "Delete"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim2.source",
+      "original_answer": "No verified primary monthly-loss source obtained. Monthly loss cannot be multiplied by annual generation as an annual-average loss; delete.",
+      "answer": "No verified primary monthly-loss source obtained. Monthly loss cannot be multiplied by annual generation as an annual-average loss; delete.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim2.source_type",
+      "original_answer": "No source found",
+      "answer": "No source found",
+      "original_options": [
+        "Select ▾",
+        "Standard (ISO / IEC / ANSI)",
+        "Peer-reviewed paper (DOI)",
+        "Government / official report",
+        "Industry report / datasheet",
+        "Other web page",
+        "No source found"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim2.verdict",
+      "original_answer": "Delete",
+      "answer": "Delete",
+      "original_options": [
+        "Select ▾",
+        "Keep",
+        "Correct",
+        "Delete"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim3.source",
+      "original_answer": "No measured PV electrical recovery or sourced commercial payback supports these numbers. Delete; replace with explicitly assumed dimensionless scenario in Section 3.",
+      "answer": "No measured PV electrical recovery or sourced commercial payback supports these numbers. Delete; replace with explicitly assumed dimensionless scenario in Section 3.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim3.source_type",
+      "original_answer": "No source found",
+      "answer": "No source found",
+      "original_options": [
+        "Select ▾",
+        "Standard (ISO / IEC / ANSI)",
+        "Peer-reviewed paper (DOI)",
+        "Government / official report",
+        "Industry report / datasheet",
+        "Other web page",
+        "No source found"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.claim3.verdict",
+      "original_answer": "Delete",
+      "answer": "Delete",
+      "original_options": [
+        "Select ▾",
+        "Keep",
+        "Correct",
+        "Delete"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_iso10218.applies",
+      "original_answer": "No",
+      "answer": "No",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "Partly",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_iso10218.clause",
+      "original_answer": "Scope: industrial robot/manipulator and integration. This fixed-panel cleaning mobile device is not an industrial manipulator; no conformity claim.",
+      "answer": "Scope: industrial robot/manipulator and integration. This fixed-panel cleaning mobile device is not an industrial manipulator; no conformity claim.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_iso3691.applies",
+      "original_answer": "No",
+      "answer": "No",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "Partly",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_iso3691.clause",
+      "original_answer": "Scope: driverless industrial trucks. The selected fixed PV-bay cleaner is not an industrial truck; no conformity claim.",
+      "answer": "Scope: driverless industrial trucks. The selected fixed PV-bay cleaner is not an industrial truck; no conformity claim.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_ria.applies",
+      "original_answer": "No",
+      "answer": "No",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "Partly",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_ria.clause",
+      "original_answer": "Industrial robot-system standard associated with ISO 10218; selected system is not an industrial manipulator. No compliance claim.",
+      "answer": "Industrial robot-system standard associated with ISO 10218; selected system is not an industrial manipulator. No compliance claim.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_iec60601.applies",
+      "original_answer": "No",
+      "answer": "No",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "Partly",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_iec60601.clause",
+      "original_answer": "Medical electrical equipment; the PV cleaner has no medical use. No applicable medical requirement.",
+      "answer": "Medical electrical equipment; the PV cleaner has no medical use. No applicable medical requirement.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_domain.applies",
+      "original_answer": "Partly",
+      "answer": "Partly",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "Partly",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.std_domain.clause",
+      "original_answer": "IEC 61215 (PV module qualification) and IEC 61730 (module safety) are relevant to future module/cleaner compatibility. Licensed clauses and allowable local brush/wheel loads were not verified; no clause number, certified glass load or compliance is asserted.",
+      "answer": "IEC 61215 (PV module qualification) and IEC 61730 (module safety) are relevant to future module/cleaner compatibility. Licensed clauses and allowable local brush/wheel loads were not verified; no clause number, certified glass load or compliance is asserted.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.baseline_value",
+      "original_answer": "Measured simulation baseline: waypoint + proportional wheel control; compare at equal 0–30 s exposure. Commercial reference: 120 person-hours/month is an assumption, not a site measurement.",
+      "answer": "Measured simulation baseline: waypoint + proportional wheel control; compare at equal 0–30 s exposure. Commercial reference: 120 person-hours/month is an assumption, not a site measurement.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.baseline_source",
+      "original_answer": "Actual controller logs and frozen protocol; commercial assumptions in analytics/final_business_inputs.json. No Mumbai field survey or verified annual-yield figure.",
+      "answer": "Actual controller logs and frozen protocol; commercial assumptions in analytics/final_business_inputs.json. No Mumbai field survey or verified annual-yield figure.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S1.stakeholder",
+      "original_answer": "Rooftop PV owner/operator and cleaning contractor; access, inspection, transfer and maintenance remain human responsibilities in the business scenario.",
+      "answer": "Rooftop PV owner/operator and cleaning contractor; access, inspection, transfer and maintenance remain human responsibilities in the business scenario.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.timestep",
+      "original_answer": "0.002 s; 500 Hz integration and logging",
+      "answer": "0.002 s; 500 Hz integration and logging",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.friction",
+      "original_answer": "Rollers 1.2 / 0.005 / 0.0001; glass and brush 0.4 / 0.005 / 0.0001; brush contact priority 2. Guard friction is zero. These are model assumptions, not measured tyre/glass properties.",
+      "answer": "Rollers 1.2 / 0.005 / 0.0001; glass and brush 0.4 / 0.005 / 0.0001; brush contact priority 2. Guard friction is zero. These are model assumptions, not measured tyre/glass properties.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.solref",
+      "original_answer": "Brush/glass 0.02 s, 1 (soft bristle approximation); guide 0.01 s, 1; model default 0.005 s, 1. Rounded capsule contact was retained after replay rejected rigid-cylinder kicks. No coating-safety inference.",
+      "answer": "Brush/glass 0.02 s, 1 (soft bristle approximation); guide 0.01 s, 1; model default 0.005 s, 1. Rounded capsule contact was retained after replay rejected rigid-cylinder kicks. No coating-safety inference.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.control_law",
+      "original_answer": "PI / PD",
+      "answer": "PI / PD",
+      "original_options": [
+        "Select ▾",
+        "PID",
+        "PI / PD",
+        "Impedance / admittance",
+        "DLS-IK + PID",
+        "Potential field / DWA",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.gains",
+      "original_answer": "Wheel PI: Kp=0.8 N·m/(rad/s), Ki=0.5 N·m/rad, integral clamp ±3 rad, motor ±3 N·m. Heading 3 s⁻¹, yaw command ±1.2 rad/s. Shared incline/return regulator Kp=0.6, Ki=0.2; torque ±1 N·m, slew 4 N·m/s. Brush velocity target 15 rad/s, kv=0.1, torque ±1 N·m.",
+      "answer": "Wheel PI: Kp=0.8 N·m/(rad/s), Ki=0.5 N·m/rad, integral clamp ±3 rad, motor ±3 N·m. Heading 3 s⁻¹, yaw command ±1.2 rad/s. Shared incline/return regulator Kp=0.6, Ki=0.2; torque ±1 N·m, slew 4 N·m/s. Brush velocity target 15 rad/s, kv=0.1, torque ±1 N·m.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.fsm_states",
+      "original_answer": "HOME_MONITOR → SETTLE/ALIGN → SWEEP; image-requested EDGE_CLEAN_BOTTOM; verification/revisit; RETURN_HOME → DOCKING → DOCK_SERVICE → DOCKED. Safety abort/timeout remain failed outcomes.",
+      "answer": "HOME_MONITOR → SETTLE/ALIGN → SWEEP; image-requested EDGE_CLEAN_BOTTOM; verification/revisit; RETURN_HOME → DOCKING → DOCK_SERVICE → DOCKED. Safety abort/timeout remain failed outcomes.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.model_loads",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script1.authorship",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "Written by us",
+        "Modified by us",
+        "Used as given",
+        "Deleted / not used"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script1.author",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "E048",
+        "E052",
+        "E058",
+        "Shared"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script1.change",
+      "original_answer": "Active model is collection_cleaning_crawler.xml: off-glass dock, capsule brush, fixed support/guide, tray; 8.5 kg robot and 5 actuators. AI-assisted development; member authorship pending.",
+      "answer": "Active model is collection_cleaning_crawler.xml: off-glass dock, capsule brush, fixed support/guide, tray; 8.5 kg robot and 5 actuators. AI-assisted development; member authorship pending.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script2.authorship",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "Written by us",
+        "Modified by us",
+        "Used as given",
+        "Deleted / not used"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script2.author",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "E048",
+        "E052",
+        "E058",
+        "Shared"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script2.change",
+      "original_answer": "Camera-gated departure, PI tracking, safe turns/return, contact-gated brush, 500 Hz actual torque logging. AI-assisted; member authorship pending.",
+      "answer": "Camera-gated departure, PI tracking, safe turns/return, contact-gated brush, 500 Hz actual torque logging. AI-assisted; member authorship pending.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script3.authorship",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "Written by us",
+        "Modified by us",
+        "Used as given",
+        "Deleted / not used"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script3.author",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "E048",
+        "E052",
+        "E058",
+        "Shared"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script3.change",
+      "original_answer": "Replaced unsupported PV percentages with measured-throughput, dimensionless scenario, explicit human transfer labour and sensitivity. Member authorship pending.",
+      "answer": "Replaced unsupported PV percentages with measured-throughput, dimensionless scenario, explicit human transfer labour and sensitivity. Member authorship pending.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script4.name",
+      "original_answer": "src/vision_mission.py + panel_vision.py",
+      "answer": "src/vision_mission.py + panel_vision.py",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script4.authorship",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "Written by us",
+        "Modified by us",
+        "Used as given",
+        "Deleted / not used"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script4.author",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "E048",
+        "E052",
+        "E058",
+        "Shared"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script4.change",
+      "original_answer": "Real rendered RGB observations, persistence gate, camera-target revisits and final independent scoring. Ground-truth navigation disclosed; member authorship pending.",
+      "answer": "Real rendered RGB observations, persistence gate, camera-target revisits and final independent scoring. Ground-truth navigation disclosed; member authorship pending.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script5.name",
+      "original_answer": "src/run_final_validation.py",
+      "answer": "src/run_final_validation.py",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S2.script5.authorship",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "Written by us",
+        "Modified by us",
+        "Used as given",
+        "Deleted / not used"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script5.author",
+      "original_answer": "Select ▾",
+      "answer": "Per-file authorship not confirmed",
+      "original_options": [
+        "Select ▾",
+        "E048",
+        "E052",
+        "E058",
+        "Shared"
+      ],
+      "basis": "Project uses AI-assisted implementation. Reported general roles do not establish per-file authorship.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S2.script5.change",
+      "original_answer": "Frozen 180 full-mission attempts over 3 tilts with independent seeds, raw torques and source snapshots; no generated targets. Member authorship pending.",
+      "answer": "Frozen 180 full-mission attempts over 3 tilts with independent seeds, raw torques and source snapshots; no generated targets. Member authorship pending.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.hreclaimed_inputs",
+      "original_answer": "All 30 proposed attempts at 20°, failures retained. H0=120 h/month; 21 sections/day × 30 days; f=0.2; attempt mean 612.713 s; p=1; transfer=180 s/section fully human; recovery=180 s/failure fully human; maintenance=10 h/month. All commercial values are assumptions.",
+      "answer": "All 30 proposed attempts at 20°, failures retained. H0=120 h/month; 21 sections/day × 30 days; f=0.2; attempt mean 612.713 s; p=1; transfer=180 s/section fully human; recovery=180 s/failure fully human; maintenance=10 h/month. All commercial values are assumptions.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.hreclaimed_metric",
+      "original_answer": "57.055 person-h/month; robot-related human effort 62.945 h/month (monitoring + transfer/recovery + maintenance).",
+      "answer": "57.055 person-h/month; robot-related human effort 62.945 h/month (monitoring + transfer/recovery + maintenance).",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.payback_inputs",
+      "original_answer": "Normalise one year of baseline labour cost to 1. CapEx ratio k=0.65; life L=5 years; annual saving ratio s=NCRI. All commercial inputs assumed. T=12k/s months; P=k/(L·s); undefined for s≤0.",
+      "answer": "Normalise one year of baseline labour cost to 1. CapEx ratio k=0.65; life L=5 years; annual saving ratio s=NCRI. All commercial inputs assumed. T=12k/s months; P=k/(L·s); undefined for s≤0.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.payback_metric",
+      "original_answer": "T=20.522 months; P=0.34204 (dimensionless). Scenario output, not observed payback.",
+      "answer": "T=20.522 months; P=0.34204 (dimensionless). Scenario output, not observed payback.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.ncri_inputs",
+      "original_answer": "κ=human-hours/H0 + annual energy cost ratio + 0.05 spares/battery + 0.03 consumables. Electrical estimate: positive simulated work/assumed 0.60 efficiency + 20 W modelled blower + 5 W electronics; two assumed 3 W cameras. Tariff ratio=0.0003 per kWh of one-year baseline cost.",
+      "answer": "κ=human-hours/H0 + annual energy cost ratio + 0.05 spares/battery + 0.03 consumables. Electrical estimate: positive simulated work/assumed 0.60 efficiency + 20 W modelled blower + 5 W electronics; two assumed 3 W cameras. Tariff ratio=0.0003 per kWh of one-year baseline cost.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.ncri_metric",
+      "original_answer": "κ=0.61993; NCRI=1−κ=0.38007. Estimated system energy 51.281 kWh/year under scenario assumptions; not measured electrical energy.",
+      "answer": "κ=0.61993; NCRI=1−κ=0.38007. Estimated system energy 51.281 kWh/year under scenario assumptions; not measured electrical energy.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_inputs",
+      "original_answer": "A section is one 24 m² bay, not a raster lane. λ=2.625 sections/h; μ=3600/[E(Tattempt)/p + (1−p)·180/p + 180]=4.54137 sections/h; c=1. Poisson arrivals/exponential service assumed.",
+      "answer": "A section is one 24 m² bay, not a raster lane. λ=2.625 sections/h; μ=3600/[E(Tattempt)/p + (1−p)·180/p + 180]=4.54137 sections/h; c=1. Poisson arrivals/exponential service assumed.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_metric",
+      "original_answer": "ρ=0.57802; Wq=18.097 min if stable. Mean service 792.713 s. M/M/1 distribution assumptions are not validated by the simulator.",
+      "answer": "ρ=0.57802; Wq=18.097 min if stable. Mean service 792.713 s. M/M/1 distribution assumptions are not validated by the simulator.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.sensitivity_inputs",
+      "original_answer": "Eight inputs swept ±30%: supervision, baseline hours, CapEx, manual transfer, failure recovery, energy price ratio, maintenance and drive efficiency. Repeated independent retries are an assumption. See sensitivity.csv; no PV yield uplift is monetised.",
+      "answer": "Eight inputs swept ±30%: supervision, baseline hours, CapEx, manual transfer, failure recovery, energy price ratio, maintenance and drive efficiency. Repeated independent retries are an assumption. See sensitivity.csv; no PV yield uplift is monetised.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.sensitivity_metric",
+      "original_answer": "Break-even supervision fraction f=0.62536; maximum k for payback within assumed life=1.9004. Negative NCRI and unstable queues are retained, not converted to finite payback.",
+      "answer": "Break-even supervision fraction f=0.62536; maximum k for payback within assumed life=1.9004. Negative NCRI and unstable queues are retained, not converted to finite payback.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_model",
+      "original_answer": "M/M/1",
+      "answer": "M/M/1",
+      "original_options": [
+        "Select ▾",
+        "M/M/1",
+        "M/M/c",
+        "Other (explain in 3.1)"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_params",
+      "original_answer": "λ=2.625 sections/h; μ=4.54137 sections/h; c=1; ρ=0.57802",
+      "answer": "λ=2.625 sections/h; μ=4.54137 sections/h; c=1; ρ=0.57802",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.payback_months",
+      "original_answer": "20.5223 months; assumed scenario",
+      "answer": "20.5223 months; assumed scenario",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.E058.reproducible",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.effect",
+      "original_answer": "Fall/damage, interrupted work and human recovery.",
+      "answer": "Fall/damage, interrupted work and human recovery.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.severity",
+      "original_answer": "9",
+      "answer": "9",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.occurrence",
+      "original_answer": "4",
+      "answer": "4",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.detection",
+      "original_answer": "8",
+      "answer": "8",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.rpn_pre",
+      "original_answer": "288",
+      "answer": "288",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.mitigation",
+      "original_answer": "Physical containment guard, bounded return drive, attitude/height stop and logged guard load; guards remain part of the safety model. Post D=3 credits simulation fault detection only.",
+      "answer": "Physical containment guard, bounded return drive, attitude/height stop and logged guard load; guards remain part of the safety model. Post D=3 credits simulation fault detection only.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.rpn_post",
+      "original_answer": "108",
+      "answer": "108",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea1.evidence",
+      "original_answer": "Both",
+      "answer": "Both",
+      "original_options": [
+        "Select ▾",
+        "Simulation",
+        "Code",
+        "Both",
+        "Not yet"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.effect",
+      "original_answer": "Permanent PV damage and repair cost.",
+      "answer": "Permanent PV damage and repair cost.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.severity",
+      "original_answer": "8",
+      "answer": "8",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.occurrence",
+      "original_answer": "4",
+      "answer": "4",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.detection",
+      "original_answer": "9",
+      "answer": "9",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.rpn_pre",
+      "original_answer": "288",
+      "answer": "288",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.mitigation",
+      "original_answer": "Rounded soft-contact brush and load logs support development. Coating wear, grit hardness and allowable local pressure are unvalidated. No reduction credited: post S/O/D unchanged.",
+      "answer": "Rounded soft-contact brush and load logs support development. Coating wear, grit hardness and allowable local pressure are unvalidated. No reduction credited: post S/O/D unchanged.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.rpn_post",
+      "original_answer": "288",
+      "answer": "288",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea2.evidence",
+      "original_answer": "Not yet",
+      "answer": "Not yet",
+      "original_options": [
+        "Select ▾",
+        "Simulation",
+        "Code",
+        "Both",
+        "Not yet"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.mode",
+      "original_answer": "RGB misses dirt or falsely declares clean",
+      "answer": "RGB misses dirt or falsely declares clean",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.effect",
+      "original_answer": "Residual dirt or wasted cleaning cycle.",
+      "answer": "Residual dirt or wasted cleaning cycle.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.severity",
+      "original_answer": "6",
+      "answer": "6",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.occurrence",
+      "original_answer": "5",
+      "answer": "5",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.detection",
+      "original_answer": "8",
+      "answer": "8",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.rpn_pre",
+      "original_answer": "240",
+      "answer": "240",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.mitigation",
+      "original_answer": "Persistent two-frame image trigger; actual camera feeds; independent final residual check rejects false-clean development cases. Post D=3 is offline evaluation detectability, not field camera reliability.",
+      "answer": "Persistent two-frame image trigger; actual camera feeds; independent final residual check rejects false-clean development cases. Post D=3 is offline evaluation detectability, not field camera reliability.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.rpn_post",
+      "original_answer": "90",
+      "answer": "90",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea3.evidence",
+      "original_answer": "Both",
+      "answer": "Both",
+      "original_options": [
+        "Select ▾",
+        "Simulation",
+        "Code",
+        "Both",
+        "Not yet"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.mode",
+      "original_answer": "Large solid escapes or jams the guide",
+      "answer": "Large solid escapes or jams the guide",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.effect",
+      "original_answer": "Unsafe ejection, jam or incomplete mission.",
+      "answer": "Unsafe ejection, jam or incomplete mission.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.severity",
+      "original_answer": "7",
+      "answer": "7",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.occurrence",
+      "original_answer": "4",
+      "answer": "4",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.detection",
+      "original_answer": "7",
+      "answer": "7",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.rpn_pre",
+      "original_answer": "196",
+      "answer": "196",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.mitigation",
+      "original_answer": "Permanent tray, fixed guide and actual solid/contact logs; success requires final retention. Applies only to the tested lower-strip corridor. Post D=3 credits final logged check.",
+      "answer": "Permanent tray, fixed guide and actual solid/contact logs; success requires final retention. Applies only to the tested lower-strip corridor. Post D=3 credits final logged check.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.rpn_post",
+      "original_answer": "84",
+      "answer": "84",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea4.evidence",
+      "original_answer": "Both",
+      "answer": "Both",
+      "original_options": [
+        "Select ▾",
+        "Simulation",
+        "Code",
+        "Both",
+        "Not yet"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.mode",
+      "original_answer": "Dock transfer/accounting fault",
+      "answer": "Dock transfer/accounting fault",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.effect",
+      "original_answer": "Dirt inventory error or missed service.",
+      "answer": "Dirt inventory error or missed service.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.severity",
+      "original_answer": "5",
+      "answer": "5",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.occurrence",
+      "original_answer": "4",
+      "answer": "4",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.detection",
+      "original_answer": "7",
+      "answer": "7",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.rpn_pre",
+      "original_answer": "140",
+      "answer": "140",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.mitigation",
+      "original_answer": "Settled docking, 8 s modelled service, explicit mass balance and charge-energy counters. Post D=3 credits software checks; no airflow, connector or battery hardware reliability claim.",
+      "answer": "Settled docking, 8 s modelled service, explicit mass balance and charge-energy counters. Post D=3 credits software checks; no airflow, connector or battery hardware reliability claim.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.rpn_post",
+      "original_answer": "60",
+      "answer": "60",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S3.fmea5.evidence",
+      "original_answer": "Both",
+      "answer": "Both",
+      "original_options": [
+        "Select ▾",
+        "Simulation",
+        "Code",
+        "Both",
+        "Not yet"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.baseline_condition",
+      "original_answer": "Final collection model: waypoint reference + P wheel control versus segment lookahead + PI. Same camera pipeline, fixed brush/guide, mission route, guard, safety and shared incline/return regulator. Primary endpoint is common 0–30 s RMSE; all attempts continue through full mission/abort/1000 s.",
+      "answer": "Final collection model: waypoint reference + P wheel control versus segment lookahead + PI. Same camera pipeline, fixed brush/guide, mission route, guard, safety and shared incline/return regulator. Primary endpoint is common 0–30 s RMSE; all attempts continue through full mission/abort/1000 s.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.n_runs",
+      "original_answer": "30 independent runs/controller/tilt; 10°,20°,30°; 180 full-mission attempts. All failures retained. Table below: prespecified nominal 20°; all conditions in Appendix A.",
+      "answer": "30 independent runs/controller/tilt; 10°,20°,30°; 180 full-mission attempts. All failures retained. Table below: prespecified nominal 20°; all conditions in Appendix A.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.randomised",
+      "original_answer": "Initial x/y independent U(−0.01,+0.01) m; dust shape/offset RNG independent through logged debris_seed; clusters and 120 g lower-strip corridor fixed. Dry friction fixed. Seeds/distributions frozen before execution.",
+      "answer": "Initial x/y independent U(−0.01,+0.01) m; dust shape/offset RNG independent through logged debris_seed; clusters and 120 g lower-strip corridor fixed. Dry friction fixed. Seeds/distributions frozen before execution.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.log_rate_hz",
+      "original_answer": "500 Hz; each 0.002 s integration sample. XZ compresses CSV; final batch serialises numbers to 9 significant digits.",
+      "answer": "500 Hz; each 0.002 s integration sample. XZ compresses CSV; final batch serialises numbers to 9 significant digits.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.seeds_recorded",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.real_csv_path",
+      "original_answer": "analytics/final_validation_v1/tilt_{10,20,30}/{baseline,proposed}_{seed}/telemetry.csv.xz; summary.csv, protocol.json, statistics.json and trace_audit.json. A run, not a 500 Hz sample, is the unit of inference.",
+      "answer": "analytics/final_validation_v1/tilt_{10,20,30}/{baseline,proposed}_{seed}/telemetry.csv.xz; summary.csv, protocol.json, statistics.json and trace_audit.json. A run, not a 500 Hz sample, is the unit of inference.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.rmse.n",
+      "original_answer": "Available 30 s windows: 30 baseline / 30 proposed; 30 attempts each",
+      "answer": "Available 30 s windows: 30 baseline / 30 proposed; 30 attempts each",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.rmse.baseline",
+      "original_answer": "0.100061 ± 0.0012",
+      "answer": "0.100061 ± 0.0012",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.rmse.proposed",
+      "original_answer": "0.0118225 ± 0.000166",
+      "answer": "0.0118225 ± 0.000166",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.rmse.unit",
+      "original_answer": "m; common 0–30 s",
+      "answer": "m; common 0–30 s",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.rmse.better",
+      "original_answer": "Lower is better",
+      "answer": "Lower is better",
+      "original_options": [
+        "Select ▾",
+        "Lower is better",
+        "Higher is better"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.effort.n",
+      "original_answer": "Available 30 s windows: 30 baseline / 30 proposed; 30 attempts each",
+      "answer": "Available 30 s windows: 30 baseline / 30 proposed; 30 attempts each",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.effort.baseline",
+      "original_answer": "30.5728 ± 0.162",
+      "answer": "30.5728 ± 0.162",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.effort.proposed",
+      "original_answer": "31.1333 ± 0.201",
+      "answer": "31.1333 ± 0.201",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.effort.unit",
+      "original_answer": "N²·m²·s; 0–30 s",
+      "answer": "N²·m²·s; 0–30 s",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.effort.better",
+      "original_answer": "Lower is better",
+      "answer": "Lower is better",
+      "original_options": [
+        "Select ▾",
+        "Lower is better",
+        "Higher is better"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.metric.name",
+      "original_answer": "Complete safe, camera-clean, solid-retained, serviced home cycle",
+      "answer": "Complete safe, camera-clean, solid-retained, serviced home cycle",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.metric.n",
+      "original_answer": "30 per controller at 20°",
+      "answer": "30 per controller at 20°",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.metric.baseline",
+      "original_answer": "30/30 (100.00%)",
+      "answer": "30/30 (100.00%)",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.metric.proposed",
+      "original_answer": "30/30 (100.00%)",
+      "answer": "30/30 (100.00%)",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.metric.unit",
+      "original_answer": "completion fraction",
+      "answer": "completion fraction",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.metric.better",
+      "original_answer": "Higher is better",
+      "answer": "Higher is better",
+      "original_options": [
+        "Select ▾",
+        "Lower is better",
+        "Higher is better"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.test",
+      "original_answer": "Welch's t-test",
+      "answer": "Welch's t-test",
+      "original_options": [
+        "Select ▾",
+        "Welch's t-test",
+        "Student's t-test (equal variance)",
+        "Paired t-test",
+        "Mann-Whitney U (non-normal)"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.t_df_p",
+      "original_answer": "20°: t=-400.1377, df=30.11906, p=1.127902e-57; Holm-adjusted p=1.127902e-57 across 3 tilt comparisons.",
+      "answer": "20°: t=-400.1377, df=30.11906, p=1.127902e-57; Holm-adjusted p=1.127902e-57 across 3 tilt comparisons.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.cohens_d",
+      "original_answer": "-103.3151; pooled SD; proposed minus baseline",
+      "answer": "-103.3151; pooled SD; proposed minus baseline",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.ci95",
+      "original_answer": "[-0.08868864868975783, -0.08778807408256452] m for proposed minus baseline. Run-level Welch interval; other conditions in Appendix A.",
+      "answer": "[-0.08868864868975783, -0.08778807408256452] m for proposed minus baseline. Run-level Welch interval; other conditions in Appendix A.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.prov_own_runs",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.prov_no_simulated",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.prov_plots_reproducible",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S4.prov_economics_sourced",
+      "original_answer": "Yes",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.linkedin_url",
+      "original_answer": "PENDING TEAM ACTION: post the actual team video and paste its public URL.",
+      "answer": "Not supplied",
+      "original_options": [],
+      "basis": "No public LinkedIn post URL supplied in this conversation.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.video_length",
+      "original_answer": "Source simulation: 03:20.40; final 3–4 minute team presentation with every member speaking is pending.",
+      "answer": "Simulation segment: 03:21.52, including visible cameras and the business graph. Face introduction, conclusion and final edited presentation have not been supplied.",
+      "original_options": [],
+      "basis": "submission/complete_camera_video_v1/VIDEO_CHECKS.json",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.live_mujoco",
+      "original_answer": "Select ▾",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Fresh rendered MuJoCo mission; not slides or a replayed pose trace.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.business_graph",
+      "original_answer": "Select ▾",
+      "answer": "Yes",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Final 12 seconds of the completed camera-inclusive simulation video.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.all_members_speak",
+      "original_answer": "Select ▾",
+      "answer": "Not verified",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "No completed three-member face/voice edit supplied.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai1.tool",
+      "original_answer": "ChatGPT",
+      "answer": "ChatGPT",
+      "original_options": [
+        "Select ▾",
+        "ChatGPT",
+        "Gemini",
+        "Microsoft Copilot",
+        "GitHub Copilot",
+        "Claude",
+        "Perplexity",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai1.said",
+      "original_answer": "Conditional import mujoco.viewer inside mission was expected to work, but shadowed the module name and raised UnboundLocalError before model construction.",
+      "answer": "Conditional import mujoco.viewer inside mission was expected to work, but shadowed the module name and raised UnboundLocalError before model construction.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai1.caught_by",
+      "original_answer": "Ran / tested the code or simulation",
+      "answer": "Ran / tested the code or simulation",
+      "original_options": [
+        "Select ▾",
+        "Checked the original source",
+        "Textbook",
+        "Official documentation (MuJoCo, standard)",
+        "Ran / tested the code or simulation",
+        "Recomputed by hand",
+        "Teacher or TA feedback",
+        "Teammate or peer"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai1.truth",
+      "original_answer": "Use from mujoco import viewer as mj_viewer. Actual mission/integration tests execute model construction. See docs/AI_AUDIT.md and controller import. Development audit candidate: members must review before claiming personal verification.",
+      "answer": "Use from mujoco import viewer as mj_viewer. Actual mission/integration tests execute model construction. See docs/AI_AUDIT.md and controller import. Development audit candidate: members must review before claiming personal verification.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai1.error_type",
+      "original_answer": "Wrong code / MuJoCo API",
+      "answer": "Wrong code / MuJoCo API",
+      "original_options": [
+        "Select ▾",
+        "Fabricated source / citation",
+        "Real source, wrong details (author, year, venue)",
+        "Wrong number or statistic",
+        "Wrong physics / equation",
+        "Wrong economics / cost logic",
+        "Wrong standard or clause",
+        "Wrong code / MuJoCo API",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai1.verdict",
+      "original_answer": "Corrected",
+      "answer": "Corrected",
+      "original_options": [
+        "Select ▾",
+        "Rejected",
+        "Corrected",
+        "Accepted after checking"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai2.tool",
+      "original_answer": "ChatGPT",
+      "answer": "ChatGPT",
+      "original_options": [
+        "Select ▾",
+        "ChatGPT",
+        "Gemini",
+        "Microsoft Copilot",
+        "GitHub Copilot",
+        "Claude",
+        "Perplexity",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai2.said",
+      "original_answer": "RMS distance to the next waypoint was initially labelled path-tracking RMSE.",
+      "answer": "RMS distance to the next waypoint was initially labelled path-tracking RMSE.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai2.caught_by",
+      "original_answer": "Ran / tested the code or simulation",
+      "answer": "Ran / tested the code or simulation",
+      "original_options": [
+        "Select ▾",
+        "Checked the original source",
+        "Textbook",
+        "Official documentation (MuJoCo, standard)",
+        "Ran / tested the code or simulation",
+        "Recomputed by hand",
+        "Teacher or TA feedback",
+        "Teammate or peer"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai2.truth",
+      "original_answer": "Measure distance to the active segment using projection; tests/test_geometry_economics.py checks a 0.2 m perpendicular error. Time-indexed tracking is not claimed. Development audit candidate: members must review before claiming personal verification.",
+      "answer": "Measure distance to the active segment using projection; tests/test_geometry_economics.py checks a 0.2 m perpendicular error. Time-indexed tracking is not claimed. Development audit candidate: members must review before claiming personal verification.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai2.error_type",
+      "original_answer": "Wrong number or statistic",
+      "answer": "Wrong number or statistic",
+      "original_options": [
+        "Select ▾",
+        "Fabricated source / citation",
+        "Real source, wrong details (author, year, venue)",
+        "Wrong number or statistic",
+        "Wrong physics / equation",
+        "Wrong economics / cost logic",
+        "Wrong standard or clause",
+        "Wrong code / MuJoCo API",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai2.verdict",
+      "original_answer": "Corrected",
+      "answer": "Corrected",
+      "original_options": [
+        "Select ▾",
+        "Rejected",
+        "Corrected",
+        "Accepted after checking"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai3.tool",
+      "original_answer": "ChatGPT",
+      "answer": "ChatGPT",
+      "original_options": [
+        "Select ▾",
+        "ChatGPT",
+        "Gemini",
+        "Microsoft Copilot",
+        "GitHub Copilot",
+        "Claude",
+        "Perplexity",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai3.said",
+      "original_answer": "Computing source hashes at run completion could label an earlier executed model with later edits.",
+      "answer": "Computing source hashes at run completion could label an earlier executed model with later edits.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai3.caught_by",
+      "original_answer": "Ran / tested the code or simulation",
+      "answer": "Ran / tested the code or simulation",
+      "original_options": [
+        "Select ▾",
+        "Checked the original source",
+        "Textbook",
+        "Official documentation (MuJoCo, standard)",
+        "Ran / tested the code or simulation",
+        "Recomputed by hand",
+        "Teacher or TA feedback",
+        "Teammate or peer"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai3.truth",
+      "original_answer": "Capture hashes at launch and preserve immutable source snapshots. Final batch protocol records launch hashes; executed source is frozen. See docs/AI_AUDIT.md. Development audit candidate: members must review before claiming personal verification.",
+      "answer": "Capture hashes at launch and preserve immutable source snapshots. Final batch protocol records launch hashes; executed source is frozen. See docs/AI_AUDIT.md. Development audit candidate: members must review before claiming personal verification.",
+      "original_options": [],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai3.error_type",
+      "original_answer": "Wrong code / MuJoCo API",
+      "answer": "Wrong code / MuJoCo API",
+      "original_options": [
+        "Select ▾",
+        "Fabricated source / citation",
+        "Real source, wrong details (author, year, venue)",
+        "Wrong number or statistic",
+        "Wrong physics / equation",
+        "Wrong economics / cost logic",
+        "Wrong standard or clause",
+        "Wrong code / MuJoCo API",
+        "Other"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.ai3.verdict",
+      "original_answer": "Corrected",
+      "answer": "Corrected",
+      "original_options": [
+        "Select ▾",
+        "Rejected",
+        "Corrected",
+        "Accepted after checking"
+      ],
+      "basis": "Existing technical dossier; unchanged.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.problem",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.physics",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.business",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.data",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.clarity",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.best_moment",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not assessed; video not reviewed.",
+      "original_options": [],
+      "basis": "No observed video timestamp exists.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.question",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "How does the mobile manipulator detect contact with a patient or unexpected obstacle and stop safely?",
+      "original_options": [],
+      "basis": "Proposed viva question based only on the assigned project title; not an observed defect.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.problem",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.physics",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.business",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.data",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.clarity",
+      "original_answer": "Select ▾",
+      "answer": "Not assessed",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1",
+        "2"
+      ],
+      "basis": "No published video URL in checked roster/dossier at faculty main d5b7da279a034fcd08b090766ef96ed31b196684. No final peer video watched.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.best_moment",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not assessed; video not reviewed.",
+      "original_options": [],
+      "basis": "No observed video timestamp exists.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.question",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "How is an apparent pipeline defect distinguished from a shadow, and how is detection confidence validated?",
+      "original_options": [],
+      "basis": "Proposed viva question based only on the assigned project title; not an observed defect.",
+      "needs_member_input": false
+    },
+    {
+      "tag": "M06.S6.E048.hours",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.role_fidelity",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.cross_disciplinary_skill",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.scripts_authored",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.commit_share",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.ai_draft_share",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "0–25 %",
+        "26–50 %",
+        "51–75 %",
+        "76–100 %"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.ai_errors_caught",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1–2",
+        "3–5",
+        "6 or more"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.hours",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.role_fidelity",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.cross_disciplinary_skill",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.scripts_authored",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.commit_share",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.ai_draft_share",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "0–25 %",
+        "26–50 %",
+        "51–75 %",
+        "76–100 %"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.ai_errors_caught",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1–2",
+        "3–5",
+        "6 or more"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.hours",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.role_fidelity",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.cross_disciplinary_skill",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.scripts_authored",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.commit_share",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.ai_draft_share",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "0–25 %",
+        "26–50 %",
+        "51–75 %",
+        "76–100 %"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.ai_errors_caught",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "0",
+        "1–2",
+        "3–5",
+        "6 or more"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.prior_simulator",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.most_valuable",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E048.change_one_thing",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.prior_simulator",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.most_valuable",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E052.change_one_thing",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.prior_simulator",
+      "original_answer": "Select ▾",
+      "answer": "Not reported",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.most_valuable",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.S6.E058.change_one_thing",
+      "original_answer": "MEMBER TO COMPLETE",
+      "answer": "Not reported",
+      "original_options": [],
+      "basis": "This individual fact or self-assessment was not supplied.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E048.original",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E048.code_runs",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E048.viva_ready",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E048.research_consent",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E052.original",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E052.code_runs",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E052.viva_ready",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E052.research_consent",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E058.original",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E058.code_runs",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E058.viva_ready",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    },
+    {
+      "tag": "M06.SIGN.E058.research_consent",
+      "original_answer": "Select ▾",
+      "answer": "Not confirmed by member",
+      "original_options": [
+        "Select ▾",
+        "Yes",
+        "No"
+      ],
+      "basis": "Personal sign-off/consent cannot be inferred.",
+      "needs_member_input": true
+    }
+  ],
+  "tables_preserved": 30,
+  "images_preserved": 6,
+  "no_content_controls": true,
+  "no_dropdown_placeholders": true,
+  "peer_review": "Not assessed: checked faculty main d5b7da279a034fcd08b090766ef96ed31b196684; roster video URLs are PENDING_SUBMISSION and dossier video fields are type here. See PEER_VIDEO_CHECK.json. No scores invented.",
+  "status": "Mobile-editable review copy; personal confirmations and actual peer review remain required."
+}

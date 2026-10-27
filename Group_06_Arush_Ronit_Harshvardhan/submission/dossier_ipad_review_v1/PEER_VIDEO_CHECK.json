@@ -1,0 +1,72 @@
+{
+  "repository": "sunny-nanade/NMIMS-MPSTME-MDRIIA-2026",
+  "ref": "main",
+  "commit": "d5b7da279a034fcd08b090766ef96ed31b196684",
+  "scope": "README, roster showcase status and dossier video fields only. No final peer video watched. No peer scores assigned. Pending in this snapshot does not establish that no video exists elsewhere.",
+  "groups": [
+    {
+      "group": "07",
+      "files": [
+        {
+          "path": "Group_07_Soumil_Aditya_Priyansh/README.md",
+          "sha256": "ee783e1b63ba6eac9fbdca5136aa195a2c0358fa9ac70d7034377cb643f245cf",
+          "source_url": "https://github.com/sunny-nanade/NMIMS-MPSTME-MDRIIA-2026/blob/d5b7da279a034fcd08b090766ef96ed31b196684/Group_07_Soumil_Aditya_Priyansh/README.md"
+        },
+        {
+          "path": "Group_07_Soumil_Aditya_Priyansh/docs/TEAM_ROSTER.json",
+          "sha256": "622e72f4c7f285ceed095428704e8037531b57584f9c58dc48f4389c5989e6b4",
+          "source_url": "https://github.com/sunny-nanade/NMIMS-MPSTME-MDRIIA-2026/blob/d5b7da279a034fcd08b090766ef96ed31b196684/Group_07_Soumil_Aditya_Priyansh/docs/TEAM_ROSTER.json"
+        },
+        {
+          "path": "Group_07_Soumil_Aditya_Priyansh/docs/MDRIIA_Group_07_Technical_Dossier.docx",
+          "sha256": "7a74a742a63377fb99712425f13f1671695a049948446893b78ee056519532af",
+          "source_url": "https://github.com/sunny-nanade/NMIMS-MPSTME-MDRIIA-2026/blob/d5b7da279a034fcd08b090766ef96ed31b196684/Group_07_Soumil_Aditya_Priyansh/docs/MDRIIA_Group_07_Technical_Dossier.docx"
+        }
+      ],
+      "roster_showcase": {
+        "platform": "LinkedIn Video",
+        "linkedin_url": "PENDING_SUBMISSION",
+        "video_poster_path": "docs/figures/video_poster.png",
+        "video_duration_target": "60-90 seconds",
+        "submission_status": "PENDING",
+        "submission_instructions": "Paste your published LinkedIn post URL into 'linkedin_url' and submit a Pull Request"
+      },
+      "dossier_video_fields": {
+        "M07.S5.linkedin_url": "type here",
+        "M07.S5.video_length": "type here"
+      }
+    },
+    {
+      "group": "12",
+      "files": [
+        {
+          "path": "Group_12_Arham_Aneesh/README.md",
+          "sha256": "3a1a37f5b301457d9cf629f4497f22803c73ae464e39ee5aceab36f7eae5b7c9",
+          "source_url": "https://github.com/sunny-nanade/NMIMS-MPSTME-MDRIIA-2026/blob/d5b7da279a034fcd08b090766ef96ed31b196684/Group_12_Arham_Aneesh/README.md"
+        },
+        {
+          "path": "Group_12_Arham_Aneesh/docs/TEAM_ROSTER.json",
+          "sha256": "43e177b4c58b63721b4a7e367401e56442728759e3c2c30c0a689f66d2058730",
+          "source_url": "https://github.com/sunny-nanade/NMIMS-MPSTME-MDRIIA-2026/blob/d5b7da279a034fcd08b090766ef96ed31b196684/Group_12_Arham_Aneesh/docs/TEAM_ROSTER.json"
+        },
+        {
+          "path": "Group_12_Arham_Aneesh/docs/MDRIIA_Group_12_Technical_Dossier.docx",
+          "sha256": "e1f7929a9210148360b9061660fdfaab01e11416a6ef2ca2729792314d7fa25b",
+          "source_url": "https://github.com/sunny-nanade/NMIMS-MPSTME-MDRIIA-2026/blob/d5b7da279a034fcd08b090766ef96ed31b196684/Group_12_Arham_Aneesh/docs/MDRIIA_Group_12_Technical_Dossier.docx"
+        }
+      ],
+      "roster_showcase": {
+        "platform": "LinkedIn Video",
+        "linkedin_url": "PENDING_SUBMISSION",
+        "video_poster_path": "docs/figures/video_poster.png",
+        "video_duration_target": "60-90 seconds",
+        "submission_status": "PENDING",
+        "submission_instructions": "Paste your published LinkedIn post URL into 'linkedin_url' and submit a Pull Request"
+      },
+      "dossier_video_fields": {
+        "M12.S5.linkedin_url": "type here",
+        "M12.S5.video_length": "type here"
+      }
+    }
+  ]
+}

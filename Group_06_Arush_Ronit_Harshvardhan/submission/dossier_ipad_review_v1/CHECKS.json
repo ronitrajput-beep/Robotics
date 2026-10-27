@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "pages": 10,
+  "fields_filled_or_explicitly_statused": 212,
+  "technical_fields_unchanged": 141,
+  "unreported_personal_fields": 52,
+  "no_content_controls": true,
+  "tables": 30,
+  "images": 6,
+  "pdf_text_within_page_bounds": true,
+  "original_source_unchanged": true,
+  "native_ipad_hardware_tested": false,
+  "peer_scores_awarded": false
+}
