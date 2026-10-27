@@ -1,0 +1,65 @@
+{
+  "source": "submission/dossier_revision_v6/Group06_Dossier_Updated.docx",
+  "source_sha256": "1f99a6c99c283815f2726b870b791ad5ec3f40eb2ffbba68badff0f83c6a3d05",
+  "output_name": "Group_06_E048_E052_E058_Technical_Dossier",
+  "output_sha256": "ad0c4cf417bc55e2194947a021e4e14a2eac5291ac652ae9604789a7b6c294ac",
+  "user_request": "Insert the provided signature photographs and rename dossier with group6 and member roll numbers.",
+  "mapping": {
+    "E048": "User identifies their signature as pencil on paper.",
+    "E052": "User identifies signature reading Ronit Rajput.",
+    "E058": "Remaining Sahi signature assigned to Harshvardhan Sahi."
+  },
+  "signatures": [
+    {
+      "member": "Arush Ashish Patil",
+      "roll": "E048",
+      "image_sha256": "56805e1ea76a35b38dec5e7978b4fac2560274d4f9ea4ac4454c41204e74b176",
+      "original_dimensions_px": [
+        1280,
+        424
+      ],
+      "embedded_without_pixel_changes": true,
+      "signature_cell": [
+        28,
+        1,
+        4
+      ],
+      "display_width_in": 1.34
+    },
+    {
+      "member": "Ronit Rajput",
+      "roll": "E052",
+      "image_sha256": "e11078cb5574d86258e9e8a662e6d9b4446591d7781a75a5ee0a382762dd0400",
+      "original_dimensions_px": [
+        736,
+        496
+      ],
+      "embedded_without_pixel_changes": true,
+      "signature_cell": [
+        28,
+        2,
+        4
+      ],
+      "display_width_in": 1.0387096774193547
+    },
+    {
+      "member": "Harshvardhan Sahi",
+      "roll": "E058",
+      "image_sha256": "840555c67a56b5fef276f97c6937d8044ac95d3aeed9bca8efe3cf45ea90d65f",
+      "original_dimensions_px": [
+        1170,
+        736
+      ],
+      "embedded_without_pixel_changes": true,
+      "signature_cell": [
+        28,
+        3,
+        4
+      ],
+      "display_width_in": 1.1127717391304348
+    }
+  ],
+  "research_consent": "Blank for all three, as requested.",
+  "document_changes": "Signature image insertion, filename and stale unsigned/pending-signature text only. Other answers and numerical records retained.",
+  "external_submission": "Not performed."
+}

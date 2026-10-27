@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "filename": "Group_06_E048_E052_E058_Technical_Dossier",
+  "pdf_pages": 10,
+  "tables_preserved": 30,
+  "drawings": 9,
+  "all_three_supplied_signature_images_present": true,
+  "signature_bytes_unchanged": true,
+  "correct_member_rows": true,
+  "all_existing_table_answers_preserved": true,
+  "optional_consent_blank": true,
+  "text_within_page_bounds": true,
+  "signoff_pdf_page": 8,
+  "word_sha256": "ad0c4cf417bc55e2194947a021e4e14a2eac5291ac652ae9604789a7b6c294ac",
+  "pdf_sha256": "4ece9bafa7ca36ad1adf6f51c06c8f7d758fa0d7b5be92e4af083f80e3a2cdf8",
+  "actual_public_video_URL": "Not supplied in workspace; remains to be inserted by team if not already completed locally."
+}

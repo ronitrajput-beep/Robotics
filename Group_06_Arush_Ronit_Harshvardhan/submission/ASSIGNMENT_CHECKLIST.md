@@ -8,7 +8,7 @@ This checklist follows the faculty's current **20-mark capstone rubric**, not th
 - **Arush, Ronit and Harshvardhan each click Turn in individually**, using the same final group PDF.
 - The business-model report PDF can be added as supporting material if the assignment accepts additional attachments. The rubric explicitly requires the dossier PDF on Teams; it does not separately mandate a business-report PDF.
 
-Use the team's latest completed local dossier, with its final public LinkedIn video URL and personal signatures. The cloud-generated reference copy has blank signature cells; use your signed version for submission. Optional research consent may remain blank as the team requested.
+Use the team's latest completed local dossier, with its final public LinkedIn video URL and personal signatures. The latest cloud copy includes the three user-supplied signature photographs; retain any later local edits, including the final video URL. Optional research consent may remain blank as the team requested.
 
 ## 2. Faculty GitHub repository: group folder
 
@@ -17,7 +17,7 @@ Folder: `Group_06_Arush_Ronit_Harshvardhan/`.
 
 | Required material | Location / files |
 |---|---|
-| Filled dossier Word and matching final PDF | `docs/MDRIIA_Group_06_Technical_Dossier.docx` and `.pdf` |
+| Filled dossier Word and matching final PDF | `docs/Group_06_E048_E052_E058_Technical_Dossier.docx` and `.pdf` |
 | Actual MuJoCo model | `models/`, including `collection_cleaning_crawler.xml` and model dependencies |
 | Controller, vision and live-demo code | `src/`, with the current entry points and dependencies |
 | **Executable business model** | `analytics/final_business_model.py` and `analytics/final_business_inputs.json` |
