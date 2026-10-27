@@ -1,0 +1,26 @@
+{
+  "status": "Updated working review copy; missing personal responses and peer-group clarification remain. Unsigned.",
+  "source_sha256": "6b9a0c744e307c7021ec164e6a8307ddf4455b956808da3f24888851b0fdc887",
+  "output_sha256": "0ab603e1c6e50e1f583e6710228d136feed9534271e86aef51bdb8f2a707a8a8",
+  "hours": {
+    "per_member_estimate": 32,
+    "basis": "User reports two months of working together on weekends and requests estimation.",
+    "assumptions": "Eight weekends; four project hours/person/weekend. Not logged or independently verified.",
+    "exact_hours_claimed": false
+  },
+  "authorship": {
+    "basis": "User states they led file contributions, with Ronit and Harsh assisting. Earlier user role description identifies Arush as modelling/coding/simulation lead.",
+    "classification": "Modified by us; AI assistance retained. Main file lead E048; business inputs credited to E058 with E052 support."
+  },
+  "peer_review": {
+    "Group07": "2/2 for each criterion, explicitly provisional user-supplied general assessment. No observed timestamp.",
+    "Group10": "User supplied full-marks general assessment; not substituted for assigned Group12.",
+    "Group12": "Clarification requested; no score inferred."
+  },
+  "pending": [
+    "Group10 versus assigned Group12 clarification",
+    "Individual learning/self-assessment/AI-share answers",
+    "Personal sign-off, signatures and optional consent",
+    "Final team LinkedIn URL and verified peer-video best moments"
+  ]
+}

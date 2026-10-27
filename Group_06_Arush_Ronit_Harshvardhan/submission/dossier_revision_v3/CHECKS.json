@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "pdf_pages": 10,
+  "tables": 30,
+  "images": 6,
+  "no_dropdowns": true,
+  "hours_explicitly_estimated": true,
+  "peer_scores_explicitly_user_assessment": true,
+  "peer_timestamps_invented": false,
+  "assigned_Group12_not_replaced_by_Group10": true,
+  "text_within_page_bounds": true,
+  "status": "Working review copy; user answers still pending."
+}
