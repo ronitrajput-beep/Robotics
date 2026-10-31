@@ -1,0 +1,28 @@
+{
+  "ref": "519203226b22cca6c376ca7aca4fc4349f143a02",
+  "scope": "Commits touching Group_06_Arush_Ronit_Harshvardhan, reachable from the pinned ref.",
+  "command": "git log <ref> --format=%an -- Group_06_Arush_Ronit_Harshvardhan",
+  "author_counts": {
+    "Arush Patil": 52,
+    "RONIT RAJPUT": 3
+  },
+  "total": 55,
+  "rows": [
+    {
+      "member": "Arush_E048",
+      "author_count": 52,
+      "share_percent": 94.54545454545455
+    },
+    {
+      "member": "Ronit_E052",
+      "author_count": 3,
+      "share_percent": 5.454545454545454
+    },
+    {
+      "member": "Harshvardhan_E058",
+      "author_count": 0,
+      "share_percent": 0.0
+    }
+  ],
+  "interpretation": "Git author metadata only; includes AI-assisted commits made under configured author identities. Not a measurement of labour hours, manual code authorship or economic contribution. No Harshvardhan author identity occurs in this scoped history."
+}

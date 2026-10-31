@@ -1,0 +1,88 @@
+{
+  "group_id": "MDRIIA_GROUP_06",
+  "folder_name": "Group_06_Arush_Ronit_Harshvardhan",
+  "domain": "Autonomous Crawler Cleaning Robot for Rooftop Commercial Solar Arrays",
+  "authorized_title": "How can an autonomous crawler cleaning robot simulated in MuJoCo recover soiling-induced energy losses (15-18% monthly) on inclined commercial rooftop solar arrays while reducing cleaning cycle operational expenditure compared to manual labor?",
+  "members": [
+    {
+      "roll_no": "E048",
+      "sap_id": "70362400013",
+      "name": "Arush Ashish Patil",
+      "role": "Robot physics, controller/vision logic and MuJoCo simulation",
+      "assigned_branch": "feat/e048-lead-tracked-crawler",
+      "viva_focus": "Rigid-body/contact assumptions, PI/FSM logic, RGB contamination gating, ground-truth navigation and validation limits.",
+      "original_assigned_role": "Lead Tracked Crawler Chassis & MuJoCo Adhesion Modeler"
+    },
+    {
+      "roll_no": "E052",
+      "sap_id": "70362400001",
+      "name": "Ronit Rajput",
+      "role": "Robot/XML modelling, brush-mechanism support and telemetry QA",
+      "assigned_branch": "feat/e052-waterless-rotary-bru",
+      "viva_focus": "Robot/XML structure, camera/brush/guide/tray geometry, actual torque/500Hz logging and model limitations.",
+      "original_assigned_role": "Waterless Rotary Brush Actuation & Cleaning Efficiency Engineer"
+    },
+    {
+      "roll_no": "E058",
+      "sap_id": "70362400031",
+      "name": "Harshvardhan Sahi",
+      "role": "Business-model script and techno-economic analysis",
+      "assigned_branch": "feat/e058-csbs-photovoltaic-de",
+      "viva_focus": "Measured simulation throughput, declared commercial assumptions, reclaimed labour, NCRI/payback, queueing, sensitivity and FMEA.",
+      "original_assigned_role": "CSBS Photovoltaic Degradation & CapEx/OpEx Payback Analyst"
+    }
+  ],
+  "foundational_papers": [
+    {
+      "id": 1,
+      "authors": "Todorov, Erez and Tassa",
+      "year": 2012,
+      "title": "MuJoCo: A physics engine for model-based control",
+      "venue": "IROS",
+      "doi": "https://doi.org/10.1109/IROS.2012.6386109"
+    },
+    {
+      "id": 2,
+      "authors": "Holmgren, Hansen and Mikofski",
+      "year": 2018,
+      "title": "pvlib python: a python package for modeling solar energy systems",
+      "venue": "JOSS3(29),884",
+      "doi": "https://doi.org/10.21105/joss.00884"
+    },
+    {
+      "id": 3,
+      "authors": "Anderson et al.",
+      "year": 2023,
+      "title": "pvlib python:2023project update",
+      "venue": "JOSS8(92),5994",
+      "doi": "https://doi.org/10.21105/joss.05994"
+    },
+    {
+      "id": 4,
+      "authors": "Deceglie, Micheli and Muller",
+      "year": 2018,
+      "title": "Quantifying Soiling Loss Directly From PV Yield",
+      "venue": "IEEEJournal of Photovoltaics8(2),547\u2013551",
+      "doi": "https://doi.org/10.1109/JPHOTOV.2017.2784682"
+    },
+    {
+      "id": 5,
+      "authors": "Jordan et al.",
+      "year": 2018,
+      "title": "Robust PV Degradation Methodology and Application",
+      "venue": "IEEEJournal of Photovoltaics8(2),525\u2013531",
+      "doi": "https://doi.org/10.1109/JPHOTOV.2017.2779779"
+    }
+  ],
+  "project_showcase": {
+    "platform": "LinkedIn Video",
+    "linkedin_url": "https://lnkd.in/p/d_en8Zas",
+    "video_duration_target": "3\u20134minutes per capstone rubric",
+    "submission_status": "TEAM_SUPPLIED_PUBLISHED_VIDEO",
+    "verification": "Team confirms all three appear and speak; exact full video runtime not independently retrieved here.",
+    "video_poster_path": "docs/figures/video_poster.png"
+  },
+  "identity_basis": "SAP IDs/names taken from the user-uploaded submitted dossier; replaces conflicting starter-roster IDs.",
+  "authorized_title_scope": "Faculty-assigned question retained. Its15\u201318%phrase is not an established result; this implementation does not model electrical PV yield.",
+  "foundational_papers_status": "Current five bibliographic entries are metadata-verified in official/author software repositories; no full-text access or quantitative PV-yield claim is inferred. See docs/source_audit/source_access.json."
+}

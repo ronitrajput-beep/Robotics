@@ -1,0 +1,41 @@
+{
+  "scope": "Six hash-verified actual500Hz first30-second datasets; total180trials. URL is the reviewed sharing branch; hashes protect content if branch moves.",
+  "files": [
+    {
+      "relative_path": "analytics/primary_windows/baseline_tilt10_real_trials.csv.gz",
+      "bytes": 32687748,
+      "sha256": "372bb56ce412e927663cd41547bbee3b4e75d060047c7b0971eded69e15ca01b",
+      "url": "https://raw.githubusercontent.com/ronitrajput-beep/Robotics/feat/e052-group06-jury-20261031/Group_06_Arush_Ronit_Harshvardhan/analytics/primary_windows/baseline_tilt10_real_trials.csv.gz"
+    },
+    {
+      "relative_path": "analytics/primary_windows/baseline_tilt20_real_trials.csv.gz",
+      "bytes": 32880428,
+      "sha256": "4b7282275ed701799173d43a665eb9c39fae2844920df85ba41120530dd3670a",
+      "url": "https://raw.githubusercontent.com/ronitrajput-beep/Robotics/feat/e052-group06-jury-20261031/Group_06_Arush_Ronit_Harshvardhan/analytics/primary_windows/baseline_tilt20_real_trials.csv.gz"
+    },
+    {
+      "relative_path": "analytics/primary_windows/baseline_tilt30_real_trials.csv.gz",
+      "bytes": 33141066,
+      "sha256": "f5588d2044913cbc2eece2dc9e599ce911dba2e49da313b6a714ad7534274694",
+      "url": "https://raw.githubusercontent.com/ronitrajput-beep/Robotics/feat/e052-group06-jury-20261031/Group_06_Arush_Ronit_Harshvardhan/analytics/primary_windows/baseline_tilt30_real_trials.csv.gz"
+    },
+    {
+      "relative_path": "analytics/primary_windows/proposed_tilt10_real_trials.csv.gz",
+      "bytes": 35617173,
+      "sha256": "a1c59670886bd21d24628c7976fdf1055f7df0a5e5d5f883f71c27ea8f2cf813",
+      "url": "https://raw.githubusercontent.com/ronitrajput-beep/Robotics/feat/e052-group06-jury-20261031/Group_06_Arush_Ronit_Harshvardhan/analytics/primary_windows/proposed_tilt10_real_trials.csv.gz"
+    },
+    {
+      "relative_path": "analytics/primary_windows/proposed_tilt20_real_trials.csv.gz",
+      "bytes": 36240464,
+      "sha256": "8ae383dab37a54f4301485c98c7f64a922a0b26a3b2d70f46314090bb0720efe",
+      "url": "https://raw.githubusercontent.com/ronitrajput-beep/Robotics/feat/e052-group06-jury-20261031/Group_06_Arush_Ronit_Harshvardhan/analytics/primary_windows/proposed_tilt20_real_trials.csv.gz"
+    },
+    {
+      "relative_path": "analytics/primary_windows/proposed_tilt30_real_trials.csv.gz",
+      "bytes": 36593877,
+      "sha256": "d4fdc600df70ee0e51ceee65c0382bd00e8f8955d8faf734f2cf96d30385a1a6",
+      "url": "https://raw.githubusercontent.com/ronitrajput-beep/Robotics/feat/e052-group06-jury-20261031/Group_06_Arush_Ronit_Harshvardhan/analytics/primary_windows/proposed_tilt30_real_trials.csv.gz"
+    }
+  ]
+}

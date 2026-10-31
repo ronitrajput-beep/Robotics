@@ -1,0 +1,1622 @@
+{
+  "baseline_11000_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11001_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11002_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11003_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11004_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11005_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11006_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11007_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11008_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11009_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11010_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11011_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11012_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11013_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11014_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11015_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11016_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11017_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11018_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11019_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11020_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11021_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11022_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11023_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11024_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11025_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11026_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11027_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11028_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_11029_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21000_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21001_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21002_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21003_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21004_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21005_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21006_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21007_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21008_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21009_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21010_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21011_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21012_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21013_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21014_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21015_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21016_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21017_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21018_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21019_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21020_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21021_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21022_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21023_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21024_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21025_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21026_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21027_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21028_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_21029_10.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12000_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12001_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12002_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12003_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12004_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12005_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12006_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12007_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12008_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12009_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12010_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12011_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12012_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12013_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12014_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12015_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12016_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12017_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12018_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12019_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12020_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12021_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12022_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12023_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12024_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12025_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12026_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12027_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12028_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_12029_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22000_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22001_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22002_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22003_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22004_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22005_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22006_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22007_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22008_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22009_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22010_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22011_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22012_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22013_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22014_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22015_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22016_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22017_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22018_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22019_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22020_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22021_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22022_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22023_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22024_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22025_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22026_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22027_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22028_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_22029_20.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13000_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13001_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13002_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13003_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13004_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13005_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13006_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13007_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13008_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13009_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13010_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13011_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13012_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13013_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13014_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13015_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13016_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13017_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13018_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13019_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13020_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13021_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13022_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13023_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13024_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13025_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13026_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13027_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13028_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "baseline_13029_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23000_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23001_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23002_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23003_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23004_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23005_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23006_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23007_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23008_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23009_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23010_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23011_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23012_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23013_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23014_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23015_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23016_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23017_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23018_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23019_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23020_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23021_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23022_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23023_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23024_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23025_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23026_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23027_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23028_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  },
+  "proposed_23029_30.0": {
+    "finite": true,
+    "sample_count_matches": true,
+    "sampling_500Hz": true,
+    "max_dt_error_s": 6.639307159606034e-14,
+    "primary_rmse_matches": true,
+    "effort_30s_matches": true,
+    "common_window_samples": 15000
+  }
+}

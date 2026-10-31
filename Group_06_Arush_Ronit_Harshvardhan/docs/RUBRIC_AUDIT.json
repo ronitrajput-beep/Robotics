@@ -1,0 +1,23 @@
+{
+  "briefing_sha256": "ecb7307723523b36302bc86dd7be39deaf580c6ab77f11fcd79bb685b9807515",
+  "today_score": "2A+2B+D=20;A8/B8/D4;four-minute live pitch",
+  "source_test_count": 61,
+  "curated_release_test_count": 56,
+  "curated_test_scope": "Excludes5tests of historical starter economics/generated-target scaffolding;current-system56tests pass.",
+  "independent_compact_trials": 180,
+  "independent_compact_samples": 2700000,
+  "native_full_mission": "CLEAN_AND_HOME at610.858simulated seconds;all four uncompressed logs byte-identical to separately validated nominal.",
+  "business": "Base and Wilson-lower-bound scenarios reproduce exactly from saved full-run summary.",
+  "dossier": "212 original controls restored;209required fields answered;3optional consent cells intentionally blank;9drawings include3source signature photographs.",
+  "human_items": [
+    "Exact full LinkedIn video runtime was not supplied;dossier explicitly labels3:21.52as source simulation segment only.",
+    "Peer-review overall ratings supplied by the team;exact standout timestamps were not supplied and are not invented.",
+    "SAP IDs aligned with uploaded submitted dossier;starter roster conflict raised to user for confirmation."
+  ],
+  "engineering_limits": [
+    "Commercial costs/labour inputs are declared assumptions,not verified quotations or field savings.",
+    "NoPV electrical-yield recovery model,real coating/traction/structural certification or general object-handling validation.",
+    "Controlled RGB segmentation;ground-truth navigation;reduced-order dust/vacuum/dock-service model;containment guards."
+  ],
+  "publication": "Faculty write access denied403in preliminary push probe;actual reviewed branch push will be attempted after checks."
+}

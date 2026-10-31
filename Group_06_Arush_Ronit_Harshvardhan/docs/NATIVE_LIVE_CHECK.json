@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "native_viewer": "Linux GLFW on Xorg dummy display; not prerecorded replay",
+  "full_cycle_status": "CLEAN_AND_HOME",
+  "simulated_seconds": 610.8579999993789,
+  "comparison_to_independently_validated_nominal": {
+    "telemetry.csv.gz": {
+      "byte_identical": true,
+      "uncompressed_sha256": "2efea66420e0d8fd5256d5a6792766a3d38bd9bce7ad7293ce5bdfe2421e5517"
+    },
+    "collection.csv.gz": {
+      "byte_identical": true,
+      "uncompressed_sha256": "cad5e0d24fe4753700872ab51acefe052d60ba21645f135ac70e0e9a70161bd1"
+    },
+    "solid.csv.gz": {
+      "byte_identical": true,
+      "uncompressed_sha256": "0943fb2b204efa471b929f42b42e5469a94b99902b1f4fc4e7d54cdeed4ac445"
+    },
+    "observations.jsonl": {
+      "byte_identical": true,
+      "uncompressed_sha256": "55515f0ce22fb865691a1f88d23474ab2c86170b974fe69df7b3f8506346eb0a"
+    }
+  },
+  "native_Mac_hardware_tested": false
+}

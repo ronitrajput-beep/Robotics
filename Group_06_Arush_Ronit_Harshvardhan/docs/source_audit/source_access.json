@@ -1,0 +1,30 @@
+{
+  "retrieved_utc": "2026-10-25T16:37:59.743652+00:00",
+  "repositories": [
+    {
+      "project": "mujoco",
+      "official_repository": "https://github.com/google-deepmind/mujoco",
+      "commit": "b7fcf964e9ae57e4d45e7add431a500933ec5223",
+      "readme_sha256": "1a9f46194b8eece62a5406f0ef7bb0899e2dffa2f0a7da8966d8d156f531c0d7",
+      "retrieval": "Official project Git repository through configured Git transport; direct HTTP was blocked",
+      "verified_scope": "Citation metadata and developer/source documentation. No claim that paywalled primary PV articles were read or numerical soiling/yield claims verified."
+    },
+    {
+      "project": "pvlib",
+      "official_repository": "https://github.com/pvlib/pvlib-python",
+      "commit": "d6075f679f5c05c87fc9be1af72a1f3af2da0d2f",
+      "readme_sha256": "f3965dba388a9bbe1fa89ac68971f66d8da1de47358f85cd5ac2feb274c6c720",
+      "retrieval": "Official project Git repository through configured Git transport; direct HTTP was blocked",
+      "verified_scope": "Citation metadata and developer/source documentation. No claim that paywalled primary PV articles were read or numerical soiling/yield claims verified."
+    },
+    {
+      "project": "rdtools",
+      "official_repository": "https://github.com/NatLabRockies/rdtools",
+      "commit": "b5eb6e2d76f18b07fbb61bc3901c2a3b06612073",
+      "readme_sha256": "76a65c528b7cc5d8cc89f2d3a94e296ee062d8db0c480cf204c755c36e92c0ca",
+      "retrieval": "Official project Git repository through configured Git transport; direct HTTP was blocked",
+      "verified_scope": "Citation metadata and developer/source documentation. No claim that paywalled primary PV articles were read or numerical soiling/yield claims verified."
+    }
+  ],
+  "quantitative_external_claims": "The unverified Mumbai annual yield, universal monthly-soiling loss, PV power recovery and original payback claims are removed, not repeated as verified results."
+}

@@ -1,0 +1,2617 @@
+{
+  "pass": true,
+  "trials": 180,
+  "samples": 2700000,
+  "sample_rate_Hz": 500,
+  "window_s": [
+    0,
+    30
+  ],
+  "columns": [
+    "run_id",
+    "variant",
+    "tilt_deg",
+    "seed",
+    "debris_seed",
+    "time_s",
+    "state",
+    "x_m",
+    "y_m",
+    "yaw_rad",
+    "ref_x_m",
+    "ref_y_m",
+    "path_error_m",
+    "tau_left_front_Nm",
+    "tau_left_rear_Nm",
+    "tau_right_front_Nm",
+    "tau_right_rear_Nm",
+    "tau_brush_Nm",
+    "vx_panel_mps",
+    "vy_panel_mps",
+    "effort_Nm2_s",
+    "work_J"
+  ],
+  "all_primary_RMSE_and_effort_match": true,
+  "full_nominal_20_degree_traces_included": [
+    "baseline_12000",
+    "proposed_22000"
+  ],
+  "full_metadata_all180": true,
+  "exports": [
+    {
+      "file": "analytics/primary_windows/baseline_tilt10_real_trials.csv.gz",
+      "bytes": 32687748,
+      "sha256": "372bb56ce412e927663cd41547bbee3b4e75d060047c7b0971eded69e15ca01b",
+      "runs": [
+        {
+          "run_id": "baseline_11000_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.045385633668968924,
+          "effort_Nm2_s": 28.145235095824894,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11001_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04642757759544403,
+          "effort_Nm2_s": 28.072364782969895,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11002_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046702575784179245,
+          "effort_Nm2_s": 28.077066230435978,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11003_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04582624287463042,
+          "effort_Nm2_s": 28.071108075262988,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11004_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04635128610681244,
+          "effort_Nm2_s": 28.208994703896753,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11005_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046710794774798114,
+          "effort_Nm2_s": 28.236060348768397,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11006_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04597007960722848,
+          "effort_Nm2_s": 28.03885254038112,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11007_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04667732593215934,
+          "effort_Nm2_s": 28.0746423797456,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11008_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04754089997350122,
+          "effort_Nm2_s": 28.184379772660552,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11009_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04633801413719729,
+          "effort_Nm2_s": 28.04337544082759,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11010_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04648378737779875,
+          "effort_Nm2_s": 28.091189237132543,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11011_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04624185948478211,
+          "effort_Nm2_s": 28.112126248260612,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11012_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04659665761697693,
+          "effort_Nm2_s": 28.137453686118214,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11013_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04628939527138146,
+          "effort_Nm2_s": 28.160449993033684,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11014_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04654154375741842,
+          "effort_Nm2_s": 28.166709019690053,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11015_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0463519691461565,
+          "effort_Nm2_s": 27.962522040512898,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11016_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04581907137952056,
+          "effort_Nm2_s": 28.197245152997038,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11017_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04603897927643515,
+          "effort_Nm2_s": 28.13015820392591,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11018_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046481972956415554,
+          "effort_Nm2_s": 28.070342313162918,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11019_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046539875089759035,
+          "effort_Nm2_s": 28.2410111608475,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11020_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046519389519587354,
+          "effort_Nm2_s": 28.189311725545366,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11021_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.045961670108826,
+          "effort_Nm2_s": 28.15608484019307,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11022_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046347188875213274,
+          "effort_Nm2_s": 28.11989990912987,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11023_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046562014336687836,
+          "effort_Nm2_s": 28.149331005822212,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11024_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046739694338117053,
+          "effort_Nm2_s": 28.173016683332364,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11025_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04678705801164407,
+          "effort_Nm2_s": 28.155985956018267,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11026_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.045795525910031554,
+          "effort_Nm2_s": 28.095154448016018,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11027_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.04617912850776322,
+          "effort_Nm2_s": 28.065125516027816,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11028_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.045186681621904874,
+          "effort_Nm2_s": 28.1819700762595,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_11029_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.046451527511720096,
+          "effort_Nm2_s": 28.016158696487487,
+          "matches_summary": true
+        }
+      ],
+      "original_telemetry": [
+        {
+          "run_id": "baseline_11000_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11000/telemetry.csv.xz",
+          "bytes": 38048092,
+          "sha256": "6d44cc15580922fe2f3c53d8d2f77b54449ae15cc23701f4937782657cc5baf1"
+        },
+        {
+          "run_id": "baseline_11001_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11001/telemetry.csv.xz",
+          "bytes": 37662524,
+          "sha256": "5b9695b2a3091dc785d56d46b2035550669a8ddc34431b286af0dd59da843877"
+        },
+        {
+          "run_id": "baseline_11002_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11002/telemetry.csv.xz",
+          "bytes": 38221632,
+          "sha256": "382271f3dba4e17730564455a1e2357cf983a06d0ea9c68e75d4b2f0606e882e"
+        },
+        {
+          "run_id": "baseline_11003_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11003/telemetry.csv.xz",
+          "bytes": 38026132,
+          "sha256": "d65e1b8a0d69795f547b6735f9d0f0c367f2c206357535051a80062e8bb645d4"
+        },
+        {
+          "run_id": "baseline_11004_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11004/telemetry.csv.xz",
+          "bytes": 37515440,
+          "sha256": "1a32624c3785f40d0f2c17e8932e7a1867938014755043b2105c3df2b02f1fdb"
+        },
+        {
+          "run_id": "baseline_11005_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11005/telemetry.csv.xz",
+          "bytes": 37914688,
+          "sha256": "babf1c77b59d705dd4be3eebabbb44705cf63f3f0dc276f9b4501d7908a8b490"
+        },
+        {
+          "run_id": "baseline_11006_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11006/telemetry.csv.xz",
+          "bytes": 37741228,
+          "sha256": "a4d4cfa8d3b681ab5d02adcc033ded05f57a3b8199c2f43b42a64e027f0d1470"
+        },
+        {
+          "run_id": "baseline_11007_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11007/telemetry.csv.xz",
+          "bytes": 38054072,
+          "sha256": "76e5119297938b99d91e571c4f6c15ed7c7d40e1c116fca59f32ebbce6764062"
+        },
+        {
+          "run_id": "baseline_11008_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11008/telemetry.csv.xz",
+          "bytes": 37738720,
+          "sha256": "3f0c17810cc19a2dbb1e35461ec60342f093f1baafc5d7476e3ef7afaa01d2c3"
+        },
+        {
+          "run_id": "baseline_11009_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11009/telemetry.csv.xz",
+          "bytes": 38226684,
+          "sha256": "fa721d9eba7dca1c6dd1c6551c53b9cc0760c63bf901c58609d41204aa4cead5"
+        },
+        {
+          "run_id": "baseline_11010_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11010/telemetry.csv.xz",
+          "bytes": 37868212,
+          "sha256": "be6afa76c81051736c79d5038611e41c4245c10128c85a46f945989f99ec72fe"
+        },
+        {
+          "run_id": "baseline_11011_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11011/telemetry.csv.xz",
+          "bytes": 38384700,
+          "sha256": "9c36e715e3bbc345df452d0159cdd1104d79383a258bd68705506ab6ae43220c"
+        },
+        {
+          "run_id": "baseline_11012_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11012/telemetry.csv.xz",
+          "bytes": 37611744,
+          "sha256": "4c3e1862913b5b15543649b541e3af201e52f117b4fd95023e3d9179767b0ac9"
+        },
+        {
+          "run_id": "baseline_11013_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11013/telemetry.csv.xz",
+          "bytes": 37783292,
+          "sha256": "7ea149d7e3aa3ac0a0166c65c21b7ac3703dce1abf8ad5763a69bcc38c243110"
+        },
+        {
+          "run_id": "baseline_11014_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11014/telemetry.csv.xz",
+          "bytes": 38013324,
+          "sha256": "02106ac2655b0f3b22108bf35ff5b5e1d6a6d6396b5b0f4593ebcd157c388976"
+        },
+        {
+          "run_id": "baseline_11015_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11015/telemetry.csv.xz",
+          "bytes": 37918756,
+          "sha256": "c4bd48fda0eb4af1a638978b1d252a7ded23d9090abd84e31cfe97dbfefd6bc8"
+        },
+        {
+          "run_id": "baseline_11016_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11016/telemetry.csv.xz",
+          "bytes": 38354972,
+          "sha256": "e879c3ea184f7d07631f62ae8236bad9934c9b9d334fe3d4ac37d9f4f6d4697c"
+        },
+        {
+          "run_id": "baseline_11017_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11017/telemetry.csv.xz",
+          "bytes": 37975004,
+          "sha256": "9ee20739f527cafa40e374f636fbd958b3ffd1b94dc190e99fddda4051d8b487"
+        },
+        {
+          "run_id": "baseline_11018_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11018/telemetry.csv.xz",
+          "bytes": 38099436,
+          "sha256": "dfdfe4c699d89ae49e68d62d9d6601eecf87723394b14833265720048b11491f"
+        },
+        {
+          "run_id": "baseline_11019_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11019/telemetry.csv.xz",
+          "bytes": 38118568,
+          "sha256": "8d5c77f407ba26e01d25eaaa10dde567aa7e41d72b97255297d7daba1cbc2201"
+        },
+        {
+          "run_id": "baseline_11020_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11020/telemetry.csv.xz",
+          "bytes": 37854560,
+          "sha256": "55ff06f87dcc42aacb5ac4884fa01f65e3785dc452c8d797aea2f0c530843933"
+        },
+        {
+          "run_id": "baseline_11021_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11021/telemetry.csv.xz",
+          "bytes": 37898888,
+          "sha256": "2dd4e9388c992f99129b1a5697e8aa1de6c0b84ad63aa5e2182b830255cd52f1"
+        },
+        {
+          "run_id": "baseline_11022_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11022/telemetry.csv.xz",
+          "bytes": 37725560,
+          "sha256": "a3e46181ac77776c25c502990a1248253edec5639759c6d6bafab882c1af28d3"
+        },
+        {
+          "run_id": "baseline_11023_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11023/telemetry.csv.xz",
+          "bytes": 38032484,
+          "sha256": "31e8a04c330b7cfe16cd7492a1d8d5c2b249c66094e8e2646f0a6e9cc1d118c7"
+        },
+        {
+          "run_id": "baseline_11024_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11024/telemetry.csv.xz",
+          "bytes": 37660224,
+          "sha256": "ed2ff2e536717ef8e2fba4a54898f753901f579bf39a335da2ba02ddff57d80a"
+        },
+        {
+          "run_id": "baseline_11025_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11025/telemetry.csv.xz",
+          "bytes": 37673056,
+          "sha256": "f775a1c04e861bde1fcae44c678501dd551dabbaa9b72c1b629f75d46102d7c8"
+        },
+        {
+          "run_id": "baseline_11026_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11026/telemetry.csv.xz",
+          "bytes": 38309140,
+          "sha256": "f27ae5f4bb4025f02c0482d2f34fd5207a88197aa3bd94ca7dd1663929d350b7"
+        },
+        {
+          "run_id": "baseline_11027_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11027/telemetry.csv.xz",
+          "bytes": 36924492,
+          "sha256": "9fcaa0c4d7b934a34eded00fa83d1b412dbc6de90ba6daa37b5de45baea4e959"
+        },
+        {
+          "run_id": "baseline_11028_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11028/telemetry.csv.xz",
+          "bytes": 37982892,
+          "sha256": "08d7e3bbfd6a1b5cbe3caa00bbc0bdaf91f9a3ba3c3551a9175e9b27ce1187b3"
+        },
+        {
+          "run_id": "baseline_11029_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/baseline_11029/telemetry.csv.xz",
+          "bytes": 38438080,
+          "sha256": "e35b939a6d62d1df73f8b3fabb38794c8fdddf79f8fa1f188de26b104a39d09c"
+        }
+      ]
+    },
+    {
+      "file": "analytics/primary_windows/proposed_tilt10_real_trials.csv.gz",
+      "bytes": 35617173,
+      "sha256": "a1c59670886bd21d24628c7976fdf1055f7df0a5e5d5f883f71c27ea8f2cf813",
+      "runs": [
+        {
+          "run_id": "proposed_21000_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036073790413661327,
+          "effort_Nm2_s": 32.57565189984606,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21001_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0038316068236473543,
+          "effort_Nm2_s": 32.98898417190608,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21002_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003913733589916967,
+          "effort_Nm2_s": 31.586958027811942,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21003_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0034681499099378957,
+          "effort_Nm2_s": 33.2392583928003,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21004_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0038153985250972845,
+          "effort_Nm2_s": 30.787396007024707,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21005_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.00387093681943207,
+          "effort_Nm2_s": 31.616188697666775,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21006_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003943641355954678,
+          "effort_Nm2_s": 30.65710971386506,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21007_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0039063664932694085,
+          "effort_Nm2_s": 30.144501398971705,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21008_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0037142790680666816,
+          "effort_Nm2_s": 31.45624875679228,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21009_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003568001115528046,
+          "effort_Nm2_s": 30.73714783346566,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21010_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003709496278408616,
+          "effort_Nm2_s": 30.402580949617487,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21011_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036547147784983846,
+          "effort_Nm2_s": 31.537955693635393,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21012_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003653907563232909,
+          "effort_Nm2_s": 30.738784969647355,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21013_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003784246968953069,
+          "effort_Nm2_s": 30.637366858577675,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21014_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003855426557306313,
+          "effort_Nm2_s": 30.608794542051715,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21015_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003647099001581556,
+          "effort_Nm2_s": 32.638784422336386,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21016_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0034271084529331045,
+          "effort_Nm2_s": 33.18121577653224,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21017_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036705385576703926,
+          "effort_Nm2_s": 30.986932977808387,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21018_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0035857935644301813,
+          "effort_Nm2_s": 31.76133854298405,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21019_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0037420930093161817,
+          "effort_Nm2_s": 31.531203894159056,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21020_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.004087039883972683,
+          "effort_Nm2_s": 30.08583842929771,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21021_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036223695377834565,
+          "effort_Nm2_s": 33.15931147568174,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21022_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036194295509043,
+          "effort_Nm2_s": 31.2183622775659,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21023_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036842374135244945,
+          "effort_Nm2_s": 30.86575785924778,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21024_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0034743851394149483,
+          "effort_Nm2_s": 30.882257988669434,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21025_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0036158849158391,
+          "effort_Nm2_s": 32.973401556031014,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21026_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0038790464126897176,
+          "effort_Nm2_s": 30.189308652578596,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21027_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0037429040287415725,
+          "effort_Nm2_s": 32.21267572580314,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21028_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0037609654143841036,
+          "effort_Nm2_s": 31.04374389120742,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_21029_tilt10",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.003979237617710678,
+          "effort_Nm2_s": 30.327081042543675,
+          "matches_summary": true
+        }
+      ],
+      "original_telemetry": [
+        {
+          "run_id": "proposed_21000_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21000/telemetry.csv.xz",
+          "bytes": 38808548,
+          "sha256": "f41113180ba9e9d791498e32cd216079fe637aefd62ab9b6fa1b8d3f70cbe09f"
+        },
+        {
+          "run_id": "proposed_21001_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21001/telemetry.csv.xz",
+          "bytes": 38068012,
+          "sha256": "1e5ae7f7c4a399c4de6a7639e1140569d9cccb6e7bfba5a97729badd85b65f54"
+        },
+        {
+          "run_id": "proposed_21002_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21002/telemetry.csv.xz",
+          "bytes": 38910800,
+          "sha256": "dab32c641babd34a7d8771a70550ee522e178e07298645077c239701a01cdc08"
+        },
+        {
+          "run_id": "proposed_21003_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21003/telemetry.csv.xz",
+          "bytes": 39207288,
+          "sha256": "436b4d85620b0cd485816e5048892dd07251e570240803000c9c607990094c89"
+        },
+        {
+          "run_id": "proposed_21004_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21004/telemetry.csv.xz",
+          "bytes": 38939828,
+          "sha256": "8f1b9c2b6a8580e34cebec3fac5db0e9b3469f3764b443e6377c187bc940ff7d"
+        },
+        {
+          "run_id": "proposed_21005_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21005/telemetry.csv.xz",
+          "bytes": 38979500,
+          "sha256": "e90da53a23257a5bf8b95b7556082622baf69ee42ecf24a8aa7dfd82c2d28a38"
+        },
+        {
+          "run_id": "proposed_21006_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21006/telemetry.csv.xz",
+          "bytes": 39132208,
+          "sha256": "c15208031c0da39f7cd9d3e3dbded16a4265202184258043d5b9005bd1c33f55"
+        },
+        {
+          "run_id": "proposed_21007_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21007/telemetry.csv.xz",
+          "bytes": 38647140,
+          "sha256": "5c3450679428ad02ce51edd0c66ff42d851df9e0a5cf6e84a1602bb8fe9b0324"
+        },
+        {
+          "run_id": "proposed_21008_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21008/telemetry.csv.xz",
+          "bytes": 39253012,
+          "sha256": "689f4605ec87b45d5768cd108f69506494d1ac73ad524ab69a24e228a1265378"
+        },
+        {
+          "run_id": "proposed_21009_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21009/telemetry.csv.xz",
+          "bytes": 38849904,
+          "sha256": "049e0a638b4ef401e25566d1a25b368bd6fdb05bdef7857fdee1d079454db118"
+        },
+        {
+          "run_id": "proposed_21010_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21010/telemetry.csv.xz",
+          "bytes": 38928236,
+          "sha256": "0855e886038b1d9d0d214003bbef0f0945c931f6aad33619c0a66ece8be50df4"
+        },
+        {
+          "run_id": "proposed_21011_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21011/telemetry.csv.xz",
+          "bytes": 39188128,
+          "sha256": "bafeee9a0aa979643a077b5db877c36ba46d327190f0f9ca7c71671b6850ec80"
+        },
+        {
+          "run_id": "proposed_21012_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21012/telemetry.csv.xz",
+          "bytes": 38979024,
+          "sha256": "c9f1825cd19a13b3c3bf8666d92f070cdd6c104f58e454b65da2e9bf84987cc8"
+        },
+        {
+          "run_id": "proposed_21013_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21013/telemetry.csv.xz",
+          "bytes": 39260464,
+          "sha256": "ba41c79622a4508f958ab783871d72fe22e188911a11670493a7a9fdd0225c7d"
+        },
+        {
+          "run_id": "proposed_21014_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21014/telemetry.csv.xz",
+          "bytes": 38949932,
+          "sha256": "b75cdfd68d91d00a033af34d63de6d5423b197fc1a6fac8e3cd500ad24e4788b"
+        },
+        {
+          "run_id": "proposed_21015_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21015/telemetry.csv.xz",
+          "bytes": 38774080,
+          "sha256": "e8abcfb21bef85a1a71e57113b54d988524825f59cf39530c8cbc9c7f690a9bf"
+        },
+        {
+          "run_id": "proposed_21016_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21016/telemetry.csv.xz",
+          "bytes": 38630560,
+          "sha256": "c97a8d571d63e6653f08b6c632beb620821fb4dda2f37365afa72163c4922e81"
+        },
+        {
+          "run_id": "proposed_21017_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21017/telemetry.csv.xz",
+          "bytes": 39223656,
+          "sha256": "73c0b0af07598e3b8ba441038ef819de988bc094155ed6e706d2f63f49815ae1"
+        },
+        {
+          "run_id": "proposed_21018_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21018/telemetry.csv.xz",
+          "bytes": 38854812,
+          "sha256": "0de43a0d97b6202c4baf992b5830ccb32b869f36a7f0572208f56a0f1bdf1bf6"
+        },
+        {
+          "run_id": "proposed_21019_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21019/telemetry.csv.xz",
+          "bytes": 38618956,
+          "sha256": "90562a68439fbba087e4418d5c0dac63efa3bc9f5eca6570c5c16522e69b776f"
+        },
+        {
+          "run_id": "proposed_21020_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21020/telemetry.csv.xz",
+          "bytes": 39461008,
+          "sha256": "826da5097960720b3bcd0b2c6dbe41e513803d9ff6d61867a909fb5434501784"
+        },
+        {
+          "run_id": "proposed_21021_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21021/telemetry.csv.xz",
+          "bytes": 38944680,
+          "sha256": "113816c12dc333d23502b0dcb6611cda15b15549b0d54f75d24b7c6373d20823"
+        },
+        {
+          "run_id": "proposed_21022_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21022/telemetry.csv.xz",
+          "bytes": 38544948,
+          "sha256": "b59624104810436c277295cdc5f9d2d46996baf914038b6c34c7b61541901f17"
+        },
+        {
+          "run_id": "proposed_21023_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21023/telemetry.csv.xz",
+          "bytes": 38656948,
+          "sha256": "170b918987555666ff5a5448646820bec70c016849a0d6a0f4b145ba3e4c6de0"
+        },
+        {
+          "run_id": "proposed_21024_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21024/telemetry.csv.xz",
+          "bytes": 39077168,
+          "sha256": "fe0b85e41ca5c5f36fb3750a5ba7844c3c6e4fbfa7271dd91caa7800d06ef712"
+        },
+        {
+          "run_id": "proposed_21025_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21025/telemetry.csv.xz",
+          "bytes": 39111392,
+          "sha256": "4922fabf10e3a861ce7ac6080aa2fa4c405cc931b0135b63007415ea48297fba"
+        },
+        {
+          "run_id": "proposed_21026_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21026/telemetry.csv.xz",
+          "bytes": 39251636,
+          "sha256": "f7017fa54bce6d7d9de834b2974079f7f1bcf6e4f2d8344d9b7a32678f4f93b9"
+        },
+        {
+          "run_id": "proposed_21027_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21027/telemetry.csv.xz",
+          "bytes": 39374528,
+          "sha256": "036baacfa72ad690ed3e8c72c5c4f08b8fa05436ee7da8f69e12e9670bb489bb"
+        },
+        {
+          "run_id": "proposed_21028_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21028/telemetry.csv.xz",
+          "bytes": 39524908,
+          "sha256": "a46fbe1755e50d9fda570ce976f2a673d729bb1486721b8bbe10063601294606"
+        },
+        {
+          "run_id": "proposed_21029_tilt10",
+          "relative_path": "analytics/final_validation_v1/tilt_10/proposed_21029/telemetry.csv.xz",
+          "bytes": 39338552,
+          "sha256": "5cd30993620de49888d5e9a2b703b6763c9bb5e5710bab34c4cdc839b1108af8"
+        }
+      ]
+    },
+    {
+      "file": "analytics/primary_windows/baseline_tilt20_real_trials.csv.gz",
+      "bytes": 32880428,
+      "sha256": "4b7282275ed701799173d43a665eb9c39fae2844920df85ba41120530dd3670a",
+      "runs": [
+        {
+          "run_id": "baseline_12000_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09749484778369805,
+          "effort_Nm2_s": 30.284236118149483,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12001_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10185045953841466,
+          "effort_Nm2_s": 30.884724916096477,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12002_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09935060885045098,
+          "effort_Nm2_s": 30.44989393826991,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12003_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1009246781042574,
+          "effort_Nm2_s": 30.711807774831623,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12004_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0988026348399441,
+          "effort_Nm2_s": 30.529475772720094,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12005_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10118025724007462,
+          "effort_Nm2_s": 30.62301000989866,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12006_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09902127676716761,
+          "effort_Nm2_s": 30.45037769250814,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12007_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10134334439243672,
+          "effort_Nm2_s": 30.85870488611343,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12008_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09991547289665706,
+          "effort_Nm2_s": 30.561584893922387,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12009_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10141475857267003,
+          "effort_Nm2_s": 30.652911773548766,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12010_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09867763662596978,
+          "effort_Nm2_s": 30.433705050270596,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12011_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09971113839762373,
+          "effort_Nm2_s": 30.512979018736665,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12012_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0999746841277569,
+          "effort_Nm2_s": 30.736339431383286,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12013_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09990748929327746,
+          "effort_Nm2_s": 30.587440828957924,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12014_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1007723097405873,
+          "effort_Nm2_s": 30.524119500955702,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12015_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0991747062473758,
+          "effort_Nm2_s": 30.57062116413738,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12016_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09947318236501743,
+          "effort_Nm2_s": 30.507288097720323,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12017_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10178351190257805,
+          "effort_Nm2_s": 30.75249732950854,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12018_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09810123548222976,
+          "effort_Nm2_s": 30.357800616910538,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12019_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09887470483364227,
+          "effort_Nm2_s": 30.365331267173143,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12020_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09819814761756554,
+          "effort_Nm2_s": 30.27469804948486,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12021_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10133485338589178,
+          "effort_Nm2_s": 30.821607368237878,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12022_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09999238979070953,
+          "effort_Nm2_s": 30.37870851146145,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12023_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10097622349744823,
+          "effort_Nm2_s": 30.658151968853762,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12024_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10167628702496444,
+          "effort_Nm2_s": 30.70194306759188,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12025_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0993560303177108,
+          "effort_Nm2_s": 30.727525078952656,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12026_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.09991515163812559,
+          "effort_Nm2_s": 30.505207852340977,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12027_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10064718926472291,
+          "effort_Nm2_s": 30.53716480923902,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12028_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10102425831240151,
+          "effort_Nm2_s": 30.514096627602957,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_12029_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.10095513944736613,
+          "effort_Nm2_s": 30.708966167209645,
+          "matches_summary": true
+        }
+      ],
+      "original_telemetry": [
+        {
+          "run_id": "baseline_12000_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12000/telemetry.csv.xz",
+          "bytes": 46151172,
+          "sha256": "aa154973445ded5fa65de15b04521f6e778ee33745edd22c08c72c499aa65a7d"
+        },
+        {
+          "run_id": "baseline_12001_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12001/telemetry.csv.xz",
+          "bytes": 46143580,
+          "sha256": "b166749581d96cf93710db3494e5fd68dcaea4f782817ca6f20599f29eb33a98"
+        },
+        {
+          "run_id": "baseline_12002_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12002/telemetry.csv.xz",
+          "bytes": 46191184,
+          "sha256": "3cb3ca36302f5aeef87752d2f4543ad705fa7c86238ef1d292530d04edb5237e"
+        },
+        {
+          "run_id": "baseline_12003_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12003/telemetry.csv.xz",
+          "bytes": 45666364,
+          "sha256": "a3fe6acb815957e72215f3f7709419b80287fd39310d506c02fc87740552c9c7"
+        },
+        {
+          "run_id": "baseline_12004_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12004/telemetry.csv.xz",
+          "bytes": 45983624,
+          "sha256": "bc94bb23fbd20dcee51a5eab3e6c95d694be49523ea651e1689c6db706248a61"
+        },
+        {
+          "run_id": "baseline_12005_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12005/telemetry.csv.xz",
+          "bytes": 46266340,
+          "sha256": "0ba6d9a16174f7d729c7fc7a87867b165cfe469ea82c192a7b8c37c34dc08192"
+        },
+        {
+          "run_id": "baseline_12006_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12006/telemetry.csv.xz",
+          "bytes": 45932240,
+          "sha256": "22a3b3d2a5d536c6ecbe61617ee6e122eae25c93b572385ff13a008050ce64fd"
+        },
+        {
+          "run_id": "baseline_12007_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12007/telemetry.csv.xz",
+          "bytes": 45301192,
+          "sha256": "099a5ff538cd2b9bc0b4dabc272f6253b8900c1d3275344b17d77d2b1d27704c"
+        },
+        {
+          "run_id": "baseline_12008_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12008/telemetry.csv.xz",
+          "bytes": 45306560,
+          "sha256": "661a0209b5f733503ade96a24623a820971a122bc451053006e415f2f6cc9a71"
+        },
+        {
+          "run_id": "baseline_12009_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12009/telemetry.csv.xz",
+          "bytes": 45182344,
+          "sha256": "56d4fe49faba78e7ec85996141ead857c57bb41a39a1f2e9b325046b69aab615"
+        },
+        {
+          "run_id": "baseline_12010_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12010/telemetry.csv.xz",
+          "bytes": 45832076,
+          "sha256": "9ee77392edf4c923fe2a520767a730cec73186207a98823e1a771338b7f7366e"
+        },
+        {
+          "run_id": "baseline_12011_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12011/telemetry.csv.xz",
+          "bytes": 45741672,
+          "sha256": "e030f3189e6927e4b2b394ea14150af17569879d4ccbf73b21c60905dd947131"
+        },
+        {
+          "run_id": "baseline_12012_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12012/telemetry.csv.xz",
+          "bytes": 45639396,
+          "sha256": "108ebfa4c512b96ea85c13d2f2b25f94b6ca73cd79bcfc9277f50fa7346fec59"
+        },
+        {
+          "run_id": "baseline_12013_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12013/telemetry.csv.xz",
+          "bytes": 45503532,
+          "sha256": "75d44e7e7b42a3e87defcee8e0f6990d307260f534ed018a616f93dab02d7fac"
+        },
+        {
+          "run_id": "baseline_12014_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12014/telemetry.csv.xz",
+          "bytes": 45852964,
+          "sha256": "13edc77708fbe2fc40d1b523ad1794644a0837d2b6d74bc64c5ba43dd6b19d5a"
+        },
+        {
+          "run_id": "baseline_12015_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12015/telemetry.csv.xz",
+          "bytes": 46146076,
+          "sha256": "d7f733c43b7228e7820d2caa8e9bbf014885647ebc33bd22e26ebc01bb9d46be"
+        },
+        {
+          "run_id": "baseline_12016_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12016/telemetry.csv.xz",
+          "bytes": 46074292,
+          "sha256": "1995aff7b161340f40328412bb40ea53f86f1baad28c15ec56844151b4dbd084"
+        },
+        {
+          "run_id": "baseline_12017_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12017/telemetry.csv.xz",
+          "bytes": 45320836,
+          "sha256": "106b53c024ffb87243601005f64deeb07cad94bc7a0c19807091de7f2159c6cb"
+        },
+        {
+          "run_id": "baseline_12018_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12018/telemetry.csv.xz",
+          "bytes": 45052952,
+          "sha256": "61725c15d425aab5f777dbe54abb9e825eab2051ca4b91c30fc7b214de852133"
+        },
+        {
+          "run_id": "baseline_12019_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12019/telemetry.csv.xz",
+          "bytes": 46028660,
+          "sha256": "a8288c9c70a36872b265cdd86c4fd675aa8e454822253bb7b7c8df828163df64"
+        },
+        {
+          "run_id": "baseline_12020_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12020/telemetry.csv.xz",
+          "bytes": 46023792,
+          "sha256": "9136a1dab29db27a84a6b879ca32cdb069d74b769fac485e3d3e764441f9c8fa"
+        },
+        {
+          "run_id": "baseline_12021_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12021/telemetry.csv.xz",
+          "bytes": 45241608,
+          "sha256": "7cd82017ede1329d6d25ed7c84380aeda33f6acfbd04d0b674d474b5046bbe21"
+        },
+        {
+          "run_id": "baseline_12022_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12022/telemetry.csv.xz",
+          "bytes": 45130044,
+          "sha256": "5305576b516cf9445496e1ba4a31b1c8f40a0a05808b89f14960f3d76ec65a7e"
+        },
+        {
+          "run_id": "baseline_12023_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12023/telemetry.csv.xz",
+          "bytes": 45991204,
+          "sha256": "fe60c04d559643da2db2ae9ba02adfbf381d1e4d62e3132c906231824b508ddd"
+        },
+        {
+          "run_id": "baseline_12024_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12024/telemetry.csv.xz",
+          "bytes": 45220260,
+          "sha256": "c8b2c0406f742598915e7879b17053a65929761b2b51aefcd36558b99edee318"
+        },
+        {
+          "run_id": "baseline_12025_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12025/telemetry.csv.xz",
+          "bytes": 45849712,
+          "sha256": "4611dc4a24e50ecec4c45639455c695f333092aa75e431a54dc5886a6d751202"
+        },
+        {
+          "run_id": "baseline_12026_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12026/telemetry.csv.xz",
+          "bytes": 45806892,
+          "sha256": "a920c5c40fea7f021d296ae715b081837f5cdd23b35a3aa8893def44e73e3caa"
+        },
+        {
+          "run_id": "baseline_12027_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12027/telemetry.csv.xz",
+          "bytes": 45691232,
+          "sha256": "ef4433244f7b05136aeb9214485ac7764aa868307759d499d89e2f912ff4fa44"
+        },
+        {
+          "run_id": "baseline_12028_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12028/telemetry.csv.xz",
+          "bytes": 45472924,
+          "sha256": "f94b873bd760632e3bd08707966a7d640e5bb4239b59ae8e2937f14c95948301"
+        },
+        {
+          "run_id": "baseline_12029_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/baseline_12029/telemetry.csv.xz",
+          "bytes": 45703452,
+          "sha256": "d8e57cd7c5d574da021d52800147d53b8710021fa3972782c7ad7fef0f6f4896"
+        }
+      ]
+    },
+    {
+      "file": "analytics/primary_windows/proposed_tilt20_real_trials.csv.gz",
+      "bytes": 36240464,
+      "sha256": "8ae383dab37a54f4301485c98c7f64a922a0b26a3b2d70f46314090bb0720efe",
+      "runs": [
+        {
+          "run_id": "proposed_22000_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011731202275817827,
+          "effort_Nm2_s": 31.2052134429318,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22001_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.01206162276529952,
+          "effort_Nm2_s": 31.37857016430128,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22002_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011829498043583724,
+          "effort_Nm2_s": 31.28207132178709,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22003_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011792688378986362,
+          "effort_Nm2_s": 30.962937576419503,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22004_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.012031235992572937,
+          "effort_Nm2_s": 31.400706556246753,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22005_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.012011302419384452,
+          "effort_Nm2_s": 31.449655802004816,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22006_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.012044489306893837,
+          "effort_Nm2_s": 30.956261954575968,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22007_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011728650438932946,
+          "effort_Nm2_s": 31.278376618710332,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22008_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011355498459093442,
+          "effort_Nm2_s": 30.810087271916707,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22009_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011652539761496024,
+          "effort_Nm2_s": 31.034619961366193,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22010_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011847436140392168,
+          "effort_Nm2_s": 30.97492532238315,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22011_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.01176502108913289,
+          "effort_Nm2_s": 30.874453349496306,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22012_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011962458186101864,
+          "effort_Nm2_s": 31.242613144229267,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22013_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011827670622259484,
+          "effort_Nm2_s": 30.96725216295681,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22014_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.01191956906651161,
+          "effort_Nm2_s": 31.116629415567328,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22015_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011897539463076605,
+          "effort_Nm2_s": 30.93654533486716,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22016_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011663141255397965,
+          "effort_Nm2_s": 31.126011216687992,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22017_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.012120940147915486,
+          "effort_Nm2_s": 31.394201558334174,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22018_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011873325321028815,
+          "effort_Nm2_s": 31.13561345604872,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22019_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011604986589429609,
+          "effort_Nm2_s": 31.293670194051668,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22020_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011785934039038224,
+          "effort_Nm2_s": 30.985465183631636,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22021_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011807015174991036,
+          "effort_Nm2_s": 31.28162916677737,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22022_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.012048770864502158,
+          "effort_Nm2_s": 30.94415684080528,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22023_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011711097839572304,
+          "effort_Nm2_s": 31.247088977250986,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22024_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011743892739546602,
+          "effort_Nm2_s": 31.50448523133331,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22025_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.01193502180965158,
+          "effort_Nm2_s": 31.110697892178724,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22026_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011670903751969696,
+          "effort_Nm2_s": 31.237111732885456,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22027_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011793060043313368,
+          "effort_Nm2_s": 31.233805274804297,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22028_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011833374685708857,
+          "effort_Nm2_s": 30.76931662734702,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_22029_tilt20",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.011623880041424726,
+          "effort_Nm2_s": 30.863700456440693,
+          "matches_summary": true
+        }
+      ],
+      "original_telemetry": [
+        {
+          "run_id": "proposed_22000_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22000/telemetry.csv.xz",
+          "bytes": 39782124,
+          "sha256": "2f054015347318efc4272e3a29b0d5be0dd15cea12972364e629e25ce1c3f6cb"
+        },
+        {
+          "run_id": "proposed_22001_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22001/telemetry.csv.xz",
+          "bytes": 39910116,
+          "sha256": "1388c381054d840dfc28998cabf9a1bf9f8ff8fd2cdc7cbc769c5b4104479dd6"
+        },
+        {
+          "run_id": "proposed_22002_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22002/telemetry.csv.xz",
+          "bytes": 39653208,
+          "sha256": "a89b4f4e9fcd949538d886d5a03f0a6260324268f4043d232538772138ce9355"
+        },
+        {
+          "run_id": "proposed_22003_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22003/telemetry.csv.xz",
+          "bytes": 39797748,
+          "sha256": "4b3e35a598cbdb4b8338b9cf5b2632513e38a2aee5a07518a89f7e31998ed720"
+        },
+        {
+          "run_id": "proposed_22004_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22004/telemetry.csv.xz",
+          "bytes": 40058916,
+          "sha256": "7139bbbee8a9379256e04a92ed7607b3439a10d20d1ea3648861cf1d35ccc8c3"
+        },
+        {
+          "run_id": "proposed_22005_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22005/telemetry.csv.xz",
+          "bytes": 39546124,
+          "sha256": "2af5e3a33744ef35c944e68420f9722d1d8ea4b0783f91e12efbf5c3d50516f1"
+        },
+        {
+          "run_id": "proposed_22006_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22006/telemetry.csv.xz",
+          "bytes": 39482364,
+          "sha256": "85fe53a6b50b8273179c256ff6a42648eb50867a7902882c6bed07024c96caac"
+        },
+        {
+          "run_id": "proposed_22007_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22007/telemetry.csv.xz",
+          "bytes": 39891072,
+          "sha256": "1c5b6cf1c436510646209e66c04c3c395fb7ad079fc66611870656ddfd2ebb85"
+        },
+        {
+          "run_id": "proposed_22008_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22008/telemetry.csv.xz",
+          "bytes": 39930604,
+          "sha256": "d228e092ba4a07938e31fc885eaa490840767c6b844253ce0cb2153afc83ce98"
+        },
+        {
+          "run_id": "proposed_22009_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22009/telemetry.csv.xz",
+          "bytes": 39952548,
+          "sha256": "dce53d26b8bc1baa4400e1c88acfc9c364d760a4d62c87b764a468c7e2e985b9"
+        },
+        {
+          "run_id": "proposed_22010_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22010/telemetry.csv.xz",
+          "bytes": 40053812,
+          "sha256": "d74d08ae49946b79c5383fa9a4c70d152dfd9193ec407de030d49480bdc2203a"
+        },
+        {
+          "run_id": "proposed_22011_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22011/telemetry.csv.xz",
+          "bytes": 39495116,
+          "sha256": "79596a85a93bad93e4f80a87d6ca0276a62585fd26be60ed67dad580fd8ad3e9"
+        },
+        {
+          "run_id": "proposed_22012_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22012/telemetry.csv.xz",
+          "bytes": 39696752,
+          "sha256": "72d63bb3d51e8196e919608620def605f15efb2ef031b159cfd1c1c2b7114ccd"
+        },
+        {
+          "run_id": "proposed_22013_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22013/telemetry.csv.xz",
+          "bytes": 39884656,
+          "sha256": "d4b557466b8f404fe47bfc6aff4165dd775cf98c003dac255007f93d2f1203be"
+        },
+        {
+          "run_id": "proposed_22014_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22014/telemetry.csv.xz",
+          "bytes": 39722880,
+          "sha256": "0b18cb26ae018c24fa17e924d8962d1e7e554228bd4b412a3405ec547837eccc"
+        },
+        {
+          "run_id": "proposed_22015_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22015/telemetry.csv.xz",
+          "bytes": 40043116,
+          "sha256": "03ce6052146d0f9b2dc1ac4e1afe4283096fa93a84a8c910f7ab7caa3ac3eaa7"
+        },
+        {
+          "run_id": "proposed_22016_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22016/telemetry.csv.xz",
+          "bytes": 39874608,
+          "sha256": "fde258dedca73cbe03f73bb41b91a887555a682ba4500f70deeb1e34afc6ce94"
+        },
+        {
+          "run_id": "proposed_22017_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22017/telemetry.csv.xz",
+          "bytes": 39601356,
+          "sha256": "eee3d3341fd50ad610d917f4c854c76d8736ace2ab6f422275903d1306267ffd"
+        },
+        {
+          "run_id": "proposed_22018_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22018/telemetry.csv.xz",
+          "bytes": 40076300,
+          "sha256": "ad68c53155bce70a478fd21521595911a3e6a8e7aab5f8166850bac787c36151"
+        },
+        {
+          "run_id": "proposed_22019_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22019/telemetry.csv.xz",
+          "bytes": 39991004,
+          "sha256": "7e27a40e159c1160dda673db0e58941406fff85a85b000b7938d7e6eb2d061c9"
+        },
+        {
+          "run_id": "proposed_22020_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22020/telemetry.csv.xz",
+          "bytes": 39912292,
+          "sha256": "88475af25c56c9d91a5d28c673485685b18d7570a1daf7930d645ccf8bf21fca"
+        },
+        {
+          "run_id": "proposed_22021_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22021/telemetry.csv.xz",
+          "bytes": 39973236,
+          "sha256": "985fe644f936f287b0f1a947830cf750ecd549384548a71559c44c602387bf32"
+        },
+        {
+          "run_id": "proposed_22022_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22022/telemetry.csv.xz",
+          "bytes": 39805556,
+          "sha256": "022e72f382a8f96f3e9f3a20dae5960a430989e467cf42bf6869514bcea74289"
+        },
+        {
+          "run_id": "proposed_22023_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22023/telemetry.csv.xz",
+          "bytes": 39629964,
+          "sha256": "c133c2a76c924882a49e1f59304631476d358a36adeae38eb1c5b49cb2b2e74d"
+        },
+        {
+          "run_id": "proposed_22024_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22024/telemetry.csv.xz",
+          "bytes": 39833680,
+          "sha256": "a9d47c125f363fcae559049c892823f650bfa75a07b2edc5ab10ee16cae775d4"
+        },
+        {
+          "run_id": "proposed_22025_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22025/telemetry.csv.xz",
+          "bytes": 39314988,
+          "sha256": "1c6388abde340a44bb7c1e7681de60e2caaa9c901980df5a6cca6af5aae44427"
+        },
+        {
+          "run_id": "proposed_22026_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22026/telemetry.csv.xz",
+          "bytes": 40041888,
+          "sha256": "3ada99396e75cb669d0e3ec6d3ded89a2dd0453a4a60e0c10ba2f2c279fde462"
+        },
+        {
+          "run_id": "proposed_22027_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22027/telemetry.csv.xz",
+          "bytes": 39939800,
+          "sha256": "e9ca029b04b66acf83946eed119e68cb668cb46e2a65ee3edea057c658bb1196"
+        },
+        {
+          "run_id": "proposed_22028_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22028/telemetry.csv.xz",
+          "bytes": 39987972,
+          "sha256": "6ea60e87a47bc7db1d2f431b2dfca7f8d85ff6091688360852f4e6aaac7a3a29"
+        },
+        {
+          "run_id": "proposed_22029_tilt20",
+          "relative_path": "analytics/final_validation_v1/tilt_20/proposed_22029/telemetry.csv.xz",
+          "bytes": 39290720,
+          "sha256": "4915f5d47a67a3aaaa43c5fdf3ee31ddc26c20cc5d012029d9b4c813f80d63ff"
+        }
+      ]
+    },
+    {
+      "file": "analytics/primary_windows/baseline_tilt30_real_trials.csv.gz",
+      "bytes": 33141066,
+      "sha256": "f5588d2044913cbc2eece2dc9e599ce911dba2e49da313b6a714ad7534274694",
+      "runs": [
+        {
+          "run_id": "baseline_13000_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16537540562201153,
+          "effort_Nm2_s": 25.45219529235583,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13001_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16414084562588002,
+          "effort_Nm2_s": 25.32112897147848,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13002_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16576176087159572,
+          "effort_Nm2_s": 25.482026778949713,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13003_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1649421910203653,
+          "effort_Nm2_s": 25.374250541376174,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13004_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16578974878696678,
+          "effort_Nm2_s": 25.31122308126231,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13005_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16392353647231747,
+          "effort_Nm2_s": 25.343360998466576,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13006_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1667140359442275,
+          "effort_Nm2_s": 25.451300167699994,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13007_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16509670487101055,
+          "effort_Nm2_s": 25.407000027036133,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13008_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16442740937553396,
+          "effort_Nm2_s": 25.455585725595423,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13009_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1666965165102341,
+          "effort_Nm2_s": 25.30876406521287,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13010_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16610875360544342,
+          "effort_Nm2_s": 25.421635378963074,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13011_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16353949246584915,
+          "effort_Nm2_s": 25.380933482525922,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13012_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16410872700483303,
+          "effort_Nm2_s": 25.421183577893498,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13013_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16459934653729183,
+          "effort_Nm2_s": 25.40205901509099,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13014_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16535574400237102,
+          "effort_Nm2_s": 25.38983741032481,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13015_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16619163990248687,
+          "effort_Nm2_s": 25.38240250263787,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13016_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16533419094302002,
+          "effort_Nm2_s": 25.40654801821383,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13017_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16371018831358766,
+          "effort_Nm2_s": 25.290168365669132,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13018_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1640923605987884,
+          "effort_Nm2_s": 25.41336673959193,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13019_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1648053300191367,
+          "effort_Nm2_s": 25.384926691711115,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13020_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.166752923060858,
+          "effort_Nm2_s": 25.399846982199424,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13021_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16580810905865057,
+          "effort_Nm2_s": 25.40835937492431,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13022_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16366149339310743,
+          "effort_Nm2_s": 25.406155612523857,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13023_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1635430470296491,
+          "effort_Nm2_s": 25.265992532651126,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13024_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16505931507848148,
+          "effort_Nm2_s": 25.377546585468888,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13025_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16545874164574703,
+          "effort_Nm2_s": 25.452611992424302,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13026_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1642593590226776,
+          "effort_Nm2_s": 25.43620959024927,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13027_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.164586331577124,
+          "effort_Nm2_s": 25.411217075285087,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13028_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.1679609455494507,
+          "effort_Nm2_s": 25.4248309529242,
+          "matches_summary": true
+        },
+        {
+          "run_id": "baseline_13029_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.16681508955881508,
+          "effort_Nm2_s": 25.42858823374312,
+          "matches_summary": true
+        }
+      ],
+      "original_telemetry": [
+        {
+          "run_id": "baseline_13000_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13000/telemetry.csv.xz",
+          "bytes": 57171752,
+          "sha256": "8e59bc57bedc191e6dd838618f8b8b924afe3f92345a3d1779f309f3d31590fb"
+        },
+        {
+          "run_id": "baseline_13001_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13001/telemetry.csv.xz",
+          "bytes": 56825832,
+          "sha256": "25c21e1023f5b57f3156ec408aa2e47065cf2252357834ee82dc64deffd80f66"
+        },
+        {
+          "run_id": "baseline_13002_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13002/telemetry.csv.xz",
+          "bytes": 57580096,
+          "sha256": "44d78f07f737dff1d11bed85aeadfd2c986f3e978f25423107ab6f0a86e3d49d"
+        },
+        {
+          "run_id": "baseline_13003_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13003/telemetry.csv.xz",
+          "bytes": 58117432,
+          "sha256": "f153b9ba0b7ee5bcc8fc499f1ad220cf0d1da918c74d95b24a23c910740bae08"
+        },
+        {
+          "run_id": "baseline_13004_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13004/telemetry.csv.xz",
+          "bytes": 57550132,
+          "sha256": "c7bcbba19aaeb078b1d3ba3cc8ff3e433e1814d2e9c25f861a4fb25b90e64f42"
+        },
+        {
+          "run_id": "baseline_13005_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13005/telemetry.csv.xz",
+          "bytes": 56899024,
+          "sha256": "4a1ccfb056c9969e0eb392aa2cf8ed6ebfdb855a56cf26af6e5a4fbfc1206361"
+        },
+        {
+          "run_id": "baseline_13006_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13006/telemetry.csv.xz",
+          "bytes": 57408996,
+          "sha256": "e3c485bcaeeb07a38df396be08dbfaecf4d3fa8ab5cfc63d6fb5c720172e11cc"
+        },
+        {
+          "run_id": "baseline_13007_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13007/telemetry.csv.xz",
+          "bytes": 57726888,
+          "sha256": "adecab4420e4b019f9dd8ecee74d01244a291778db6f3c774be4386095143eb1"
+        },
+        {
+          "run_id": "baseline_13008_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13008/telemetry.csv.xz",
+          "bytes": 57173904,
+          "sha256": "4090d214aa422f2be24eea7fb1fac458153140eeeb61d86d510455512554e805"
+        },
+        {
+          "run_id": "baseline_13009_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13009/telemetry.csv.xz",
+          "bytes": 58038728,
+          "sha256": "e5584d78d162f4a568ba941e52754d394d05ffa5d249b6fcd744a763ab7076a9"
+        },
+        {
+          "run_id": "baseline_13010_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13010/telemetry.csv.xz",
+          "bytes": 57390360,
+          "sha256": "ca494ec216edceecc7ef69e464bea3f091ad74db696f26c8962170f3e77a6351"
+        },
+        {
+          "run_id": "baseline_13011_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13011/telemetry.csv.xz",
+          "bytes": 56677816,
+          "sha256": "cdde7a06de695dd35faf82b6617717aff867e8c84414d73583f31172ff71ee88"
+        },
+        {
+          "run_id": "baseline_13012_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13012/telemetry.csv.xz",
+          "bytes": 57328712,
+          "sha256": "3b9d9b3119cb7b5ecb19bcb3df16be28b0b21b9cc74a425837c72cae63dae7da"
+        },
+        {
+          "run_id": "baseline_13013_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13013/telemetry.csv.xz",
+          "bytes": 57308184,
+          "sha256": "0281cac8495b7ce09cbf245a4886bf7258debe97e7e797ccbdae504bce415151"
+        },
+        {
+          "run_id": "baseline_13014_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13014/telemetry.csv.xz",
+          "bytes": 57503392,
+          "sha256": "152643d6bb0430cb95719fd622dbe2cd8e9cb51ce157b72033de021efd681987"
+        },
+        {
+          "run_id": "baseline_13015_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13015/telemetry.csv.xz",
+          "bytes": 57097692,
+          "sha256": "0406cc331617f19e617f9f9e8da4e3fa22891645088dab62510c7054f99a193b"
+        },
+        {
+          "run_id": "baseline_13016_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13016/telemetry.csv.xz",
+          "bytes": 57697548,
+          "sha256": "7f4169830284979302981b74de543fd933e9a0397fc57a40569d1ca5ec33c1db"
+        },
+        {
+          "run_id": "baseline_13017_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13017/telemetry.csv.xz",
+          "bytes": 57233184,
+          "sha256": "4a12cfd1b2b35c9e4a92b1927ff2c8991103bb44a1f4a1ca0381409ed712e209"
+        },
+        {
+          "run_id": "baseline_13018_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13018/telemetry.csv.xz",
+          "bytes": 56742500,
+          "sha256": "ca28926e126553bad8ac76c903ecc2f989ce0fb2a78602cf44a8380a1b68f8d8"
+        },
+        {
+          "run_id": "baseline_13019_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13019/telemetry.csv.xz",
+          "bytes": 57257536,
+          "sha256": "20c1fd9da161832f22b2169ddbeb26570adf73e2f2ce5ed03fb03b16b6553030"
+        },
+        {
+          "run_id": "baseline_13020_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13020/telemetry.csv.xz",
+          "bytes": 56930808,
+          "sha256": "7bbd2611d5f11af0a3f6e37bc99542b229e51d63b0e61108e375c0512c253ec4"
+        },
+        {
+          "run_id": "baseline_13021_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13021/telemetry.csv.xz",
+          "bytes": 56662304,
+          "sha256": "ce1471d05679b788047b67c5a48b1543488a1680ff2a4fb5ad20f86f1368cd65"
+        },
+        {
+          "run_id": "baseline_13022_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13022/telemetry.csv.xz",
+          "bytes": 57156712,
+          "sha256": "90e62db7c258b2db7ccd79b0ad3d2c1b05ddf421b68a935b91883b2ba37db0d2"
+        },
+        {
+          "run_id": "baseline_13023_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13023/telemetry.csv.xz",
+          "bytes": 57758808,
+          "sha256": "8c08db0e5411564b69adacf46b32482583ee00d3cfc3a6302a51d17758b11b9a"
+        },
+        {
+          "run_id": "baseline_13024_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13024/telemetry.csv.xz",
+          "bytes": 56907508,
+          "sha256": "4c1ef782e409c5e7f7e4fdac104f69de99fadb7335f9de7026dd05f364c8f41a"
+        },
+        {
+          "run_id": "baseline_13025_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13025/telemetry.csv.xz",
+          "bytes": 57062624,
+          "sha256": "f012d7ec3fa1758049f445731290aca04797997d8edeb3cb0785bf48a7ea8996"
+        },
+        {
+          "run_id": "baseline_13026_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13026/telemetry.csv.xz",
+          "bytes": 57533192,
+          "sha256": "f1727859b8020682a109c6c2925f99374430c02c56871f964451bcbed840e506"
+        },
+        {
+          "run_id": "baseline_13027_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13027/telemetry.csv.xz",
+          "bytes": 57486736,
+          "sha256": "b02f7f25b425ff15016c51b74e3edcc1a7d7268e16844cdd3d0a1dfa6ed74764"
+        },
+        {
+          "run_id": "baseline_13028_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13028/telemetry.csv.xz",
+          "bytes": 58294976,
+          "sha256": "ecc5b832be17eb14b8d07ff1262deda6e28f4d56d5e8a0b2fcfd70a2acbb06e1"
+        },
+        {
+          "run_id": "baseline_13029_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/baseline_13029/telemetry.csv.xz",
+          "bytes": 56943400,
+          "sha256": "9ac74d533e44814c8a1d77de0c85dac55109240f8452f6b6b4d0cd82c74cf095"
+        }
+      ]
+    },
+    {
+      "file": "analytics/primary_windows/proposed_tilt30_real_trials.csv.gz",
+      "bytes": 36593877,
+      "sha256": "d4fdc600df70ee0e51ceee65c0382bd00e8f8955d8faf734f2cf96d30385a1a6",
+      "runs": [
+        {
+          "run_id": "proposed_23000_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029457913861889864,
+          "effort_Nm2_s": 25.83538572595482,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23001_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02876056233500711,
+          "effort_Nm2_s": 25.64162403252477,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23002_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02900475226925095,
+          "effort_Nm2_s": 25.785360055524382,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23003_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028878724314395282,
+          "effort_Nm2_s": 25.802310846702877,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23004_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029107170646834598,
+          "effort_Nm2_s": 25.66508430503091,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23005_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028460009488514203,
+          "effort_Nm2_s": 25.836229514807933,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23006_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028648435056183086,
+          "effort_Nm2_s": 25.623519578681538,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23007_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029172114736047923,
+          "effort_Nm2_s": 25.825568520659044,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23008_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029177987053125548,
+          "effort_Nm2_s": 25.713315393181,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23009_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029174933461984236,
+          "effort_Nm2_s": 25.865902515149713,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23010_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02826793228928911,
+          "effort_Nm2_s": 25.762592519267763,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23011_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02896816656076284,
+          "effort_Nm2_s": 25.77070423349338,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23012_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02948177708674785,
+          "effort_Nm2_s": 25.85027466342205,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23013_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02832170387714294,
+          "effort_Nm2_s": 25.78548572914543,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23014_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02920623859482265,
+          "effort_Nm2_s": 25.755290848953667,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23015_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029013787452290978,
+          "effort_Nm2_s": 25.77653859087466,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23016_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028992098979865724,
+          "effort_Nm2_s": 25.503796745373943,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23017_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02920957232418558,
+          "effort_Nm2_s": 25.909815423033756,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23018_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0295711174479978,
+          "effort_Nm2_s": 25.82371083649842,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23019_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029048790134667615,
+          "effort_Nm2_s": 25.78440364709407,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23020_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02897152871639675,
+          "effort_Nm2_s": 25.839428530951334,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23021_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02917387648497515,
+          "effort_Nm2_s": 25.88787643103467,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23022_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.0295385529647983,
+          "effort_Nm2_s": 25.85501449393405,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23023_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029240496792244452,
+          "effort_Nm2_s": 25.93350028806296,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23024_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028776680916232658,
+          "effort_Nm2_s": 25.740890897959723,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23025_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02908237736663238,
+          "effort_Nm2_s": 25.759178639999043,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23026_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.029154877364280043,
+          "effort_Nm2_s": 25.938560945861237,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23027_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028950630517329937,
+          "effort_Nm2_s": 25.74527027065949,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23028_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.02863611621474538,
+          "effort_Nm2_s": 25.767535609595956,
+          "matches_summary": true
+        },
+        {
+          "run_id": "proposed_23029_tilt30",
+          "samples": 15000,
+          "max_dt_error_s": 2.444225377651321e-15,
+          "rmse_m": 0.028724240002933842,
+          "effort_Nm2_s": 25.99303136182153,
+          "matches_summary": true
+        }
+      ],
+      "original_telemetry": [
+        {
+          "run_id": "proposed_23000_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23000/telemetry.csv.xz",
+          "bytes": 55306268,
+          "sha256": "5bd901ed5aa613842447ee679e455ddf90a802553ca847947d9807b4c8994301"
+        },
+        {
+          "run_id": "proposed_23001_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23001/telemetry.csv.xz",
+          "bytes": 51780332,
+          "sha256": "0bd6c86e8f6f530c17f765fa6fa1fec85d44d92c015054ff74185eac30df6956"
+        },
+        {
+          "run_id": "proposed_23002_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23002/telemetry.csv.xz",
+          "bytes": 56720520,
+          "sha256": "dde56e09a1741a46601451a5cee81993d805d82da55a169f0516f75fcbfc7bf1"
+        },
+        {
+          "run_id": "proposed_23003_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23003/telemetry.csv.xz",
+          "bytes": 54236560,
+          "sha256": "d7b6a034fdfcbe294c3508b57c33b9d06400022d4359e55b5b7a1ce3d4cc4dec"
+        },
+        {
+          "run_id": "proposed_23004_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23004/telemetry.csv.xz",
+          "bytes": 55980720,
+          "sha256": "b83c32ff054dbe8dbac2312fa38b8f0b376073578832aa84da020b1d5ea55f90"
+        },
+        {
+          "run_id": "proposed_23005_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23005/telemetry.csv.xz",
+          "bytes": 55581012,
+          "sha256": "f81475e0fd9286857158b43af97b1221b35be9d412d0b0f0a22862f9e371985d"
+        },
+        {
+          "run_id": "proposed_23006_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23006/telemetry.csv.xz",
+          "bytes": 54402264,
+          "sha256": "59408ea6fee37444718c8ae7b8448174ed07219182617d7cdc39bf862c270b30"
+        },
+        {
+          "run_id": "proposed_23007_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23007/telemetry.csv.xz",
+          "bytes": 56487940,
+          "sha256": "f7dfceb7a87ef24343238ef12425bbda6fd8bf74b2cf0a99c5467ec9039ccf40"
+        },
+        {
+          "run_id": "proposed_23008_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23008/telemetry.csv.xz",
+          "bytes": 59213544,
+          "sha256": "8fa9f9577a85997439e07059416af24c5901f4c9c30c540802722834c3bd7c91"
+        },
+        {
+          "run_id": "proposed_23009_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23009/telemetry.csv.xz",
+          "bytes": 59097580,
+          "sha256": "dd7b6c883a7c10fd9098c9285ab4886711e18c83ac9dca604759f08e437ae5cc"
+        },
+        {
+          "run_id": "proposed_23010_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23010/telemetry.csv.xz",
+          "bytes": 53566168,
+          "sha256": "5ef35b7123b224ffdcf99e749a08d6153f1309c686b5a383a72c804568ccb50a"
+        },
+        {
+          "run_id": "proposed_23011_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23011/telemetry.csv.xz",
+          "bytes": 52480736,
+          "sha256": "606c8bbae1a8e9e2e3b88e03f9f617d241ebafec00c4600bcc1c8f5bd4f9b82a"
+        },
+        {
+          "run_id": "proposed_23012_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23012/telemetry.csv.xz",
+          "bytes": 54925952,
+          "sha256": "0ebedf8a96188b78b020086b1132d60401a721763e2d16508e37f8671d7d9794"
+        },
+        {
+          "run_id": "proposed_23013_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23013/telemetry.csv.xz",
+          "bytes": 48436856,
+          "sha256": "2e56b29ed7e330921abf87d10e852070f77b6c338d8732e1bac19fd1592bdfec"
+        },
+        {
+          "run_id": "proposed_23014_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23014/telemetry.csv.xz",
+          "bytes": 55009860,
+          "sha256": "9858914cfb78523bdf77956d24ff6df516de07ed0f5e1d35b005137b3a5dab27"
+        },
+        {
+          "run_id": "proposed_23015_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23015/telemetry.csv.xz",
+          "bytes": 53112912,
+          "sha256": "9373debb07e8f31cb2c86b7e5ac6319096a0f7fc5920902c37408b823e4c45e3"
+        },
+        {
+          "run_id": "proposed_23016_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23016/telemetry.csv.xz",
+          "bytes": 53670108,
+          "sha256": "7afe4d9cf779db953e3449defc46610bdffc5f4ce4578bedd446ef867460c437"
+        },
+        {
+          "run_id": "proposed_23017_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23017/telemetry.csv.xz",
+          "bytes": 59700404,
+          "sha256": "9308b3697a46fe2cc2f13087817605401f0f5870bfa15aba420f48295b4b214c"
+        },
+        {
+          "run_id": "proposed_23018_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23018/telemetry.csv.xz",
+          "bytes": 56457872,
+          "sha256": "66011f0002eea0726819fc7b9fe7088b58c84f3460f35e113fa79d54ce2cd639"
+        },
+        {
+          "run_id": "proposed_23019_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23019/telemetry.csv.xz",
+          "bytes": 56826376,
+          "sha256": "6e7c6a5877b8666cea3ca851b495c4b374e5d0671fc8737535cfc6803fc09d9c"
+        },
+        {
+          "run_id": "proposed_23020_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23020/telemetry.csv.xz",
+          "bytes": 59346888,
+          "sha256": "fb8370a5290cfa255ce516f4bbeab802463ba0e0b8b7976cbadc750ed85f9bc8"
+        },
+        {
+          "run_id": "proposed_23021_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23021/telemetry.csv.xz",
+          "bytes": 53471232,
+          "sha256": "8ce022a609ea338e3d9ea2beddda90b3935758e9b6093eb02a4d5a44c374e8db"
+        },
+        {
+          "run_id": "proposed_23022_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23022/telemetry.csv.xz",
+          "bytes": 55985396,
+          "sha256": "4f3bcd1323994bec4d960a38ae80d2ebcba2feaffb9690328e1a93cd90b598d4"
+        },
+        {
+          "run_id": "proposed_23023_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23023/telemetry.csv.xz",
+          "bytes": 54136820,
+          "sha256": "8169de197fc01d256a9ddc2ba4f2cf25db34845c8a85ef9878f0f552af695bf2"
+        },
+        {
+          "run_id": "proposed_23024_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23024/telemetry.csv.xz",
+          "bytes": 51315420,
+          "sha256": "08b9a88ad3863ed58173f709755206d6c516c3872e82e89a5bbf20cdfc187954"
+        },
+        {
+          "run_id": "proposed_23025_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23025/telemetry.csv.xz",
+          "bytes": 57002336,
+          "sha256": "696360691ae86f2113c2f38cb0093dc7559d3cc661513f85be833245d1416992"
+        },
+        {
+          "run_id": "proposed_23026_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23026/telemetry.csv.xz",
+          "bytes": 51830536,
+          "sha256": "9ca8ac87ac1d8c771421c031445fe3142cda56741b842a5610d2313a9bdcd4bf"
+        },
+        {
+          "run_id": "proposed_23027_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23027/telemetry.csv.xz",
+          "bytes": 53125424,
+          "sha256": "133761e5898dc2330ffa935dd195eb44ef239dbbed0c17c4f9413d0639d37aaf"
+        },
+        {
+          "run_id": "proposed_23028_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23028/telemetry.csv.xz",
+          "bytes": 53625752,
+          "sha256": "08f369fc48403c34e638e726db297a435d35abce051847b4b73778877c68bef7"
+        },
+        {
+          "run_id": "proposed_23029_tilt30",
+          "relative_path": "analytics/final_validation_v1/tilt_30/proposed_23029/telemetry.csv.xz",
+          "bytes": 56086848,
+          "sha256": "ee3441927c3496de5c4047f3f90f66e64ef5dfeb01dae74bf13f288e559f9dc2"
+        }
+      ]
+    }
+  ],
+  "wall_s": 52.62069369200617
+}

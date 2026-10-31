@@ -1,0 +1,1283 @@
+{
+  "submitted_sha256": "9a70293b3326307d92efa87bbccb0addb2234ddaaf7487415894df3aa54f61ee",
+  "audited_sha256": "7b70406e30a66ea4db34cd1ad4707a70fff5070c995fd25c8ff64fed587a3695",
+  "faculty_controls": 212,
+  "mandatory_controls_answered": 209,
+  "optional_consent_blank": 3,
+  "signature_images_preserved": true,
+  "fields": [
+    {
+      "tag": "M06.S1.claim1.source",
+      "answer": "No verified site-specific yield source obtained; delete numerical Mumbai claim. No electrical PV model is implemented.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim1.source_type",
+      "answer": "No source found",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim1.verdict",
+      "answer": "Delete",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim2.source",
+      "answer": "No verified primary monthly-loss source obtained. Monthly loss cannot be multiplied by annual generation as an annual-average loss; delete.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim2.source_type",
+      "answer": "No source found",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim2.verdict",
+      "answer": "Delete",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim3.source",
+      "answer": "No measured PV electrical recovery or sourced commercial payback supports these numbers. Delete; replace with explicitly assumed dimensionless scenario in Section 3.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim3.source_type",
+      "answer": "No source found",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.claim3.verdict",
+      "answer": "Delete",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_iso10218.applies",
+      "answer": "No",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_iso10218.clause",
+      "answer": "Scope: industrial robot/manipulator and integration. This fixed-panel cleaning mobile device is not an industrial manipulator; no conformity claim.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_iso3691.applies",
+      "answer": "No",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_iso3691.clause",
+      "answer": "Scope: driverless industrial trucks. The selected fixed PV-bay cleaner is not an industrial truck; no conformity claim.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_ria.applies",
+      "answer": "No",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_ria.clause",
+      "answer": "Industrial robot-system standard associated with ISO 10218; selected system is not an industrial manipulator. No compliance claim.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_iec60601.applies",
+      "answer": "No",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_iec60601.clause",
+      "answer": "Medical electrical equipment; the PV cleaner has no medical use. No applicable medical requirement.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_domain.applies",
+      "answer": "Partly",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.std_domain.clause",
+      "answer": "IEC 61215 (PV module qualification) and IEC 61730 (module safety) are relevant to future module/cleaner compatibility. Licensed clauses and allowable local brush/wheel loads were not verified; no clause number, certified glass load or compliance is asserted.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.baseline_value",
+      "answer": "Measured simulation baseline: waypoint + proportional wheel control; compare at equal 0\u201330 s exposure. Commercial reference: 120 person-hours/month is an assumption, not a site measurement.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.baseline_source",
+      "answer": "Actual controller logs and frozen protocol; commercial assumptions in analytics/final_business_inputs.json. No Mumbai field survey or verified annual-yield figure.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S1.stakeholder",
+      "answer": "Rooftop PV owner/operator and cleaning contractor; access, inspection, transfer and maintenance remain human responsibilities in the business scenario.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.timestep",
+      "answer": "0.002 s; 500 Hz integration and logging",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.friction",
+      "answer": "Rollers 1.2 / 0.005 / 0.0001; glass and brush 0.4 / 0.005 / 0.0001; brush contact priority 2. Guard friction is zero. These are model assumptions, not measured tyre/glass properties.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.solref",
+      "answer": "Brush/glass 0.02 s, 1 (soft bristle approximation); guide 0.01 s, 1; model default 0.005 s, 1. Rounded capsule contact was retained after replay rejected rigid-cylinder kicks. No coating-safety inference.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.control_law",
+      "answer": "PI / PD",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.gains",
+      "answer": "Wheel PI: Kp=0.8 N\u00b7m/(rad/s), Ki=0.5 N\u00b7m/rad, integral clamp \u00b13 rad, motor \u00b13 N\u00b7m. Heading 3 s\u207b\u00b9, yaw command \u00b11.2 rad/s. Shared incline/return regulator Kp=0.6, Ki=0.2; torque \u00b11 N\u00b7m, slew 4 N\u00b7m/s. Brush velocity target 15 rad/s, kv=0.1, torque \u00b11 N\u00b7m.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.fsm_states",
+      "answer": "HOME_MONITOR \u2192 SETTLE/ALIGN \u2192 SWEEP; image-requested EDGE_CLEAN_BOTTOM; verification/revisit; RETURN_HOME \u2192 DOCKING \u2192 DOCK_SERVICE \u2192 DOCKED. Safety abort/timeout remain failed outcomes.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.model_loads",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script1.authorship",
+      "answer": "Modified by us",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script1.author",
+      "answer": "Shared",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script1.change",
+      "answer": "Robot model with dock, fixed brush, guide and tray. Arush led physics and logic; Ronit contributed robot/XML file work. Development was AI-assisted.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script2.authorship",
+      "answer": "Modified by us",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script2.author",
+      "answer": "E048",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script2.change",
+      "answer": "Camera-triggered departure, PI tracking, bounded turns/return and 500 Hz logging. Arush led AI-assisted code implementation; team members supported development.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script3.authorship",
+      "answer": "Modified by us",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script3.author",
+      "answer": "E058",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script3.change",
+      "answer": "Harshvardhan led final_business_model.py and the business/economic analysis, including operating costs, transfer labour, payback and sensitivity. Ronit supported business modelling. AI-assisted development.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script4.name",
+      "answer": "src/vision_mission.py + panel_vision.py",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script4.authorship",
+      "answer": "Modified by us",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script4.author",
+      "answer": "E048",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script4.change",
+      "answer": "Rendered RGB observations, persistence, targeted revisits and independent residual scoring. Arush led AI-assisted implementation; navigation uses simulator pose.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script5.name",
+      "answer": "src/run_final_validation.py",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script5.authorship",
+      "answer": "Modified by us",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script5.author",
+      "answer": "E048",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S2.script5.change",
+      "answer": "Frozen 180 attempts over three inclinations with independent seeds, raw torque logs and source snapshots. Arush led AI-assisted implementation; team members supported the project.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.hreclaimed_inputs",
+      "answer": "All 30 proposed attempts at 20\u00b0, failures retained. H0=120 h/month; 21 sections/day \u00d7 30 days; f=0.2; attempt mean 612.713 s; p=1; transfer=180 s/section fully human; recovery=180 s/failure fully human; maintenance=10 h/month. All commercial values are assumptions.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.hreclaimed_metric",
+      "answer": "57.055 person-h/month; robot-related human effort 62.945 h/month (monitoring + transfer/recovery + maintenance).",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.payback_inputs",
+      "answer": "Normalise one year of baseline labour cost to 1. CapEx ratio k=0.65; life L=5 years; annual saving ratio s=NCRI. All commercial inputs assumed. T=12k/s months; P=k/(L\u00b7s); undefined for s\u22640.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.payback_metric",
+      "answer": "T=20.522 months; P=0.34204 (dimensionless). Scenario output, not observed payback.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.ncri_inputs",
+      "answer": "\u03ba=human-hours/H0 + annual energy cost ratio + 0.05 spares/battery + 0.03 consumables. Electrical estimate: positive simulated work/assumed 0.60 efficiency + 20 W modelled blower + 5 W electronics; two assumed 3 W cameras. Tariff ratio=0.0003 per kWh of one-year baseline cost.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.ncri_metric",
+      "answer": "\u03ba=0.61993; NCRI=1\u2212\u03ba=0.38007. Estimated system energy 51.281 kWh/year under scenario assumptions; not measured electrical energy.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_inputs",
+      "answer": "A section is one 24 m\u00b2 bay, not a raster lane. \u03bb=2.625 sections/h; \u03bc=3600/[E(Tattempt)/p + (1\u2212p)\u00b7180/p + 180]=4.54137 sections/h; c=1. Poisson arrivals/exponential service assumed.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_metric",
+      "answer": "\u03c1=0.57802; Wq=18.097 min if stable. Mean service 792.713 s. M/M/1 distribution assumptions are not validated by the simulator.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.sensitivity_inputs",
+      "answer": "Eight inputs swept \u00b130%: supervision, baseline hours, CapEx, manual transfer, failure recovery, energy price ratio, maintenance and drive efficiency. Repeated independent retries are an assumption. See sensitivity.csv; no PV yield uplift is monetised.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.sensitivity_metric",
+      "answer": "Break-even supervision fraction f=0.62536; maximum k for payback within assumed life=1.9004. Negative NCRI and unstable queues are retained, not converted to finite payback.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_model",
+      "answer": "M/M/1",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.queue_params",
+      "answer": "\u03bb=2.625 sections/h; \u03bc=4.54137 sections/h; c=1; \u03c1=0.57802",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.payback_months",
+      "answer": "20.5223 months; assumed scenario",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.E058.reproducible",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.effect",
+      "answer": "Fall/damage, interrupted work and human recovery.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.severity",
+      "answer": "9",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.occurrence",
+      "answer": "4",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.detection",
+      "answer": "8",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.rpn_pre",
+      "answer": "288",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.mitigation",
+      "answer": "Physical containment guard, bounded return drive, attitude/height stop and logged guard load; guards remain part of the safety model. Post D=3 credits simulation fault detection only.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.rpn_post",
+      "answer": "108",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea1.evidence",
+      "answer": "Both",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.effect",
+      "answer": "Permanent PV damage and repair cost.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.severity",
+      "answer": "8",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.occurrence",
+      "answer": "4",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.detection",
+      "answer": "9",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.rpn_pre",
+      "answer": "288",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.mitigation",
+      "answer": "Rounded soft-contact brush and load logs support development. Coating wear, grit hardness and allowable local pressure are unvalidated. No reduction credited: post S/O/D unchanged.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.rpn_post",
+      "answer": "288",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea2.evidence",
+      "answer": "Not yet",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.mode",
+      "answer": "RGB misses dirt or falsely declares clean",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.effect",
+      "answer": "Residual dirt or wasted cleaning cycle.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.severity",
+      "answer": "6",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.occurrence",
+      "answer": "5",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.detection",
+      "answer": "8",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.rpn_pre",
+      "answer": "240",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.mitigation",
+      "answer": "Persistent two-frame image trigger; actual camera feeds; independent final residual check rejects false-clean development cases. Post D=3 is offline evaluation detectability, not field camera reliability.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.rpn_post",
+      "answer": "90",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea3.evidence",
+      "answer": "Both",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.mode",
+      "answer": "Large solid escapes or jams the guide",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.effect",
+      "answer": "Unsafe ejection, jam or incomplete mission.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.severity",
+      "answer": "7",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.occurrence",
+      "answer": "4",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.detection",
+      "answer": "7",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.rpn_pre",
+      "answer": "196",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.mitigation",
+      "answer": "Permanent tray, fixed guide and actual solid/contact logs; success requires final retention. Applies only to the tested lower-strip corridor. Post D=3 credits final logged check.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.rpn_post",
+      "answer": "84",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea4.evidence",
+      "answer": "Both",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.mode",
+      "answer": "Dock transfer/accounting fault",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.effect",
+      "answer": "Dirt inventory error or missed service.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.severity",
+      "answer": "5",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.occurrence",
+      "answer": "4",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.detection",
+      "answer": "7",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.rpn_pre",
+      "answer": "140",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.mitigation",
+      "answer": "Settled docking, 8 s modelled service, explicit mass balance and charge-energy counters. Post D=3 credits software checks; no airflow, connector or battery hardware reliability claim.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.rpn_post",
+      "answer": "60",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S3.fmea5.evidence",
+      "answer": "Both",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.baseline_condition",
+      "answer": "Final collection model: waypoint reference + P wheel control versus segment lookahead + PI. Same camera pipeline, fixed brush/guide, mission route, guard, safety and shared incline/return regulator. Primary endpoint is common 0\u201330 s RMSE; all attempts continue through full mission/abort/1000 s.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.n_runs",
+      "answer": "30 independent runs/controller/tilt; 10\u00b0,20\u00b0,30\u00b0; 180 full-mission attempts. All failures retained. Table below: prespecified nominal 20\u00b0; all conditions in Appendix A.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.randomised",
+      "answer": "Initial x/y independent U(\u22120.01,+0.01) m; dust shape/offset RNG independent through logged debris_seed; clusters and 120 g lower-strip corridor fixed. Dry friction fixed. Seeds/distributions frozen before execution.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.log_rate_hz",
+      "answer": "500 Hz; each 0.002 s integration sample. XZ compresses CSV; final batch serialises numbers to 9 significant digits.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.seeds_recorded",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.real_csv_path",
+      "answer": "analytics/primary_windows/*_real_trials.csv.gz: actual 500 Hz 0\u201330 s windows for all 180 full attempts. Full result/coverage metadata and two complete 20\u00b0 traces: analytics/final_validation_v1/. All 180 original full traces are pinned with hashes/URLs in analytics/FULL_RAW_DATA_MANIFEST.json; fetch_full_validation.py retrieves missing originals. A run is the unit of inference.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.rmse.n",
+      "answer": "Available 30 s windows: 30 baseline / 30 proposed; 30 attempts each",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.rmse.baseline",
+      "answer": "0.100061 \u00b1 0.0012",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.rmse.proposed",
+      "answer": "0.0118225 \u00b1 0.000166",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.rmse.unit",
+      "answer": "m; common 0\u201330 s",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.rmse.better",
+      "answer": "Lower is better",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.effort.n",
+      "answer": "Available 30 s windows: 30 baseline / 30 proposed; 30 attempts each",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.effort.baseline",
+      "answer": "30.5728 \u00b1 0.162",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.effort.proposed",
+      "answer": "31.1333 \u00b1 0.201",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.effort.unit",
+      "answer": "N\u00b2\u00b7m\u00b2\u00b7s; 0\u201330 s",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.effort.better",
+      "answer": "Lower is better",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.metric.name",
+      "answer": "Complete safe, camera-clean, solid-retained, serviced home cycle",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.metric.n",
+      "answer": "30 per controller at 20\u00b0",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.metric.baseline",
+      "answer": "30/30 (100.00%)",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.metric.proposed",
+      "answer": "30/30 (100.00%)",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.metric.unit",
+      "answer": "completion fraction",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.metric.better",
+      "answer": "Higher is better",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.test",
+      "answer": "Welch's t-test",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.t_df_p",
+      "answer": "20\u00b0: t=-400.1377, df=30.11906, p=1.127902e-57; Holm-adjusted p=1.127902e-57 across 3 tilt comparisons.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.cohens_d",
+      "answer": "-103.3151; pooled SD; proposed minus baseline",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.ci95",
+      "answer": "[-0.08868864868975783, -0.08778807408256452] m for proposed minus baseline. Run-level Welch interval; other conditions in Appendix A.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.prov_own_runs",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.prov_no_simulated",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.prov_plots_reproducible",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S4.prov_economics_sourced",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.linkedin_url",
+      "answer": "https://lnkd.in/p/d_en8Zas",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.video_length",
+      "answer": "Simulation segment: 03:21.52, including visible cameras and business graph. The completed team presentation is linked above.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.live_mujoco",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.business_graph",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.all_members_speak",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai1.tool",
+      "answer": "ChatGPT",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai1.said",
+      "answer": "Conditional import mujoco.viewer inside mission was expected to work, but shadowed the module name and raised UnboundLocalError before model construction.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai1.caught_by",
+      "answer": "Ran / tested the code or simulation",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai1.truth",
+      "answer": "Use from mujoco import viewer as mj_viewer. Actual mission/integration tests execute model construction. See docs/AI_AUDIT.md and controller import.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai1.error_type",
+      "answer": "Wrong code / MuJoCo API",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai1.verdict",
+      "answer": "Corrected",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai2.tool",
+      "answer": "ChatGPT",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai2.said",
+      "answer": "RMS distance to the next waypoint was initially labelled path-tracking RMSE.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai2.caught_by",
+      "answer": "Ran / tested the code or simulation",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai2.truth",
+      "answer": "Measure distance to the active segment using projection; tests/test_geometry_economics.py checks a 0.2 m perpendicular error. Time-indexed tracking is not claimed.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai2.error_type",
+      "answer": "Wrong number or statistic",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai2.verdict",
+      "answer": "Corrected",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai3.tool",
+      "answer": "ChatGPT",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai3.said",
+      "answer": "Computing source hashes at run completion could label an earlier executed model with later edits.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai3.caught_by",
+      "answer": "Ran / tested the code or simulation",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai3.truth",
+      "answer": "Capture hashes at launch and preserve immutable source snapshots. Final batch protocol records launch hashes; executed source is frozen. See docs/AI_AUDIT.md.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai3.error_type",
+      "answer": "Wrong code / MuJoCo API",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.ai3.verdict",
+      "answer": "Corrected",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.problem",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.physics",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.business",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.data",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.clarity",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.best_moment",
+      "answer": "Overall demonstration",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M07.question",
+      "answer": "How does the mobile manipulator detect contact with a patient or unexpected obstacle and stop safely?",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.problem",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.physics",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.business",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.data",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.clarity",
+      "answer": "2",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.best_moment",
+      "answer": "Overall demonstration",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S5.peer_M12.question",
+      "answer": "How is an apparent pipeline defect distinguished from a shadow, and how is detection confidence validated?",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.hours",
+      "answer": "20 h",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.role_fidelity",
+      "answer": "5",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.cross_disciplinary_skill",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.scripts_authored",
+      "answer": "Physics, control and simulation logic: crawler_cleaning_controller.py, vision_mission.py, panel_vision.py and run_final_validation.py; shared model XML. AI-assisted.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.commit_share",
+      "answer": "Work: 45%Git: 94.5%",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.ai_draft_share",
+      "answer": "26\u201350 %",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.ai_errors_caught",
+      "answer": "6 or more",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.hours",
+      "answer": "20 h",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.role_fidelity",
+      "answer": "5",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.cross_disciplinary_skill",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.scripts_authored",
+      "answer": "Robot-model and XML file work, including collection_cleaning_crawler.xml; supported business modelling. AI-assisted.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.commit_share",
+      "answer": "Work: 27.5%Git: 5.5%",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.ai_draft_share",
+      "answer": "26\u201350 %",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.ai_errors_caught",
+      "answer": "3\u20135",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.hours",
+      "answer": "20 h",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.role_fidelity",
+      "answer": "5",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.cross_disciplinary_skill",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.scripts_authored",
+      "answer": "Lead: analytics/final_business_model.py; business modelling and economic analysis. AI-assisted.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.commit_share",
+      "answer": "Work: 27.5%Git: 0.0%",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.ai_draft_share",
+      "answer": "26\u201350 %",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.ai_errors_caught",
+      "answer": "3\u20135",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.prior_simulator",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.most_valuable",
+      "answer": "Learning MuJoCo end-to-end: modelling robots, writing MuJoCo/Python simulation scripts and building a functioning digital prototype for business demonstrations.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E048.change_one_thing",
+      "answer": "No changes suggested; the teaching and guidance were effective.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.prior_simulator",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.most_valuable",
+      "answer": "Learning MuJoCo end-to-end: modelling robots, writing MuJoCo/Python simulation scripts and building a functioning digital prototype for business demonstrations.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E052.change_one_thing",
+      "answer": "No changes suggested; the teaching and guidance were effective.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.prior_simulator",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.most_valuable",
+      "answer": "Learning MuJoCo end-to-end: modelling robots, writing MuJoCo/Python simulation scripts and building a functioning digital prototype for business demonstrations.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.S6.E058.change_one_thing",
+      "answer": "No changes suggested; the teaching and guidance were effective.",
+      "dropdown": false,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E048.original",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E048.code_runs",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E048.viva_ready",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E048.research_consent",
+      "answer": "",
+      "dropdown": true,
+      "intentional_blank": true
+    },
+    {
+      "tag": "M06.SIGN.E052.original",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E052.code_runs",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E052.viva_ready",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E052.research_consent",
+      "answer": "",
+      "dropdown": true,
+      "intentional_blank": true
+    },
+    {
+      "tag": "M06.SIGN.E058.original",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E058.code_runs",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E058.viva_ready",
+      "answer": "Yes",
+      "dropdown": true,
+      "intentional_blank": false
+    },
+    {
+      "tag": "M06.SIGN.E058.research_consent",
+      "answer": "",
+      "dropdown": true,
+      "intentional_blank": true
+    }
+  ],
+  "edits": "Restored original field metadata/choice lists and unique IDs; corrected stale editing instructions; made compact/full data paths explicit. Shared model-author dropdown normalised to Shared with names retained in adjacent explanation. No new peer timestamps or unknown video runtime invented."
+}

@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "faults": [
+    "pose_dropout",
+    "brush_jam",
+    "traction_loss"
+  ],
+  "fault_time_s": 3.0,
+  "duration_s": 10.0,
+  "variant": "proposed",
+  "scope": "Development matrix at fixed 20 degree nominal model; no failure-rate inference. Severe traction loss is expected to remain unsafe."
+}

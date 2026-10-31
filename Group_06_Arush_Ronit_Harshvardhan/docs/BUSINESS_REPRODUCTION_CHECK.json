@@ -1,0 +1,6 @@
+{
+  "pass": true,
+  "base_and_conservative_scenarios_match_exactly": true,
+  "selected_trials": 30,
+  "source": "Retained full180-run summary; all nominal proposed attempts selected."
+}
